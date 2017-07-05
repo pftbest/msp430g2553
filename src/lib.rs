@@ -1,223 +1,194 @@
-#![feature(abi_msp430_interrupt)]
-# ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.10.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.10.0/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ feature ( optin_builtin_traits ) ] # ! [ no_std ]extern crate msp430 ;
+# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( core_intrinsics ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( naked_functions ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.0/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
+#[cfg(feature = "rt")]
+extern crate msp430_rt ;
+extern crate mcu ;
 extern crate vcell ;
 use core::ops::Deref;
-use msp430::peripheral::Peripheral;
-#[doc = r" Interrupts"]
+use mcu::Peripheral;
+pub use interrupt::Interrupt;
+#[doc(hidden)]
 pub mod interrupt {
-    use msp430::ctxt::Context;
-    use msp430::exception;
-    use msp430::interrupt::Nr;
-    #[doc = "0 - 0xFFE0 TRAPINT"]
-    pub struct TRAPINT {
-        _0: (),
-    }
-    unsafe impl Context for TRAPINT {}
-    unsafe impl Nr for TRAPINT {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            0
-        }
-    }
-    impl !Send for TRAPINT {}
-    #[doc = "2 - 0xFFE4 Port 1"]
-    pub struct PORT1 {
-        _0: (),
-    }
-    unsafe impl Context for PORT1 {}
-    unsafe impl Nr for PORT1 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            2
-        }
-    }
-    impl !Send for PORT1 {}
-    #[doc = "3 - 0xFFE6 Port 2"]
-    pub struct PORT2 {
-        _0: (),
-    }
-    unsafe impl Context for PORT2 {}
-    unsafe impl Nr for PORT2 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            3
-        }
-    }
-    impl !Send for PORT2 {}
-    #[doc = "5 - 0xFFEA ADC10"]
-    pub struct ADC10 {
-        _0: (),
-    }
-    unsafe impl Context for ADC10 {}
-    unsafe impl Nr for ADC10 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            5
-        }
-    }
-    impl !Send for ADC10 {}
-    #[doc = "6 - 0xFFEC USCI A0/B0 Transmit"]
-    pub struct USCIAB0TX {
-        _0: (),
-    }
-    unsafe impl Context for USCIAB0TX {}
-    unsafe impl Nr for USCIAB0TX {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            6
-        }
-    }
-    impl !Send for USCIAB0TX {}
-    #[doc = "7 - 0xFFEE USCI A0/B0 Receive"]
-    pub struct USCIAB0RX {
-        _0: (),
-    }
-    unsafe impl Context for USCIAB0RX {}
-    unsafe impl Nr for USCIAB0RX {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            7
-        }
-    }
-    impl !Send for USCIAB0RX {}
-    #[doc = "8 - 0xFFF0 Timer0)A CC1, TA0"]
-    pub struct TIMER0_A1 {
-        _0: (),
-    }
-    unsafe impl Context for TIMER0_A1 {}
-    unsafe impl Nr for TIMER0_A1 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            8
-        }
-    }
-    impl !Send for TIMER0_A1 {}
-    #[doc = "9 - 0xFFF2 Timer0_A CC0"]
-    pub struct TIMER0_A0 {
-        _0: (),
-    }
-    unsafe impl Context for TIMER0_A0 {}
-    unsafe impl Nr for TIMER0_A0 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            9
-        }
-    }
-    impl !Send for TIMER0_A0 {}
-    #[doc = "10 - 0xFFF4 Watchdog Timer"]
-    pub struct WDT {
-        _0: (),
-    }
-    unsafe impl Context for WDT {}
-    unsafe impl Nr for WDT {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            10
-        }
-    }
-    impl !Send for WDT {}
-    #[doc = "11 - 0xFFF6 Comparator A"]
-    pub struct COMPARATORA {
-        _0: (),
-    }
-    unsafe impl Context for COMPARATORA {}
-    unsafe impl Nr for COMPARATORA {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            11
-        }
-    }
-    impl !Send for COMPARATORA {}
-    #[doc = "12 - 0xFFF8 Timer1_A CC1-4, TA1"]
-    pub struct TIMER1_A1 {
-        _0: (),
-    }
-    unsafe impl Context for TIMER1_A1 {}
-    unsafe impl Nr for TIMER1_A1 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            12
-        }
-    }
-    impl !Send for TIMER1_A1 {}
-    #[doc = "13 - 0xFFFA Timer1_A CC0"]
-    pub struct TIMER1_A0 {
-        _0: (),
-    }
-    unsafe impl Context for TIMER1_A0 {}
-    unsafe impl Nr for TIMER1_A0 {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            13
-        }
-    }
-    impl !Send for TIMER1_A0 {}
-    #[doc = "14 - 0xFFFC Non-maskable"]
-    pub struct NMI {
-        _0: (),
-    }
-    unsafe impl Context for NMI {}
-    unsafe impl Nr for NMI {
-        #[inline(always)]
-        fn nr(&self) -> u8 {
-            14
-        }
-    }
-    impl !Send for NMI {}
-    use msp430::Reserved;
-    #[doc = r" Interrupt handlers"]
+    use mcu::Nr;
     #[allow(non_snake_case)]
-    #[repr(C)]
-    pub struct Handlers {
-        #[doc = "0 - 0xFFE0 TRAPINT"]
-        pub TRAPINT: extern "msp430-interrupt" fn(TRAPINT),
-        #[doc = r" Reserved spot in the vector table"]
-        pub _reserved0: [Reserved; 1],
-        #[doc = "2 - 0xFFE4 Port 1"]
-        pub PORT1: extern "msp430-interrupt" fn(PORT1),
-        #[doc = "3 - 0xFFE6 Port 2"]
-        pub PORT2: extern "msp430-interrupt" fn(PORT2),
-        #[doc = r" Reserved spot in the vector table"]
-        pub _reserved1: [Reserved; 1],
-        #[doc = "5 - 0xFFEA ADC10"]
-        pub ADC10: extern "msp430-interrupt" fn(ADC10),
-        #[doc = "6 - 0xFFEC USCI A0/B0 Transmit"]
-        pub USCIAB0TX: extern "msp430-interrupt" fn(USCIAB0TX),
-        #[doc = "7 - 0xFFEE USCI A0/B0 Receive"]
-        pub USCIAB0RX: extern "msp430-interrupt" fn(USCIAB0RX),
-        #[doc = "8 - 0xFFF0 Timer0)A CC1, TA0"]
-        pub TIMER0_A1: extern "msp430-interrupt" fn(TIMER0_A1),
-        #[doc = "9 - 0xFFF2 Timer0_A CC0"]
-        pub TIMER0_A0: extern "msp430-interrupt" fn(TIMER0_A0),
-        #[doc = "10 - 0xFFF4 Watchdog Timer"]
-        pub WDT: extern "msp430-interrupt" fn(WDT),
-        #[doc = "11 - 0xFFF6 Comparator A"]
-        pub COMPARATORA: extern "msp430-interrupt" fn(COMPARATORA),
-        #[doc = "12 - 0xFFF8 Timer1_A CC1-4, TA1"]
-        pub TIMER1_A1: extern "msp430-interrupt" fn(TIMER1_A1),
-        #[doc = "13 - 0xFFFA Timer1_A CC0"]
-        pub TIMER1_A0: extern "msp430-interrupt" fn(TIMER1_A0),
-        #[doc = "14 - 0xFFFC Non-maskable"]
-        pub NMI: extern "msp430-interrupt" fn(NMI),
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn TRAPINT() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
     }
-    #[doc = r" Default interrupt handlers"]
-    pub const DEFAULT_HANDLERS: Handlers = Handlers {
-        TRAPINT: exception::default_handler,
-        _reserved0: [Reserved::Vector; 1],
-        PORT1: exception::default_handler,
-        PORT2: exception::default_handler,
-        _reserved1: [Reserved::Vector; 1],
-        ADC10: exception::default_handler,
-        USCIAB0TX: exception::default_handler,
-        USCIAB0RX: exception::default_handler,
-        TIMER0_A1: exception::default_handler,
-        TIMER0_A0: exception::default_handler,
-        WDT: exception::default_handler,
-        COMPARATORA: exception::default_handler,
-        TIMER1_A1: exception::default_handler,
-        TIMER1_A0: exception::default_handler,
-        NMI: exception::default_handler,
-    };
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn PORT1() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn PORT2() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn ADC10() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn USCIAB0TX() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn USCIAB0RX() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn TIMER0_A1() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn TIMER0_A0() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn WDT() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn COMPARATORA() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn TIMER1_A1() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn TIMER1_A0() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(non_snake_case)]
+    #[allow(private_no_mangle_fns)]
+    #[cfg(feature = "rt")]
+    #[linkage = "weak"]
+    #[naked]
+    #[no_mangle]
+    extern "msp430-interrupt" fn NMI() {
+        unsafe {
+            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
+            ::core::intrinsics::unreachable()
+        }
+    }
+    #[allow(private_no_mangle_statics)]
+    #[cfg(feature = "rt")]
+    #[doc(hidden)]
+    #[link_section = ".vector_table.interrupts"]
+    #[no_mangle]
+    #[used]
+    pub static INTERRUPTS: [Option<extern "msp430-interrupt" fn()>; 15] =
+        [
+            Some(TRAPINT),
+            None,
+            Some(PORT1),
+            Some(PORT2),
+            None,
+            Some(ADC10),
+            Some(USCIAB0TX),
+            Some(USCIAB0RX),
+            Some(TIMER0_A1),
+            Some(TIMER0_A0),
+            Some(WDT),
+            Some(COMPARATORA),
+            Some(TIMER1_A1),
+            Some(TIMER1_A0),
+            Some(NMI),
+        ];
     #[doc = r" Enumeration of all the interrupts"]
     pub enum Interrupt {
         #[doc = "0 - 0xFFE0 TRAPINT"]
@@ -267,6 +238,9 @@ pub mod interrupt {
             }
         }
     }
+    #[cfg(feature = "rt")]
+    #[macro_export]
+    macro_rules ! interrupt { ( $ NAME : ident , $ f : ident , local : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Local { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCAL : self :: $ NAME :: Local = self :: $ NAME :: Local { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Local ) = $ f ; f ( unsafe { & mut LOCAL } ) ; } } ; ( $ NAME : ident , $ f : ident ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ f ; f ( ) ; } } }
 }
 #[doc = "Flash"]
 pub const FLASH: Peripheral<FLASH> = unsafe { Peripheral::new(296) };
@@ -5405,7 +5379,8 @@ impl Deref for ADC10 {
     }
 }
 #[doc = "System Clock"]
-pub const SYSTEM_CLOCK: Peripheral<SYSTEM_CLOCK> = unsafe { Peripheral::new(82) };
+pub const SYSTEM_CLOCK: Peripheral<SYSTEM_CLOCK> =
+    unsafe { Peripheral::new(82) };
 #[doc = "System Clock"]
 pub mod system_clock {
     use vcell::VolatileCell;
@@ -21969,7 +21944,8 @@ impl Deref for PORT_1_2 {
     }
 }
 #[doc = "USCI_A0 UART Mode"]
-pub const USCI_A0_UART_MODE: Peripheral<USCI_A0_UART_MODE> = unsafe { Peripheral::new(92) };
+pub const USCI_A0_UART_MODE: Peripheral<USCI_A0_UART_MODE> =
+    unsafe { Peripheral::new(92) };
 #[doc = "USCI_A0 UART Mode"]
 pub mod usci_a0_uart_mode {
     use vcell::VolatileCell;
@@ -27065,7 +27041,8 @@ impl Deref for USCI_A0_UART_MODE {
     }
 }
 #[doc = "Special Function"]
-pub const SPECIAL_FUNCTION: Peripheral<SPECIAL_FUNCTION> = unsafe { Peripheral::new(0) };
+pub const SPECIAL_FUNCTION: Peripheral<SPECIAL_FUNCTION> =
+    unsafe { Peripheral::new(0) };
 #[doc = "Special Function"]
 pub mod special_function {
     use vcell::VolatileCell;
@@ -33474,7 +33451,8 @@ impl Deref for TIMER1_A3 {
     }
 }
 #[doc = "USCI_B0 SPI Mode"]
-pub const USCI_B0_SPI_MODE: Peripheral<USCI_B0_SPI_MODE> = unsafe { Peripheral::new(104) };
+pub const USCI_B0_SPI_MODE: Peripheral<USCI_B0_SPI_MODE> =
+    unsafe { Peripheral::new(104) };
 #[doc = "USCI_B0 SPI Mode"]
 pub mod usci_b0_spi_mode {
     use vcell::VolatileCell;
@@ -35045,7 +35023,8 @@ impl Deref for USCI_B0_SPI_MODE {
     }
 }
 #[doc = "USCI_B0 I2C Mode"]
-pub const USCI_B0_I2C_MODE: Peripheral<USCI_B0_I2C_MODE> = unsafe { Peripheral::new(104) };
+pub const USCI_B0_I2C_MODE: Peripheral<USCI_B0_I2C_MODE> =
+    unsafe { Peripheral::new(104) };
 #[doc = "USCI_B0 I2C Mode"]
 pub mod usci_b0_i2c_mode {
     use vcell::VolatileCell;
@@ -39613,7 +39592,8 @@ impl Deref for USCI_B0_I2C_MODE {
     }
 }
 #[doc = "Watchdog Timer"]
-pub const WATCHDOG_TIMER: Peripheral<WATCHDOG_TIMER> = unsafe { Peripheral::new(288) };
+pub const WATCHDOG_TIMER: Peripheral<WATCHDOG_TIMER> =
+    unsafe { Peripheral::new(288) };
 #[doc = "Watchdog Timer"]
 pub mod watchdog_timer {
     use vcell::VolatileCell;
@@ -45024,7 +45004,8 @@ impl Deref for PORT_3_4 {
     }
 }
 #[doc = "TLV Calibration Data"]
-pub const TLV_CALIBRATION_DATA: Peripheral<TLV_CALIBRATION_DATA> = unsafe { Peripheral::new(4288) };
+pub const TLV_CALIBRATION_DATA: Peripheral<TLV_CALIBRATION_DATA> =
+    unsafe { Peripheral::new(4288) };
 #[doc = "TLV Calibration Data"]
 pub mod tlv_calibration_data {
     use vcell::VolatileCell;
@@ -45181,7 +45162,8 @@ impl Deref for TLV_CALIBRATION_DATA {
     }
 }
 #[doc = "Comparator A"]
-pub const COMPARATOR_A: Peripheral<COMPARATOR_A> = unsafe { Peripheral::new(88) };
+pub const COMPARATOR_A: Peripheral<COMPARATOR_A> =
+    unsafe { Peripheral::new(88) };
 #[doc = "Comparator A"]
 pub mod comparator_a {
     use vcell::VolatileCell;
@@ -47465,7 +47447,8 @@ impl Deref for COMPARATOR_A {
     }
 }
 #[doc = "USCI_A0 SPI Mode"]
-pub const USCI_A0_SPI_MODE: Peripheral<USCI_A0_SPI_MODE> = unsafe { Peripheral::new(96) };
+pub const USCI_A0_SPI_MODE: Peripheral<USCI_A0_SPI_MODE> =
+    unsafe { Peripheral::new(96) };
 #[doc = "USCI_A0 SPI Mode"]
 pub mod usci_a0_spi_mode {
     use vcell::VolatileCell;
@@ -49062,7 +49045,8 @@ impl Deref for USCI_A0_SPI_MODE {
     }
 }
 #[doc = "Calibration Data"]
-pub const CALIBRATION_DATA: Peripheral<CALIBRATION_DATA> = unsafe { Peripheral::new(4344) };
+pub const CALIBRATION_DATA: Peripheral<CALIBRATION_DATA> =
+    unsafe { Peripheral::new(4344) };
 #[doc = "Calibration Data"]
 pub mod calibration_data {
     use vcell::VolatileCell;

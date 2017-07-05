@@ -12,6 +12,10 @@ repository = "https://github.com/pftbest/msp430g2553"
 version = "0.1.0"
 
 [dependencies]
-#msp430 = "0.1.0"
-msp430 = { path = "../msp430" }
+mcu = { git = "https://github.com/japaric/mcu" }
+msp430 = { git = "https://github.com/japaric/cortex-m", branch = "msp430" }
+msp430-rt = { git = "https://github.com/japaric/cortex-m-rt", branch = "msp430-rt" }
 vcell = "0.1.0"
+
+[features]
+rt = []

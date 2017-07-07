@@ -1,14 +1,14 @@
 # ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( core_intrinsics ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( naked_functions ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.0/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
 #[cfg(feature = "rt")]
 extern crate msp430_rt ;
-extern crate mcu ;
+extern crate bare_metal ;
 extern crate vcell ;
 use core::ops::Deref;
-use mcu::Peripheral;
+use bare_metal::Peripheral;
 pub use interrupt::Interrupt;
 #[doc(hidden)]
 pub mod interrupt {
-    use mcu::Nr;
+    use bare_metal::Nr;
     #[allow(non_snake_case)]
     #[allow(private_no_mangle_fns)]
     #[cfg(feature = "rt")]
@@ -240,7 +240,7 @@ pub mod interrupt {
     }
     #[cfg(feature = "rt")]
     #[macro_export]
-    macro_rules ! interrupt { ( $ NAME : ident , $ f : ident , local : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Local { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCAL : self :: $ NAME :: Local = self :: $ NAME :: Local { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Local ) = $ f ; f ( unsafe { & mut LOCAL } ) ; } } ; ( $ NAME : ident , $ f : ident ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ f ; f ( ) ; } } }
+    macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
 }
 #[doc = "Flash"]
 pub const FLASH: Peripheral<FLASH> = unsafe { Peripheral::new(296) };
@@ -53905,5 +53905,64 @@ impl Deref for TIMER0_A3 {
     type Target = timer0_a3::RegisterBlock;
     fn deref(&self) -> &timer0_a3::RegisterBlock {
         &self.register_block
+    }
+}
+#[doc = r" All the peripherals"]
+#[allow(non_snake_case)]
+pub struct Peripherals<'a> {
+    #[doc = "FLASH"]
+    pub FLASH: &'a FLASH,
+    #[doc = "ADC10"]
+    pub ADC10: &'a ADC10,
+    #[doc = "SYSTEM_CLOCK"]
+    pub SYSTEM_CLOCK: &'a SYSTEM_CLOCK,
+    #[doc = "PORT_1_2"]
+    pub PORT_1_2: &'a PORT_1_2,
+    #[doc = "USCI_A0_UART_MODE"]
+    pub USCI_A0_UART_MODE: &'a USCI_A0_UART_MODE,
+    #[doc = "SPECIAL_FUNCTION"]
+    pub SPECIAL_FUNCTION: &'a SPECIAL_FUNCTION,
+    #[doc = "TIMER1_A3"]
+    pub TIMER1_A3: &'a TIMER1_A3,
+    #[doc = "USCI_B0_SPI_MODE"]
+    pub USCI_B0_SPI_MODE: &'a USCI_B0_SPI_MODE,
+    #[doc = "USCI_B0_I2C_MODE"]
+    pub USCI_B0_I2C_MODE: &'a USCI_B0_I2C_MODE,
+    #[doc = "WATCHDOG_TIMER"]
+    pub WATCHDOG_TIMER: &'a WATCHDOG_TIMER,
+    #[doc = "PORT_3_4"]
+    pub PORT_3_4: &'a PORT_3_4,
+    #[doc = "TLV_CALIBRATION_DATA"]
+    pub TLV_CALIBRATION_DATA: &'a TLV_CALIBRATION_DATA,
+    #[doc = "COMPARATOR_A"]
+    pub COMPARATOR_A: &'a COMPARATOR_A,
+    #[doc = "USCI_A0_SPI_MODE"]
+    pub USCI_A0_SPI_MODE: &'a USCI_A0_SPI_MODE,
+    #[doc = "CALIBRATION_DATA"]
+    pub CALIBRATION_DATA: &'a CALIBRATION_DATA,
+    #[doc = "TIMER0_A3"]
+    pub TIMER0_A3: &'a TIMER0_A3,
+}
+impl<'a> Peripherals<'a> {
+    #[doc = r" Grants access to all the peripherals"]
+    pub unsafe fn all() -> Self {
+        Peripherals {
+            FLASH: &*FLASH.get(),
+            ADC10: &*ADC10.get(),
+            SYSTEM_CLOCK: &*SYSTEM_CLOCK.get(),
+            PORT_1_2: &*PORT_1_2.get(),
+            USCI_A0_UART_MODE: &*USCI_A0_UART_MODE.get(),
+            SPECIAL_FUNCTION: &*SPECIAL_FUNCTION.get(),
+            TIMER1_A3: &*TIMER1_A3.get(),
+            USCI_B0_SPI_MODE: &*USCI_B0_SPI_MODE.get(),
+            USCI_B0_I2C_MODE: &*USCI_B0_I2C_MODE.get(),
+            WATCHDOG_TIMER: &*WATCHDOG_TIMER.get(),
+            PORT_3_4: &*PORT_3_4.get(),
+            TLV_CALIBRATION_DATA: &*TLV_CALIBRATION_DATA.get(),
+            COMPARATOR_A: &*COMPARATOR_A.get(),
+            USCI_A0_SPI_MODE: &*USCI_A0_SPI_MODE.get(),
+            CALIBRATION_DATA: &*CALIBRATION_DATA.get(),
+            TIMER0_A3: &*TIMER0_A3.get(),
+        }
     }
 }

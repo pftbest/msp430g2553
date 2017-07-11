@@ -1,4 +1,4 @@
-# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( core_intrinsics ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( naked_functions ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.0/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
+# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( core_intrinsics ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( naked_functions ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.1/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
 #[cfg(feature = "rt")]
 extern crate msp430_rt ;
 extern crate bare_metal ;
@@ -171,24 +171,23 @@ pub mod interrupt {
     #[link_section = ".vector_table.interrupts"]
     #[no_mangle]
     #[used]
-    pub static INTERRUPTS: [Option<extern "msp430-interrupt" fn()>; 15] =
-        [
-            Some(TRAPINT),
-            None,
-            Some(PORT1),
-            Some(PORT2),
-            None,
-            Some(ADC10),
-            Some(USCIAB0TX),
-            Some(USCIAB0RX),
-            Some(TIMER0_A1),
-            Some(TIMER0_A0),
-            Some(WDT),
-            Some(COMPARATORA),
-            Some(TIMER1_A1),
-            Some(TIMER1_A0),
-            Some(NMI),
-        ];
+    pub static INTERRUPTS: [Option<extern "msp430-interrupt" fn()>; 15] = [
+        Some(TRAPINT),
+        None,
+        Some(PORT1),
+        Some(PORT2),
+        None,
+        Some(ADC10),
+        Some(USCIAB0TX),
+        Some(USCIAB0RX),
+        Some(TIMER0_A1),
+        Some(TIMER0_A0),
+        Some(WDT),
+        Some(COMPARATORA),
+        Some(TIMER1_A1),
+        Some(TIMER1_A0),
+        Some(NMI),
+    ];
     #[doc = r" Enumeration of all the interrupts"]
     pub enum Interrupt {
         #[doc = "0 - 0xFFE0 TRAPINT"]
@@ -240,7 +239,7 @@ pub mod interrupt {
     }
     #[cfg(feature = "rt")]
     #[macro_export]
-    macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "C" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
+    macro_rules ! interrupt { ( $ NAME : ident , $ path : path , locals : { $ ( $ lvar : ident : $ lty : ident = $ lval : expr ; ) * } ) => { # [ allow ( non_snake_case ) ] mod $ NAME { pub struct Locals { $ ( pub $ lvar : $ lty , ) * } } # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "msp430-interrupt" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; static mut LOCALS : self :: $ NAME :: Locals = self :: $ NAME :: Locals { $ ( $ lvar : $ lval , ) * } ; let f : fn ( & mut self :: $ NAME :: Locals ) = $ path ; f ( unsafe { & mut LOCALS } ) ; } } ; ( $ NAME : ident , $ path : path ) => { # [ allow ( non_snake_case ) ] # [ no_mangle ] pub extern "msp430-interrupt" fn $ NAME ( ) { let _ = $ crate :: interrupt :: Interrupt :: $ NAME ; let f : fn ( ) = $ path ; f ( ) ; } } }
 }
 #[doc = "Flash"]
 pub const FLASH: Peripheral<FLASH> = unsafe { Peripheral::new(296) };
@@ -287,7 +286,9 @@ pub mod flash {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -704,7 +705,9 @@ pub mod flash {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -1431,7 +1434,9 @@ pub mod flash {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -2232,7 +2237,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -2633,7 +2640,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -2658,7 +2667,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -2699,7 +2710,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -4065,7 +4078,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -5331,7 +5346,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -5356,7 +5373,9 @@ pub mod adc10 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -5428,7 +5447,9 @@ pub mod system_clock {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -6079,7 +6100,9 @@ pub mod system_clock {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -6844,7 +6867,9 @@ pub mod system_clock {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -7571,7 +7596,9 @@ pub mod system_clock {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -8192,7 +8219,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -8957,7 +8986,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -9722,7 +9753,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -10487,7 +10520,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -11252,7 +11287,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -12017,7 +12054,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -12782,7 +12821,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -13547,7 +13588,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -14312,7 +14355,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -15077,7 +15122,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -15842,7 +15889,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -16607,7 +16656,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -17372,7 +17423,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -18137,7 +18190,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -18902,7 +18957,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -19667,7 +19724,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -20432,7 +20491,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -21197,7 +21258,9 @@ pub mod port_1_2 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -22006,7 +22069,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -22510,7 +22575,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -23275,7 +23342,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -24040,7 +24109,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -24767,7 +24838,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -25478,7 +25551,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -25503,7 +25578,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -25544,7 +25621,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -26244,7 +26323,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -26993,7 +27074,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -27018,7 +27101,9 @@ pub mod usci_a0_uart_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -27088,7 +27173,9 @@ pub mod special_function {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -27505,7 +27592,9 @@ pub mod special_function {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -27922,7 +28011,9 @@ pub mod special_function {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -28426,7 +28517,9 @@ pub mod special_function {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -28867,7 +28960,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -28908,7 +29003,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -29646,7 +29743,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -30887,7 +30986,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -32128,7 +32229,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -33353,7 +33456,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -33378,7 +33483,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -33403,7 +33510,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -33428,7 +33537,9 @@ pub mod timer1_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -33505,7 +33616,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -34232,7 +34345,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -34508,7 +34623,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -34533,7 +34650,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -34574,7 +34693,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -34975,7 +35096,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -35000,7 +35123,9 @@ pub mod usci_b0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -35083,7 +35208,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -35723,7 +35850,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -36347,7 +36476,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -36372,7 +36503,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -36413,7 +36546,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -36830,7 +36965,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -37579,7 +37716,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -37604,7 +37743,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -37645,7 +37786,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -38671,7 +38814,9 @@ pub mod usci_b0_i2c_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -39633,7 +39778,9 @@ pub mod watchdog_timer {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -40432,7 +40579,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -41197,7 +41346,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -41962,7 +42113,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -42727,7 +42880,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -43492,7 +43647,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -44257,7 +44414,9 @@ pub mod port_3_4 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -45039,7 +45198,9 @@ pub mod tlv_calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -45064,7 +45225,9 @@ pub mod tlv_calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -45089,7 +45252,9 @@ pub mod tlv_calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -45114,7 +45279,9 @@ pub mod tlv_calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -45139,7 +45306,9 @@ pub mod tlv_calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -45208,7 +45377,9 @@ pub mod comparator_a {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -45935,7 +46106,9 @@ pub mod comparator_a {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -46700,7 +46873,9 @@ pub mod comparator_a {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -47502,7 +47677,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -48229,7 +48406,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -48505,7 +48684,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -48530,7 +48711,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -48555,7 +48738,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -48596,7 +48781,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -48997,7 +49184,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49022,7 +49211,9 @@ pub mod usci_a0_spi_mode {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49084,7 +49275,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49109,7 +49302,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49134,7 +49329,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49159,7 +49356,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49184,7 +49383,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49209,7 +49410,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49234,7 +49437,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49259,7 +49464,9 @@ pub mod calibration_data {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49324,7 +49531,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -49365,7 +49574,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -50103,7 +50314,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -51344,7 +51557,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -52585,7 +52800,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
             #[doc = r" Writes to the register"]
             #[inline(always)]
@@ -53810,7 +54027,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -53835,7 +54054,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -53860,7 +54081,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {
@@ -53885,7 +54108,9 @@ pub mod timer0_a3 {
             #[doc = r" Reads the contents of the register"]
             #[inline(always)]
             pub fn read(&self) -> R {
-                R { bits: self.register.get() }
+                R {
+                    bits: self.register.get(),
+                }
             }
         }
         impl R {

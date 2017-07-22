@@ -1,4 +1,4 @@
-# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( core_intrinsics ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( naked_functions ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.1/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
+# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( global_asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.2)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.2/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
 #[cfg(feature = "rt")]
 extern crate msp430_rt ;
 extern crate bare_metal ;
@@ -9,161 +9,25 @@ pub use interrupt::Interrupt;
 #[doc(hidden)]
 pub mod interrupt {
     use bare_metal::Nr;
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
     #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn TRAPINT() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
+    global_asm!(
+        "\n.weak TRAPINT\nTRAPINT = DEFAULT_HANDLER\n.weak PORT1\nPORT1 = DEFAULT_HANDLER\n.weak PORT2\nPORT2 = DEFAULT_HANDLER\n.weak ADC10\nADC10 = DEFAULT_HANDLER\n.weak USCIAB0TX\nUSCIAB0TX = DEFAULT_HANDLER\n.weak USCIAB0RX\nUSCIAB0RX = DEFAULT_HANDLER\n.weak TIMER0_A1\nTIMER0_A1 = DEFAULT_HANDLER\n.weak TIMER0_A0\nTIMER0_A0 = DEFAULT_HANDLER\n.weak WDT\nWDT = DEFAULT_HANDLER\n.weak COMPARATORA\nCOMPARATORA = DEFAULT_HANDLER\n.weak TIMER1_A1\nTIMER1_A1 = DEFAULT_HANDLER\n.weak TIMER1_A0\nTIMER1_A0 = DEFAULT_HANDLER\n.weak NMI\nNMI = DEFAULT_HANDLER"
+    );
     #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn PORT1() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn PORT2() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn ADC10() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn USCIAB0TX() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn USCIAB0RX() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn TIMER0_A1() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn TIMER0_A0() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn WDT() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn COMPARATORA() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn TIMER1_A1() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn TIMER1_A0() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
-    }
-    #[allow(non_snake_case)]
-    #[allow(private_no_mangle_fns)]
-    #[cfg(feature = "rt")]
-    #[linkage = "weak"]
-    #[naked]
-    #[no_mangle]
-    extern "msp430-interrupt" fn NMI() {
-        unsafe {
-            asm ! ( "jmp DEFAULT_HANDLER" :: :: "volatile" );
-            ::core::intrinsics::unreachable()
-        }
+    extern "msp430-interrupt" {
+        fn TRAPINT();
+        fn PORT1();
+        fn PORT2();
+        fn ADC10();
+        fn USCIAB0TX();
+        fn USCIAB0RX();
+        fn TIMER0_A1();
+        fn TIMER0_A0();
+        fn WDT();
+        fn COMPARATORA();
+        fn TIMER1_A1();
+        fn TIMER1_A0();
+        fn NMI();
     }
     #[allow(private_no_mangle_statics)]
     #[cfg(feature = "rt")]
@@ -171,23 +35,7 @@ pub mod interrupt {
     #[link_section = ".vector_table.interrupts"]
     #[no_mangle]
     #[used]
-    pub static INTERRUPTS: [Option<extern "msp430-interrupt" fn()>; 15] = [
-        Some(TRAPINT),
-        None,
-        Some(PORT1),
-        Some(PORT2),
-        None,
-        Some(ADC10),
-        Some(USCIAB0TX),
-        Some(USCIAB0RX),
-        Some(TIMER0_A1),
-        Some(TIMER0_A0),
-        Some(WDT),
-        Some(COMPARATORA),
-        Some(TIMER1_A1),
-        Some(TIMER1_A0),
-        Some(NMI),
-    ];
+    pub static INTERRUPTS : [ Option < unsafe extern "msp430-interrupt" fn ( ) > ; 15 ] = [ Some ( TRAPINT ) , None , Some ( PORT1 ) , Some ( PORT2 ) , None , Some ( ADC10 ) , Some ( USCIAB0TX ) , Some ( USCIAB0RX ) , Some ( TIMER0_A1 ) , Some ( TIMER0_A0 ) , Some ( WDT ) , Some ( COMPARATORA ) , Some ( TIMER1_A1 ) , Some ( TIMER1_A0 ) , Some ( NMI ) , ] ;
     #[doc = r" Enumeration of all the interrupts"]
     pub enum Interrupt {
         #[doc = "0 - 0xFFE0 TRAPINT"]

@@ -9,12 +9,12 @@ keywords = ["no-std", "msp430", "ti", "launchpad"]
 license = "MIT OR Apache-2.0"
 name = "msp430g2553"
 repository = "https://github.com/pftbest/msp430g2553"
-version = "0.1.0"
+version = "0.1.1"
 
 [dependencies]
 bare-metal = "0.1.0"
 msp430 = "0.1.0"
-msp430-rt = "0.1.0"
+msp430-rt = "0.1.1"
 vcell = "0.1.0"
 
 [features]

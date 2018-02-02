@@ -5,8 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.1.1] - 2018-02-02
+
+Updated msp430-rt to version 0.1.1
+
 ## v0.1.0 - 2017-07-22
 
 Initial release
 
-[Unreleased]: https://github.com/japaric/stm32f103xx/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/pftbest/msp430g2553/compare/v0.1.1...HEAD
+[v0.1.1]: https://github.com/pftbest/msp430g2553/compare/v0.1.0...v0.1.1

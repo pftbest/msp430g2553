@@ -1,8 +1,20 @@
-# ! [ feature ( abi_msp430_interrupt ) ] # ! [ cfg_attr ( feature = "rt" , feature ( global_asm ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( macro_reexport ) ) ] # ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ] # ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.2)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.2/svd2rust/#peripheral-api" ] # ! [ deny ( missing_docs ) ] # ! [ deny ( warnings ) ] # ! [ allow ( non_camel_case_types ) ] # ! [ feature ( const_fn ) ] # ! [ no_std ]#[macro_reexport(default_handler)]
+# ! [ feature ( abi_msp430_interrupt ) ]
+# ! [ cfg_attr ( feature = "rt" , feature ( global_asm ) ) ]
+# ! [ cfg_attr ( feature = "rt" , feature ( linkage ) ) ]
+# ! [ cfg_attr ( feature = "rt" , feature ( used ) ) ]
+# ! [ cfg_attr ( feature = "rt" , feature ( use_extern_macros ) ) ]
+# ! [ doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.11.2)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.11.2/svd2rust/#peripheral-api" ]
+# ! [ deny ( missing_docs ) ]
+# ! [ deny ( warnings ) ]
+# ! [ allow ( non_camel_case_types ) ]
+# ! [ feature ( const_fn ) ]
+# ! [ no_std ]
 #[cfg(feature = "rt")]
 extern crate msp430_rt ;
 extern crate bare_metal ;
 extern crate vcell ;
+#[cfg(feature = "rt")]
+pub use msp430_rt::default_handler;
 use core::ops::Deref;
 use bare_metal::Peripheral;
 pub use interrupt::Interrupt;

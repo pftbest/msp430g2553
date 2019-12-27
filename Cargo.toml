@@ -13,7 +13,7 @@ version = "0.2.0"
 
 [dependencies]
 bare-metal = "0.2.0"
-msp430 = "0.1.0"
+msp430 = "0.2.0"
 vcell = "0.1.0"
 
 [dependencies.msp430-rt]

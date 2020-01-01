@@ -16,7 +16,7 @@ pub struct RegisterBlock {
     #[doc = "0x33 - Port 3 Selection 2"]
     pub p3sel2: P3SEL2,
 }
-#[doc = "Port 3 Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3ren](p3ren) module"]
+#[doc = "Port 3 Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3ren](p3ren) module"]
 pub type P3REN = crate::Reg<u8, _P3REN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -27,7 +27,7 @@ impl crate::Readable for P3REN {}
 impl crate::Writable for P3REN {}
 #[doc = "Port 3 Resistor Enable"]
 pub mod p3ren;
-#[doc = "Port 3 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3in](p3in) module"]
+#[doc = "Port 3 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3in](p3in) module"]
 pub type P3IN = crate::Reg<u8, _P3IN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -38,7 +38,7 @@ impl crate::Readable for P3IN {}
 impl crate::Writable for P3IN {}
 #[doc = "Port 3 Input"]
 pub mod p3in;
-#[doc = "Port 3 Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3out](p3out) module"]
+#[doc = "Port 3 Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3out](p3out) module"]
 pub type P3OUT = crate::Reg<u8, _P3OUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -49,7 +49,7 @@ impl crate::Readable for P3OUT {}
 impl crate::Writable for P3OUT {}
 #[doc = "Port 3 Output"]
 pub mod p3out;
-#[doc = "Port 3 Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3dir](p3dir) module"]
+#[doc = "Port 3 Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3dir](p3dir) module"]
 pub type P3DIR = crate::Reg<u8, _P3DIR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -60,7 +60,7 @@ impl crate::Readable for P3DIR {}
 impl crate::Writable for P3DIR {}
 #[doc = "Port 3 Direction"]
 pub mod p3dir;
-#[doc = "Port 3 Selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3sel](p3sel) module"]
+#[doc = "Port 3 Selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3sel](p3sel) module"]
 pub type P3SEL = crate::Reg<u8, _P3SEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -71,7 +71,7 @@ impl crate::Readable for P3SEL {}
 impl crate::Writable for P3SEL {}
 #[doc = "Port 3 Selection"]
 pub mod p3sel;
-#[doc = "Port 3 Selection 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [p3sel2](p3sel2) module"]
+#[doc = "Port 3 Selection 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3sel2](p3sel2) module"]
 pub type P3SEL2 = crate::Reg<u8, _P3SEL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

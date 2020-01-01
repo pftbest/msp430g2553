@@ -111,25 +111,21 @@ impl<'a> CAON_W<'a> {
 }
 #[doc = "Comp. A Internal Reference Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAREF_A {
     #[doc = "0: Comp. A Int. Ref. Select 0 : Off"]
-    CAREF_0,
+    CAREF_0 = 0,
     #[doc = "1: Comp. A Int. Ref. Select 1 : 0.25*Vcc"]
-    CAREF_1,
+    CAREF_1 = 1,
     #[doc = "2: Comp. A Int. Ref. Select 2 : 0.5*Vcc"]
-    CAREF_2,
+    CAREF_2 = 2,
     #[doc = "3: Comp. A Int. Ref. Select 3 : Vt"]
-    CAREF_3,
+    CAREF_3 = 3,
 }
 impl From<CAREF_A> for u8 {
     #[inline(always)]
     fn from(variant: CAREF_A) -> Self {
-        match variant {
-            CAREF_A::CAREF_0 => 0,
-            CAREF_A::CAREF_1 => 1,
-            CAREF_A::CAREF_2 => 2,
-            CAREF_A::CAREF_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAREF`"]

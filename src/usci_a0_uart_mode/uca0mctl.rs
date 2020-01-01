@@ -36,37 +36,29 @@ impl<'a> UCOS16_W<'a> {
 }
 #[doc = "USCI Second Stage Modulation Select 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCBRS_A {
     #[doc = "0: USCI Second Stage Modulation: 0"]
-    UCBRS_0,
+    UCBRS_0 = 0,
     #[doc = "1: USCI Second Stage Modulation: 1"]
-    UCBRS_1,
+    UCBRS_1 = 1,
     #[doc = "2: USCI Second Stage Modulation: 2"]
-    UCBRS_2,
+    UCBRS_2 = 2,
     #[doc = "3: USCI Second Stage Modulation: 3"]
-    UCBRS_3,
+    UCBRS_3 = 3,
     #[doc = "4: USCI Second Stage Modulation: 4"]
-    UCBRS_4,
+    UCBRS_4 = 4,
     #[doc = "5: USCI Second Stage Modulation: 5"]
-    UCBRS_5,
+    UCBRS_5 = 5,
     #[doc = "6: USCI Second Stage Modulation: 6"]
-    UCBRS_6,
+    UCBRS_6 = 6,
     #[doc = "7: USCI Second Stage Modulation: 7"]
-    UCBRS_7,
+    UCBRS_7 = 7,
 }
 impl From<UCBRS_A> for u8 {
     #[inline(always)]
     fn from(variant: UCBRS_A) -> Self {
-        match variant {
-            UCBRS_A::UCBRS_0 => 0,
-            UCBRS_A::UCBRS_1 => 1,
-            UCBRS_A::UCBRS_2 => 2,
-            UCBRS_A::UCBRS_3 => 3,
-            UCBRS_A::UCBRS_4 => 4,
-            UCBRS_A::UCBRS_5 => 5,
-            UCBRS_A::UCBRS_6 => 6,
-            UCBRS_A::UCBRS_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCBRS`"]
@@ -190,61 +182,45 @@ impl<'a> UCBRS_W<'a> {
 }
 #[doc = "USCI First Stage Modulation Select 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCBRF_A {
     #[doc = "0: USCI First Stage Modulation: 0"]
-    UCBRF_0,
+    UCBRF_0 = 0,
     #[doc = "1: USCI First Stage Modulation: 1"]
-    UCBRF_1,
+    UCBRF_1 = 1,
     #[doc = "2: USCI First Stage Modulation: 2"]
-    UCBRF_2,
+    UCBRF_2 = 2,
     #[doc = "3: USCI First Stage Modulation: 3"]
-    UCBRF_3,
+    UCBRF_3 = 3,
     #[doc = "4: USCI First Stage Modulation: 4"]
-    UCBRF_4,
+    UCBRF_4 = 4,
     #[doc = "5: USCI First Stage Modulation: 5"]
-    UCBRF_5,
+    UCBRF_5 = 5,
     #[doc = "6: USCI First Stage Modulation: 6"]
-    UCBRF_6,
+    UCBRF_6 = 6,
     #[doc = "7: USCI First Stage Modulation: 7"]
-    UCBRF_7,
+    UCBRF_7 = 7,
     #[doc = "8: USCI First Stage Modulation: 8"]
-    UCBRF_8,
+    UCBRF_8 = 8,
     #[doc = "9: USCI First Stage Modulation: 9"]
-    UCBRF_9,
+    UCBRF_9 = 9,
     #[doc = "10: USCI First Stage Modulation: A"]
-    UCBRF_10,
+    UCBRF_10 = 10,
     #[doc = "11: USCI First Stage Modulation: B"]
-    UCBRF_11,
+    UCBRF_11 = 11,
     #[doc = "12: USCI First Stage Modulation: C"]
-    UCBRF_12,
+    UCBRF_12 = 12,
     #[doc = "13: USCI First Stage Modulation: D"]
-    UCBRF_13,
+    UCBRF_13 = 13,
     #[doc = "14: USCI First Stage Modulation: E"]
-    UCBRF_14,
+    UCBRF_14 = 14,
     #[doc = "15: USCI First Stage Modulation: F"]
-    UCBRF_15,
+    UCBRF_15 = 15,
 }
 impl From<UCBRF_A> for u8 {
     #[inline(always)]
     fn from(variant: UCBRF_A) -> Self {
-        match variant {
-            UCBRF_A::UCBRF_0 => 0,
-            UCBRF_A::UCBRF_1 => 1,
-            UCBRF_A::UCBRF_2 => 2,
-            UCBRF_A::UCBRF_3 => 3,
-            UCBRF_A::UCBRF_4 => 4,
-            UCBRF_A::UCBRF_5 => 5,
-            UCBRF_A::UCBRF_6 => 6,
-            UCBRF_A::UCBRF_7 => 7,
-            UCBRF_A::UCBRF_8 => 8,
-            UCBRF_A::UCBRF_9 => 9,
-            UCBRF_A::UCBRF_10 => 10,
-            UCBRF_A::UCBRF_11 => 11,
-            UCBRF_A::UCBRF_12 => 12,
-            UCBRF_A::UCBRF_13 => 13,
-            UCBRF_A::UCBRF_14 => 14,
-            UCBRF_A::UCBRF_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCBRF`"]

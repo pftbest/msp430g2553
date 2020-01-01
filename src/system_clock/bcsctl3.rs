@@ -61,25 +61,21 @@ impl<'a> XT2OF_W<'a> {
 }
 #[doc = "XIN/XOUT Cap 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum XCAP_A {
     #[doc = "0: XIN/XOUT Cap : 0 pF"]
-    XCAP_0,
+    XCAP_0 = 0,
     #[doc = "1: XIN/XOUT Cap : 6 pF"]
-    XCAP_1,
+    XCAP_1 = 1,
     #[doc = "2: XIN/XOUT Cap : 10 pF"]
-    XCAP_2,
+    XCAP_2 = 2,
     #[doc = "3: XIN/XOUT Cap : 12.5 pF"]
-    XCAP_3,
+    XCAP_3 = 3,
 }
 impl From<XCAP_A> for u8 {
     #[inline(always)]
     fn from(variant: XCAP_A) -> Self {
-        match variant {
-            XCAP_A::XCAP_0 => 0,
-            XCAP_A::XCAP_1 => 1,
-            XCAP_A::XCAP_2 => 2,
-            XCAP_A::XCAP_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `XCAP`"]
@@ -159,25 +155,21 @@ impl<'a> XCAP_W<'a> {
 }
 #[doc = "Mode 0 for LFXT1 (XTS = 0)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFXT1S_A {
     #[doc = "0: Mode 0 for LFXT1 : Normal operation"]
-    LFXT1S_0,
+    LFXT1S_0 = 0,
     #[doc = "1: Mode 1 for LFXT1 : Reserved"]
-    LFXT1S_1,
+    LFXT1S_1 = 1,
     #[doc = "2: Mode 2 for LFXT1 : VLO"]
-    LFXT1S_2,
+    LFXT1S_2 = 2,
     #[doc = "3: Mode 3 for LFXT1 : Digital input signal"]
-    LFXT1S_3,
+    LFXT1S_3 = 3,
 }
 impl From<LFXT1S_A> for u8 {
     #[inline(always)]
     fn from(variant: LFXT1S_A) -> Self {
-        match variant {
-            LFXT1S_A::LFXT1S_0 => 0,
-            LFXT1S_A::LFXT1S_1 => 1,
-            LFXT1S_A::LFXT1S_2 => 2,
-            LFXT1S_A::LFXT1S_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFXT1S`"]
@@ -257,25 +249,21 @@ impl<'a> LFXT1S_W<'a> {
 }
 #[doc = "Mode 0 for XT2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum XT2S_A {
     #[doc = "0: Mode 0 for XT2 : 0.4 - 1 MHz"]
-    XT2S_0,
+    XT2S_0 = 0,
     #[doc = "1: Mode 1 for XT2 : 1 - 4 MHz"]
-    XT2S_1,
+    XT2S_1 = 1,
     #[doc = "2: Mode 2 for XT2 : 2 - 16 MHz"]
-    XT2S_2,
+    XT2S_2 = 2,
     #[doc = "3: Mode 3 for XT2 : Digital input signal"]
-    XT2S_3,
+    XT2S_3 = 3,
 }
 impl From<XT2S_A> for u8 {
     #[inline(always)]
     fn from(variant: XT2S_A) -> Self {
-        match variant {
-            XT2S_A::XT2S_0 => 0,
-            XT2S_A::XT2S_1 => 1,
-            XT2S_A::XT2S_2 => 2,
-            XT2S_A::XT2S_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `XT2S`"]

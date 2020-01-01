@@ -12,25 +12,21 @@ impl crate::ResetValue for super::BCSCTL2 {
 }
 #[doc = "SMCLK Divider 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVS_A {
     #[doc = "0: SMCLK Divider 0: /1"]
-    DIVS_0,
+    DIVS_0 = 0,
     #[doc = "1: SMCLK Divider 1: /2"]
-    DIVS_1,
+    DIVS_1 = 1,
     #[doc = "2: SMCLK Divider 2: /4"]
-    DIVS_2,
+    DIVS_2 = 2,
     #[doc = "3: SMCLK Divider 3: /8"]
-    DIVS_3,
+    DIVS_3 = 3,
 }
 impl From<DIVS_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVS_A) -> Self {
-        match variant {
-            DIVS_A::DIVS_0 => 0,
-            DIVS_A::DIVS_1 => 1,
-            DIVS_A::DIVS_2 => 2,
-            DIVS_A::DIVS_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVS`"]
@@ -135,25 +131,21 @@ impl<'a> SELS_W<'a> {
 }
 #[doc = "MCLK Divider 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVM_A {
     #[doc = "0: MCLK Divider 0: /1"]
-    DIVM_0,
+    DIVM_0 = 0,
     #[doc = "1: MCLK Divider 1: /2"]
-    DIVM_1,
+    DIVM_1 = 1,
     #[doc = "2: MCLK Divider 2: /4"]
-    DIVM_2,
+    DIVM_2 = 2,
     #[doc = "3: MCLK Divider 3: /8"]
-    DIVM_3,
+    DIVM_3 = 3,
 }
 impl From<DIVM_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVM_A) -> Self {
-        match variant {
-            DIVM_A::DIVM_0 => 0,
-            DIVM_A::DIVM_1 => 1,
-            DIVM_A::DIVM_2 => 2,
-            DIVM_A::DIVM_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVM`"]
@@ -233,25 +225,21 @@ impl<'a> DIVM_W<'a> {
 }
 #[doc = "MCLK Source Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SELM_A {
     #[doc = "0: MCLK Source Select 0: DCOCLK"]
-    SELM_0,
+    SELM_0 = 0,
     #[doc = "1: MCLK Source Select 1: DCOCLK"]
-    SELM_1,
+    SELM_1 = 1,
     #[doc = "2: MCLK Source Select 2: XT2CLK/LFXTCLK"]
-    SELM_2,
+    SELM_2 = 2,
     #[doc = "3: MCLK Source Select 3: LFXTCLK"]
-    SELM_3,
+    SELM_3 = 3,
 }
 impl From<SELM_A> for u8 {
     #[inline(always)]
     fn from(variant: SELM_A) -> Self {
-        match variant {
-            SELM_A::SELM_0 => 0,
-            SELM_A::SELM_1 => 1,
-            SELM_A::SELM_2 => 2,
-            SELM_A::SELM_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SELM`"]

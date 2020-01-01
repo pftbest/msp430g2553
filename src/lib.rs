@@ -1,8 +1,26 @@
 #![feature(abi_msp430_interrupt)]
 #![doc = "Peripheral access API for MSP430G2553 microcontrollers (generated using svd2rust v0.17.0)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.17.0/svd2rust/#peripheral-api"]
+#![deny(const_err)]
+#![deny(dead_code)]
+#![deny(improper_ctypes)]
+#![deny(legacy_directory_ownership)]
 #![deny(missing_docs)]
-#![deny(warnings)]
+#![deny(no_mangle_generic_items)]
+#![deny(non_shorthand_field_patterns)]
+#![deny(overflowing_literals)]
+#![deny(path_statements)]
+#![deny(patterns_in_fns_without_body)]
+#![deny(plugin_as_library)]
+#![deny(private_in_public)]
+#![deny(safe_extern_statics)]
+#![deny(unconditional_recursion)]
+#![deny(unions_with_drop_fields)]
+#![deny(unused_allocation)]
+#![deny(unused_comparisons)]
+#![deny(unused_parens)]
+#![deny(while_true)]
 #![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 #![no_std]
 extern crate bare_metal;
 extern crate msp430;
@@ -70,52 +88,39 @@ pub static __INTERRUPTS: [Vector; 15] = [
 ];
 #[doc = r"Enumeration of all the interrupts"]
 #[derive(Copy, Clone, Debug)]
+#[repr(u8)]
 pub enum Interrupt {
     #[doc = "0 - 0xFFE0 TRAPINT"]
-    TRAPINT,
+    TRAPINT = 0,
     #[doc = "2 - 0xFFE4 Port 1"]
-    PORT1,
+    PORT1 = 2,
     #[doc = "3 - 0xFFE6 Port 2"]
-    PORT2,
+    PORT2 = 3,
     #[doc = "5 - 0xFFEA ADC10"]
-    ADC10,
+    ADC10 = 5,
     #[doc = "6 - 0xFFEC USCI A0/B0 Transmit"]
-    USCIAB0TX,
+    USCIAB0TX = 6,
     #[doc = "7 - 0xFFEE USCI A0/B0 Receive"]
-    USCIAB0RX,
+    USCIAB0RX = 7,
     #[doc = "8 - 0xFFF0 Timer0)A CC1, TA0"]
-    TIMER0_A1,
+    TIMER0_A1 = 8,
     #[doc = "9 - 0xFFF2 Timer0_A CC0"]
-    TIMER0_A0,
+    TIMER0_A0 = 9,
     #[doc = "10 - 0xFFF4 Watchdog Timer"]
-    WDT,
+    WDT = 10,
     #[doc = "11 - 0xFFF6 Comparator A"]
-    COMPARATORA,
+    COMPARATORA = 11,
     #[doc = "12 - 0xFFF8 Timer1_A CC1-4, TA1"]
-    TIMER1_A1,
+    TIMER1_A1 = 12,
     #[doc = "13 - 0xFFFA Timer1_A CC0"]
-    TIMER1_A0,
+    TIMER1_A0 = 13,
     #[doc = "14 - 0xFFFC Non-maskable"]
-    NMI,
+    NMI = 14,
 }
 unsafe impl bare_metal::Nr for Interrupt {
-    #[inline]
+    #[inline(always)]
     fn nr(&self) -> u8 {
-        match *self {
-            Interrupt::TRAPINT => 0,
-            Interrupt::PORT1 => 2,
-            Interrupt::PORT2 => 3,
-            Interrupt::ADC10 => 5,
-            Interrupt::USCIAB0TX => 6,
-            Interrupt::USCIAB0RX => 7,
-            Interrupt::TIMER0_A1 => 8,
-            Interrupt::TIMER0_A0 => 9,
-            Interrupt::WDT => 10,
-            Interrupt::COMPARATORA => 11,
-            Interrupt::TIMER1_A1 => 12,
-            Interrupt::TIMER1_A0 => 13,
-            Interrupt::NMI => 14,
-        }
+        *self as u8
     }
 }
 #[cfg(feature = "rt")]
@@ -140,6 +145,7 @@ impl FLASH {
 }
 impl Deref for FLASH {
     type Target = flash::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*FLASH::ptr() }
     }
@@ -160,6 +166,7 @@ impl USCI_A0_UART_MODE {
 }
 impl Deref for USCI_A0_UART_MODE {
     type Target = usci_a0_uart_mode::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*USCI_A0_UART_MODE::ptr() }
     }
@@ -180,6 +187,7 @@ impl WATCHDOG_TIMER {
 }
 impl Deref for WATCHDOG_TIMER {
     type Target = watchdog_timer::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*WATCHDOG_TIMER::ptr() }
     }
@@ -200,6 +208,7 @@ impl COMPARATOR_A {
 }
 impl Deref for COMPARATOR_A {
     type Target = comparator_a::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*COMPARATOR_A::ptr() }
     }
@@ -220,6 +229,7 @@ impl TIMER1_A3 {
 }
 impl Deref for TIMER1_A3 {
     type Target = timer1_a3::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*TIMER1_A3::ptr() }
     }
@@ -240,6 +250,7 @@ impl TIMER0_A3 {
 }
 impl Deref for TIMER0_A3 {
     type Target = timer0_a3::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*TIMER0_A3::ptr() }
     }
@@ -260,6 +271,7 @@ impl USCI_B0_I2C_MODE {
 }
 impl Deref for USCI_B0_I2C_MODE {
     type Target = usci_b0_i2c_mode::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*USCI_B0_I2C_MODE::ptr() }
     }
@@ -280,6 +292,7 @@ impl TLV_CALIBRATION_DATA {
 }
 impl Deref for TLV_CALIBRATION_DATA {
     type Target = tlv_calibration_data::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*TLV_CALIBRATION_DATA::ptr() }
     }
@@ -300,6 +313,7 @@ impl ADC10 {
 }
 impl Deref for ADC10 {
     type Target = adc10::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*ADC10::ptr() }
     }
@@ -320,6 +334,7 @@ impl USCI_B0_SPI_MODE {
 }
 impl Deref for USCI_B0_SPI_MODE {
     type Target = usci_b0_spi_mode::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*USCI_B0_SPI_MODE::ptr() }
     }
@@ -340,6 +355,7 @@ impl USCI_A0_SPI_MODE {
 }
 impl Deref for USCI_A0_SPI_MODE {
     type Target = usci_a0_spi_mode::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*USCI_A0_SPI_MODE::ptr() }
     }
@@ -360,6 +376,7 @@ impl SPECIAL_FUNCTION {
 }
 impl Deref for SPECIAL_FUNCTION {
     type Target = special_function::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*SPECIAL_FUNCTION::ptr() }
     }
@@ -380,6 +397,7 @@ impl PORT_3_4 {
 }
 impl Deref for PORT_3_4 {
     type Target = port_3_4::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*PORT_3_4::ptr() }
     }
@@ -400,6 +418,7 @@ impl CALIBRATION_DATA {
 }
 impl Deref for CALIBRATION_DATA {
     type Target = calibration_data::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*CALIBRATION_DATA::ptr() }
     }
@@ -420,6 +439,7 @@ impl PORT_1_2 {
 }
 impl Deref for PORT_1_2 {
     type Target = port_1_2::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*PORT_1_2::ptr() }
     }
@@ -440,6 +460,7 @@ impl SYSTEM_CLOCK {
 }
 impl Deref for SYSTEM_CLOCK {
     type Target = system_clock::RegisterBlock;
+    #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*SYSTEM_CLOCK::ptr() }
     }
@@ -497,6 +518,7 @@ impl Peripherals {
         })
     }
     #[doc = r"Unchecked version of `Peripherals::take`"]
+    #[inline]
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {

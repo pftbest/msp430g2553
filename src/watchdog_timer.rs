@@ -4,7 +4,7 @@ pub struct RegisterBlock {
     #[doc = "0x00 - Watchdog Timer Control"]
     pub wdtctl: WDTCTL,
 }
-#[doc = "Watchdog Timer Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdtctl](wdtctl) module"]
+#[doc = "Watchdog Timer Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdtctl](wdtctl) module"]
 pub type WDTCTL = crate::Reg<u16, _WDTCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

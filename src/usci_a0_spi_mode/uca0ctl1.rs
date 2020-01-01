@@ -36,25 +36,21 @@ impl<'a> UCSWRST_W<'a> {
 }
 #[doc = "USCI 1 Clock Source Select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: USCI 0 Clock Source: 0"]
-    UCSSEL_0,
+    UCSSEL_0 = 0,
     #[doc = "1: USCI 0 Clock Source: 1"]
-    UCSSEL_1,
+    UCSSEL_1 = 1,
     #[doc = "2: USCI 0 Clock Source: 2"]
-    UCSSEL_2,
+    UCSSEL_2 = 2,
     #[doc = "3: USCI 0 Clock Source: 3"]
-    UCSSEL_3,
+    UCSSEL_3 = 3,
 }
 impl From<UCSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: UCSSEL_A) -> Self {
-        match variant {
-            UCSSEL_A::UCSSEL_0 => 0,
-            UCSSEL_A::UCSSEL_1 => 1,
-            UCSSEL_A::UCSSEL_2 => 2,
-            UCSSEL_A::UCSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCSSEL`"]

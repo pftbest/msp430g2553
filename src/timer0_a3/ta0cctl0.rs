@@ -136,37 +136,29 @@ impl<'a> CCIE_W<'a> {
 }
 #[doc = "Output mode 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OUTMOD_A {
     #[doc = "0: PWM output mode: 0 - output only"]
-    OUTMOD_0,
+    OUTMOD_0 = 0,
     #[doc = "1: PWM output mode: 1 - set"]
-    OUTMOD_1,
+    OUTMOD_1 = 1,
     #[doc = "2: PWM output mode: 2 - PWM toggle/reset"]
-    OUTMOD_2,
+    OUTMOD_2 = 2,
     #[doc = "3: PWM output mode: 3 - PWM set/reset"]
-    OUTMOD_3,
+    OUTMOD_3 = 3,
     #[doc = "4: PWM output mode: 4 - toggle"]
-    OUTMOD_4,
+    OUTMOD_4 = 4,
     #[doc = "5: PWM output mode: 5 - Reset"]
-    OUTMOD_5,
+    OUTMOD_5 = 5,
     #[doc = "6: PWM output mode: 6 - PWM toggle/set"]
-    OUTMOD_6,
+    OUTMOD_6 = 6,
     #[doc = "7: PWM output mode: 7 - PWM reset/set"]
-    OUTMOD_7,
+    OUTMOD_7 = 7,
 }
 impl From<OUTMOD_A> for u8 {
     #[inline(always)]
     fn from(variant: OUTMOD_A) -> Self {
-        match variant {
-            OUTMOD_A::OUTMOD_0 => 0,
-            OUTMOD_A::OUTMOD_1 => 1,
-            OUTMOD_A::OUTMOD_2 => 2,
-            OUTMOD_A::OUTMOD_3 => 3,
-            OUTMOD_A::OUTMOD_4 => 4,
-            OUTMOD_A::OUTMOD_5 => 5,
-            OUTMOD_A::OUTMOD_6 => 6,
-            OUTMOD_A::OUTMOD_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OUTMOD`"]
@@ -365,25 +357,21 @@ impl<'a> SCS_W<'a> {
 }
 #[doc = "Capture input select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CCIS_A {
     #[doc = "0: Capture input select: 0 - CCIxA"]
-    CCIS_0,
+    CCIS_0 = 0,
     #[doc = "1: Capture input select: 1 - CCIxB"]
-    CCIS_1,
+    CCIS_1 = 1,
     #[doc = "2: Capture input select: 2 - GND"]
-    CCIS_2,
+    CCIS_2 = 2,
     #[doc = "3: Capture input select: 3 - Vcc"]
-    CCIS_3,
+    CCIS_3 = 3,
 }
 impl From<CCIS_A> for u8 {
     #[inline(always)]
     fn from(variant: CCIS_A) -> Self {
-        match variant {
-            CCIS_A::CCIS_0 => 0,
-            CCIS_A::CCIS_1 => 1,
-            CCIS_A::CCIS_2 => 2,
-            CCIS_A::CCIS_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CCIS`"]
@@ -463,25 +451,21 @@ impl<'a> CCIS_W<'a> {
 }
 #[doc = "Capture mode 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CM_A {
     #[doc = "0: Capture mode: 0 - disabled"]
-    CM_0,
+    CM_0 = 0,
     #[doc = "1: Capture mode: 1 - pos. edge"]
-    CM_1,
+    CM_1 = 1,
     #[doc = "2: Capture mode: 1 - neg. edge"]
-    CM_2,
+    CM_2 = 2,
     #[doc = "3: Capture mode: 1 - both edges"]
-    CM_3,
+    CM_3 = 3,
 }
 impl From<CM_A> for u8 {
     #[inline(always)]
     fn from(variant: CM_A) -> Self {
-        match variant {
-            CM_A::CM_0 => 0,
-            CM_A::CM_1 => 1,
-            CM_A::CM_2 => 2,
-            CM_A::CM_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CM`"]

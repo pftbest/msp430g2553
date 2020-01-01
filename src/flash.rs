@@ -8,7 +8,7 @@ pub struct RegisterBlock {
     #[doc = "0x04 - FLASH Control 3"]
     pub fctl3: FCTL3,
 }
-#[doc = "FLASH Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fctl1](fctl1) module"]
+#[doc = "FLASH Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fctl1](fctl1) module"]
 pub type FCTL1 = crate::Reg<u16, _FCTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -19,7 +19,7 @@ impl crate::Readable for FCTL1 {}
 impl crate::Writable for FCTL1 {}
 #[doc = "FLASH Control 1"]
 pub mod fctl1;
-#[doc = "FLASH Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fctl2](fctl2) module"]
+#[doc = "FLASH Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fctl2](fctl2) module"]
 pub type FCTL2 = crate::Reg<u16, _FCTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -30,7 +30,7 @@ impl crate::Readable for FCTL2 {}
 impl crate::Writable for FCTL2 {}
 #[doc = "FLASH Control 2"]
 pub mod fctl2;
-#[doc = "FLASH Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fctl3](fctl3) module"]
+#[doc = "FLASH Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fctl3](fctl3) module"]
 pub type FCTL3 = crate::Reg<u16, _FCTL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]

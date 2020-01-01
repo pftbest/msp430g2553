@@ -18,7 +18,7 @@ pub struct RegisterBlock {
     #[doc = "0x174 - ADC10 Data Transfer Start Address"]
     pub adc10sa: ADC10SA,
 }
-#[doc = "ADC10 Data Transfer Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10dtc0](adc10dtc0) module"]
+#[doc = "ADC10 Data Transfer Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10dtc0](adc10dtc0) module"]
 pub type ADC10DTC0 = crate::Reg<u8, _ADC10DTC0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -29,7 +29,7 @@ impl crate::Readable for ADC10DTC0 {}
 impl crate::Writable for ADC10DTC0 {}
 #[doc = "ADC10 Data Transfer Control 0"]
 pub mod adc10dtc0;
-#[doc = "ADC10 Data Transfer Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10dtc1](adc10dtc1) module"]
+#[doc = "ADC10 Data Transfer Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10dtc1](adc10dtc1) module"]
 pub type ADC10DTC1 = crate::Reg<u8, _ADC10DTC1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -40,7 +40,7 @@ impl crate::Readable for ADC10DTC1 {}
 impl crate::Writable for ADC10DTC1 {}
 #[doc = "ADC10 Data Transfer Control 1"]
 pub mod adc10dtc1;
-#[doc = "ADC10 Analog Enable 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10ae0](adc10ae0) module"]
+#[doc = "ADC10 Analog Enable 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10ae0](adc10ae0) module"]
 pub type ADC10AE0 = crate::Reg<u8, _ADC10AE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -51,7 +51,7 @@ impl crate::Readable for ADC10AE0 {}
 impl crate::Writable for ADC10AE0 {}
 #[doc = "ADC10 Analog Enable 0"]
 pub mod adc10ae0;
-#[doc = "ADC10 Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10ctl0](adc10ctl0) module"]
+#[doc = "ADC10 Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10ctl0](adc10ctl0) module"]
 pub type ADC10CTL0 = crate::Reg<u16, _ADC10CTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -62,7 +62,7 @@ impl crate::Readable for ADC10CTL0 {}
 impl crate::Writable for ADC10CTL0 {}
 #[doc = "ADC10 Control 0"]
 pub mod adc10ctl0;
-#[doc = "ADC10 Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10ctl1](adc10ctl1) module"]
+#[doc = "ADC10 Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10ctl1](adc10ctl1) module"]
 pub type ADC10CTL1 = crate::Reg<u16, _ADC10CTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -73,7 +73,7 @@ impl crate::Readable for ADC10CTL1 {}
 impl crate::Writable for ADC10CTL1 {}
 #[doc = "ADC10 Control 1"]
 pub mod adc10ctl1;
-#[doc = "ADC10 Memory\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10mem](adc10mem) module"]
+#[doc = "ADC10 Memory\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10mem](adc10mem) module"]
 pub type ADC10MEM = crate::Reg<u16, _ADC10MEM>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -84,7 +84,7 @@ impl crate::Readable for ADC10MEM {}
 impl crate::Writable for ADC10MEM {}
 #[doc = "ADC10 Memory"]
 pub mod adc10mem;
-#[doc = "ADC10 Data Transfer Start Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [adc10sa](adc10sa) module"]
+#[doc = "ADC10 Data Transfer Start Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10sa](adc10sa) module"]
 pub type ADC10SA = crate::Reg<u16, _ADC10SA>;
 #[allow(missing_docs)]
 #[doc(hidden)]

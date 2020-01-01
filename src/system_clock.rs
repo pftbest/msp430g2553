@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     #[doc = "0x06 - Basic Clock System Control 2"]
     pub bcsctl2: BCSCTL2,
 }
-#[doc = "Basic Clock System Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bcsctl3](bcsctl3) module"]
+#[doc = "Basic Clock System Control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bcsctl3](bcsctl3) module"]
 pub type BCSCTL3 = crate::Reg<u8, _BCSCTL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -23,7 +23,7 @@ impl crate::Readable for BCSCTL3 {}
 impl crate::Writable for BCSCTL3 {}
 #[doc = "Basic Clock System Control 3"]
 pub mod bcsctl3;
-#[doc = "DCO Clock Frequency Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcoctl](dcoctl) module"]
+#[doc = "DCO Clock Frequency Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcoctl](dcoctl) module"]
 pub type DCOCTL = crate::Reg<u8, _DCOCTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -34,7 +34,7 @@ impl crate::Readable for DCOCTL {}
 impl crate::Writable for DCOCTL {}
 #[doc = "DCO Clock Frequency Control"]
 pub mod dcoctl;
-#[doc = "Basic Clock System Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bcsctl1](bcsctl1) module"]
+#[doc = "Basic Clock System Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bcsctl1](bcsctl1) module"]
 pub type BCSCTL1 = crate::Reg<u8, _BCSCTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -45,7 +45,7 @@ impl crate::Readable for BCSCTL1 {}
 impl crate::Writable for BCSCTL1 {}
 #[doc = "Basic Clock System Control 1"]
 pub mod bcsctl1;
-#[doc = "Basic Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bcsctl2](bcsctl2) module"]
+#[doc = "Basic Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bcsctl2](bcsctl2) module"]
 pub type BCSCTL2 = crate::Reg<u8, _BCSCTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

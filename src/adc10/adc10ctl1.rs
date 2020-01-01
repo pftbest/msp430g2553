@@ -36,25 +36,21 @@ impl<'a> ADC10BUSY_W<'a> {
 }
 #[doc = "ADC10 Conversion Sequence Select 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CONSEQ_A {
     #[doc = "0: Single channel single conversion"]
-    CONSEQ_0,
+    CONSEQ_0 = 0,
     #[doc = "1: Sequence of channels"]
-    CONSEQ_1,
+    CONSEQ_1 = 1,
     #[doc = "2: Repeat single channel"]
-    CONSEQ_2,
+    CONSEQ_2 = 2,
     #[doc = "3: Repeat sequence of channels"]
-    CONSEQ_3,
+    CONSEQ_3 = 3,
 }
 impl From<CONSEQ_A> for u8 {
     #[inline(always)]
     fn from(variant: CONSEQ_A) -> Self {
-        match variant {
-            CONSEQ_A::CONSEQ_0 => 0,
-            CONSEQ_A::CONSEQ_1 => 1,
-            CONSEQ_A::CONSEQ_2 => 2,
-            CONSEQ_A::CONSEQ_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CONSEQ`"]
@@ -134,25 +130,21 @@ impl<'a> CONSEQ_W<'a> {
 }
 #[doc = "ADC10 Clock Source Select Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC10SSEL_A {
     #[doc = "0: ADC10OSC"]
-    ADC10SSEL_0,
+    ADC10SSEL_0 = 0,
     #[doc = "1: ACLK"]
-    ADC10SSEL_1,
+    ADC10SSEL_1 = 1,
     #[doc = "2: MCLK"]
-    ADC10SSEL_2,
+    ADC10SSEL_2 = 2,
     #[doc = "3: SMCLK"]
-    ADC10SSEL_3,
+    ADC10SSEL_3 = 3,
 }
 impl From<ADC10SSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC10SSEL_A) -> Self {
-        match variant {
-            ADC10SSEL_A::ADC10SSEL_0 => 0,
-            ADC10SSEL_A::ADC10SSEL_1 => 1,
-            ADC10SSEL_A::ADC10SSEL_2 => 2,
-            ADC10SSEL_A::ADC10SSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC10SSEL`"]
@@ -232,37 +224,29 @@ impl<'a> ADC10SSEL_W<'a> {
 }
 #[doc = "ADC10 Clock Divider Select Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC10DIV_A {
     #[doc = "0: ADC10 Clock Divider Select 0"]
-    ADC10DIV_0,
+    ADC10DIV_0 = 0,
     #[doc = "1: ADC10 Clock Divider Select 1"]
-    ADC10DIV_1,
+    ADC10DIV_1 = 1,
     #[doc = "2: ADC10 Clock Divider Select 2"]
-    ADC10DIV_2,
+    ADC10DIV_2 = 2,
     #[doc = "3: ADC10 Clock Divider Select 3"]
-    ADC10DIV_3,
+    ADC10DIV_3 = 3,
     #[doc = "4: ADC10 Clock Divider Select 4"]
-    ADC10DIV_4,
+    ADC10DIV_4 = 4,
     #[doc = "5: ADC10 Clock Divider Select 5"]
-    ADC10DIV_5,
+    ADC10DIV_5 = 5,
     #[doc = "6: ADC10 Clock Divider Select 6"]
-    ADC10DIV_6,
+    ADC10DIV_6 = 6,
     #[doc = "7: ADC10 Clock Divider Select 7"]
-    ADC10DIV_7,
+    ADC10DIV_7 = 7,
 }
 impl From<ADC10DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC10DIV_A) -> Self {
-        match variant {
-            ADC10DIV_A::ADC10DIV_0 => 0,
-            ADC10DIV_A::ADC10DIV_1 => 1,
-            ADC10DIV_A::ADC10DIV_2 => 2,
-            ADC10DIV_A::ADC10DIV_3 => 3,
-            ADC10DIV_A::ADC10DIV_4 => 4,
-            ADC10DIV_A::ADC10DIV_5 => 5,
-            ADC10DIV_A::ADC10DIV_6 => 6,
-            ADC10DIV_A::ADC10DIV_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC10DIV`"]
@@ -436,25 +420,21 @@ impl<'a> ADC10DF_W<'a> {
 }
 #[doc = "ADC10 Sample/Hold Source Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SHS_A {
     #[doc = "0: ADC10SC"]
-    SHS_0,
+    SHS_0 = 0,
     #[doc = "1: TA3 OUT1"]
-    SHS_1,
+    SHS_1 = 1,
     #[doc = "2: TA3 OUT0"]
-    SHS_2,
+    SHS_2 = 2,
     #[doc = "3: TA3 OUT2"]
-    SHS_3,
+    SHS_3 = 3,
 }
 impl From<SHS_A> for u8 {
     #[inline(always)]
     fn from(variant: SHS_A) -> Self {
-        match variant {
-            SHS_A::SHS_0 => 0,
-            SHS_A::SHS_1 => 1,
-            SHS_A::SHS_2 => 2,
-            SHS_A::SHS_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SHS`"]
@@ -534,61 +514,45 @@ impl<'a> SHS_W<'a> {
 }
 #[doc = "ADC10 Input Channel Select Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INCH_A {
     #[doc = "0: Selects Channel 0"]
-    INCH_0,
+    INCH_0 = 0,
     #[doc = "1: Selects Channel 1"]
-    INCH_1,
+    INCH_1 = 1,
     #[doc = "2: Selects Channel 2"]
-    INCH_2,
+    INCH_2 = 2,
     #[doc = "3: Selects Channel 3"]
-    INCH_3,
+    INCH_3 = 3,
     #[doc = "4: Selects Channel 4"]
-    INCH_4,
+    INCH_4 = 4,
     #[doc = "5: Selects Channel 5"]
-    INCH_5,
+    INCH_5 = 5,
     #[doc = "6: Selects Channel 6"]
-    INCH_6,
+    INCH_6 = 6,
     #[doc = "7: Selects Channel 7"]
-    INCH_7,
+    INCH_7 = 7,
     #[doc = "8: Selects Channel 8"]
-    INCH_8,
+    INCH_8 = 8,
     #[doc = "9: Selects Channel 9"]
-    INCH_9,
+    INCH_9 = 9,
     #[doc = "10: Selects Channel 10"]
-    INCH_10,
+    INCH_10 = 10,
     #[doc = "11: Selects Channel 11"]
-    INCH_11,
+    INCH_11 = 11,
     #[doc = "12: Selects Channel 12"]
-    INCH_12,
+    INCH_12 = 12,
     #[doc = "13: Selects Channel 13"]
-    INCH_13,
+    INCH_13 = 13,
     #[doc = "14: Selects Channel 14"]
-    INCH_14,
+    INCH_14 = 14,
     #[doc = "15: Selects Channel 15"]
-    INCH_15,
+    INCH_15 = 15,
 }
 impl From<INCH_A> for u8 {
     #[inline(always)]
     fn from(variant: INCH_A) -> Self {
-        match variant {
-            INCH_A::INCH_0 => 0,
-            INCH_A::INCH_1 => 1,
-            INCH_A::INCH_2 => 2,
-            INCH_A::INCH_3 => 3,
-            INCH_A::INCH_4 => 4,
-            INCH_A::INCH_5 => 5,
-            INCH_A::INCH_6 => 6,
-            INCH_A::INCH_7 => 7,
-            INCH_A::INCH_8 => 8,
-            INCH_A::INCH_9 => 9,
-            INCH_A::INCH_10 => 10,
-            INCH_A::INCH_11 => 11,
-            INCH_A::INCH_12 => 12,
-            INCH_A::INCH_13 => 13,
-            INCH_A::INCH_14 => 14,
-            INCH_A::INCH_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INCH`"]

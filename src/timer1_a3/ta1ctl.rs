@@ -86,25 +86,21 @@ impl<'a> TACLR_W<'a> {
 }
 #[doc = "Timer A mode control 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MC_A {
     #[doc = "0: Timer A mode control: 0 - Stop"]
-    MC_0,
+    MC_0 = 0,
     #[doc = "1: Timer A mode control: 1 - Up to CCR0"]
-    MC_1,
+    MC_1 = 1,
     #[doc = "2: Timer A mode control: 2 - Continous up"]
-    MC_2,
+    MC_2 = 2,
     #[doc = "3: Timer A mode control: 3 - Up/Down"]
-    MC_3,
+    MC_3 = 3,
 }
 impl From<MC_A> for u8 {
     #[inline(always)]
     fn from(variant: MC_A) -> Self {
-        match variant {
-            MC_A::MC_0 => 0,
-            MC_A::MC_1 => 1,
-            MC_A::MC_2 => 2,
-            MC_A::MC_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MC`"]
@@ -184,25 +180,21 @@ impl<'a> MC_W<'a> {
 }
 #[doc = "Timer A clock input divider 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ID_A {
     #[doc = "0: Timer A input divider: 0 - /1"]
-    ID_0,
+    ID_0 = 0,
     #[doc = "1: Timer A input divider: 1 - /2"]
-    ID_1,
+    ID_1 = 1,
     #[doc = "2: Timer A input divider: 2 - /4"]
-    ID_2,
+    ID_2 = 2,
     #[doc = "3: Timer A input divider: 3 - /8"]
-    ID_3,
+    ID_3 = 3,
 }
 impl From<ID_A> for u8 {
     #[inline(always)]
     fn from(variant: ID_A) -> Self {
-        match variant {
-            ID_A::ID_0 => 0,
-            ID_A::ID_1 => 1,
-            ID_A::ID_2 => 2,
-            ID_A::ID_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ID`"]
@@ -282,25 +274,21 @@ impl<'a> ID_W<'a> {
 }
 #[doc = "Timer A clock source select 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TASSEL_A {
     #[doc = "0: Timer A clock source select: 0 - TACLK"]
-    TASSEL_0,
+    TASSEL_0 = 0,
     #[doc = "1: Timer A clock source select: 1 - ACLK"]
-    TASSEL_1,
+    TASSEL_1 = 1,
     #[doc = "2: Timer A clock source select: 2 - SMCLK"]
-    TASSEL_2,
+    TASSEL_2 = 2,
     #[doc = "3: Timer A clock source select: 3 - INCLK"]
-    TASSEL_3,
+    TASSEL_3 = 3,
 }
 impl From<TASSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: TASSEL_A) -> Self {
-        match variant {
-            TASSEL_A::TASSEL_0 => 0,
-            TASSEL_A::TASSEL_1 => 1,
-            TASSEL_A::TASSEL_2 => 2,
-            TASSEL_A::TASSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TASSEL`"]

@@ -111,25 +111,21 @@ impl<'a> RSEL3_W<'a> {
 }
 #[doc = "ACLK Divider 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVA_A {
     #[doc = "0: ACLK Divider 0: /1"]
-    DIVA_0,
+    DIVA_0 = 0,
     #[doc = "1: ACLK Divider 1: /2"]
-    DIVA_1,
+    DIVA_1 = 1,
     #[doc = "2: ACLK Divider 2: /4"]
-    DIVA_2,
+    DIVA_2 = 2,
     #[doc = "3: ACLK Divider 3: /8"]
-    DIVA_3,
+    DIVA_3 = 3,
 }
 impl From<DIVA_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVA_A) -> Self {
-        match variant {
-            DIVA_A::DIVA_0 => 0,
-            DIVA_A::DIVA_1 => 1,
-            DIVA_A::DIVA_2 => 2,
-            DIVA_A::DIVA_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVA`"]

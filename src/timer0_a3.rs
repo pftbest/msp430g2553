@@ -22,7 +22,7 @@ pub struct RegisterBlock {
     #[doc = "0x48 - Timer0_A3 Capture/Compare 2"]
     pub ta0ccr2: TA0CCR2,
 }
-#[doc = "Timer0_A3 Interrupt Vector Word\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0iv](ta0iv) module"]
+#[doc = "Timer0_A3 Interrupt Vector Word\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0iv](ta0iv) module"]
 pub type TA0IV = crate::Reg<u16, _TA0IV>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -33,7 +33,7 @@ impl crate::Readable for TA0IV {}
 impl crate::Writable for TA0IV {}
 #[doc = "Timer0_A3 Interrupt Vector Word"]
 pub mod ta0iv;
-#[doc = "Timer0_A3 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0ctl](ta0ctl) module"]
+#[doc = "Timer0_A3 Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0ctl](ta0ctl) module"]
 pub type TA0CTL = crate::Reg<u16, _TA0CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -44,7 +44,7 @@ impl crate::Readable for TA0CTL {}
 impl crate::Writable for TA0CTL {}
 #[doc = "Timer0_A3 Control"]
 pub mod ta0ctl;
-#[doc = "Timer0_A3 Capture/Compare Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0cctl0](ta0cctl0) module"]
+#[doc = "Timer0_A3 Capture/Compare Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0cctl0](ta0cctl0) module"]
 pub type TA0CCTL0 = crate::Reg<u16, _TA0CCTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -55,7 +55,7 @@ impl crate::Readable for TA0CCTL0 {}
 impl crate::Writable for TA0CCTL0 {}
 #[doc = "Timer0_A3 Capture/Compare Control 0"]
 pub mod ta0cctl0;
-#[doc = "Timer0_A3 Capture/Compare Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0cctl1](ta0cctl1) module"]
+#[doc = "Timer0_A3 Capture/Compare Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0cctl1](ta0cctl1) module"]
 pub type TA0CCTL1 = crate::Reg<u16, _TA0CCTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -66,7 +66,7 @@ impl crate::Readable for TA0CCTL1 {}
 impl crate::Writable for TA0CCTL1 {}
 #[doc = "Timer0_A3 Capture/Compare Control 1"]
 pub mod ta0cctl1;
-#[doc = "Timer0_A3 Capture/Compare Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0cctl2](ta0cctl2) module"]
+#[doc = "Timer0_A3 Capture/Compare Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0cctl2](ta0cctl2) module"]
 pub type TA0CCTL2 = crate::Reg<u16, _TA0CCTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -77,7 +77,7 @@ impl crate::Readable for TA0CCTL2 {}
 impl crate::Writable for TA0CCTL2 {}
 #[doc = "Timer0_A3 Capture/Compare Control 2"]
 pub mod ta0cctl2;
-#[doc = "Timer0_A3 Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0r](ta0r) module"]
+#[doc = "Timer0_A3 Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0r](ta0r) module"]
 pub type TA0R = crate::Reg<u16, _TA0R>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -88,7 +88,7 @@ impl crate::Readable for TA0R {}
 impl crate::Writable for TA0R {}
 #[doc = "Timer0_A3 Counter Register"]
 pub mod ta0r;
-#[doc = "Timer0_A3 Capture/Compare 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0ccr0](ta0ccr0) module"]
+#[doc = "Timer0_A3 Capture/Compare 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0ccr0](ta0ccr0) module"]
 pub type TA0CCR0 = crate::Reg<u16, _TA0CCR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -99,7 +99,7 @@ impl crate::Readable for TA0CCR0 {}
 impl crate::Writable for TA0CCR0 {}
 #[doc = "Timer0_A3 Capture/Compare 0"]
 pub mod ta0ccr0;
-#[doc = "Timer0_A3 Capture/Compare 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0ccr1](ta0ccr1) module"]
+#[doc = "Timer0_A3 Capture/Compare 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0ccr1](ta0ccr1) module"]
 pub type TA0CCR1 = crate::Reg<u16, _TA0CCR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -110,7 +110,7 @@ impl crate::Readable for TA0CCR1 {}
 impl crate::Writable for TA0CCR1 {}
 #[doc = "Timer0_A3 Capture/Compare 1"]
 pub mod ta0ccr1;
-#[doc = "Timer0_A3 Capture/Compare 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ta0ccr2](ta0ccr2) module"]
+#[doc = "Timer0_A3 Capture/Compare 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ta0ccr2](ta0ccr2) module"]
 pub type TA0CCR2 = crate::Reg<u16, _TA0CCR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

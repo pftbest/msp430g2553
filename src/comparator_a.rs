@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     #[doc = "0x03 - Comparator A Port Disable"]
     pub capd: CAPD,
 }
-#[doc = "Comparator A Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cactl1](cactl1) module"]
+#[doc = "Comparator A Control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cactl1](cactl1) module"]
 pub type CACTL1 = crate::Reg<u8, _CACTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -20,7 +20,7 @@ impl crate::Readable for CACTL1 {}
 impl crate::Writable for CACTL1 {}
 #[doc = "Comparator A Control 1"]
 pub mod cactl1;
-#[doc = "Comparator A Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cactl2](cactl2) module"]
+#[doc = "Comparator A Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cactl2](cactl2) module"]
 pub type CACTL2 = crate::Reg<u8, _CACTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -31,7 +31,7 @@ impl crate::Readable for CACTL2 {}
 impl crate::Writable for CACTL2 {}
 #[doc = "Comparator A Control 2"]
 pub mod cactl2;
-#[doc = "Comparator A Port Disable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capd](capd) module"]
+#[doc = "Comparator A Port Disable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capd](capd) module"]
 pub type CAPD = crate::Reg<u8, _CAPD>;
 #[allow(missing_docs)]
 #[doc(hidden)]

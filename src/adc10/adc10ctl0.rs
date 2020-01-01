@@ -286,25 +286,21 @@ impl<'a> ADC10SR_W<'a> {
 }
 #[doc = "ADC10 Sample Hold Select Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC10SHT_A {
     #[doc = "0: 4 x ADC10CLKs"]
-    ADC10SHT_0,
+    ADC10SHT_0 = 0,
     #[doc = "1: 8 x ADC10CLKs"]
-    ADC10SHT_1,
+    ADC10SHT_1 = 1,
     #[doc = "2: 16 x ADC10CLKs"]
-    ADC10SHT_2,
+    ADC10SHT_2 = 2,
     #[doc = "3: 64 x ADC10CLKs"]
-    ADC10SHT_3,
+    ADC10SHT_3 = 3,
 }
 impl From<ADC10SHT_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC10SHT_A) -> Self {
-        match variant {
-            ADC10SHT_A::ADC10SHT_0 => 0,
-            ADC10SHT_A::ADC10SHT_1 => 1,
-            ADC10SHT_A::ADC10SHT_2 => 2,
-            ADC10SHT_A::ADC10SHT_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC10SHT`"]
@@ -384,37 +380,29 @@ impl<'a> ADC10SHT_W<'a> {
 }
 #[doc = "ADC10 Reference Select Bit: 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SREF_A {
     #[doc = "0: VR+ = AVCC and VR- = AVSS"]
-    SREF_0,
+    SREF_0 = 0,
     #[doc = "1: VR+ = VREF+ and VR- = AVSS"]
-    SREF_1,
+    SREF_1 = 1,
     #[doc = "2: VR+ = VEREF+ and VR- = AVSS"]
-    SREF_2,
+    SREF_2 = 2,
     #[doc = "3: VR+ = VEREF+ and VR- = AVSS"]
-    SREF_3,
+    SREF_3 = 3,
     #[doc = "4: VR+ = AVCC and VR- = VREF-/VEREF-"]
-    SREF_4,
+    SREF_4 = 4,
     #[doc = "5: VR+ = VREF+ and VR- = VREF-/VEREF-"]
-    SREF_5,
+    SREF_5 = 5,
     #[doc = "6: VR+ = VEREF+ and VR- = VREF-/VEREF-"]
-    SREF_6,
+    SREF_6 = 6,
     #[doc = "7: VR+ = VEREF+ and VR- = VREF-/VEREF-"]
-    SREF_7,
+    SREF_7 = 7,
 }
 impl From<SREF_A> for u8 {
     #[inline(always)]
     fn from(variant: SREF_A) -> Self {
-        match variant {
-            SREF_A::SREF_0 => 0,
-            SREF_A::SREF_1 => 1,
-            SREF_A::SREF_2 => 2,
-            SREF_A::SREF_3 => 3,
-            SREF_A::SREF_4 => 4,
-            SREF_A::SREF_5 => 5,
-            SREF_A::SREF_6 => 6,
-            SREF_A::SREF_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SREF`"]

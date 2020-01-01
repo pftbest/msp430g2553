@@ -36,25 +36,21 @@ impl<'a> UCSYNC_W<'a> {
 }
 #[doc = "Async. Mode: USCI Mode 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UCMODE_A {
     #[doc = "0: Sync. Mode: USCI Mode: 0"]
-    UCMODE_0,
+    UCMODE_0 = 0,
     #[doc = "1: Sync. Mode: USCI Mode: 1"]
-    UCMODE_1,
+    UCMODE_1 = 1,
     #[doc = "2: Sync. Mode: USCI Mode: 2"]
-    UCMODE_2,
+    UCMODE_2 = 2,
     #[doc = "3: Sync. Mode: USCI Mode: 3"]
-    UCMODE_3,
+    UCMODE_3 = 3,
 }
 impl From<UCMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UCMODE_A) -> Self {
-        match variant {
-            UCMODE_A::UCMODE_0 => 0,
-            UCMODE_A::UCMODE_1 => 1,
-            UCMODE_A::UCMODE_2 => 2,
-            UCMODE_A::UCMODE_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UCMODE`"]

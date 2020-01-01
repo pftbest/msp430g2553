@@ -161,25 +161,21 @@ impl<'a> FN5_W<'a> {
 }
 #[doc = "Flash clock select 0 */ /* to distinguish from USART SSELx\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FSSEL_A {
     #[doc = "0: Flash clock select: 0 - ACLK"]
-    FSSEL_0,
+    FSSEL_0 = 0,
     #[doc = "1: Flash clock select: 1 - MCLK"]
-    FSSEL_1,
+    FSSEL_1 = 1,
     #[doc = "2: Flash clock select: 2 - SMCLK"]
-    FSSEL_2,
+    FSSEL_2 = 2,
     #[doc = "3: Flash clock select: 3 - SMCLK"]
-    FSSEL_3,
+    FSSEL_3 = 3,
 }
 impl From<FSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: FSSEL_A) -> Self {
-        match variant {
-            FSSEL_A::FSSEL_0 => 0,
-            FSSEL_A::FSSEL_1 => 1,
-            FSSEL_A::FSSEL_2 => 2,
-            FSSEL_A::FSSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FSSEL`"]

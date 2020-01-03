@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.2.0] - 2020-01-03
+
+Regenerate crate with svd2rust v0.17.0 plus msp-fix branch changes.
+
+Update msp430 and msp430-rt to version 0.2.0
+
 ## [v0.1.3] - 2018-05-06
 
 Fix for macro_reexport feature.
@@ -21,7 +27,8 @@ Updated msp430-rt to version 0.1.1
 
 Initial release
 
-[Unreleased]: https://github.com/pftbest/msp430g2553/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/pftbest/msp430g2553/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/pftbest/msp430g2553/compare/v0.1.3...v0.2.0
 [v0.1.3]: https://github.com/pftbest/msp430g2553/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/pftbest/msp430g2553/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/pftbest/msp430g2553/compare/v0.1.0...v0.1.1

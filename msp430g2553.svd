@@ -2216,20 +2216,6 @@
           </fields>
         </register>
         <register>
-          <name>ADC10DTC1</name>
-          <description>ADC10 Data Transfer Control 1</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>ADC10AE0</name>
-          <description>ADC10 Analog Enable 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>ADC10CTL0</name>
           <description>ADC10 Control 0</description>
           <addressOffset>360</addressOffset>
@@ -2649,18 +2635,88 @@
           </fields>
         </register>
         <register>
+          <name>ADC10AE0</name>
+          <fields>
+            <field>
+              <name>ADC10AE0</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>ADC10 Analog Enable 0 register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>2</addressOffset>
+          <description>ADC10 Analog Enable 0</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>ADC10DTC1</name>
+          <fields>
+            <field>
+              <name>ADC10DTC1</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>ADC10 Data Transfer Control 1 register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>1</addressOffset>
+          <description>ADC10 Data Transfer Control 1</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
           <name>ADC10MEM</name>
-          <description>ADC10 Memory</description>
+          <fields>
+            <field>
+              <name>ADC10MEM</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <description>ADC10 Memory register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>364</addressOffset>
-          <size>16</size>
+          <description>ADC10 Memory</description>
           <resetMask>65535</resetMask>
+          <size>16</size>
         </register>
         <register>
           <name>ADC10SA</name>
-          <description>ADC10 Data Transfer Start Address</description>
+          <fields>
+            <field>
+              <name>ADC10SA</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <description>ADC10 Data Transfer Start Address register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>372</addressOffset>
-          <size>16</size>
+          <description>ADC10 Data Transfer Start Address</description>
           <resetMask>65535</resetMask>
+          <size>16</size>
         </register>
       </registers>
     </peripheral>
@@ -4776,39 +4832,109 @@
       <baseAddress>4288</baseAddress>
       <registers>
         <register>
-          <name>TLV_ADC10_1_TAG</name>
-          <description>TLV ADC10_1 TAG</description>
-          <addressOffset>26</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>TLV_ADC10_1_LEN</name>
-          <description>TLV ADC10_1 LEN</description>
+          <fields>
+            <field>
+              <name>TLV_ADC10_1_LEN</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>TLV ADC10_1 LEN register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>27</addressOffset>
-          <size>8</size>
+          <description>TLV ADC10_1 LEN</description>
           <resetMask>255</resetMask>
+          <size>8</size>
         </register>
         <register>
-          <name>TLV_DCO_30_TAG</name>
-          <description>TLV TAG_DCO30 TAG</description>
-          <addressOffset>54</addressOffset>
-          <size>8</size>
+          <name>TLV_ADC10_1_TAG</name>
+          <fields>
+            <field>
+              <name>TLV_ADC10_1_TAG</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>TLV ADC10_1 TAG register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>26</addressOffset>
+          <description>TLV ADC10_1 TAG</description>
           <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>TLV_DCO_30_LEN</name>
-          <description>TLV TAG_DCO30 LEN</description>
-          <addressOffset>55</addressOffset>
           <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>TLV_CHECKSUM</name>
-          <description>TLV CHECK SUM</description>
+          <fields>
+            <field>
+              <name>TLV_CHECKSUM</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <description>TLV CHECK SUM register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>0</addressOffset>
-          <size>16</size>
+          <description>TLV CHECK SUM</description>
           <resetMask>65535</resetMask>
+          <size>16</size>
+        </register>
+        <register>
+          <name>TLV_DCO_30_LEN</name>
+          <fields>
+            <field>
+              <name>TLV_DCO_30_LEN</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>TLV TAG_DCO30 LEN register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>55</addressOffset>
+          <description>TLV TAG_DCO30 LEN</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>TLV_DCO_30_TAG</name>
+          <fields>
+            <field>
+              <name>TLV_DCO_30_TAG</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>TLV TAG_DCO30 TAG register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>54</addressOffset>
+          <description>TLV TAG_DCO30 TAG</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
         </register>
       </registers>
     </peripheral>
@@ -4818,60 +4944,172 @@
       <baseAddress>4344</baseAddress>
       <registers>
         <register>
-          <name>CALDCO_16MHZ</name>
-          <description>DCOCTL  Calibration Data for 16MHz</description>
-          <addressOffset>0</addressOffset>
-          <size>8</size>
+          <name>CALBC1_12MHZ</name>
+          <fields>
+            <field>
+              <name>CALBC1_12MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>BCSCTL1 Calibration Data for 12MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>3</addressOffset>
+          <description>BCSCTL1 Calibration Data for 12MHz</description>
           <resetMask>255</resetMask>
+          <size>8</size>
         </register>
         <register>
           <name>CALBC1_16MHZ</name>
-          <description>BCSCTL1 Calibration Data for 16MHz</description>
+          <fields>
+            <field>
+              <name>CALBC1_16MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>BCSCTL1 Calibration Data for 16MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>1</addressOffset>
-          <size>8</size>
+          <description>BCSCTL1 Calibration Data for 16MHz</description>
           <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>CALDCO_12MHZ</name>
-          <description>DCOCTL  Calibration Data for 12MHz</description>
-          <addressOffset>2</addressOffset>
           <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>CALBC1_12MHZ</name>
-          <description>BCSCTL1 Calibration Data for 12MHz</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>CALDCO_8MHZ</name>
-          <description>DCOCTL  Calibration Data for 8MHz</description>
-          <addressOffset>4</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>CALBC1_8MHZ</name>
-          <description>BCSCTL1 Calibration Data for 8MHz</description>
-          <addressOffset>5</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>CALDCO_1MHZ</name>
-          <description>DCOCTL  Calibration Data for 1MHz</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>CALBC1_1MHZ</name>
-          <description>BCSCTL1 Calibration Data for 1MHz</description>
+          <fields>
+            <field>
+              <name>CALBC1_1MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>BCSCTL1 Calibration Data for 1MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <addressOffset>7</addressOffset>
-          <size>8</size>
+          <description>BCSCTL1 Calibration Data for 1MHz</description>
           <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>CALBC1_8MHZ</name>
+          <fields>
+            <field>
+              <name>CALBC1_8MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>BCSCTL1 Calibration Data for 8MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>5</addressOffset>
+          <description>BCSCTL1 Calibration Data for 8MHz</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>CALDCO_12MHZ</name>
+          <fields>
+            <field>
+              <name>CALDCO_12MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>DCOCTL  Calibration Data for 12MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>2</addressOffset>
+          <description>DCOCTL  Calibration Data for 12MHz</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>CALDCO_16MHZ</name>
+          <fields>
+            <field>
+              <name>CALDCO_16MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>DCOCTL  Calibration Data for 16MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>0</addressOffset>
+          <description>DCOCTL  Calibration Data for 16MHz</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>CALDCO_1MHZ</name>
+          <fields>
+            <field>
+              <name>CALDCO_1MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>DCOCTL  Calibration Data for 1MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>6</addressOffset>
+          <description>DCOCTL  Calibration Data for 1MHz</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
+        </register>
+        <register>
+          <name>CALDCO_8MHZ</name>
+          <fields>
+            <field>
+              <name>CALDCO_8MHZ</name>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <description>DCOCTL  Calibration Data for 8MHz register</description>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <addressOffset>4</addressOffset>
+          <description>DCOCTL  Calibration Data for 8MHz</description>
+          <resetMask>255</resetMask>
+          <size>8</size>
         </register>
       </registers>
     </peripheral>
@@ -5976,7 +6214,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>b985c76</commit_hash>
+      <commit_hash>afd54a1</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

@@ -10,5 +10,31 @@ impl crate::ResetValue for super::TLV_CHECKSUM {
         0
     }
 }
-impl R {}
-impl W {}
+#[doc = "Reader of field `TLV_CHECKSUM`"]
+pub type TLV_CHECKSUM_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `TLV_CHECKSUM`"]
+pub struct TLV_CHECKSUM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TLV_CHECKSUM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:15 - TLV CHECK SUM register"]
+    #[inline(always)]
+    pub fn tlv_checksum(&self) -> TLV_CHECKSUM_R {
+        TLV_CHECKSUM_R::new((self.bits & 0xffff) as u16)
+    }
+}
+impl W {
+    #[doc = "Bits 0:15 - TLV CHECK SUM register"]
+    #[inline(always)]
+    pub fn tlv_checksum(&mut self) -> TLV_CHECKSUM_W {
+        TLV_CHECKSUM_W { w: self }
+    }
+}

@@ -209,6 +209,73 @@ impl<'a> FAIL_W<'a> {
         self.w
     }
 }
+#[doc = "FCTL3 Password\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FWKEY_A {
+    #[doc = "150: Value always read from the FCTL3 Password register"]
+    PASSWORD = 150,
+}
+impl From<FWKEY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FWKEY_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `FWKEY`"]
+pub type FWKEY_R = crate::R<u8, FWKEY_A>;
+impl FWKEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FWKEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            150 => Val(FWKEY_A::PASSWORD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWORD`"]
+    #[inline(always)]
+    pub fn is_password(&self) -> bool {
+        *self == FWKEY_A::PASSWORD
+    }
+}
+#[doc = "FCTL3 Password\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FWKEY_AW {
+    #[doc = "165: Value which must be written to the FCTL3 Password register"]
+    PASSWORD = 165,
+}
+impl From<FWKEY_AW> for u8 {
+    #[inline(always)]
+    fn from(variant: FWKEY_AW) -> Self {
+        variant as _
+    }
+}
+#[doc = "Write proxy for field `FWKEY`"]
+pub struct FWKEY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FWKEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FWKEY_AW) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Value which must be written to the FCTL3 Password register"]
+    #[inline(always)]
+    pub fn password(self) -> &'a mut W {
+        self.variant(FWKEY_AW::PASSWORD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits =
+            (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bit 0 - Flash busy: 1"]
     #[inline(always)]
@@ -249,6 +316,11 @@ impl R {
     #[inline(always)]
     pub fn fail(&self) -> FAIL_R {
         FAIL_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+    #[doc = "Bits 8:15 - FCTL3 Password"]
+    #[inline(always)]
+    pub fn fwkey(&self) -> FWKEY_R {
+        FWKEY_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
@@ -291,5 +363,10 @@ impl W {
     #[inline(always)]
     pub fn fail(&mut self) -> FAIL_W {
         FAIL_W { w: self }
+    }
+    #[doc = "Bits 8:15 - FCTL3 Password"]
+    #[inline(always)]
+    pub fn fwkey(&mut self) -> FWKEY_W {
+        FWKEY_W { w: self }
     }
 }

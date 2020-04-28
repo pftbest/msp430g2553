@@ -10,105 +10,6 @@ impl crate::ResetValue for super::BCSCTL1 {
         0
     }
 }
-#[doc = "Reader of field `RSEL0`"]
-pub type RSEL0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RSEL0`"]
-pub struct RSEL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSEL0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
-        self.w
-    }
-}
-#[doc = "Reader of field `RSEL1`"]
-pub type RSEL1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RSEL1`"]
-pub struct RSEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSEL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Reader of field `RSEL2`"]
-pub type RSEL2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RSEL2`"]
-pub struct RSEL2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSEL2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Reader of field `RSEL3`"]
-pub type RSEL3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RSEL3`"]
-pub struct RSEL3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSEL3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | (((value as u8) & 0x01) << 3);
-        self.w
-    }
-}
 #[doc = "ACLK Divider 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -253,27 +154,35 @@ impl<'a> XT2OFF_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `BCSCTL1`"]
+pub type BCSCTL1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BCSCTL1`"]
+pub struct BCSCTL1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BCSCTL1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w
+    }
+}
+#[doc = "Reader of field `RSEL`"]
+pub type RSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RSEL`"]
+pub struct RSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u8) & 0x0f);
+        self.w
+    }
+}
 impl R {
-    #[doc = "Bit 0 - Range Select Bit 0"]
-    #[inline(always)]
-    pub fn rsel0(&self) -> RSEL0_R {
-        RSEL0_R::new((self.bits & 0x01) != 0)
-    }
-    #[doc = "Bit 1 - Range Select Bit 1"]
-    #[inline(always)]
-    pub fn rsel1(&self) -> RSEL1_R {
-        RSEL1_R::new(((self.bits >> 1) & 0x01) != 0)
-    }
-    #[doc = "Bit 2 - Range Select Bit 2"]
-    #[inline(always)]
-    pub fn rsel2(&self) -> RSEL2_R {
-        RSEL2_R::new(((self.bits >> 2) & 0x01) != 0)
-    }
-    #[doc = "Bit 3 - Range Select Bit 3"]
-    #[inline(always)]
-    pub fn rsel3(&self) -> RSEL3_R {
-        RSEL3_R::new(((self.bits >> 3) & 0x01) != 0)
-    }
     #[doc = "Bits 4:5 - ACLK Divider 0"]
     #[inline(always)]
     pub fn diva(&self) -> DIVA_R {
@@ -289,28 +198,18 @@ impl R {
     pub fn xt2off(&self) -> XT2OFF_R {
         XT2OFF_R::new(((self.bits >> 7) & 0x01) != 0)
     }
+    #[doc = "Bits 0:7 - Basic Clock System Control 1 register"]
+    #[inline(always)]
+    pub fn bcsctl1(&self) -> BCSCTL1_R {
+        BCSCTL1_R::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bits 0:3 - Range Select Bit 0"]
+    #[inline(always)]
+    pub fn rsel(&self) -> RSEL_R {
+        RSEL_R::new((self.bits & 0x0f) as u8)
+    }
 }
 impl W {
-    #[doc = "Bit 0 - Range Select Bit 0"]
-    #[inline(always)]
-    pub fn rsel0(&mut self) -> RSEL0_W {
-        RSEL0_W { w: self }
-    }
-    #[doc = "Bit 1 - Range Select Bit 1"]
-    #[inline(always)]
-    pub fn rsel1(&mut self) -> RSEL1_W {
-        RSEL1_W { w: self }
-    }
-    #[doc = "Bit 2 - Range Select Bit 2"]
-    #[inline(always)]
-    pub fn rsel2(&mut self) -> RSEL2_W {
-        RSEL2_W { w: self }
-    }
-    #[doc = "Bit 3 - Range Select Bit 3"]
-    #[inline(always)]
-    pub fn rsel3(&mut self) -> RSEL3_W {
-        RSEL3_W { w: self }
-    }
     #[doc = "Bits 4:5 - ACLK Divider 0"]
     #[inline(always)]
     pub fn diva(&mut self) -> DIVA_W {
@@ -325,5 +224,15 @@ impl W {
     #[inline(always)]
     pub fn xt2off(&mut self) -> XT2OFF_W {
         XT2OFF_W { w: self }
+    }
+    #[doc = "Bits 0:7 - Basic Clock System Control 1 register"]
+    #[inline(always)]
+    pub fn bcsctl1(&mut self) -> BCSCTL1_W {
+        BCSCTL1_W { w: self }
+    }
+    #[doc = "Bits 0:3 - Range Select Bit 0"]
+    #[inline(always)]
+    pub fn rsel(&mut self) -> RSEL_W {
+        RSEL_W { w: self }
     }
 }

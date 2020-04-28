@@ -2843,60 +2843,40 @@
           <resetMask>255</resetMask>
           <fields>
             <field>
-              <name>MOD0</name>
-              <description>Modulation Bit 0</description>
+              <name>DCOCTL</name>
+              <description>DCO Clock Frequency Control register</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
-              <name>MOD1</name>
-              <description>Modulation Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>MOD2</name>
-              <description>Modulation Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>MOD3</name>
-              <description>Modulation Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>MOD4</name>
-              <description>Modulation Bit 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DCO0</name>
+              <name>DCO</name>
               <description>DCO Select Bit 0</description>
               <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>3</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>7</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
-              <name>DCO1</name>
-              <description>DCO Select Bit 1</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>DCO2</name>
-              <description>DCO Select Bit 2</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <name>MOD</name>
+              <description>Modulation Bit 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>5</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>31</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
           <writeConstraint>
@@ -2913,34 +2893,6 @@
           <size>8</size>
           <resetMask>255</resetMask>
           <fields>
-            <field>
-              <name>RSEL0</name>
-              <description>Range Select Bit 0</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>RSEL1</name>
-              <description>Range Select Bit 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>RSEL2</name>
-              <description>Range Select Bit 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>RSEL3</name>
-              <description>Range Select Bit 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
             <field>
               <name>DIVA</name>
               <description>ACLK Divider 0</description>
@@ -2983,6 +2935,30 @@
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>BCSCTL1</name>
+              <description>Basic Clock System Control 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>RSEL</name>
+              <description>Range Select Bit 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>15</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -3198,46 +3174,181 @@
               <access>read-write</access>
             </field>
             <field>
-              <name>P2CA0</name>
-              <description>Comp. A +Terminal Multiplexer</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>P2CA1</name>
-              <description>Comp. A -Terminal Multiplexer</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>P2CA2</name>
-              <description>Comp. A -Terminal Multiplexer</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>P2CA3</name>
-              <description>Comp. A -Terminal Multiplexer</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>P2CA4</name>
-              <description>Comp. A +Terminal Multiplexer</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
               <name>CASHORT</name>
               <description>Comp. A Short + and - Terminals</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>P2CA</name>
+              <description>Comp. A +Terminal Multiplexer</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>5</bitWidth>
+              <enumeratedValues>
+                <name>P2CA</name>
+                <usage>read-write</usage>
+                <enumeratedValue>
+                  <name>NONE_NONE</name>
+                  <description>No + or - connection</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA1</name>
+                  <description>No connection to +, connect - to CA1</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA2</name>
+                  <description>No connection to +, connect - to CA2</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA3</name>
+                  <description>No connection to +, connect - to CA3</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA4</name>
+                  <description>No connection to +, connect - to CA4</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA5</name>
+                  <description>No connection to +, connect - to CA5</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA6</name>
+                  <description>No connection to +, connect - to CA6</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NONE_CA7</name>
+                  <description>No connection to +, connect - to CA7</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_NONE</name>
+                  <description>Connect + to CA0, no connection to -</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA1</name>
+                  <description>Connect + to CA0, connect - to CA1</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA2</name>
+                  <description>Connect + to CA0, connect - to CA2</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA3</name>
+                  <description>Connect + to CA0, connect - to CA3</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA4</name>
+                  <description>Connect + to CA0, connect - to CA4</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA5</name>
+                  <description>Connect + to CA0, connect - to CA5</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA6</name>
+                  <description>Connect + to CA0, connect - to CA6</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA0_CA7</name>
+                  <description>Connect + to CA0, connect - to CA7</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_NONE</name>
+                  <description>Connect + to CA1, no connection to -</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA1</name>
+                  <description>Connect + to CA1, connect - to CA1</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA2</name>
+                  <description>Connect + to CA1, connect - to CA2</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA3</name>
+                  <description>Connect + to CA1, connect - to CA3</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA4</name>
+                  <description>Connect + to CA1, connect - to CA4</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA5</name>
+                  <description>Connect + to CA1, connect - to CA5</description>
+                  <value>26</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA6</name>
+                  <description>Connect + to CA1, connect - to CA6</description>
+                  <value>28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA1_CA7</name>
+                  <description>Connect + to CA1, connect - to CA7</description>
+                  <value>30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_NONE</name>
+                  <description>Connect + to CA2, no connection to -</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA1</name>
+                  <description>Connect + to CA2, connect - to CA1</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA2</name>
+                  <description>Connect + to CA2, connect - to CA2</description>
+                  <value>21</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA3</name>
+                  <description>Connect + to CA2, connect - to CA3</description>
+                  <value>23</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA4</name>
+                  <description>Connect + to CA2, connect - to CA4</description>
+                  <value>25</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA5</name>
+                  <description>Connect + to CA2, connect - to CA5</description>
+                  <value>27</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA6</name>
+                  <description>Connect + to CA2, connect - to CA6</description>
+                  <value>29</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CA2_CA7</name>
+                  <description>Connect + to CA2, connect - to CA7</description>
+                  <value>31</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
           <writeConstraint>
@@ -3309,6 +3420,18 @@
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>CAPD</name>
+              <description>Comparator A Port Disable register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
           <writeConstraint>
@@ -5130,20 +5253,6 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>WDTIS0</name>
-              <description>WDTIS0</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>WDTIS1</name>
-              <description>WDTIS1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
               <name>WDTSSEL</name>
               <description>WDTSSEL</description>
               <bitOffset>2</bitOffset>
@@ -5184,6 +5293,36 @@
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>WDTPW</name>
+              <description>Watchdog Timer Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>WDTPWR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always read from the Watchdog Password register</description>
+                  <value>105</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>WDTPWW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the Watchdog Password register</description>
+                  <value>90</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDTIS</name>
+              <description>WDTIS0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
             </field>
           </fields>
         </register>
@@ -5229,6 +5368,30 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
+            <field>
+              <name>FWKEY</name>
+              <description>FCTL1 Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>FWKEYR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always read from the FCTL1 Password register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>FWKEYW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the FCTL1 Password register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
           </fields>
         </register>
         <register>
@@ -5238,48 +5401,6 @@
           <size>16</size>
           <resetMask>65535</resetMask>
           <fields>
-            <field>
-              <name>FN0</name>
-              <description>Divide Flash clock by 1 to 64 using FN0 to FN5 according to:</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FN1</name>
-              <description>32*FN5 + 16*FN4 + 8*FN3 + 4*FN2 + 2*FN1 + FN0 + 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FN2</name>
-              <description>FN2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FN3</name>
-              <description>FN3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FN4</name>
-              <description>FN4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>FN5</name>
-              <description>FN5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
             <field>
               <name>FSSEL</name>
               <description>Flash clock select 0 */        /* to distinguish from USART SSELx</description>
@@ -5308,6 +5429,42 @@
                   <value>3</value>
                 </enumeratedValue>
               </enumeratedValues>
+            </field>
+            <field>
+              <name>FWKEY</name>
+              <description>FCTL2 Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>FWKEYR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always read from the FCTL2 Password register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>FWKEYW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the FCTL2 Password register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FN</name>
+              <description>Divide Flash clock by 1 to 64 using FN0 to FN5 according to:</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>63</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -5373,6 +5530,30 @@
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>FWKEY</name>
+              <description>FCTL3 Password</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+              <enumeratedValues>
+                <name>FWKEYR</name>
+                <usage>read</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value always read from the FCTL3 Password register</description>
+                  <value>150</value>
+                </enumeratedValue>
+              </enumeratedValues>
+              <enumeratedValues>
+                <name>FWKEYW</name>
+                <usage>write</usage>
+                <enumeratedValue>
+                  <name>PASSWORD</name>
+                  <description>Value which must be written to the FCTL3 Password register</description>
+                  <value>165</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -6214,7 +6395,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>afd54a1</commit_hash>
+      <commit_hash>ac5f903</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

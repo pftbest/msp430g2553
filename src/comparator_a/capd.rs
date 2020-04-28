@@ -209,6 +209,20 @@ impl<'a> CAPD7_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `CAPD`"]
+pub type CAPD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CAPD`"]
+pub struct CAPD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CAPD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bit 0 - Comp. A Disable Input Buffer of Port Register .0"]
     #[inline(always)]
@@ -249,6 +263,11 @@ impl R {
     #[inline(always)]
     pub fn capd7(&self) -> CAPD7_R {
         CAPD7_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+    #[doc = "Bits 0:7 - Comparator A Port Disable register"]
+    #[inline(always)]
+    pub fn capd(&self) -> CAPD_R {
+        CAPD_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
@@ -291,5 +310,10 @@ impl W {
     #[inline(always)]
     pub fn capd7(&mut self) -> CAPD7_W {
         CAPD7_W { w: self }
+    }
+    #[doc = "Bits 0:7 - Comparator A Port Disable register"]
+    #[inline(always)]
+    pub fn capd(&mut self) -> CAPD_W {
+        CAPD_W { w: self }
     }
 }

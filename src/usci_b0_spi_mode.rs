@@ -7,7 +7,7 @@ pub struct RegisterBlock {
     pub ucb0ctl1: UCB0CTL1,
     #[doc = "0x02 - USCI B0 Baud Rate 0"]
     pub ucb0br0: UCB0BR0,
-    #[doc = "0x03 - USCI B0 Baud Rate 1"]
+    #[doc = "0x03 - USCI B0 Baud Rate 1 Buffer"]
     pub ucb0br1: UCB0BR1,
     _reserved4: [u8; 1usize],
     #[doc = "0x05 - USCI B0 Status Register"]
@@ -39,28 +39,6 @@ impl crate::Readable for UCB0CTL1 {}
 impl crate::Writable for UCB0CTL1 {}
 #[doc = "USCI B0 Control Register 1"]
 pub mod ucb0ctl1;
-#[doc = "USCI B0 Baud Rate 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0br0](ucb0br0) module"]
-pub type UCB0BR0 = crate::Reg<u8, _UCB0BR0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _UCB0BR0;
-#[doc = "`read()` method returns [ucb0br0::R](ucb0br0::R) reader structure"]
-impl crate::Readable for UCB0BR0 {}
-#[doc = "`write(|w| ..)` method takes [ucb0br0::W](ucb0br0::W) writer structure"]
-impl crate::Writable for UCB0BR0 {}
-#[doc = "USCI B0 Baud Rate 0"]
-pub mod ucb0br0;
-#[doc = "USCI B0 Baud Rate 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0br1](ucb0br1) module"]
-pub type UCB0BR1 = crate::Reg<u8, _UCB0BR1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _UCB0BR1;
-#[doc = "`read()` method returns [ucb0br1::R](ucb0br1::R) reader structure"]
-impl crate::Readable for UCB0BR1 {}
-#[doc = "`write(|w| ..)` method takes [ucb0br1::W](ucb0br1::W) writer structure"]
-impl crate::Writable for UCB0BR1 {}
-#[doc = "USCI B0 Baud Rate 1"]
-pub mod ucb0br1;
 #[doc = "USCI B0 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0stat](ucb0stat) module"]
 pub type UCB0STAT = crate::Reg<u8, _UCB0STAT>;
 #[allow(missing_docs)]
@@ -94,3 +72,25 @@ impl crate::Readable for UCB0TXBUF {}
 impl crate::Writable for UCB0TXBUF {}
 #[doc = "USCI B0 Transmit Buffer"]
 pub mod ucb0txbuf;
+#[doc = "USCI B0 Baud Rate 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0br0](ucb0br0) module"]
+pub type UCB0BR0 = crate::Reg<u8, _UCB0BR0>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _UCB0BR0;
+#[doc = "`read()` method returns [ucb0br0::R](ucb0br0::R) reader structure"]
+impl crate::Readable for UCB0BR0 {}
+#[doc = "`write(|w| ..)` method takes [ucb0br0::W](ucb0br0::W) writer structure"]
+impl crate::Writable for UCB0BR0 {}
+#[doc = "USCI B0 Baud Rate 0"]
+pub mod ucb0br0;
+#[doc = "USCI B0 Baud Rate 1 Buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0br1](ucb0br1) module"]
+pub type UCB0BR1 = crate::Reg<u8, _UCB0BR1>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _UCB0BR1;
+#[doc = "`read()` method returns [ucb0br1::R](ucb0br1::R) reader structure"]
+impl crate::Readable for UCB0BR1 {}
+#[doc = "`write(|w| ..)` method takes [ucb0br1::W](ucb0br1::W) writer structure"]
+impl crate::Writable for UCB0BR1 {}
+#[doc = "USCI B0 Baud Rate 1 Buffer"]
+pub mod ucb0br1;

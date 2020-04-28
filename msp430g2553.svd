@@ -3010,18 +3010,16 @@
               <access>read-write</access>
             </field>
             <field>
-              <name>UCDELIM0</name>
+              <name>UCDELIM</name>
               <description>Break Sync Delimiter 0</description>
               <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCDELIM1</name>
-              <description>Break Sync Delimiter 1</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>2</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>3</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -3047,46 +3045,16 @@
               <access>read-write</access>
             </field>
             <field>
-              <name>UCIRTXPL0</name>
+              <name>UCIRTXPL</name>
               <description>IRDA Transmit Pulse Length 0</description>
               <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRTXPL1</name>
-              <description>IRDA Transmit Pulse Length 1</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRTXPL2</name>
-              <description>IRDA Transmit Pulse Length 2</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRTXPL3</name>
-              <description>IRDA Transmit Pulse Length 3</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRTXPL4</name>
-              <description>IRDA Transmit Pulse Length 4</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRTXPL5</name>
-              <description>IRDA Transmit Pulse Length 5</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>6</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>63</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
           <writeConstraint>
@@ -3118,46 +3086,16 @@
               <access>read-write</access>
             </field>
             <field>
-              <name>UCIRRXFL0</name>
+              <name>UCIRRXFL</name>
               <description>IRDA Receive Filter Length 0</description>
               <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRRXFL1</name>
-              <description>IRDA Receive Filter Length 1</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRRXFL2</name>
-              <description>IRDA Receive Filter Length 2</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRRXFL3</name>
-              <description>IRDA Receive Filter Length 3</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRRXFL4</name>
-              <description>IRDA Receive Filter Length 4</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCIRRXFL5</name>
-              <description>IRDA Receive Filter Length 5</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>6</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>63</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
           <writeConstraint>
@@ -3326,20 +3264,6 @@
               </enumeratedValues>
             </field>
           </fields>
-        </register>
-        <register>
-          <name>UCA0BR0</name>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA0BR1</name>
-          <description>USCI A0 Baud Rate 1</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0MCTL</name>
@@ -3558,6 +3482,12 @@
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
+            <field>
+              <name>UCIDLE</name>
+              <description>Idle line detected</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
           </fields>
           <writeConstraint>
             <range>
@@ -3568,6 +3498,20 @@
         </register>
         <register>
           <name>UCA0RXBUF</name>
+          <fields>
+            <field>
+              <name>UCA0RXBUF</name>
+              <description>USCI A0 Receive Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI A0 Receive Buffer</description>
           <addressOffset>10</addressOffset>
           <size>8</size>
@@ -3575,8 +3519,64 @@
         </register>
         <register>
           <name>UCA0TXBUF</name>
+          <fields>
+            <field>
+              <name>UCA0TXBUF</name>
+              <description>USCI A0 Transmit Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI A0 Transmit Buffer</description>
           <addressOffset>11</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0BR0</name>
+          <fields>
+            <field>
+              <name>UCA0BR0</name>
+              <description>USCI A0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0BR1</name>
+          <fields>
+            <field>
+              <name>UCA0BR1</name>
+              <description>USCI A0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI A0 Baud Rate 1 Buffer</description>
+          <addressOffset>7</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
         </register>
@@ -3713,27 +3713,6 @@
           </fields>
         </register>
         <register>
-          <name>UCA0BR0</name>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA0BR1</name>
-          <description>USCI A0 Baud Rate 1</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCA0MCTL</name>
-          <description>USCI A0 Modulation Control</description>
-          <addressOffset>4</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>UCA0STAT</name>
           <description>USCI A0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -3772,6 +3751,20 @@
         </register>
         <register>
           <name>UCA0RXBUF</name>
+          <fields>
+            <field>
+              <name>UCA0RXBUF</name>
+              <description>USCI A0 Receive Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI A0 Receive Buffer</description>
           <addressOffset>6</addressOffset>
           <size>8</size>
@@ -3779,8 +3772,64 @@
         </register>
         <register>
           <name>UCA0TXBUF</name>
+          <fields>
+            <field>
+              <name>UCA0TXBUF</name>
+              <description>USCI A0 Transmit Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI A0 Transmit Buffer</description>
           <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0BR0</name>
+          <fields>
+            <field>
+              <name>UCA0BR0</name>
+              <description>USCI A0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCA0BR1</name>
+          <fields>
+            <field>
+              <name>UCA0BR1</name>
+              <description>USCI A0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI A0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
         </register>
@@ -3938,20 +3987,6 @@
           </fields>
         </register>
         <register>
-          <name>UCB0BR0</name>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0BR1</name>
-          <description>USCI B0 Baud Rate 1</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>UCB0I2CIE</name>
           <description>USCI B0 I2C Interrupt Enable Register</description>
           <addressOffset>4</addressOffset>
@@ -4060,20 +4095,6 @@
           </writeConstraint>
         </register>
         <register>
-          <name>UCB0RXBUF</name>
-          <description>USCI B0 Receive Buffer</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0TXBUF</name>
-          <description>USCI B0 Transmit Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>UCB0I2COA</name>
           <description>USCI B0 I2C Own Address</description>
           <addressOffset>176</addressOffset>
@@ -4081,81 +4102,23 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCOA0</name>
-              <description>I2C Own Address 0</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA1</name>
-              <description>I2C Own Address 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA2</name>
-              <description>I2C Own Address 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA3</name>
-              <description>I2C Own Address 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA4</name>
-              <description>I2C Own Address 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA5</name>
-              <description>I2C Own Address 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA6</name>
-              <description>I2C Own Address 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA7</name>
-              <description>I2C Own Address 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA8</name>
-              <description>I2C Own Address 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCOA9</name>
-              <description>I2C Own Address 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
               <name>UCGCEN</name>
               <description>I2C General Call enable</description>
               <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>UCOA</name>
+              <description>I2C Own Address 0</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>1023</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -4167,76 +4130,102 @@
           <resetMask>65535</resetMask>
           <fields>
             <field>
-              <name>UCSA0</name>
+              <name>UCSA</name>
               <description>I2C Slave Address 0</description>
               <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA1</name>
-              <description>I2C Slave Address 1</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA2</name>
-              <description>I2C Slave Address 2</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA3</name>
-              <description>I2C Slave Address 3</description>
-              <bitOffset>3</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA4</name>
-              <description>I2C Slave Address 4</description>
-              <bitOffset>4</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA5</name>
-              <description>I2C Slave Address 5</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA6</name>
-              <description>I2C Slave Address 6</description>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA7</name>
-              <description>I2C Slave Address 7</description>
-              <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA8</name>
-              <description>I2C Slave Address 8</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>UCSA9</name>
-              <description>I2C Slave Address 9</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
+              <bitWidth>10</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>1023</maximum>
+                </range>
+              </writeConstraint>
             </field>
           </fields>
+        </register>
+        <register>
+          <name>UCB0RXBUF</name>
+          <fields>
+            <field>
+              <name>UCB0RXBUF</name>
+              <description>USCI B0 Receive Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Receive Buffer</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCB0TXBUF</name>
+          <fields>
+            <field>
+              <name>UCB0TXBUF</name>
+              <description>USCI B0 Transmit Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Transmit Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCB0BR0</name>
+          <fields>
+            <field>
+              <name>UCB0BR0</name>
+              <description>USCI B0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCB0BR1</name>
+          <fields>
+            <field>
+              <name>UCB0BR1</name>
+              <description>USCI B0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -4371,20 +4360,6 @@
           </fields>
         </register>
         <register>
-          <name>UCB0BR0</name>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
-          <name>UCB0BR1</name>
-          <description>USCI B0 Baud Rate 1</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>UCB0STAT</name>
           <description>USCI B0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -4423,6 +4398,20 @@
         </register>
         <register>
           <name>UCB0RXBUF</name>
+          <fields>
+            <field>
+              <name>UCB0RXBUF</name>
+              <description>USCI B0 Receive Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI B0 Receive Buffer</description>
           <addressOffset>6</addressOffset>
           <size>8</size>
@@ -4430,8 +4419,64 @@
         </register>
         <register>
           <name>UCB0TXBUF</name>
+          <fields>
+            <field>
+              <name>UCB0TXBUF</name>
+              <description>USCI B0 Transmit Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
           <description>USCI B0 Transmit Buffer</description>
           <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCB0BR0</name>
+          <fields>
+            <field>
+              <name>UCB0BR0</name>
+              <description>USCI B0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
+          <name>UCB0BR1</name>
+          <fields>
+            <field>
+              <name>UCB0BR1</name>
+              <description>USCI B0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+          <description>USCI B0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
         </register>
@@ -5643,7 +5688,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>80aab90</commit_hash>
+      <commit_hash>14bc044</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

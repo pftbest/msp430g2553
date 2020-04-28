@@ -379,7 +379,7 @@ impl Deref for CALIBRATION_DATA {
 }
 #[doc = "Calibration Data"]
 pub mod calibration_data;
-#[doc = "Timer1_A3"]
+#[doc = "Timer A3"]
 pub struct TIMER1_A3 {
     _marker: PhantomData<*const ()>,
 }
@@ -387,19 +387,17 @@ unsafe impl Send for TIMER1_A3 {}
 impl TIMER1_A3 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const timer1_a3::RegisterBlock {
+    pub const fn ptr() -> *const timer0_a3::RegisterBlock {
         0x011e as *const _
     }
 }
 impl Deref for TIMER1_A3 {
-    type Target = timer1_a3::RegisterBlock;
+    type Target = timer0_a3::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*TIMER1_A3::ptr() }
     }
 }
-#[doc = "Timer1_A3"]
-pub mod timer1_a3;
 #[doc = "Watchdog Timer"]
 pub struct WATCHDOG_TIMER {
     _marker: PhantomData<*const ()>,
@@ -442,7 +440,7 @@ impl Deref for FLASH {
 }
 #[doc = "Flash"]
 pub mod flash;
-#[doc = "Timer0_A3"]
+#[doc = "Timer A3"]
 pub struct TIMER0_A3 {
     _marker: PhantomData<*const ()>,
 }
@@ -461,7 +459,7 @@ impl Deref for TIMER0_A3 {
         unsafe { &*TIMER0_A3::ptr() }
     }
 }
-#[doc = "Timer0_A3"]
+#[doc = "Timer A3"]
 pub mod timer0_a3;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;

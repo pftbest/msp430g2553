@@ -10,5 +10,31 @@ impl crate::ResetValue for super::ADC10SA {
         0
     }
 }
-impl R {}
-impl W {}
+#[doc = "Reader of field `ADC10SA`"]
+pub type ADC10SA_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `ADC10SA`"]
+pub struct ADC10SA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ADC10SA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:15 - ADC10 Data Transfer Start Address register"]
+    #[inline(always)]
+    pub fn adc10sa(&self) -> ADC10SA_R {
+        ADC10SA_R::new((self.bits & 0xffff) as u16)
+    }
+}
+impl W {
+    #[doc = "Bits 0:15 - ADC10 Data Transfer Start Address register"]
+    #[inline(always)]
+    pub fn adc10sa(&mut self) -> ADC10SA_W {
+        ADC10SA_W { w: self }
+    }
+}

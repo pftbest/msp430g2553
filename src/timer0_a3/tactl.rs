@@ -1,9 +1,9 @@
-#[doc = "Reader of register TA1CTL"]
-pub type R = crate::R<u16, super::TA1CTL>;
-#[doc = "Writer for register TA1CTL"]
-pub type W = crate::W<u16, super::TA1CTL>;
-#[doc = "Register TA1CTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::TA1CTL {
+#[doc = "Reader of register TACTL"]
+pub type R = crate::R<u16, super::TACTL>;
+#[doc = "Writer for register TACTL"]
+pub type W = crate::W<u16, super::TACTL>;
+#[doc = "Register TACTL `reset()`'s with value 0"]
+impl crate::ResetValue for super::TACTL {
     type Type = u16;
     #[inline(always)]
     fn reset_value() -> Self::Type {

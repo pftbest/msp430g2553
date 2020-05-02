@@ -10,5 +10,31 @@ impl crate::ResetValue for super::UCA0BR1 {
         0
     }
 }
-impl R {}
-impl W {}
+#[doc = "Reader of field `UCA0BR1`"]
+pub type UCA0BR1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `UCA0BR1`"]
+pub struct UCA0BR1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> UCA0BR1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - USCI A0 Baud Rate 1 register"]
+    #[inline(always)]
+    pub fn uca0br1(&self) -> UCA0BR1_R {
+        UCA0BR1_R::new((self.bits & 0xff) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:7 - USCI A0 Baud Rate 1 register"]
+    #[inline(always)]
+    pub fn uca0br1(&mut self) -> UCA0BR1_W {
+        UCA0BR1_W { w: self }
+    }
+}

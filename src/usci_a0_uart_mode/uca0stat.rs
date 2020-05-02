@@ -209,6 +209,31 @@ impl<'a> UCLISTEN_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `UCIDLE`"]
+pub type UCIDLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `UCIDLE`"]
+pub struct UCIDLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> UCIDLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits =
+            (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bit 0 - USCI Busy Flag"]
     #[inline(always)]
@@ -249,6 +274,11 @@ impl R {
     #[inline(always)]
     pub fn uclisten(&self) -> UCLISTEN_R {
         UCLISTEN_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+    #[doc = "Bit 1 - Idle line detected"]
+    #[inline(always)]
+    pub fn ucidle(&self) -> UCIDLE_R {
+        UCIDLE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
@@ -291,5 +321,10 @@ impl W {
     #[inline(always)]
     pub fn uclisten(&mut self) -> UCLISTEN_W {
         UCLISTEN_W { w: self }
+    }
+    #[doc = "Bit 1 - Idle line detected"]
+    #[inline(always)]
+    pub fn ucidle(&mut self) -> UCIDLE_W {
+        UCIDLE_W { w: self }
     }
 }

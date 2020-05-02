@@ -84,53 +84,18 @@ impl<'a> UCSTOE_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `UCDELIM0`"]
-pub type UCDELIM0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCDELIM0`"]
-pub struct UCDELIM0_W<'a> {
+#[doc = "Reader of field `UCDELIM`"]
+pub type UCDELIM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `UCDELIM`"]
+pub struct UCDELIM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> UCDELIM0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
+impl<'a> UCDELIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `UCDELIM1`"]
-pub type UCDELIM1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCDELIM1`"]
-pub struct UCDELIM1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCDELIM1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
+            (self.w.bits & !(0x03 << 4)) | (((value as u8) & 0x03) << 4);
         self.w
     }
 }
@@ -150,15 +115,10 @@ impl R {
     pub fn ucstoe(&self) -> UCSTOE_R {
         UCSTOE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Break Sync Delimiter 0"]
+    #[doc = "Bits 4:5 - Break Sync Delimiter 0"]
     #[inline(always)]
-    pub fn ucdelim0(&self) -> UCDELIM0_R {
-        UCDELIM0_R::new(((self.bits >> 4) & 0x01) != 0)
-    }
-    #[doc = "Bit 5 - Break Sync Delimiter 1"]
-    #[inline(always)]
-    pub fn ucdelim1(&self) -> UCDELIM1_R {
-        UCDELIM1_R::new(((self.bits >> 5) & 0x01) != 0)
+    pub fn ucdelim(&self) -> UCDELIM_R {
+        UCDELIM_R::new(((self.bits >> 4) & 0x03) as u8)
     }
 }
 impl W {
@@ -177,14 +137,9 @@ impl W {
     pub fn ucstoe(&mut self) -> UCSTOE_W {
         UCSTOE_W { w: self }
     }
-    #[doc = "Bit 4 - Break Sync Delimiter 0"]
+    #[doc = "Bits 4:5 - Break Sync Delimiter 0"]
     #[inline(always)]
-    pub fn ucdelim0(&mut self) -> UCDELIM0_W {
-        UCDELIM0_W { w: self }
-    }
-    #[doc = "Bit 5 - Break Sync Delimiter 1"]
-    #[inline(always)]
-    pub fn ucdelim1(&mut self) -> UCDELIM1_W {
-        UCDELIM1_W { w: self }
+    pub fn ucdelim(&mut self) -> UCDELIM_W {
+        UCDELIM_W { w: self }
     }
 }

@@ -10,5 +10,31 @@ impl crate::ResetValue for super::TLV_DCO_30_LEN {
         0
     }
 }
-impl R {}
-impl W {}
+#[doc = "Reader of field `TLV_DCO_30_LEN`"]
+pub type TLV_DCO_30_LEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TLV_DCO_30_LEN`"]
+pub struct TLV_DCO_30_LEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TLV_DCO_30_LEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - TLV TAG_DCO30 LEN register"]
+    #[inline(always)]
+    pub fn tlv_dco_30_len(&self) -> TLV_DCO_30_LEN_R {
+        TLV_DCO_30_LEN_R::new((self.bits & 0xff) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:7 - TLV TAG_DCO30 LEN register"]
+    #[inline(always)]
+    pub fn tlv_dco_30_len(&mut self) -> TLV_DCO_30_LEN_W {
+        TLV_DCO_30_LEN_W { w: self }
+    }
+}

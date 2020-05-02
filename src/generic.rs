@@ -1,23 +1,25 @@
 use core::marker;
-#[doc = "This trait shows that register has `read` method\r"]
+#[doc = " Trait implemented by readable registers to enable the `read` method.\r"]
 #[doc = "\r"]
-#[doc = "Registers marked with `Writable` can be also `modify`'ed\r"]
+#[doc = " Registers marked with `Writable` can be also `modify`'ed.\r"]
 pub trait Readable {}
-#[doc = "This trait shows that register has `write`, `write_with_zero` and `reset` method\r"]
+#[doc = " Trait implemented by writeable registers.\r"]
 #[doc = "\r"]
-#[doc = "Registers marked with `Readable` can be also `modify`'ed\r"]
+#[doc = " This enables the  `write`, `write_with_zero` and `reset` methods.\r"]
+#[doc = "\r"]
+#[doc = " Registers marked with `Readable` can be also `modify`'ed.\r"]
 pub trait Writable {}
-#[doc = "Reset value of the register\r"]
+#[doc = " Reset value of the register.\r"]
 #[doc = "\r"]
-#[doc = "This value is initial value for `write` method.\r"]
-#[doc = "It can be also directly writed to register by `reset` method.\r"]
+#[doc = " This value is the initial value for the `write` method. It can also be directly written to the\r"]
+#[doc = " register by using the `reset` method.\r"]
 pub trait ResetValue {
-    #[doc = "Register size\r"]
+    #[doc = " Raw register type (`u8`, `u16`, `u32`, ...).\r"]
     type Type;
-    #[doc = "Reset value of the register\r"]
+    #[doc = " Reset value of the register.\r"]
     fn reset_value() -> Self::Type;
 }
-#[doc = "This structure provides volatile access to register\r"]
+#[doc = " This structure provides volatile access to registers.\r"]
 pub struct Reg<U, REG> {
     register: vcell::VolatileCell<U>,
     _marker: marker::PhantomData<REG>,
@@ -28,18 +30,18 @@ where
     Self: Readable,
     U: Copy,
 {
-    #[doc = "Reads the contents of `Readable` register\r"]
+    #[doc = " Reads the contents of a `Readable` register.\r"]
     #[doc = "\r"]
-    #[doc = "You can read the contents of a register in such way:\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "let bits = periph.reg.read().bits();\r"]
-    #[doc = "```\r"]
-    #[doc = "or get the content of a particular field of a register.\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "let reader = periph.reg.read();\r"]
-    #[doc = "let bits = reader.field1().bits();\r"]
-    #[doc = "let flag = reader.field2().bit_is_set();\r"]
-    #[doc = "```\r"]
+    #[doc = " You can read the raw contents of a register by using `bits`:\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " let bits = periph.reg.read().bits();\r"]
+    #[doc = " ```\r"]
+    #[doc = " or get the content of a particular field of a register:\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " let reader = periph.reg.read();\r"]
+    #[doc = " let bits = reader.field1().bits();\r"]
+    #[doc = " let flag = reader.field2().bit_is_set();\r"]
+    #[doc = " ```\r"]
     #[inline(always)]
     pub fn read(&self) -> R<U, Self> {
         R {
@@ -53,9 +55,9 @@ where
     Self: ResetValue<Type = U> + Writable,
     U: Copy,
 {
-    #[doc = "Writes the reset value to `Writable` register\r"]
+    #[doc = " Writes the reset value to `Writable` register.\r"]
     #[doc = "\r"]
-    #[doc = "Resets the register to its initial state\r"]
+    #[doc = " Resets the register to its initial state.\r"]
     #[inline(always)]
     pub fn reset(&self) {
         self.register.set(Self::reset_value())
@@ -66,21 +68,21 @@ where
     Self: ResetValue<Type = U> + Writable,
     U: Copy,
 {
-    #[doc = "Writes bits to `Writable` register\r"]
+    #[doc = " Writes bits to a `Writable` register.\r"]
     #[doc = "\r"]
-    #[doc = "You can write raw bits into a register:\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "periph.reg.write(|w| unsafe { w.bits(rawbits) });\r"]
-    #[doc = "```\r"]
-    #[doc = "or write only the fields you need:\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "periph.reg.write(|w| w\r"]
-    #[doc = "    .field1().bits(newfield1bits)\r"]
-    #[doc = "    .field2().set_bit()\r"]
-    #[doc = "    .field3().variant(VARIANT)\r"]
-    #[doc = ");\r"]
-    #[doc = "```\r"]
-    #[doc = "Other fields will have reset value.\r"]
+    #[doc = " You can write raw bits into a register:\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " periph.reg.write(|w| unsafe { w.bits(rawbits) });\r"]
+    #[doc = " ```\r"]
+    #[doc = " or write only the fields you need:\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " periph.reg.write(|w| w\r"]
+    #[doc = "     .field1().bits(newfield1bits)\r"]
+    #[doc = "     .field2().set_bit()\r"]
+    #[doc = "     .field3().variant(VARIANT)\r"]
+    #[doc = " );\r"]
+    #[doc = " ```\r"]
+    #[doc = " In the latter case, other fields will be set to their reset value.\r"]
     #[inline(always)]
     pub fn write<F>(&self, f: F)
     where
@@ -100,9 +102,9 @@ where
     Self: Writable,
     U: Copy + Default,
 {
-    #[doc = "Writes Zero to `Writable` register\r"]
+    #[doc = " Writes 0 to a `Writable` register.\r"]
     #[doc = "\r"]
-    #[doc = "Similar to `write`, but unused bits will contain 0.\r"]
+    #[doc = " Similar to `write`, but unused bits will contain 0.\r"]
     #[inline(always)]
     pub fn write_with_zero<F>(&self, f: F)
     where
@@ -122,23 +124,23 @@ where
     Self: Readable + Writable,
     U: Copy,
 {
-    #[doc = "Modifies the contents of the register\r"]
+    #[doc = " Modifies the contents of the register by reading and then writing it.\r"]
     #[doc = "\r"]
-    #[doc = "E.g. to do a read-modify-write sequence to change parts of a register:\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "periph.reg.modify(|r, w| unsafe { w.bits(\r"]
-    #[doc = "   r.bits() | 3\r"]
-    #[doc = ") });\r"]
-    #[doc = "```\r"]
-    #[doc = "or\r"]
-    #[doc = "```ignore\r"]
-    #[doc = "periph.reg.modify(|_, w| w\r"]
-    #[doc = "    .field1().bits(newfield1bits)\r"]
-    #[doc = "    .field2().set_bit()\r"]
-    #[doc = "    .field3().variant(VARIANT)\r"]
-    #[doc = ");\r"]
-    #[doc = "```\r"]
-    #[doc = "Other fields will have value they had before call `modify`.\r"]
+    #[doc = " E.g. to do a read-modify-write sequence to change parts of a register:\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " periph.reg.modify(|r, w| unsafe { w.bits(\r"]
+    #[doc = "    r.bits() | 3\r"]
+    #[doc = " ) });\r"]
+    #[doc = " ```\r"]
+    #[doc = " or\r"]
+    #[doc = " ```ignore\r"]
+    #[doc = " periph.reg.modify(|_, w| w\r"]
+    #[doc = "     .field1().bits(newfield1bits)\r"]
+    #[doc = "     .field2().set_bit()\r"]
+    #[doc = "     .field3().variant(VARIANT)\r"]
+    #[doc = " );\r"]
+    #[doc = " ```\r"]
+    #[doc = " Other fields will have the value they had before the call to `modify`.\r"]
     #[inline(always)]
     pub fn modify<F>(&self, f: F)
     where
@@ -161,10 +163,10 @@ where
         );
     }
 }
-#[doc = "Register/field reader\r"]
+#[doc = " Register/field reader.\r"]
 #[doc = "\r"]
-#[doc = "Result of the [`read`](Reg::read) method of a register.\r"]
-#[doc = "Also it can be used in the [`modify`](Reg::read) method\r"]
+#[doc = " Result of the `read` methods of registers. Also used as a closure argument in the `modify`\r"]
+#[doc = " method.\r"]
 pub struct R<U, T> {
     pub(crate) bits: U,
     _reg: marker::PhantomData<T>,
@@ -173,7 +175,7 @@ impl<U, T> R<U, T>
 where
     U: Copy,
 {
-    #[doc = "Create new instance of reader\r"]
+    #[doc = " Creates a new instance of the reader.\r"]
     #[inline(always)]
     pub(crate) fn new(bits: U) -> Self {
         Self {
@@ -181,7 +183,7 @@ where
             _reg: marker::PhantomData,
         }
     }
-    #[doc = "Read raw bits from register/field\r"]
+    #[doc = " Reads raw bits from register/field.\r"]
     #[inline(always)]
     pub fn bits(&self) -> U {
         self.bits
@@ -198,43 +200,43 @@ where
     }
 }
 impl<FI> R<bool, FI> {
-    #[doc = "Value of the field as raw bits\r"]
+    #[doc = " Value of the field as raw bits.\r"]
     #[inline(always)]
     pub fn bit(&self) -> bool {
         self.bits
     }
-    #[doc = "Returns `true` if the bit is clear (0)\r"]
+    #[doc = " Returns `true` if the bit is clear (0).\r"]
     #[inline(always)]
     pub fn bit_is_clear(&self) -> bool {
         !self.bit()
     }
-    #[doc = "Returns `true` if the bit is set (1)\r"]
+    #[doc = " Returns `true` if the bit is set (1).\r"]
     #[inline(always)]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
 }
-#[doc = "Register writer\r"]
+#[doc = " Register writer.\r"]
 #[doc = "\r"]
-#[doc = "Used as an argument to the closures in the [`write`](Reg::write) and [`modify`](Reg::modify) methods of the register\r"]
+#[doc = " Used as an argument to the closures in the `write` and `modify` methods of the register.\r"]
 pub struct W<U, REG> {
     #[doc = "Writable bits\r"]
     pub(crate) bits: U,
     _reg: marker::PhantomData<REG>,
 }
 impl<U, REG> W<U, REG> {
-    #[doc = "Writes raw bits to the register\r"]
+    #[doc = " Writes raw bits to the register.\r"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: U) -> &mut Self {
         self.bits = bits;
         self
     }
 }
-#[doc = "Used if enumerated values cover not the whole range\r"]
+#[doc = " Used if enumerated values cover not the whole range.\r"]
 #[derive(Clone, Copy, PartialEq)]
 pub enum Variant<U, T> {
-    #[doc = "Expected variant\r"]
+    #[doc = " Expected variant.\r"]
     Val(T),
-    #[doc = "Raw bits\r"]
+    #[doc = " Raw bits.\r"]
     Res(U),
 }

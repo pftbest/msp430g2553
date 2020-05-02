@@ -209,6 +209,20 @@ impl<'a> P7_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `P2IN`"]
+pub type P2IN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `P2IN`"]
+pub struct P2IN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> P2IN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bit 0 - P0"]
     #[inline(always)]
@@ -249,6 +263,11 @@ impl R {
     #[inline(always)]
     pub fn p7(&self) -> P7_R {
         P7_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+    #[doc = "Bits 0:7 - Port 2 Input register"]
+    #[inline(always)]
+    pub fn p2in(&self) -> P2IN_R {
+        P2IN_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
@@ -291,5 +310,10 @@ impl W {
     #[inline(always)]
     pub fn p7(&mut self) -> P7_W {
         P7_W { w: self }
+    }
+    #[doc = "Bits 0:7 - Port 2 Input register"]
+    #[inline(always)]
+    pub fn p2in(&mut self) -> P2IN_W {
+        P2IN_W { w: self }
     }
 }

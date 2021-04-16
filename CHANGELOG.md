@@ -5,12 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-Regenerate crate with svd2rust v0.17.0 plus [commit hash information](https://github.com/rust-embedded/svd2rust/pull/439),
+Regenerate crate (twice) with svd2rust v0.17.0 plus [commit hash information](https://github.com/rust-embedded/svd2rust/pull/439),
 and msp430_svd v0.2.0.
 
-No breaking changes were introduced by bumping the svd2rust commit.
+Enough changes to svd2rust occurred since the between the two regenerations
+(_since v0.2.0_) to warrant a breaking change.
 
-msp430_svd v0.2.0 [adds](https://github.com/pftbest/msp430_svd/tree/master/overrides)
+Furthermore, msp430_svd v0.2.0 [adds](https://github.com/pftbest/msp430_svd/tree/master/overrides)
 a large number of missing register fields to generated SVD files, and merges
 multiple individual bit fields into larger single fields as appropriate.
 _Merging bit fields is a breaking change._ The msp430_svd commit hash is now

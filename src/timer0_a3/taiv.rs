@@ -1,13 +1,35 @@
-#[doc = "Reader of register TAIV"]
-pub type R = crate::R<u16, super::TAIV>;
-#[doc = "Writer for register TAIV"]
-pub type W = crate::W<u16, super::TAIV>;
-#[doc = "Register TAIV `reset()`'s with value 0"]
-impl crate::ResetValue for super::TAIV {
-    type Type = u16;
+#[doc = "Register `TAIV` reader"]
+pub struct R(crate::R<TAIV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TAIV_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<TAIV_SPEC>> for R {
+    fn from(reader: crate::R<TAIV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TAIV` writer"]
+pub struct W(crate::W<TAIV_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TAIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<TAIV_SPEC>> for W {
+    fn from(writer: crate::W<TAIV_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Timer A Interrupt Vector value\n\nValue on reset: 0"]
@@ -29,43 +51,52 @@ impl From<TAIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TAIV`"]
-pub type TAIV_R = crate::R<u8, TAIV_A>;
+#[doc = "Field `TAIV` reader - Timer A Interrupt Vector value"]
+pub struct TAIV_R(crate::FieldReader<u8, TAIV_A>);
 impl TAIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TAIV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TAIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TAIV_A> {
         match self.bits {
-            0 => Val(TAIV_A::NONE),
-            2 => Val(TAIV_A::TACCR1),
-            4 => Val(TAIV_A::TACCR2),
-            10 => Val(TAIV_A::TAIFG),
-            i => Res(i),
+            0 => Some(TAIV_A::NONE),
+            2 => Some(TAIV_A::TACCR1),
+            4 => Some(TAIV_A::TACCR2),
+            10 => Some(TAIV_A::TAIFG),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == TAIV_A::NONE
+        **self == TAIV_A::NONE
     }
     #[doc = "Checks if the value of the field is `TACCR1`"]
     #[inline(always)]
     pub fn is_taccr1(&self) -> bool {
-        *self == TAIV_A::TACCR1
+        **self == TAIV_A::TACCR1
     }
     #[doc = "Checks if the value of the field is `TACCR2`"]
     #[inline(always)]
     pub fn is_taccr2(&self) -> bool {
-        *self == TAIV_A::TACCR2
+        **self == TAIV_A::TACCR2
     }
     #[doc = "Checks if the value of the field is `TAIFG`"]
     #[inline(always)]
     pub fn is_taifg(&self) -> bool {
-        *self == TAIV_A::TAIFG
+        **self == TAIV_A::TAIFG
     }
 }
-#[doc = "Write proxy for field `TAIV`"]
+impl core::ops::Deref for TAIV_R {
+    type Target = crate::FieldReader<u8, TAIV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TAIV` writer - Timer A Interrupt Vector value"]
 pub struct TAIV_W<'a> {
     w: &'a mut W,
 }
@@ -98,7 +129,7 @@ impl<'a> TAIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u16) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u16 & 0x0f);
         self.w
     }
 }
@@ -114,5 +145,30 @@ impl W {
     #[inline(always)]
     pub fn taiv(&mut self) -> TAIV_W {
         TAIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timer A Interrupt Vector Word\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [taiv](index.html) module"]
+pub struct TAIV_SPEC;
+impl crate::RegisterSpec for TAIV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [taiv::R](R) reader structure"]
+impl crate::Readable for TAIV_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [taiv::W](W) writer structure"]
+impl crate::Writable for TAIV_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TAIV to value 0"]
+impl crate::Resettable for TAIV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

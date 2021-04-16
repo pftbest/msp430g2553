@@ -2,83 +2,41 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Port 3 Resistor Enable"]
-    pub p3ren: P3REN,
+    pub p3ren: crate::Reg<p3ren::P3REN_SPEC>,
     _reserved1: [u8; 7usize],
     #[doc = "0x08 - Port 3 Input"]
-    pub p3in: P3IN,
+    pub p3in: crate::Reg<p3in::P3IN_SPEC>,
     #[doc = "0x09 - Port 3 Output"]
-    pub p3out: P3OUT,
+    pub p3out: crate::Reg<p3out::P3OUT_SPEC>,
     #[doc = "0x0a - Port 3 Direction"]
-    pub p3dir: P3DIR,
+    pub p3dir: crate::Reg<p3dir::P3DIR_SPEC>,
     #[doc = "0x0b - Port 3 Selection"]
-    pub p3sel: P3SEL,
+    pub p3sel: crate::Reg<p3sel::P3SEL_SPEC>,
     _reserved5: [u8; 39usize],
     #[doc = "0x33 - Port 3 Selection 2"]
-    pub p3sel2: P3SEL2,
+    pub p3sel2: crate::Reg<p3sel2::P3SEL2_SPEC>,
 }
-#[doc = "Port 3 Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3ren](p3ren) module"]
-pub type P3REN = crate::Reg<u8, _P3REN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3REN;
-#[doc = "`read()` method returns [p3ren::R](p3ren::R) reader structure"]
-impl crate::Readable for P3REN {}
-#[doc = "`write(|w| ..)` method takes [p3ren::W](p3ren::W) writer structure"]
-impl crate::Writable for P3REN {}
+#[doc = "P3REN register accessor: an alias for `Reg<P3REN_SPEC>`"]
+pub type P3REN = crate::Reg<p3ren::P3REN_SPEC>;
 #[doc = "Port 3 Resistor Enable"]
 pub mod p3ren;
-#[doc = "Port 3 Input\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3in](p3in) module"]
-pub type P3IN = crate::Reg<u8, _P3IN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3IN;
-#[doc = "`read()` method returns [p3in::R](p3in::R) reader structure"]
-impl crate::Readable for P3IN {}
-#[doc = "`write(|w| ..)` method takes [p3in::W](p3in::W) writer structure"]
-impl crate::Writable for P3IN {}
+#[doc = "P3IN register accessor: an alias for `Reg<P3IN_SPEC>`"]
+pub type P3IN = crate::Reg<p3in::P3IN_SPEC>;
 #[doc = "Port 3 Input"]
 pub mod p3in;
-#[doc = "Port 3 Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3out](p3out) module"]
-pub type P3OUT = crate::Reg<u8, _P3OUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3OUT;
-#[doc = "`read()` method returns [p3out::R](p3out::R) reader structure"]
-impl crate::Readable for P3OUT {}
-#[doc = "`write(|w| ..)` method takes [p3out::W](p3out::W) writer structure"]
-impl crate::Writable for P3OUT {}
+#[doc = "P3OUT register accessor: an alias for `Reg<P3OUT_SPEC>`"]
+pub type P3OUT = crate::Reg<p3out::P3OUT_SPEC>;
 #[doc = "Port 3 Output"]
 pub mod p3out;
-#[doc = "Port 3 Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3dir](p3dir) module"]
-pub type P3DIR = crate::Reg<u8, _P3DIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3DIR;
-#[doc = "`read()` method returns [p3dir::R](p3dir::R) reader structure"]
-impl crate::Readable for P3DIR {}
-#[doc = "`write(|w| ..)` method takes [p3dir::W](p3dir::W) writer structure"]
-impl crate::Writable for P3DIR {}
+#[doc = "P3DIR register accessor: an alias for `Reg<P3DIR_SPEC>`"]
+pub type P3DIR = crate::Reg<p3dir::P3DIR_SPEC>;
 #[doc = "Port 3 Direction"]
 pub mod p3dir;
-#[doc = "Port 3 Selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3sel](p3sel) module"]
-pub type P3SEL = crate::Reg<u8, _P3SEL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3SEL;
-#[doc = "`read()` method returns [p3sel::R](p3sel::R) reader structure"]
-impl crate::Readable for P3SEL {}
-#[doc = "`write(|w| ..)` method takes [p3sel::W](p3sel::W) writer structure"]
-impl crate::Writable for P3SEL {}
+#[doc = "P3SEL register accessor: an alias for `Reg<P3SEL_SPEC>`"]
+pub type P3SEL = crate::Reg<p3sel::P3SEL_SPEC>;
 #[doc = "Port 3 Selection"]
 pub mod p3sel;
-#[doc = "Port 3 Selection 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3sel2](p3sel2) module"]
-pub type P3SEL2 = crate::Reg<u8, _P3SEL2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3SEL2;
-#[doc = "`read()` method returns [p3sel2::R](p3sel2::R) reader structure"]
-impl crate::Readable for P3SEL2 {}
-#[doc = "`write(|w| ..)` method takes [p3sel2::W](p3sel2::W) writer structure"]
-impl crate::Writable for P3SEL2 {}
+#[doc = "P3SEL2 register accessor: an alias for `Reg<P3SEL2_SPEC>`"]
+pub type P3SEL2 = crate::Reg<p3sel2::P3SEL2_SPEC>;
 #[doc = "Port 3 Selection 2"]
 pub mod p3sel2;

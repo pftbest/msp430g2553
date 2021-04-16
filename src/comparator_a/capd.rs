@@ -1,18 +1,52 @@
-#[doc = "Reader of register CAPD"]
-pub type R = crate::R<u8, super::CAPD>;
-#[doc = "Writer for register CAPD"]
-pub type W = crate::W<u8, super::CAPD>;
-#[doc = "Register CAPD `reset()`'s with value 0"]
-impl crate::ResetValue for super::CAPD {
-    type Type = u8;
+#[doc = "Register `CAPD` reader"]
+pub struct R(crate::R<CAPD_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CAPD_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CAPD0`"]
-pub type CAPD0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD0`"]
+impl core::convert::From<crate::R<CAPD_SPEC>> for R {
+    fn from(reader: crate::R<CAPD_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CAPD` writer"]
+pub struct W(crate::W<CAPD_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CAPD_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CAPD_SPEC>> for W {
+    fn from(writer: crate::W<CAPD_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CAPD0` reader - Comp. A Disable Input Buffer of Port Register .0"]
+pub struct CAPD0_R(crate::FieldReader<bool, bool>);
+impl CAPD0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD0` writer - Comp. A Disable Input Buffer of Port Register .0"]
 pub struct CAPD0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> CAPD0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD1`"]
-pub type CAPD1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD1`"]
+#[doc = "Field `CAPD1` reader - Comp. A Disable Input Buffer of Port Register .1"]
+pub struct CAPD1_R(crate::FieldReader<bool, bool>);
+impl CAPD1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD1` writer - Comp. A Disable Input Buffer of Port Register .1"]
 pub struct CAPD1_W<'a> {
     w: &'a mut W,
 }
@@ -55,13 +101,25 @@ impl<'a> CAPD1_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD2`"]
-pub type CAPD2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD2`"]
+#[doc = "Field `CAPD2` reader - Comp. A Disable Input Buffer of Port Register .2"]
+pub struct CAPD2_R(crate::FieldReader<bool, bool>);
+impl CAPD2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD2` writer - Comp. A Disable Input Buffer of Port Register .2"]
 pub struct CAPD2_W<'a> {
     w: &'a mut W,
 }
@@ -80,13 +138,25 @@ impl<'a> CAPD2_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD3`"]
-pub type CAPD3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD3`"]
+#[doc = "Field `CAPD3` reader - Comp. A Disable Input Buffer of Port Register .3"]
+pub struct CAPD3_R(crate::FieldReader<bool, bool>);
+impl CAPD3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD3` writer - Comp. A Disable Input Buffer of Port Register .3"]
 pub struct CAPD3_W<'a> {
     w: &'a mut W,
 }
@@ -105,13 +175,25 @@ impl<'a> CAPD3_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | (((value as u8) & 0x01) << 3);
+            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD4`"]
-pub type CAPD4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD4`"]
+#[doc = "Field `CAPD4` reader - Comp. A Disable Input Buffer of Port Register .4"]
+pub struct CAPD4_R(crate::FieldReader<bool, bool>);
+impl CAPD4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD4` writer - Comp. A Disable Input Buffer of Port Register .4"]
 pub struct CAPD4_W<'a> {
     w: &'a mut W,
 }
@@ -130,13 +212,25 @@ impl<'a> CAPD4_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | (((value as u8) & 0x01) << 4);
+            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD5`"]
-pub type CAPD5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD5`"]
+#[doc = "Field `CAPD5` reader - Comp. A Disable Input Buffer of Port Register .5"]
+pub struct CAPD5_R(crate::FieldReader<bool, bool>);
+impl CAPD5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD5` writer - Comp. A Disable Input Buffer of Port Register .5"]
 pub struct CAPD5_W<'a> {
     w: &'a mut W,
 }
@@ -155,13 +249,25 @@ impl<'a> CAPD5_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
+            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD6`"]
-pub type CAPD6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD6`"]
+#[doc = "Field `CAPD6` reader - Comp. A Disable Input Buffer of Port Register .6"]
+pub struct CAPD6_R(crate::FieldReader<bool, bool>);
+impl CAPD6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD6` writer - Comp. A Disable Input Buffer of Port Register .6"]
 pub struct CAPD6_W<'a> {
     w: &'a mut W,
 }
@@ -180,13 +286,25 @@ impl<'a> CAPD6_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
+            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD7`"]
-pub type CAPD7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CAPD7`"]
+#[doc = "Field `CAPD7` reader - Comp. A Disable Input Buffer of Port Register .7"]
+pub struct CAPD7_R(crate::FieldReader<bool, bool>);
+impl CAPD7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CAPD7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD7` writer - Comp. A Disable Input Buffer of Port Register .7"]
 pub struct CAPD7_W<'a> {
     w: &'a mut W,
 }
@@ -205,13 +323,25 @@ impl<'a> CAPD7_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
+            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `CAPD`"]
-pub type CAPD_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CAPD`"]
+#[doc = "Field `CAPD` reader - Comparator A Port Disable register"]
+pub struct CAPD_R(crate::FieldReader<u8, u8>);
+impl CAPD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CAPD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CAPD_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CAPD` writer - Comparator A Port Disable register"]
 pub struct CAPD_W<'a> {
     w: &'a mut W,
 }
@@ -219,7 +349,7 @@ impl<'a> CAPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u8) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u8 & 0xff);
         self.w
     }
 }
@@ -315,5 +445,30 @@ impl W {
     #[inline(always)]
     pub fn capd(&mut self) -> CAPD_W {
         CAPD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Comparator A Port Disable\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capd](index.html) module"]
+pub struct CAPD_SPEC;
+impl crate::RegisterSpec for CAPD_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [capd::R](R) reader structure"]
+impl crate::Readable for CAPD_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [capd::W](W) writer structure"]
+impl crate::Writable for CAPD_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CAPD to value 0"]
+impl crate::Resettable for CAPD_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

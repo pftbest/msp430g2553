@@ -1,13 +1,35 @@
-#[doc = "Reader of register BCSCTL2"]
-pub type R = crate::R<u8, super::BCSCTL2>;
-#[doc = "Writer for register BCSCTL2"]
-pub type W = crate::W<u8, super::BCSCTL2>;
-#[doc = "Register BCSCTL2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::BCSCTL2 {
-    type Type = u8;
+#[doc = "Register `BCSCTL2` reader"]
+pub struct R(crate::R<BCSCTL2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BCSCTL2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<BCSCTL2_SPEC>> for R {
+    fn from(reader: crate::R<BCSCTL2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BCSCTL2` writer"]
+pub struct W(crate::W<BCSCTL2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BCSCTL2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<BCSCTL2_SPEC>> for W {
+    fn from(writer: crate::W<BCSCTL2_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "SMCLK Divider 0\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<DIVS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVS`"]
-pub type DIVS_R = crate::R<u8, DIVS_A>;
+#[doc = "Field `DIVS` reader - SMCLK Divider 0"]
+pub struct DIVS_R(crate::FieldReader<u8, DIVS_A>);
 impl DIVS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVS_A {
@@ -46,25 +71,32 @@ impl DIVS_R {
     #[doc = "Checks if the value of the field is `DIVS_0`"]
     #[inline(always)]
     pub fn is_divs_0(&self) -> bool {
-        *self == DIVS_A::DIVS_0
+        **self == DIVS_A::DIVS_0
     }
     #[doc = "Checks if the value of the field is `DIVS_1`"]
     #[inline(always)]
     pub fn is_divs_1(&self) -> bool {
-        *self == DIVS_A::DIVS_1
+        **self == DIVS_A::DIVS_1
     }
     #[doc = "Checks if the value of the field is `DIVS_2`"]
     #[inline(always)]
     pub fn is_divs_2(&self) -> bool {
-        *self == DIVS_A::DIVS_2
+        **self == DIVS_A::DIVS_2
     }
     #[doc = "Checks if the value of the field is `DIVS_3`"]
     #[inline(always)]
     pub fn is_divs_3(&self) -> bool {
-        *self == DIVS_A::DIVS_3
+        **self == DIVS_A::DIVS_3
     }
 }
-#[doc = "Write proxy for field `DIVS`"]
+impl core::ops::Deref for DIVS_R {
+    type Target = crate::FieldReader<u8, DIVS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVS` writer - SMCLK Divider 0"]
 pub struct DIVS_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> DIVS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DIVS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "SMCLK Divider 0: /1"]
     #[inline(always)]
@@ -100,13 +130,25 @@ impl<'a> DIVS_W<'a> {
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x03 << 1)) | (((value as u8) & 0x03) << 1);
+            (self.w.bits & !(0x03 << 1)) | ((value as u8 & 0x03) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `SELS`"]
-pub type SELS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SELS`"]
+#[doc = "Field `SELS` reader - SMCLK Source Select 0:DCOCLK / 1:XT2CLK/LFXTCLK"]
+pub struct SELS_R(crate::FieldReader<bool, bool>);
+impl SELS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SELS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SELS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SELS` writer - SMCLK Source Select 0:DCOCLK / 1:XT2CLK/LFXTCLK"]
 pub struct SELS_W<'a> {
     w: &'a mut W,
 }
@@ -125,7 +167,7 @@ impl<'a> SELS_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | (((value as u8) & 0x01) << 3);
+            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
         self.w
     }
 }
@@ -148,9 +190,12 @@ impl From<DIVM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVM`"]
-pub type DIVM_R = crate::R<u8, DIVM_A>;
+#[doc = "Field `DIVM` reader - MCLK Divider 0"]
+pub struct DIVM_R(crate::FieldReader<u8, DIVM_A>);
 impl DIVM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIVM_A {
@@ -165,25 +210,32 @@ impl DIVM_R {
     #[doc = "Checks if the value of the field is `DIVM_0`"]
     #[inline(always)]
     pub fn is_divm_0(&self) -> bool {
-        *self == DIVM_A::DIVM_0
+        **self == DIVM_A::DIVM_0
     }
     #[doc = "Checks if the value of the field is `DIVM_1`"]
     #[inline(always)]
     pub fn is_divm_1(&self) -> bool {
-        *self == DIVM_A::DIVM_1
+        **self == DIVM_A::DIVM_1
     }
     #[doc = "Checks if the value of the field is `DIVM_2`"]
     #[inline(always)]
     pub fn is_divm_2(&self) -> bool {
-        *self == DIVM_A::DIVM_2
+        **self == DIVM_A::DIVM_2
     }
     #[doc = "Checks if the value of the field is `DIVM_3`"]
     #[inline(always)]
     pub fn is_divm_3(&self) -> bool {
-        *self == DIVM_A::DIVM_3
+        **self == DIVM_A::DIVM_3
     }
 }
-#[doc = "Write proxy for field `DIVM`"]
+impl core::ops::Deref for DIVM_R {
+    type Target = crate::FieldReader<u8, DIVM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVM` writer - MCLK Divider 0"]
 pub struct DIVM_W<'a> {
     w: &'a mut W,
 }
@@ -191,9 +243,7 @@ impl<'a> DIVM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DIVM_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "MCLK Divider 0: /1"]
     #[inline(always)]
@@ -219,7 +269,7 @@ impl<'a> DIVM_W<'a> {
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x03 << 4)) | (((value as u8) & 0x03) << 4);
+            (self.w.bits & !(0x03 << 4)) | ((value as u8 & 0x03) << 4);
         self.w
     }
 }
@@ -242,9 +292,12 @@ impl From<SELM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SELM`"]
-pub type SELM_R = crate::R<u8, SELM_A>;
+#[doc = "Field `SELM` reader - MCLK Source Select 0"]
+pub struct SELM_R(crate::FieldReader<u8, SELM_A>);
 impl SELM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SELM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SELM_A {
@@ -259,25 +312,32 @@ impl SELM_R {
     #[doc = "Checks if the value of the field is `SELM_0`"]
     #[inline(always)]
     pub fn is_selm_0(&self) -> bool {
-        *self == SELM_A::SELM_0
+        **self == SELM_A::SELM_0
     }
     #[doc = "Checks if the value of the field is `SELM_1`"]
     #[inline(always)]
     pub fn is_selm_1(&self) -> bool {
-        *self == SELM_A::SELM_1
+        **self == SELM_A::SELM_1
     }
     #[doc = "Checks if the value of the field is `SELM_2`"]
     #[inline(always)]
     pub fn is_selm_2(&self) -> bool {
-        *self == SELM_A::SELM_2
+        **self == SELM_A::SELM_2
     }
     #[doc = "Checks if the value of the field is `SELM_3`"]
     #[inline(always)]
     pub fn is_selm_3(&self) -> bool {
-        *self == SELM_A::SELM_3
+        **self == SELM_A::SELM_3
     }
 }
-#[doc = "Write proxy for field `SELM`"]
+impl core::ops::Deref for SELM_R {
+    type Target = crate::FieldReader<u8, SELM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SELM` writer - MCLK Source Select 0"]
 pub struct SELM_W<'a> {
     w: &'a mut W,
 }
@@ -285,9 +345,7 @@ impl<'a> SELM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SELM_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "MCLK Source Select 0: DCOCLK"]
     #[inline(always)]
@@ -313,7 +371,7 @@ impl<'a> SELM_W<'a> {
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x03 << 6)) | (((value as u8) & 0x03) << 6);
+            (self.w.bits & !(0x03 << 6)) | ((value as u8 & 0x03) << 6);
         self.w
     }
 }
@@ -359,5 +417,30 @@ impl W {
     #[inline(always)]
     pub fn selm(&mut self) -> SELM_W {
         SELM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Basic Clock System Control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bcsctl2](index.html) module"]
+pub struct BCSCTL2_SPEC;
+impl crate::RegisterSpec for BCSCTL2_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [bcsctl2::R](R) reader structure"]
+impl crate::Readable for BCSCTL2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bcsctl2::W](W) writer structure"]
+impl crate::Writable for BCSCTL2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BCSCTL2 to value 0"]
+impl crate::Resettable for BCSCTL2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,52 @@
-#[doc = "Reader of register UCA0STAT"]
-pub type R = crate::R<u8, super::UCA0STAT>;
-#[doc = "Writer for register UCA0STAT"]
-pub type W = crate::W<u8, super::UCA0STAT>;
-#[doc = "Register UCA0STAT `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCA0STAT {
-    type Type = u8;
+#[doc = "Register `UCA0STAT` reader"]
+pub struct R(crate::R<UCA0STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCA0STAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `UCBUSY`"]
-pub type UCBUSY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCBUSY`"]
+impl core::convert::From<crate::R<UCA0STAT_SPEC>> for R {
+    fn from(reader: crate::R<UCA0STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCA0STAT` writer"]
+pub struct W(crate::W<UCA0STAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCA0STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<UCA0STAT_SPEC>> for W {
+    fn from(writer: crate::W<UCA0STAT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCBUSY` reader - USCI Busy Flag"]
+pub struct UCBUSY_R(crate::FieldReader<bool, bool>);
+impl UCBUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCBUSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCBUSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCBUSY` writer - USCI Busy Flag"]
 pub struct UCBUSY_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> UCBUSY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `UCOE`"]
-pub type UCOE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCOE`"]
+#[doc = "Field `UCOE` reader - USCI Overrun Error Flag"]
+pub struct UCOE_R(crate::FieldReader<bool, bool>);
+impl UCOE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCOE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCOE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCOE` writer - USCI Overrun Error Flag"]
 pub struct UCOE_W<'a> {
     w: &'a mut W,
 }
@@ -55,13 +101,25 @@ impl<'a> UCOE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | (((value as u8) & 0x01) << 5);
+            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `UCFE`"]
-pub type UCFE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCFE`"]
+#[doc = "Field `UCFE` reader - USCI Frame Error Flag"]
+pub struct UCFE_R(crate::FieldReader<bool, bool>);
+impl UCFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCFE` writer - USCI Frame Error Flag"]
 pub struct UCFE_W<'a> {
     w: &'a mut W,
 }
@@ -80,13 +138,25 @@ impl<'a> UCFE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | (((value as u8) & 0x01) << 6);
+            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `UCLISTEN`"]
-pub type UCLISTEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCLISTEN`"]
+#[doc = "Field `UCLISTEN` reader - USCI Listen mode"]
+pub struct UCLISTEN_R(crate::FieldReader<bool, bool>);
+impl UCLISTEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCLISTEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCLISTEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCLISTEN` writer - USCI Listen mode"]
 pub struct UCLISTEN_W<'a> {
     w: &'a mut W,
 }
@@ -105,7 +175,7 @@ impl<'a> UCLISTEN_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | (((value as u8) & 0x01) << 7);
+            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
         self.w
     }
 }
@@ -151,5 +221,30 @@ impl W {
     #[inline(always)]
     pub fn uclisten(&mut self) -> UCLISTEN_W {
         UCLISTEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USCI A0 Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uca0stat](index.html) module"]
+pub struct UCA0STAT_SPEC;
+impl crate::RegisterSpec for UCA0STAT_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [uca0stat::R](R) reader structure"]
+impl crate::Readable for UCA0STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uca0stat::W](W) writer structure"]
+impl crate::Writable for UCA0STAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCA0STAT to value 0"]
+impl crate::Resettable for UCA0STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,52 @@
-#[doc = "Reader of register UCB0I2CIE"]
-pub type R = crate::R<u8, super::UCB0I2CIE>;
-#[doc = "Writer for register UCB0I2CIE"]
-pub type W = crate::W<u8, super::UCB0I2CIE>;
-#[doc = "Register UCB0I2CIE `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCB0I2CIE {
-    type Type = u8;
+#[doc = "Register `UCB0I2CIE` reader"]
+pub struct R(crate::R<UCB0I2CIE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCB0I2CIE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `UCALIE`"]
-pub type UCALIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCALIE`"]
+impl core::convert::From<crate::R<UCB0I2CIE_SPEC>> for R {
+    fn from(reader: crate::R<UCB0I2CIE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCB0I2CIE` writer"]
+pub struct W(crate::W<UCB0I2CIE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCB0I2CIE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<UCB0I2CIE_SPEC>> for W {
+    fn from(writer: crate::W<UCB0I2CIE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `UCALIE` reader - Arbitration Lost interrupt enable"]
+pub struct UCALIE_R(crate::FieldReader<bool, bool>);
+impl UCALIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCALIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCALIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCALIE` writer - Arbitration Lost interrupt enable"]
 pub struct UCALIE_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> UCALIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u8) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `UCSTTIE`"]
-pub type UCSTTIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCSTTIE`"]
+#[doc = "Field `UCSTTIE` reader - START Condition interrupt enable"]
+pub struct UCSTTIE_R(crate::FieldReader<bool, bool>);
+impl UCSTTIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCSTTIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCSTTIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCSTTIE` writer - START Condition interrupt enable"]
 pub struct UCSTTIE_W<'a> {
     w: &'a mut W,
 }
@@ -55,13 +101,25 @@ impl<'a> UCSTTIE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | (((value as u8) & 0x01) << 1);
+            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `UCSTPIE`"]
-pub type UCSTPIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCSTPIE`"]
+#[doc = "Field `UCSTPIE` reader - STOP Condition interrupt enable"]
+pub struct UCSTPIE_R(crate::FieldReader<bool, bool>);
+impl UCSTPIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCSTPIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCSTPIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCSTPIE` writer - STOP Condition interrupt enable"]
 pub struct UCSTPIE_W<'a> {
     w: &'a mut W,
 }
@@ -80,13 +138,25 @@ impl<'a> UCSTPIE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | (((value as u8) & 0x01) << 2);
+            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `UCNACKIE`"]
-pub type UCNACKIE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UCNACKIE`"]
+#[doc = "Field `UCNACKIE` reader - NACK Condition interrupt enable"]
+pub struct UCNACKIE_R(crate::FieldReader<bool, bool>);
+impl UCNACKIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCNACKIE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for UCNACKIE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCNACKIE` writer - NACK Condition interrupt enable"]
 pub struct UCNACKIE_W<'a> {
     w: &'a mut W,
 }
@@ -105,7 +175,7 @@ impl<'a> UCNACKIE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | (((value as u8) & 0x01) << 3);
+            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
         self.w
     }
 }
@@ -151,5 +221,30 @@ impl W {
     #[inline(always)]
     pub fn ucnackie(&mut self) -> UCNACKIE_W {
         UCNACKIE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USCI B0 I2C Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucb0i2cie](index.html) module"]
+pub struct UCB0I2CIE_SPEC;
+impl crate::RegisterSpec for UCB0I2CIE_SPEC {
+    type Ux = u8;
+}
+#[doc = "`read()` method returns [ucb0i2cie::R](R) reader structure"]
+impl crate::Readable for UCB0I2CIE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ucb0i2cie::W](W) writer structure"]
+impl crate::Writable for UCB0I2CIE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCB0I2CIE to value 0"]
+impl crate::Resettable for UCB0I2CIE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

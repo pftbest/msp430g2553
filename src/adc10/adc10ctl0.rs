@@ -1,18 +1,52 @@
-#[doc = "Reader of register ADC10CTL0"]
-pub type R = crate::R<u16, super::ADC10CTL0>;
-#[doc = "Writer for register ADC10CTL0"]
-pub type W = crate::W<u16, super::ADC10CTL0>;
-#[doc = "Register ADC10CTL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADC10CTL0 {
-    type Type = u16;
+#[doc = "Register `ADC10CTL0` reader"]
+pub struct R(crate::R<ADC10CTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC10CTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADC10SC`"]
-pub type ADC10SC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC10SC`"]
+impl core::convert::From<crate::R<ADC10CTL0_SPEC>> for R {
+    fn from(reader: crate::R<ADC10CTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADC10CTL0` writer"]
+pub struct W(crate::W<ADC10CTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC10CTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ADC10CTL0_SPEC>> for W {
+    fn from(writer: crate::W<ADC10CTL0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADC10SC` reader - ADC10 Start Conversion"]
+pub struct ADC10SC_R(crate::FieldReader<bool, bool>);
+impl ADC10SC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC10SC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC10SC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10SC` writer - ADC10 Start Conversion"]
 pub struct ADC10SC_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> ADC10SC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `ENC`"]
-pub type ENC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENC`"]
+#[doc = "Field `ENC` reader - ADC10 Enable Conversion"]
+pub struct ENC_R(crate::FieldReader<bool, bool>);
+impl ENC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENC` writer - ADC10 Enable Conversion"]
 pub struct ENC_W<'a> {
     w: &'a mut W,
 }
@@ -55,13 +101,25 @@ impl<'a> ENC_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+            (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `ADC10IFG`"]
-pub type ADC10IFG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC10IFG`"]
+#[doc = "Field `ADC10IFG` reader - ADC10 Interrupt Flag"]
+pub struct ADC10IFG_R(crate::FieldReader<bool, bool>);
+impl ADC10IFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC10IFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC10IFG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10IFG` writer - ADC10 Interrupt Flag"]
 pub struct ADC10IFG_W<'a> {
     w: &'a mut W,
 }
@@ -80,13 +138,25 @@ impl<'a> ADC10IFG_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+            (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `ADC10IE`"]
-pub type ADC10IE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC10IE`"]
+#[doc = "Field `ADC10IE` reader - ADC10 Interrupt Enalbe"]
+pub struct ADC10IE_R(crate::FieldReader<bool, bool>);
+impl ADC10IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC10IE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC10IE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10IE` writer - ADC10 Interrupt Enalbe"]
 pub struct ADC10IE_W<'a> {
     w: &'a mut W,
 }
@@ -105,13 +175,25 @@ impl<'a> ADC10IE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+            (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `ADC10ON`"]
-pub type ADC10ON_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC10ON`"]
+#[doc = "Field `ADC10ON` reader - ADC10 On/Enable"]
+pub struct ADC10ON_R(crate::FieldReader<bool, bool>);
+impl ADC10ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC10ON_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC10ON_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10ON` writer - ADC10 On/Enable"]
 pub struct ADC10ON_W<'a> {
     w: &'a mut W,
 }
@@ -130,13 +212,25 @@ impl<'a> ADC10ON_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+            (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `REFON`"]
-pub type REFON_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REFON`"]
+#[doc = "Field `REFON` reader - ADC10 Reference on"]
+pub struct REFON_R(crate::FieldReader<bool, bool>);
+impl REFON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFON_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REFON_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFON` writer - ADC10 Reference on"]
 pub struct REFON_W<'a> {
     w: &'a mut W,
 }
@@ -155,13 +249,25 @@ impl<'a> REFON_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+            (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `REF2_5V`"]
-pub type REF2_5V_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REF2_5V`"]
+#[doc = "Field `REF2_5V` reader - ADC10 Ref 0:1.5V / 1:2.5V"]
+pub struct REF2_5V_R(crate::FieldReader<bool, bool>);
+impl REF2_5V_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REF2_5V_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REF2_5V_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REF2_5V` writer - ADC10 Ref 0:1.5V / 1:2.5V"]
 pub struct REF2_5V_W<'a> {
     w: &'a mut W,
 }
@@ -180,13 +286,25 @@ impl<'a> REF2_5V_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+            (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `MSC`"]
-pub type MSC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MSC`"]
+#[doc = "Field `MSC` reader - ADC10 Multiple SampleConversion"]
+pub struct MSC_R(crate::FieldReader<bool, bool>);
+impl MSC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MSC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MSC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MSC` writer - ADC10 Multiple SampleConversion"]
 pub struct MSC_W<'a> {
     w: &'a mut W,
 }
@@ -205,13 +323,25 @@ impl<'a> MSC_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+            (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `REFBURST`"]
-pub type REFBURST_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REFBURST`"]
+#[doc = "Field `REFBURST` reader - ADC10 Reference Burst Mode"]
+pub struct REFBURST_R(crate::FieldReader<bool, bool>);
+impl REFBURST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBURST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REFBURST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFBURST` writer - ADC10 Reference Burst Mode"]
 pub struct REFBURST_W<'a> {
     w: &'a mut W,
 }
@@ -230,13 +360,25 @@ impl<'a> REFBURST_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+            (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `REFOUT`"]
-pub type REFOUT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REFOUT`"]
+#[doc = "Field `REFOUT` reader - ADC10 Enalbe output of Ref."]
+pub struct REFOUT_R(crate::FieldReader<bool, bool>);
+impl REFOUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REFOUT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFOUT` writer - ADC10 Enalbe output of Ref."]
 pub struct REFOUT_W<'a> {
     w: &'a mut W,
 }
@@ -255,13 +397,25 @@ impl<'a> REFOUT_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+            (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `ADC10SR`"]
-pub type ADC10SR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ADC10SR`"]
+#[doc = "Field `ADC10SR` reader - ADC10 Sampling Rate 0:200ksps / 1:50ksps"]
+pub struct ADC10SR_R(crate::FieldReader<bool, bool>);
+impl ADC10SR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC10SR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC10SR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10SR` writer - ADC10 Sampling Rate 0:200ksps / 1:50ksps"]
 pub struct ADC10SR_W<'a> {
     w: &'a mut W,
 }
@@ -280,7 +434,7 @@ impl<'a> ADC10SR_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+            (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
@@ -303,9 +457,12 @@ impl From<ADC10SHT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADC10SHT`"]
-pub type ADC10SHT_R = crate::R<u8, ADC10SHT_A>;
+#[doc = "Field `ADC10SHT` reader - ADC10 Sample Hold Select Bit: 0"]
+pub struct ADC10SHT_R(crate::FieldReader<u8, ADC10SHT_A>);
 impl ADC10SHT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ADC10SHT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC10SHT_A {
@@ -320,25 +477,32 @@ impl ADC10SHT_R {
     #[doc = "Checks if the value of the field is `ADC10SHT_0`"]
     #[inline(always)]
     pub fn is_adc10sht_0(&self) -> bool {
-        *self == ADC10SHT_A::ADC10SHT_0
+        **self == ADC10SHT_A::ADC10SHT_0
     }
     #[doc = "Checks if the value of the field is `ADC10SHT_1`"]
     #[inline(always)]
     pub fn is_adc10sht_1(&self) -> bool {
-        *self == ADC10SHT_A::ADC10SHT_1
+        **self == ADC10SHT_A::ADC10SHT_1
     }
     #[doc = "Checks if the value of the field is `ADC10SHT_2`"]
     #[inline(always)]
     pub fn is_adc10sht_2(&self) -> bool {
-        *self == ADC10SHT_A::ADC10SHT_2
+        **self == ADC10SHT_A::ADC10SHT_2
     }
     #[doc = "Checks if the value of the field is `ADC10SHT_3`"]
     #[inline(always)]
     pub fn is_adc10sht_3(&self) -> bool {
-        *self == ADC10SHT_A::ADC10SHT_3
+        **self == ADC10SHT_A::ADC10SHT_3
     }
 }
-#[doc = "Write proxy for field `ADC10SHT`"]
+impl core::ops::Deref for ADC10SHT_R {
+    type Target = crate::FieldReader<u8, ADC10SHT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC10SHT` writer - ADC10 Sample Hold Select Bit: 0"]
 pub struct ADC10SHT_W<'a> {
     w: &'a mut W,
 }
@@ -346,9 +510,7 @@ impl<'a> ADC10SHT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ADC10SHT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "4 x ADC10CLKs"]
     #[inline(always)]
@@ -374,7 +536,7 @@ impl<'a> ADC10SHT_W<'a> {
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x03 << 11)) | (((value as u16) & 0x03) << 11);
+            (self.w.bits & !(0x03 << 11)) | ((value as u16 & 0x03) << 11);
         self.w
     }
 }
@@ -405,9 +567,12 @@ impl From<SREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SREF`"]
-pub type SREF_R = crate::R<u8, SREF_A>;
+#[doc = "Field `SREF` reader - ADC10 Reference Select Bit: 0"]
+pub struct SREF_R(crate::FieldReader<u8, SREF_A>);
 impl SREF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SREF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SREF_A {
@@ -426,45 +591,52 @@ impl SREF_R {
     #[doc = "Checks if the value of the field is `SREF_0`"]
     #[inline(always)]
     pub fn is_sref_0(&self) -> bool {
-        *self == SREF_A::SREF_0
+        **self == SREF_A::SREF_0
     }
     #[doc = "Checks if the value of the field is `SREF_1`"]
     #[inline(always)]
     pub fn is_sref_1(&self) -> bool {
-        *self == SREF_A::SREF_1
+        **self == SREF_A::SREF_1
     }
     #[doc = "Checks if the value of the field is `SREF_2`"]
     #[inline(always)]
     pub fn is_sref_2(&self) -> bool {
-        *self == SREF_A::SREF_2
+        **self == SREF_A::SREF_2
     }
     #[doc = "Checks if the value of the field is `SREF_3`"]
     #[inline(always)]
     pub fn is_sref_3(&self) -> bool {
-        *self == SREF_A::SREF_3
+        **self == SREF_A::SREF_3
     }
     #[doc = "Checks if the value of the field is `SREF_4`"]
     #[inline(always)]
     pub fn is_sref_4(&self) -> bool {
-        *self == SREF_A::SREF_4
+        **self == SREF_A::SREF_4
     }
     #[doc = "Checks if the value of the field is `SREF_5`"]
     #[inline(always)]
     pub fn is_sref_5(&self) -> bool {
-        *self == SREF_A::SREF_5
+        **self == SREF_A::SREF_5
     }
     #[doc = "Checks if the value of the field is `SREF_6`"]
     #[inline(always)]
     pub fn is_sref_6(&self) -> bool {
-        *self == SREF_A::SREF_6
+        **self == SREF_A::SREF_6
     }
     #[doc = "Checks if the value of the field is `SREF_7`"]
     #[inline(always)]
     pub fn is_sref_7(&self) -> bool {
-        *self == SREF_A::SREF_7
+        **self == SREF_A::SREF_7
     }
 }
-#[doc = "Write proxy for field `SREF`"]
+impl core::ops::Deref for SREF_R {
+    type Target = crate::FieldReader<u8, SREF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SREF` writer - ADC10 Reference Select Bit: 0"]
 pub struct SREF_W<'a> {
     w: &'a mut W,
 }
@@ -472,9 +644,7 @@ impl<'a> SREF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SREF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "VR+ = AVCC and VR- = AVSS"]
     #[inline(always)]
@@ -520,7 +690,7 @@ impl<'a> SREF_W<'a> {
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits =
-            (self.w.bits & !(0x07 << 13)) | (((value as u16) & 0x07) << 13);
+            (self.w.bits & !(0x07 << 13)) | ((value as u16 & 0x07) << 13);
         self.w
     }
 }
@@ -656,5 +826,30 @@ impl W {
     #[inline(always)]
     pub fn sref(&mut self) -> SREF_W {
         SREF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC10 Control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc10ctl0](index.html) module"]
+pub struct ADC10CTL0_SPEC;
+impl crate::RegisterSpec for ADC10CTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [adc10ctl0::R](R) reader structure"]
+impl crate::Readable for ADC10CTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc10ctl0::W](W) writer structure"]
+impl crate::Writable for ADC10CTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC10CTL0 to value 0"]
+impl crate::Resettable for ADC10CTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -2,8 +2,8 @@
 <device>
   <name>MSP430G2553</name>
   <size>2</size>
-  <resetValue>0</resetValue>
   <access>read-write</access>
+  <resetValue>0</resetValue>
   <peripherals>
     <peripheral>
       <name>SPECIAL_FUNCTION</name>
@@ -178,6 +178,12 @@
           <addressOffset>0</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -248,12 +254,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P3IN</name>
@@ -261,6 +261,12 @@
           <addressOffset>8</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -331,12 +337,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P3OUT</name>
@@ -344,6 +344,12 @@
           <addressOffset>9</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -414,12 +420,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P3DIR</name>
@@ -427,6 +427,12 @@
           <addressOffset>10</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -497,12 +503,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P3SEL</name>
@@ -510,6 +510,12 @@
           <addressOffset>11</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -580,12 +586,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P3SEL2</name>
@@ -593,6 +593,12 @@
           <addressOffset>51</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -663,12 +669,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
       </registers>
     </peripheral>
@@ -683,6 +683,12 @@
           <addressOffset>0</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -753,12 +759,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1OUT</name>
@@ -766,6 +766,12 @@
           <addressOffset>1</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -836,12 +842,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1DIR</name>
@@ -849,6 +849,12 @@
           <addressOffset>2</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -919,12 +925,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1IFG</name>
@@ -932,6 +932,12 @@
           <addressOffset>3</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1002,12 +1008,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1IES</name>
@@ -1015,6 +1015,12 @@
           <addressOffset>4</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1085,12 +1091,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1IE</name>
@@ -1098,6 +1098,12 @@
           <addressOffset>5</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1168,12 +1174,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1SEL</name>
@@ -1181,6 +1181,12 @@
           <addressOffset>6</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1251,12 +1257,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1REN</name>
@@ -1264,6 +1264,12 @@
           <addressOffset>7</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1334,12 +1340,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2IN</name>
@@ -1347,6 +1347,12 @@
           <addressOffset>8</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1417,12 +1423,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2OUT</name>
@@ -1430,6 +1430,12 @@
           <addressOffset>9</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1500,12 +1506,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2DIR</name>
@@ -1513,6 +1513,12 @@
           <addressOffset>10</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1583,12 +1589,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2IFG</name>
@@ -1596,6 +1596,12 @@
           <addressOffset>11</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1666,12 +1672,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2IES</name>
@@ -1679,6 +1679,12 @@
           <addressOffset>12</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1749,12 +1755,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2IE</name>
@@ -1762,6 +1762,12 @@
           <addressOffset>13</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1832,12 +1838,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2SEL</name>
@@ -1845,6 +1845,12 @@
           <addressOffset>14</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1915,12 +1921,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2REN</name>
@@ -1928,6 +1928,12 @@
           <addressOffset>15</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -1998,12 +2004,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P1SEL2</name>
@@ -2011,6 +2011,12 @@
           <addressOffset>33</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -2081,12 +2087,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>P2SEL2</name>
@@ -2094,6 +2094,12 @@
           <addressOffset>34</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>P0</name>
@@ -2164,12 +2170,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
       </registers>
     </peripheral>
@@ -2636,12 +2636,16 @@
         </register>
         <register>
           <name>ADC10AE0</name>
+          <description>ADC10 Analog Enable 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>ADC10AE0</name>
+              <description>ADC10 Analog Enable 0 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>ADC10 Analog Enable 0 register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -2650,19 +2654,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>2</addressOffset>
-          <description>ADC10 Analog Enable 0</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>ADC10DTC1</name>
+          <description>ADC10 Data Transfer Control 1</description>
+          <addressOffset>1</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>ADC10DTC1</name>
+              <description>ADC10 Data Transfer Control 1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>ADC10 Data Transfer Control 1 register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -2671,19 +2675,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>1</addressOffset>
-          <description>ADC10 Data Transfer Control 1</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>ADC10MEM</name>
+          <description>ADC10 Memory</description>
+          <addressOffset>364</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>ADC10MEM</name>
+              <description>ADC10 Memory register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
-              <description>ADC10 Memory register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -2692,19 +2696,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>364</addressOffset>
-          <description>ADC10 Memory</description>
-          <resetMask>65535</resetMask>
-          <size>16</size>
         </register>
         <register>
           <name>ADC10SA</name>
+          <description>ADC10 Data Transfer Start Address</description>
+          <addressOffset>372</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>ADC10SA</name>
+              <description>ADC10 Data Transfer Start Address register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
-              <description>ADC10 Data Transfer Start Address register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -2713,10 +2717,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>372</addressOffset>
-          <description>ADC10 Data Transfer Start Address</description>
-          <resetMask>65535</resetMask>
-          <size>16</size>
         </register>
       </registers>
     </peripheral>
@@ -2841,6 +2841,12 @@
           <addressOffset>4</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>DCOCTL</name>
@@ -2879,12 +2885,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>BCSCTL1</name>
@@ -3158,6 +3158,12 @@
           <addressOffset>2</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>CAOUT</name>
@@ -3351,12 +3357,6 @@
               </enumeratedValues>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>CAPD</name>
@@ -3364,6 +3364,12 @@
           <addressOffset>3</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>CAPD0</name>
@@ -3434,12 +3440,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
       </registers>
     </peripheral>
@@ -3496,6 +3496,12 @@
           <addressOffset>2</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>UCIREN</name>
@@ -3524,12 +3530,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>UCA0IRRCTL</name>
@@ -3537,6 +3537,12 @@
           <addressOffset>3</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>UCIRRXFE</name>
@@ -3565,12 +3571,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>UCA0CTL0</name>
@@ -3892,6 +3892,12 @@
           <addressOffset>9</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>UCBUSY</name>
@@ -3956,15 +3962,13 @@
               <bitWidth>1</bitWidth>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>UCA0RXBUF</name>
+          <description>USCI A0 Receive Buffer</description>
+          <addressOffset>10</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0RXBUF</name>
@@ -3979,13 +3983,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Receive Buffer</description>
-          <addressOffset>10</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0TXBUF</name>
+          <description>USCI A0 Transmit Buffer</description>
+          <addressOffset>11</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0TXBUF</name>
@@ -4000,13 +4004,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Transmit Buffer</description>
-          <addressOffset>11</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0BR0</name>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0BR0</name>
@@ -4021,13 +4025,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0BR1</name>
+          <description>USCI A0 Baud Rate 1 Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0BR1</name>
@@ -4042,10 +4046,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Baud Rate 1 Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -4180,6 +4180,13 @@
           </fields>
         </register>
         <register>
+          <name>UCA0MCTL</name>
+          <description>USCI A0 Modulation Control</description>
+          <addressOffset>4</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+        </register>
+        <register>
           <name>UCA0STAT</name>
           <description>USCI A0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -4218,6 +4225,10 @@
         </register>
         <register>
           <name>UCA0RXBUF</name>
+          <description>USCI A0 Receive Buffer</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0RXBUF</name>
@@ -4232,13 +4243,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Receive Buffer</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0TXBUF</name>
+          <description>USCI A0 Transmit Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0TXBUF</name>
@@ -4253,13 +4264,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Transmit Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0BR0</name>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0BR0</name>
@@ -4274,13 +4285,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCA0BR1</name>
+          <description>USCI A0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCA0BR1</name>
@@ -4295,10 +4306,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI A0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -4496,6 +4503,12 @@
           <addressOffset>5</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
+          <writeConstraint>
+            <range>
+              <minimum>0</minimum>
+              <maximum>255</maximum>
+            </range>
+          </writeConstraint>
           <fields>
             <field>
               <name>UCALIFG</name>
@@ -4554,12 +4567,6 @@
               <access>read-write</access>
             </field>
           </fields>
-          <writeConstraint>
-            <range>
-              <minimum>0</minimum>
-              <maximum>255</maximum>
-            </range>
-          </writeConstraint>
         </register>
         <register>
           <name>UCB0I2COA</name>
@@ -4612,6 +4619,10 @@
         </register>
         <register>
           <name>UCB0RXBUF</name>
+          <description>USCI B0 Receive Buffer</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0RXBUF</name>
@@ -4626,13 +4637,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Receive Buffer</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0TXBUF</name>
+          <description>USCI B0 Transmit Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0TXBUF</name>
@@ -4647,13 +4658,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Transmit Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0BR0</name>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0BR0</name>
@@ -4668,13 +4679,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0BR1</name>
+          <description>USCI B0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0BR1</name>
@@ -4689,10 +4700,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -4865,6 +4872,10 @@
         </register>
         <register>
           <name>UCB0RXBUF</name>
+          <description>USCI B0 Receive Buffer</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0RXBUF</name>
@@ -4879,13 +4890,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Receive Buffer</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0TXBUF</name>
+          <description>USCI B0 Transmit Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0TXBUF</name>
@@ -4900,13 +4911,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Transmit Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0BR0</name>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0BR0</name>
@@ -4921,13 +4932,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
         <register>
           <name>UCB0BR1</name>
+          <description>USCI B0 Baud Rate 1 Buffer</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>UCB0BR1</name>
@@ -4942,10 +4953,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>USCI B0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -4956,12 +4963,16 @@
       <registers>
         <register>
           <name>TLV_ADC10_1_LEN</name>
+          <description>TLV ADC10_1 LEN</description>
+          <addressOffset>27</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>TLV_ADC10_1_LEN</name>
+              <description>TLV ADC10_1 LEN register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>TLV ADC10_1 LEN register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -4970,19 +4981,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>27</addressOffset>
-          <description>TLV ADC10_1 LEN</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>TLV_ADC10_1_TAG</name>
+          <description>TLV ADC10_1 TAG</description>
+          <addressOffset>26</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>TLV_ADC10_1_TAG</name>
+              <description>TLV ADC10_1 TAG register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>TLV ADC10_1 TAG register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -4991,19 +5002,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>26</addressOffset>
-          <description>TLV ADC10_1 TAG</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>TLV_CHECKSUM</name>
+          <description>TLV CHECK SUM</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TLV_CHECKSUM</name>
+              <description>TLV CHECK SUM register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>16</bitWidth>
-              <description>TLV CHECK SUM register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5012,19 +5023,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>0</addressOffset>
-          <description>TLV CHECK SUM</description>
-          <resetMask>65535</resetMask>
-          <size>16</size>
         </register>
         <register>
           <name>TLV_DCO_30_LEN</name>
+          <description>TLV TAG_DCO30 LEN</description>
+          <addressOffset>55</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>TLV_DCO_30_LEN</name>
+              <description>TLV TAG_DCO30 LEN register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>TLV TAG_DCO30 LEN register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5033,19 +5044,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>55</addressOffset>
-          <description>TLV TAG_DCO30 LEN</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>TLV_DCO_30_TAG</name>
+          <description>TLV TAG_DCO30 TAG</description>
+          <addressOffset>54</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>TLV_DCO_30_TAG</name>
+              <description>TLV TAG_DCO30 TAG register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>TLV TAG_DCO30 TAG register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5054,10 +5065,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>54</addressOffset>
-          <description>TLV TAG_DCO30 TAG</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
       </registers>
     </peripheral>
@@ -5068,12 +5075,16 @@
       <registers>
         <register>
           <name>CALBC1_12MHZ</name>
+          <description>BCSCTL1 Calibration Data for 12MHz</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALBC1_12MHZ</name>
+              <description>BCSCTL1 Calibration Data for 12MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>BCSCTL1 Calibration Data for 12MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5082,19 +5093,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>3</addressOffset>
-          <description>BCSCTL1 Calibration Data for 12MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALBC1_16MHZ</name>
+          <description>BCSCTL1 Calibration Data for 16MHz</description>
+          <addressOffset>1</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALBC1_16MHZ</name>
+              <description>BCSCTL1 Calibration Data for 16MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>BCSCTL1 Calibration Data for 16MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5103,19 +5114,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>1</addressOffset>
-          <description>BCSCTL1 Calibration Data for 16MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALBC1_1MHZ</name>
+          <description>BCSCTL1 Calibration Data for 1MHz</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALBC1_1MHZ</name>
+              <description>BCSCTL1 Calibration Data for 1MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>BCSCTL1 Calibration Data for 1MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5124,19 +5135,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>7</addressOffset>
-          <description>BCSCTL1 Calibration Data for 1MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALBC1_8MHZ</name>
+          <description>BCSCTL1 Calibration Data for 8MHz</description>
+          <addressOffset>5</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALBC1_8MHZ</name>
+              <description>BCSCTL1 Calibration Data for 8MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>BCSCTL1 Calibration Data for 8MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5145,19 +5156,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>5</addressOffset>
-          <description>BCSCTL1 Calibration Data for 8MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALDCO_12MHZ</name>
+          <description>DCOCTL  Calibration Data for 12MHz</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALDCO_12MHZ</name>
+              <description>DCOCTL  Calibration Data for 12MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>DCOCTL  Calibration Data for 12MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5166,19 +5177,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>2</addressOffset>
-          <description>DCOCTL  Calibration Data for 12MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALDCO_16MHZ</name>
+          <description>DCOCTL  Calibration Data for 16MHz</description>
+          <addressOffset>0</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALDCO_16MHZ</name>
+              <description>DCOCTL  Calibration Data for 16MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>DCOCTL  Calibration Data for 16MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5187,19 +5198,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>0</addressOffset>
-          <description>DCOCTL  Calibration Data for 16MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALDCO_1MHZ</name>
+          <description>DCOCTL  Calibration Data for 1MHz</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALDCO_1MHZ</name>
+              <description>DCOCTL  Calibration Data for 1MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>DCOCTL  Calibration Data for 1MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5208,19 +5219,19 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>6</addressOffset>
-          <description>DCOCTL  Calibration Data for 1MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
         <register>
           <name>CALDCO_8MHZ</name>
+          <description>DCOCTL  Calibration Data for 8MHz</description>
+          <addressOffset>4</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
           <fields>
             <field>
               <name>CALDCO_8MHZ</name>
+              <description>DCOCTL  Calibration Data for 8MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
-              <description>DCOCTL  Calibration Data for 8MHz register</description>
               <writeConstraint>
                 <range>
                   <minimum>0</minimum>
@@ -5229,15 +5240,11 @@
               </writeConstraint>
             </field>
           </fields>
-          <addressOffset>4</addressOffset>
-          <description>DCOCTL  Calibration Data for 8MHz</description>
-          <resetMask>255</resetMask>
-          <size>8</size>
         </register>
       </registers>
     </peripheral>
-    <peripheral derivedFrom="Timer0_A3">
-      <name>Timer1_A3</name>
+    <peripheral derivedFrom="TIMER0_A3">
+      <name>TIMER1_A3</name>
       <baseAddress>286</baseAddress>
     </peripheral>
     <peripheral>
@@ -5560,7 +5567,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>Timer0_A3</name>
+      <name>TIMER0_A3</name>
       <description>Timer A3</description>
       <baseAddress>302</baseAddress>
       <registers>
@@ -6199,6 +6206,10 @@
         </register>
         <register>
           <name>TAIV</name>
+          <description>Timer A Interrupt Vector Word</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TAIV</name>
@@ -6231,13 +6242,13 @@
               </enumeratedValues>
             </field>
           </fields>
-          <description>Timer A Interrupt Vector Word</description>
-          <addressOffset>0</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
         </register>
         <register>
           <name>TAR</name>
+          <description>Timer A Counter Register</description>
+          <addressOffset>66</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TAR</name>
@@ -6252,13 +6263,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>Timer A Counter Register</description>
-          <addressOffset>66</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
         </register>
         <register>
           <name>TACCR0</name>
+          <description>Timer A Capture/Compare 0</description>
+          <addressOffset>68</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TACCR0</name>
@@ -6273,13 +6284,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>Timer A Capture/Compare 0</description>
-          <addressOffset>68</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
         </register>
         <register>
           <name>TACCR1</name>
+          <description>Timer A Capture/Compare 1</description>
+          <addressOffset>70</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TACCR1</name>
@@ -6294,13 +6305,13 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>Timer A Capture/Compare 1</description>
-          <addressOffset>70</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
         </register>
         <register>
           <name>TACCR2</name>
+          <description>Timer A Capture/Compare 2</description>
+          <addressOffset>72</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
           <fields>
             <field>
               <name>TACCR2</name>
@@ -6315,10 +6326,6 @@
               </writeConstraint>
             </field>
           </fields>
-          <description>Timer A Capture/Compare 2</description>
-          <addressOffset>72</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -6395,7 +6402,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>00c1bf9</commit_hash>
+      <commit_hash>92826fe</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

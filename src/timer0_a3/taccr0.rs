@@ -1,18 +1,52 @@
-#[doc = "Reader of register TACCR0"]
-pub type R = crate::R<u16, super::TACCR0>;
-#[doc = "Writer for register TACCR0"]
-pub type W = crate::W<u16, super::TACCR0>;
-#[doc = "Register TACCR0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::TACCR0 {
-    type Type = u16;
+#[doc = "Register `TACCR0` reader"]
+pub struct R(crate::R<TACCR0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TACCR0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TACCR0`"]
-pub type TACCR0_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `TACCR0`"]
+impl core::convert::From<crate::R<TACCR0_SPEC>> for R {
+    fn from(reader: crate::R<TACCR0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TACCR0` writer"]
+pub struct W(crate::W<TACCR0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TACCR0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<TACCR0_SPEC>> for W {
+    fn from(writer: crate::W<TACCR0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TACCR0` reader - Timer A Capture/Compare register 0"]
+pub struct TACCR0_R(crate::FieldReader<u16, u16>);
+impl TACCR0_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        TACCR0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TACCR0_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TACCR0` writer - Timer A Capture/Compare register 0"]
 pub struct TACCR0_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> TACCR0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u16) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
         self.w
     }
 }
@@ -36,5 +70,30 @@ impl W {
     #[inline(always)]
     pub fn taccr0(&mut self) -> TACCR0_W {
         TACCR0_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timer A Capture/Compare 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [taccr0](index.html) module"]
+pub struct TACCR0_SPEC;
+impl crate::RegisterSpec for TACCR0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [taccr0::R](R) reader structure"]
+impl crate::Readable for TACCR0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [taccr0::W](W) writer structure"]
+impl crate::Writable for TACCR0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TACCR0 to value 0"]
+impl crate::Resettable for TACCR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

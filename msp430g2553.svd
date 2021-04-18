@@ -4180,13 +4180,6 @@
           </fields>
         </register>
         <register>
-          <name>UCA0MCTL</name>
-          <description>USCI A0 Modulation Control</description>
-          <addressOffset>4</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-        </register>
-        <register>
           <name>UCA0STAT</name>
           <description>USCI A0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -6402,7 +6395,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>92826fe</commit_hash>
+      <commit_hash>c87849c</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

@@ -22,6 +22,14 @@ pub struct RegisterBlock {
 pub type ADC10DTC0 = crate::Reg<adc10dtc0::ADC10DTC0_SPEC>;
 #[doc = "ADC10 Data Transfer Control 0"]
 pub mod adc10dtc0;
+#[doc = "ADC10DTC1 register accessor: an alias for `Reg<ADC10DTC1_SPEC>`"]
+pub type ADC10DTC1 = crate::Reg<adc10dtc1::ADC10DTC1_SPEC>;
+#[doc = "ADC10 Data Transfer Control 1"]
+pub mod adc10dtc1;
+#[doc = "ADC10AE0 register accessor: an alias for `Reg<ADC10AE0_SPEC>`"]
+pub type ADC10AE0 = crate::Reg<adc10ae0::ADC10AE0_SPEC>;
+#[doc = "ADC10 Analog Enable 0"]
+pub mod adc10ae0;
 #[doc = "ADC10CTL0 register accessor: an alias for `Reg<ADC10CTL0_SPEC>`"]
 pub type ADC10CTL0 = crate::Reg<adc10ctl0::ADC10CTL0_SPEC>;
 #[doc = "ADC10 Control 0"]
@@ -30,14 +38,6 @@ pub mod adc10ctl0;
 pub type ADC10CTL1 = crate::Reg<adc10ctl1::ADC10CTL1_SPEC>;
 #[doc = "ADC10 Control 1"]
 pub mod adc10ctl1;
-#[doc = "ADC10AE0 register accessor: an alias for `Reg<ADC10AE0_SPEC>`"]
-pub type ADC10AE0 = crate::Reg<adc10ae0::ADC10AE0_SPEC>;
-#[doc = "ADC10 Analog Enable 0"]
-pub mod adc10ae0;
-#[doc = "ADC10DTC1 register accessor: an alias for `Reg<ADC10DTC1_SPEC>`"]
-pub type ADC10DTC1 = crate::Reg<adc10dtc1::ADC10DTC1_SPEC>;
-#[doc = "ADC10 Data Transfer Control 1"]
-pub mod adc10dtc1;
 #[doc = "ADC10MEM register accessor: an alias for `Reg<ADC10MEM_SPEC>`"]
 pub type ADC10MEM = crate::Reg<adc10mem::ADC10MEM_SPEC>;
 #[doc = "ADC10 Memory"]

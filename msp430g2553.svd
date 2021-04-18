@@ -2216,6 +2216,48 @@
           </fields>
         </register>
         <register>
+          <name>ADC10DTC1</name>
+          <description>ADC10 Data Transfer Control 1</description>
+          <addressOffset>1</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>ADC10DTC1</name>
+              <description>ADC10 Data Transfer Control 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ADC10AE0</name>
+          <description>ADC10 Analog Enable 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>ADC10AE0</name>
+              <description>ADC10 Analog Enable 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>ADC10CTL0</name>
           <description>ADC10 Control 0</description>
           <addressOffset>360</addressOffset>
@@ -2631,48 +2673,6 @@
                   <value>15</value>
                 </enumeratedValue>
               </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ADC10AE0</name>
-          <description>ADC10 Analog Enable 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>ADC10AE0</name>
-              <description>ADC10 Analog Enable 0 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ADC10DTC1</name>
-          <description>ADC10 Data Transfer Control 1</description>
-          <addressOffset>1</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>ADC10DTC1</name>
-              <description>ADC10 Data Transfer Control 1 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
             </field>
           </fields>
         </register>
@@ -3733,6 +3733,48 @@
           </fields>
         </register>
         <register>
+          <name>UCA0BR0</name>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCA0BR0</name>
+              <description>USCI A0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCA0BR1</name>
+          <description>USCI A0 Baud Rate 1</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCA0BR1</name>
+              <description>USCI A0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCA0MCTL</name>
           <description>USCI A0 Modulation Control</description>
           <addressOffset>8</addressOffset>
@@ -4005,48 +4047,6 @@
             </field>
           </fields>
         </register>
-        <register>
-          <name>UCA0BR0</name>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCA0BR0</name>
-              <description>USCI A0 Baud Rate 0 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCA0BR1</name>
-          <description>USCI A0 Baud Rate 1 Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCA0BR1</name>
-              <description>USCI A0 Baud Rate 1 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -4180,6 +4180,48 @@
           </fields>
         </register>
         <register>
+          <name>UCA0BR0</name>
+          <description>USCI A0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCA0BR0</name>
+              <description>USCI A0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCA0BR1</name>
+          <description>USCI A0 Baud Rate 1</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCA0BR1</name>
+              <description>USCI A0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCA0STAT</name>
           <description>USCI A0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -4247,48 +4289,6 @@
             <field>
               <name>UCA0TXBUF</name>
               <description>USCI A0 Transmit Buffer register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCA0BR0</name>
-          <description>USCI A0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCA0BR0</name>
-              <description>USCI A0 Baud Rate 0 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCA0BR1</name>
-          <description>USCI A0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCA0BR1</name>
-              <description>USCI A0 Baud Rate 1 register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <writeConstraint>
@@ -4454,6 +4454,48 @@
           </fields>
         </register>
         <register>
+          <name>UCB0BR0</name>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0BR0</name>
+              <description>USCI B0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCB0BR1</name>
+          <description>USCI B0 Baud Rate 1</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0BR1</name>
+              <description>USCI B0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCB0I2CIE</name>
           <description>USCI B0 I2C Interrupt Enable Register</description>
           <addressOffset>4</addressOffset>
@@ -4562,6 +4604,48 @@
           </fields>
         </register>
         <register>
+          <name>UCB0RXBUF</name>
+          <description>USCI B0 Receive Buffer</description>
+          <addressOffset>6</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0RXBUF</name>
+              <description>USCI B0 Receive Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCB0TXBUF</name>
+          <description>USCI B0 Transmit Buffer</description>
+          <addressOffset>7</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0TXBUF</name>
+              <description>USCI B0 Transmit Buffer register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCB0I2COA</name>
           <description>USCI B0 I2C Own Address</description>
           <addressOffset>176</addressOffset>
@@ -4605,90 +4689,6 @@
                 <range>
                   <minimum>0</minimum>
                   <maximum>1023</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCB0RXBUF</name>
-          <description>USCI B0 Receive Buffer</description>
-          <addressOffset>6</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0RXBUF</name>
-              <description>USCI B0 Receive Buffer register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCB0TXBUF</name>
-          <description>USCI B0 Transmit Buffer</description>
-          <addressOffset>7</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0TXBUF</name>
-              <description>USCI B0 Transmit Buffer register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCB0BR0</name>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0BR0</name>
-              <description>USCI B0 Baud Rate 0 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCB0BR1</name>
-          <description>USCI B0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0BR1</name>
-              <description>USCI B0 Baud Rate 1 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
                 </range>
               </writeConstraint>
             </field>
@@ -4827,6 +4827,48 @@
           </fields>
         </register>
         <register>
+          <name>UCB0BR0</name>
+          <description>USCI B0 Baud Rate 0</description>
+          <addressOffset>2</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0BR0</name>
+              <description>USCI B0 Baud Rate 0 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UCB0BR1</name>
+          <description>USCI B0 Baud Rate 1</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>UCB0BR1</name>
+              <description>USCI B0 Baud Rate 1 register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>UCB0STAT</name>
           <description>USCI B0 Status Register</description>
           <addressOffset>5</addressOffset>
@@ -4905,48 +4947,6 @@
             </field>
           </fields>
         </register>
-        <register>
-          <name>UCB0BR0</name>
-          <description>USCI B0 Baud Rate 0</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0BR0</name>
-              <description>USCI B0 Baud Rate 0 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>UCB0BR1</name>
-          <description>USCI B0 Baud Rate 1 Buffer</description>
-          <addressOffset>3</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>UCB0BR1</name>
-              <description>USCI B0 Baud Rate 1 register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -4954,27 +4954,6 @@
       <description>TLV Calibration Data</description>
       <baseAddress>4288</baseAddress>
       <registers>
-        <register>
-          <name>TLV_ADC10_1_LEN</name>
-          <description>TLV ADC10_1 LEN</description>
-          <addressOffset>27</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>TLV_ADC10_1_LEN</name>
-              <description>TLV ADC10_1 LEN register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
         <register>
           <name>TLV_ADC10_1_TAG</name>
           <description>TLV ADC10_1 TAG</description>
@@ -4997,36 +4976,15 @@
           </fields>
         </register>
         <register>
-          <name>TLV_CHECKSUM</name>
-          <description>TLV CHECK SUM</description>
-          <addressOffset>0</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
-          <fields>
-            <field>
-              <name>TLV_CHECKSUM</name>
-              <description>TLV CHECK SUM register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>16</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>65535</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>TLV_DCO_30_LEN</name>
-          <description>TLV TAG_DCO30 LEN</description>
-          <addressOffset>55</addressOffset>
+          <name>TLV_ADC10_1_LEN</name>
+          <description>TLV ADC10_1 LEN</description>
+          <addressOffset>27</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
           <fields>
             <field>
-              <name>TLV_DCO_30_LEN</name>
-              <description>TLV TAG_DCO30 LEN register</description>
+              <name>TLV_ADC10_1_LEN</name>
+              <description>TLV ADC10_1 LEN register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <writeConstraint>
@@ -5059,6 +5017,48 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>TLV_DCO_30_LEN</name>
+          <description>TLV TAG_DCO30 LEN</description>
+          <addressOffset>55</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>TLV_DCO_30_LEN</name>
+              <description>TLV TAG_DCO30 LEN register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TLV_CHECKSUM</name>
+          <description>TLV CHECK SUM</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>TLV_CHECKSUM</name>
+              <description>TLV CHECK SUM register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
       </registers>
     </peripheral>
     <peripheral>
@@ -5067,15 +5067,15 @@
       <baseAddress>4344</baseAddress>
       <registers>
         <register>
-          <name>CALBC1_12MHZ</name>
-          <description>BCSCTL1 Calibration Data for 12MHz</description>
-          <addressOffset>3</addressOffset>
+          <name>CALDCO_16MHZ</name>
+          <description>DCOCTL  Calibration Data for 16MHz</description>
+          <addressOffset>0</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
           <fields>
             <field>
-              <name>CALBC1_12MHZ</name>
-              <description>BCSCTL1 Calibration Data for 12MHz register</description>
+              <name>CALDCO_16MHZ</name>
+              <description>DCOCTL  Calibration Data for 16MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <writeConstraint>
@@ -5109,15 +5109,57 @@
           </fields>
         </register>
         <register>
-          <name>CALBC1_1MHZ</name>
-          <description>BCSCTL1 Calibration Data for 1MHz</description>
-          <addressOffset>7</addressOffset>
+          <name>CALDCO_12MHZ</name>
+          <description>DCOCTL  Calibration Data for 12MHz</description>
+          <addressOffset>2</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
           <fields>
             <field>
-              <name>CALBC1_1MHZ</name>
-              <description>BCSCTL1 Calibration Data for 1MHz register</description>
+              <name>CALDCO_12MHZ</name>
+              <description>DCOCTL  Calibration Data for 12MHz register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CALBC1_12MHZ</name>
+          <description>BCSCTL1 Calibration Data for 12MHz</description>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>CALBC1_12MHZ</name>
+              <description>BCSCTL1 Calibration Data for 12MHz register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CALDCO_8MHZ</name>
+          <description>DCOCTL  Calibration Data for 8MHz</description>
+          <addressOffset>4</addressOffset>
+          <size>8</size>
+          <resetMask>255</resetMask>
+          <fields>
+            <field>
+              <name>CALDCO_8MHZ</name>
+              <description>DCOCTL  Calibration Data for 8MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <writeConstraint>
@@ -5151,48 +5193,6 @@
           </fields>
         </register>
         <register>
-          <name>CALDCO_12MHZ</name>
-          <description>DCOCTL  Calibration Data for 12MHz</description>
-          <addressOffset>2</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>CALDCO_12MHZ</name>
-              <description>DCOCTL  Calibration Data for 12MHz register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>CALDCO_16MHZ</name>
-          <description>DCOCTL  Calibration Data for 16MHz</description>
-          <addressOffset>0</addressOffset>
-          <size>8</size>
-          <resetMask>255</resetMask>
-          <fields>
-            <field>
-              <name>CALDCO_16MHZ</name>
-              <description>DCOCTL  Calibration Data for 16MHz register</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>8</bitWidth>
-              <writeConstraint>
-                <range>
-                  <minimum>0</minimum>
-                  <maximum>255</maximum>
-                </range>
-              </writeConstraint>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>CALDCO_1MHZ</name>
           <description>DCOCTL  Calibration Data for 1MHz</description>
           <addressOffset>6</addressOffset>
@@ -5214,15 +5214,15 @@
           </fields>
         </register>
         <register>
-          <name>CALDCO_8MHZ</name>
-          <description>DCOCTL  Calibration Data for 8MHz</description>
-          <addressOffset>4</addressOffset>
+          <name>CALBC1_1MHZ</name>
+          <description>BCSCTL1 Calibration Data for 1MHz</description>
+          <addressOffset>7</addressOffset>
           <size>8</size>
           <resetMask>255</resetMask>
           <fields>
             <field>
-              <name>CALDCO_8MHZ</name>
-              <description>DCOCTL  Calibration Data for 8MHz register</description>
+              <name>CALBC1_1MHZ</name>
+              <description>BCSCTL1 Calibration Data for 1MHz register</description>
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <writeConstraint>
@@ -5564,6 +5564,45 @@
       <description>Timer A3</description>
       <baseAddress>302</baseAddress>
       <registers>
+        <register>
+          <name>TAIV</name>
+          <description>Timer0_A3 Interrupt Vector Word</description>
+          <addressOffset>0</addressOffset>
+          <size>16</size>
+          <resetMask>65535</resetMask>
+          <fields>
+            <field>
+              <name>TAIV</name>
+              <description>Timer A Interrupt Vector value</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <enumeratedValues>
+                <name>TAIV</name>
+                <usage>read-write</usage>
+                <enumeratedValue>
+                  <name>NONE</name>
+                  <description>No interrupt pending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TACCR1</name>
+                  <description>Capture/Compare 1</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TACCR2</name>
+                  <description>Capture/Compare 2</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TAIFG</name>
+                  <description>Timer overflow</description>
+                  <value>10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
         <register>
           <name>TACTL</name>
           <description>Timer0_A3 Control</description>
@@ -6198,47 +6237,8 @@
           </fields>
         </register>
         <register>
-          <name>TAIV</name>
-          <description>Timer A Interrupt Vector Word</description>
-          <addressOffset>0</addressOffset>
-          <size>16</size>
-          <resetMask>65535</resetMask>
-          <fields>
-            <field>
-              <name>TAIV</name>
-              <description>Timer A Interrupt Vector value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>4</bitWidth>
-              <enumeratedValues>
-                <name>TAIV</name>
-                <usage>read-write</usage>
-                <enumeratedValue>
-                  <name>NONE</name>
-                  <description>No interrupt pending</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>TACCR1</name>
-                  <description>Capture/Compare 1</description>
-                  <value>2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>TACCR2</name>
-                  <description>Capture/Compare 2</description>
-                  <value>4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>TAIFG</name>
-                  <description>Timer overflow</description>
-                  <value>10</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>TAR</name>
-          <description>Timer A Counter Register</description>
+          <description>Timer0_A3 Counter Register</description>
           <addressOffset>66</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
@@ -6259,7 +6259,7 @@
         </register>
         <register>
           <name>TACCR0</name>
-          <description>Timer A Capture/Compare 0</description>
+          <description>Timer0_A3 Capture/Compare 0</description>
           <addressOffset>68</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
@@ -6280,7 +6280,7 @@
         </register>
         <register>
           <name>TACCR1</name>
-          <description>Timer A Capture/Compare 1</description>
+          <description>Timer0_A3 Capture/Compare 1</description>
           <addressOffset>70</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
@@ -6301,7 +6301,7 @@
         </register>
         <register>
           <name>TACCR2</name>
-          <description>Timer A Capture/Compare 2</description>
+          <description>Timer0_A3 Capture/Compare 2</description>
           <addressOffset>72</addressOffset>
           <size>16</size>
           <resetMask>65535</resetMask>
@@ -6395,7 +6395,7 @@
   <vendorExtensions>
     <msp430_svd>
       <version>0.2.0</version>
-      <commit_hash>c87849c</commit_hash>
+      <commit_hash>de4ae3f</commit_hash>
     </msp430_svd>
   </vendorExtensions>
 </device>

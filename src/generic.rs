@@ -125,7 +125,7 @@ where
     ///
     /// Similar to `write`, but unused bits will contain 0.
     #[inline(always)]
-    pub fn write_with_zero<F>(&self, f: F)
+    pub unsafe fn write_with_zero<F>(&self, f: F)
     where
         F: FnOnce(&mut REG::Writer) -> &mut W<REG>,
     {

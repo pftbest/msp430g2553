@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BCSCTL2_SPEC>> for R {
+impl From<crate::R<BCSCTL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BCSCTL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BCSCTL2_SPEC>> for W {
+impl From<crate::W<BCSCTL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BCSCTL2_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<DIVS_A> for u8 {
 #[doc = "Field `DIVS` reader - SMCLK Divider 0"]
 pub struct DIVS_R(crate::FieldReader<u8, DIVS_A>);
 impl DIVS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DIVS_R(crate::FieldReader::new(bits))
     }
@@ -137,6 +140,7 @@ impl<'a> DIVS_W<'a> {
 #[doc = "Field `SELS` reader - SMCLK Source Select 0:DCOCLK / 1:XT2CLK/LFXTCLK"]
 pub struct SELS_R(crate::FieldReader<bool, bool>);
 impl SELS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SELS_R(crate::FieldReader::new(bits))
     }
@@ -193,6 +197,7 @@ impl From<DIVM_A> for u8 {
 #[doc = "Field `DIVM` reader - MCLK Divider 0"]
 pub struct DIVM_R(crate::FieldReader<u8, DIVM_A>);
 impl DIVM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DIVM_R(crate::FieldReader::new(bits))
     }
@@ -295,6 +300,7 @@ impl From<SELM_A> for u8 {
 #[doc = "Field `SELM` reader - MCLK Source Select 0"]
 pub struct SELM_R(crate::FieldReader<u8, SELM_A>);
 impl SELM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SELM_R(crate::FieldReader::new(bits))
     }
@@ -419,6 +425,7 @@ impl W {
         SELM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

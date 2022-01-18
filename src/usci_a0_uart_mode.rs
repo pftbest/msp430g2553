@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 1usize],
+    _reserved0: [u8; 0x01],
     #[doc = "0x01 - USCI A0 LIN Control"]
     pub uca0abctl: crate::Reg<uca0abctl::UCA0ABCTL_SPEC>,
     #[doc = "0x02 - USCI A0 IrDA Transmit Control"]

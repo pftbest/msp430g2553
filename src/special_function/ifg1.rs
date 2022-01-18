@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IFG1_SPEC>> for R {
+impl From<crate::R<IFG1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IFG1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IFG1_SPEC>> for W {
+impl From<crate::W<IFG1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IFG1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IFG1_SPEC>> for W {
 #[doc = "Field `WDTIFG` reader - Watchdog Interrupt Flag"]
 pub struct WDTIFG_R(crate::FieldReader<bool, bool>);
 impl WDTIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTIFG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> WDTIFG_W<'a> {
 #[doc = "Field `OFIFG` reader - Osc. Fault Interrupt Flag"]
 pub struct OFIFG_R(crate::FieldReader<bool, bool>);
 impl OFIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OFIFG_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> OFIFG_W<'a> {
 #[doc = "Field `PORIFG` reader - Power On Interrupt Flag"]
 pub struct PORIFG_R(crate::FieldReader<bool, bool>);
 impl PORIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PORIFG_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> PORIFG_W<'a> {
 #[doc = "Field `RSTIFG` reader - Reset Interrupt Flag"]
 pub struct RSTIFG_R(crate::FieldReader<bool, bool>);
 impl RSTIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSTIFG_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> RSTIFG_W<'a> {
 #[doc = "Field `NMIIFG` reader - NMI Interrupt Flag"]
 pub struct NMIIFG_R(crate::FieldReader<bool, bool>);
 impl NMIIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NMIIFG_R(crate::FieldReader::new(bits))
     }
@@ -270,6 +277,7 @@ impl W {
         NMIIFG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

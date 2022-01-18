@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TACCTL0_SPEC>> for R {
+impl From<crate::R<TACCTL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TACCTL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TACCTL0_SPEC>> for W {
+impl From<crate::W<TACCTL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TACCTL0_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<TACCTL0_SPEC>> for W {
 #[doc = "Field `CCIFG` reader - Capture/compare interrupt flag"]
 pub struct CCIFG_R(crate::FieldReader<bool, bool>);
 impl CCIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCIFG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CCIFG_W<'a> {
 #[doc = "Field `COV` reader - Capture/compare overflow flag"]
 pub struct COV_R(crate::FieldReader<bool, bool>);
 impl COV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COV_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> COV_W<'a> {
 #[doc = "Field `OUT` reader - PWM Output signal if output mode 0"]
 pub struct OUT_R(crate::FieldReader<bool, bool>);
 impl OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OUT_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> OUT_W<'a> {
 #[doc = "Field `CCI` reader - Capture input signal (read)"]
 pub struct CCI_R(crate::FieldReader<bool, bool>);
 impl CCI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCI_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> CCI_W<'a> {
 #[doc = "Field `CCIE` reader - Capture/compare interrupt enable"]
 pub struct CCIE_R(crate::FieldReader<bool, bool>);
 impl CCIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCIE_R(crate::FieldReader::new(bits))
     }
@@ -246,6 +253,7 @@ impl From<OUTMOD_A> for u8 {
 #[doc = "Field `OUTMOD` reader - Output mode 2"]
 pub struct OUTMOD_R(crate::FieldReader<u8, OUTMOD_A>);
 impl OUTMOD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OUTMOD_R(crate::FieldReader::new(bits))
     }
@@ -373,6 +381,7 @@ impl<'a> OUTMOD_W<'a> {
 #[doc = "Field `CAP` reader - Capture mode: 1 /Compare mode : 0"]
 pub struct CAP_R(crate::FieldReader<bool, bool>);
 impl CAP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAP_R(crate::FieldReader::new(bits))
     }
@@ -410,6 +419,7 @@ impl<'a> CAP_W<'a> {
 #[doc = "Field `SCCI` reader - Latched capture signal (read)"]
 pub struct SCCI_R(crate::FieldReader<bool, bool>);
 impl SCCI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SCCI_R(crate::FieldReader::new(bits))
     }
@@ -447,6 +457,7 @@ impl<'a> SCCI_W<'a> {
 #[doc = "Field `SCS` reader - Capture sychronize"]
 pub struct SCS_R(crate::FieldReader<bool, bool>);
 impl SCS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SCS_R(crate::FieldReader::new(bits))
     }
@@ -503,6 +514,7 @@ impl From<CCIS_A> for u8 {
 #[doc = "Field `CCIS` reader - Capture input select 1"]
 pub struct CCIS_R(crate::FieldReader<u8, CCIS_A>);
 impl CCIS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCIS_R(crate::FieldReader::new(bits))
     }
@@ -605,6 +617,7 @@ impl From<CM_A> for u8 {
 #[doc = "Field `CM` reader - Capture mode 1"]
 pub struct CM_R(crate::FieldReader<u8, CM_A>);
 impl CM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CM_R(crate::FieldReader::new(bits))
     }
@@ -799,6 +812,7 @@ impl W {
         CM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

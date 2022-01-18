@@ -3,7 +3,7 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Port 3 Resistor Enable"]
     pub p3ren: crate::Reg<p3ren::P3REN_SPEC>,
-    _reserved1: [u8; 7usize],
+    _reserved1: [u8; 0x07],
     #[doc = "0x08 - Port 3 Input"]
     pub p3in: crate::Reg<p3in::P3IN_SPEC>,
     #[doc = "0x09 - Port 3 Output"]
@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     pub p3dir: crate::Reg<p3dir::P3DIR_SPEC>,
     #[doc = "0x0b - Port 3 Selection"]
     pub p3sel: crate::Reg<p3sel::P3SEL_SPEC>,
-    _reserved5: [u8; 39usize],
+    _reserved5: [u8; 0x27],
     #[doc = "0x33 - Port 3 Selection 2"]
     pub p3sel2: crate::Reg<p3sel2::P3SEL2_SPEC>,
 }

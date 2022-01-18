@@ -33,7 +33,7 @@ pub struct RegisterBlock {
     pub p2sel: crate::Reg<p2sel::P2SEL_SPEC>,
     #[doc = "0x0f - Port 2 Resistor Enable"]
     pub p2ren: crate::Reg<p2ren::P2REN_SPEC>,
-    _reserved16: [u8; 17usize],
+    _reserved16: [u8; 0x11],
     #[doc = "0x21 - Port 1 Selection 2"]
     pub p1sel2: crate::Reg<p1sel2::P1SEL2_SPEC>,
     #[doc = "0x22 - Port 2 Selection 2"]

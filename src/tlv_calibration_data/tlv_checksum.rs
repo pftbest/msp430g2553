@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TLV_CHECKSUM_SPEC>> for R {
+impl From<crate::R<TLV_CHECKSUM_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TLV_CHECKSUM_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TLV_CHECKSUM_SPEC>> for W {
+impl From<crate::W<TLV_CHECKSUM_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TLV_CHECKSUM_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<TLV_CHECKSUM_SPEC>> for W {
 #[doc = "Field `TLV_CHECKSUM` reader - TLV CHECK SUM register"]
 pub struct TLV_CHECKSUM_R(crate::FieldReader<u16, u16>);
 impl TLV_CHECKSUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TLV_CHECKSUM_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> TLV_CHECKSUM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
+        self.w.bits = value as u16;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:15 - TLV CHECK SUM register"]
     #[inline(always)]
     pub fn tlv_checksum(&self) -> TLV_CHECKSUM_R {
-        TLV_CHECKSUM_R::new((self.bits & 0xffff) as u16)
+        TLV_CHECKSUM_R::new(self.bits as u16)
     }
 }
 impl W {
@@ -72,8 +75,9 @@ impl W {
         TLV_CHECKSUM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
-    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
-        self.0.bits(bits);
+    #[inline(always)]
+    pub fn bits(&mut self, bits: u16) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }

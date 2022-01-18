@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCB0CTL1_SPEC>> for R {
+impl From<crate::R<UCB0CTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCB0CTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCB0CTL1_SPEC>> for W {
+impl From<crate::W<UCB0CTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCB0CTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCB0CTL1_SPEC>> for W {
 #[doc = "Field `UCSWRST` reader - USCI Software Reset"]
 pub struct UCSWRST_R(crate::FieldReader<bool, bool>);
 impl UCSWRST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSWRST_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCSWRST_W<'a> {
 #[doc = "Field `UCTXSTT` reader - Transmit START"]
 pub struct UCTXSTT_R(crate::FieldReader<bool, bool>);
 impl UCTXSTT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCTXSTT_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCTXSTT_W<'a> {
 #[doc = "Field `UCTXSTP` reader - Transmit STOP"]
 pub struct UCTXSTP_R(crate::FieldReader<bool, bool>);
 impl UCTXSTP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCTXSTP_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> UCTXSTP_W<'a> {
 #[doc = "Field `UCTXNACK` reader - Transmit NACK"]
 pub struct UCTXNACK_R(crate::FieldReader<bool, bool>);
 impl UCTXNACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCTXNACK_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> UCTXNACK_W<'a> {
 #[doc = "Field `UCTR` reader - Transmit/Receive Select/Flag"]
 pub struct UCTR_R(crate::FieldReader<bool, bool>);
 impl UCTR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCTR_R(crate::FieldReader::new(bits))
     }
@@ -238,6 +245,7 @@ impl From<UCSSEL_A> for u8 {
 #[doc = "Field `UCSSEL` reader - USCI 1 Clock Source Select 1"]
 pub struct UCSSEL_R(crate::FieldReader<u8, UCSSEL_A>);
 impl UCSSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCSSEL_R(crate::FieldReader::new(bits))
     }
@@ -382,6 +390,7 @@ impl W {
         UCSSEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

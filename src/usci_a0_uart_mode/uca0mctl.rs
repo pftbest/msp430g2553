@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0MCTL_SPEC>> for R {
+impl From<crate::R<UCA0MCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0MCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0MCTL_SPEC>> for W {
+impl From<crate::W<UCA0MCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0MCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0MCTL_SPEC>> for W {
 #[doc = "Field `UCOS16` reader - USCI 16-times Oversampling enable"]
 pub struct UCOS16_R(crate::FieldReader<bool, bool>);
 impl UCOS16_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCOS16_R(crate::FieldReader::new(bits))
     }
@@ -98,6 +101,7 @@ impl From<UCBRS_A> for u8 {
 #[doc = "Field `UCBRS` reader - USCI Second Stage Modulation Select 2"]
 pub struct UCBRS_R(crate::FieldReader<u8, UCBRS_A>);
 impl UCBRS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCBRS_R(crate::FieldReader::new(bits))
     }
@@ -268,6 +272,7 @@ impl From<UCBRF_A> for u8 {
 #[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
 pub struct UCBRF_R(crate::FieldReader<u8, UCBRF_A>);
 impl UCBRF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCBRF_R(crate::FieldReader::new(bits))
     }
@@ -514,6 +519,7 @@ impl W {
         UCBRF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

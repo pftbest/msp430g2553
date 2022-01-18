@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC10CTL0_SPEC>> for R {
+impl From<crate::R<ADC10CTL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC10CTL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC10CTL0_SPEC>> for W {
+impl From<crate::W<ADC10CTL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC10CTL0_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ADC10CTL0_SPEC>> for W {
 #[doc = "Field `ADC10SC` reader - ADC10 Start Conversion"]
 pub struct ADC10SC_R(crate::FieldReader<bool, bool>);
 impl ADC10SC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10SC_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ADC10SC_W<'a> {
 #[doc = "Field `ENC` reader - ADC10 Enable Conversion"]
 pub struct ENC_R(crate::FieldReader<bool, bool>);
 impl ENC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENC_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> ENC_W<'a> {
 #[doc = "Field `ADC10IFG` reader - ADC10 Interrupt Flag"]
 pub struct ADC10IFG_R(crate::FieldReader<bool, bool>);
 impl ADC10IFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10IFG_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> ADC10IFG_W<'a> {
 #[doc = "Field `ADC10IE` reader - ADC10 Interrupt Enalbe"]
 pub struct ADC10IE_R(crate::FieldReader<bool, bool>);
 impl ADC10IE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10IE_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> ADC10IE_W<'a> {
 #[doc = "Field `ADC10ON` reader - ADC10 On/Enable"]
 pub struct ADC10ON_R(crate::FieldReader<bool, bool>);
 impl ADC10ON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10ON_R(crate::FieldReader::new(bits))
     }
@@ -219,6 +226,7 @@ impl<'a> ADC10ON_W<'a> {
 #[doc = "Field `REFON` reader - ADC10 Reference on"]
 pub struct REFON_R(crate::FieldReader<bool, bool>);
 impl REFON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFON_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +264,7 @@ impl<'a> REFON_W<'a> {
 #[doc = "Field `REF2_5V` reader - ADC10 Ref 0:1.5V / 1:2.5V"]
 pub struct REF2_5V_R(crate::FieldReader<bool, bool>);
 impl REF2_5V_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REF2_5V_R(crate::FieldReader::new(bits))
     }
@@ -293,6 +302,7 @@ impl<'a> REF2_5V_W<'a> {
 #[doc = "Field `MSC` reader - ADC10 Multiple SampleConversion"]
 pub struct MSC_R(crate::FieldReader<bool, bool>);
 impl MSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSC_R(crate::FieldReader::new(bits))
     }
@@ -330,6 +340,7 @@ impl<'a> MSC_W<'a> {
 #[doc = "Field `REFBURST` reader - ADC10 Reference Burst Mode"]
 pub struct REFBURST_R(crate::FieldReader<bool, bool>);
 impl REFBURST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFBURST_R(crate::FieldReader::new(bits))
     }
@@ -367,6 +378,7 @@ impl<'a> REFBURST_W<'a> {
 #[doc = "Field `REFOUT` reader - ADC10 Enalbe output of Ref."]
 pub struct REFOUT_R(crate::FieldReader<bool, bool>);
 impl REFOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFOUT_R(crate::FieldReader::new(bits))
     }
@@ -404,6 +416,7 @@ impl<'a> REFOUT_W<'a> {
 #[doc = "Field `ADC10SR` reader - ADC10 Sampling Rate 0:200ksps / 1:50ksps"]
 pub struct ADC10SR_R(crate::FieldReader<bool, bool>);
 impl ADC10SR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10SR_R(crate::FieldReader::new(bits))
     }
@@ -460,6 +473,7 @@ impl From<ADC10SHT_A> for u8 {
 #[doc = "Field `ADC10SHT` reader - ADC10 Sample Hold Select Bit: 0"]
 pub struct ADC10SHT_R(crate::FieldReader<u8, ADC10SHT_A>);
 impl ADC10SHT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADC10SHT_R(crate::FieldReader::new(bits))
     }
@@ -570,6 +584,7 @@ impl From<SREF_A> for u8 {
 #[doc = "Field `SREF` reader - ADC10 Reference Select Bit: 0"]
 pub struct SREF_R(crate::FieldReader<u8, SREF_A>);
 impl SREF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SREF_R(crate::FieldReader::new(bits))
     }
@@ -828,6 +843,7 @@ impl W {
         SREF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

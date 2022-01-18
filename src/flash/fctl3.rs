@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FCTL3_SPEC>> for R {
+impl From<crate::R<FCTL3_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FCTL3_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FCTL3_SPEC>> for W {
+impl From<crate::W<FCTL3_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FCTL3_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FCTL3_SPEC>> for W {
 #[doc = "Field `BUSY` reader - Flash busy: 1"]
 pub struct BUSY_R(crate::FieldReader<bool, bool>);
 impl BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSY_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> BUSY_W<'a> {
 #[doc = "Field `KEYV` reader - Flash Key violation flag"]
 pub struct KEYV_R(crate::FieldReader<bool, bool>);
 impl KEYV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYV_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> KEYV_W<'a> {
 #[doc = "Field `ACCVIFG` reader - Flash Access violation flag"]
 pub struct ACCVIFG_R(crate::FieldReader<bool, bool>);
 impl ACCVIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACCVIFG_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> ACCVIFG_W<'a> {
 #[doc = "Field `WAIT` reader - Wait flag for segment write"]
 pub struct WAIT_R(crate::FieldReader<bool, bool>);
 impl WAIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAIT_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> WAIT_W<'a> {
 #[doc = "Field `LOCK` reader - Lock bit: 1 - Flash is locked (read only)"]
 pub struct LOCK_R(crate::FieldReader<bool, bool>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }
@@ -219,6 +226,7 @@ impl<'a> LOCK_W<'a> {
 #[doc = "Field `EMEX` reader - Flash Emergency Exit"]
 pub struct EMEX_R(crate::FieldReader<bool, bool>);
 impl EMEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EMEX_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +264,7 @@ impl<'a> EMEX_W<'a> {
 #[doc = "Field `LOCKA` reader - Segment A Lock bit: read = 1 - Segment is locked (read only)"]
 pub struct LOCKA_R(crate::FieldReader<bool, bool>);
 impl LOCKA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCKA_R(crate::FieldReader::new(bits))
     }
@@ -293,6 +302,7 @@ impl<'a> LOCKA_W<'a> {
 #[doc = "Field `FAIL` reader - Last Program or Erase failed"]
 pub struct FAIL_R(crate::FieldReader<bool, bool>);
 impl FAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FAIL_R(crate::FieldReader::new(bits))
     }
@@ -343,6 +353,7 @@ impl From<FWKEY_A> for u8 {
 #[doc = "Field `FWKEY` reader - FCTL3 Password"]
 pub struct FWKEY_R(crate::FieldReader<u8, FWKEY_A>);
 impl FWKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FWKEY_R(crate::FieldReader::new(bits))
     }
@@ -497,6 +508,7 @@ impl W {
         FWKEY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

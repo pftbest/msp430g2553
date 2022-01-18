@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FCTL1_SPEC>> for R {
+impl From<crate::R<FCTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FCTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FCTL1_SPEC>> for W {
+impl From<crate::W<FCTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FCTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FCTL1_SPEC>> for W {
 #[doc = "Field `ERASE` reader - Enable bit for Flash segment erase"]
 pub struct ERASE_R(crate::FieldReader<bool, bool>);
 impl ERASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERASE_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl<'a> ERASE_W<'a> {
 #[doc = "Field `MERAS` reader - Enable bit for Flash mass erase"]
 pub struct MERAS_R(crate::FieldReader<bool, bool>);
 impl MERAS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MERAS_R(crate::FieldReader::new(bits))
     }
@@ -109,6 +113,7 @@ impl<'a> MERAS_W<'a> {
 #[doc = "Field `WRT` reader - Enable bit for Flash write"]
 pub struct WRT_R(crate::FieldReader<bool, bool>);
 impl WRT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WRT_R(crate::FieldReader::new(bits))
     }
@@ -146,6 +151,7 @@ impl<'a> WRT_W<'a> {
 #[doc = "Field `BLKWRT` reader - Enable bit for Flash segment write"]
 pub struct BLKWRT_R(crate::FieldReader<bool, bool>);
 impl BLKWRT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BLKWRT_R(crate::FieldReader::new(bits))
     }
@@ -196,6 +202,7 @@ impl From<FWKEY_A> for u8 {
 #[doc = "Field `FWKEY` reader - FCTL1 Password"]
 pub struct FWKEY_R(crate::FieldReader<u8, FWKEY_A>);
 impl FWKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FWKEY_R(crate::FieldReader::new(bits))
     }
@@ -310,6 +317,7 @@ impl W {
         FWKEY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

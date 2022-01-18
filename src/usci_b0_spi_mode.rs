@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     pub ucb0br0: crate::Reg<ucb0br0::UCB0BR0_SPEC>,
     #[doc = "0x03 - USCI B0 Baud Rate 1"]
     pub ucb0br1: crate::Reg<ucb0br1::UCB0BR1_SPEC>,
-    _reserved4: [u8; 1usize],
+    _reserved4: [u8; 0x01],
     #[doc = "0x05 - USCI B0 Status Register"]
     pub ucb0stat: crate::Reg<ucb0stat::UCB0STAT_SPEC>,
     #[doc = "0x06 - USCI B0 Receive Buffer"]

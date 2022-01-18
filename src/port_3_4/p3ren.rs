@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<P3REN_SPEC>> for R {
+impl From<crate::R<P3REN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<P3REN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<P3REN_SPEC>> for W {
+impl From<crate::W<P3REN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<P3REN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<P3REN_SPEC>> for W {
 #[doc = "Field `P0` reader - P0"]
 pub struct P0_R(crate::FieldReader<bool, bool>);
 impl P0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> P0_W<'a> {
 #[doc = "Field `P1` reader - P1"]
 pub struct P1_R(crate::FieldReader<bool, bool>);
 impl P1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P1_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> P1_W<'a> {
 #[doc = "Field `P2` reader - P2"]
 pub struct P2_R(crate::FieldReader<bool, bool>);
 impl P2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P2_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> P2_W<'a> {
 #[doc = "Field `P3` reader - P3"]
 pub struct P3_R(crate::FieldReader<bool, bool>);
 impl P3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P3_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> P3_W<'a> {
 #[doc = "Field `P4` reader - P4"]
 pub struct P4_R(crate::FieldReader<bool, bool>);
 impl P4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P4_R(crate::FieldReader::new(bits))
     }
@@ -219,6 +226,7 @@ impl<'a> P4_W<'a> {
 #[doc = "Field `P5` reader - P5"]
 pub struct P5_R(crate::FieldReader<bool, bool>);
 impl P5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P5_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +264,7 @@ impl<'a> P5_W<'a> {
 #[doc = "Field `P6` reader - P6"]
 pub struct P6_R(crate::FieldReader<bool, bool>);
 impl P6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P6_R(crate::FieldReader::new(bits))
     }
@@ -293,6 +302,7 @@ impl<'a> P6_W<'a> {
 #[doc = "Field `P7` reader - P7"]
 pub struct P7_R(crate::FieldReader<bool, bool>);
 impl P7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P7_R(crate::FieldReader::new(bits))
     }
@@ -330,6 +340,7 @@ impl<'a> P7_W<'a> {
 #[doc = "Field `P3REN` reader - Port 3 Resistor Enable register"]
 pub struct P3REN_R(crate::FieldReader<u8, u8>);
 impl P3REN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         P3REN_R(crate::FieldReader::new(bits))
     }
@@ -349,7 +360,7 @@ impl<'a> P3REN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u8 & 0xff);
+        self.w.bits = value as u8;
         self.w
     }
 }
@@ -397,7 +408,7 @@ impl R {
     #[doc = "Bits 0:7 - Port 3 Resistor Enable register"]
     #[inline(always)]
     pub fn p3ren(&self) -> P3REN_R {
-        P3REN_R::new((self.bits & 0xff) as u8)
+        P3REN_R::new(self.bits as u8)
     }
 }
 impl W {
@@ -447,6 +458,7 @@ impl W {
         P3REN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

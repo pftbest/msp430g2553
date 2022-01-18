@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 The crate was regenerated several times with various commits of msp430_svd
-and svdrust, up to and including svd2rust v0.18.0. Non-breaking changes
+and svdrust, up to and including svd2rust v0.20.0. Non-breaking changes
 include:
 
 - Add [commit hash information](https://github.com/rust-embedded/svd2rust/pull/439)
@@ -25,6 +25,7 @@ Breaking changes include:
 - Using patching, merge multiple individual bit fields from peripherals into
   larger single fields as appropriate, such as USCI_B0_I2C_MODE
   (see commit 92f9892).
+- Update msp430 and msp4300-rt to version 0.3.0.
 
 With the additional register fields added via patching, _it should now be
 possible to write completely safe applications using this PAC._

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCB0I2COA_SPEC>> for R {
+impl From<crate::R<UCB0I2COA_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCB0I2COA_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCB0I2COA_SPEC>> for W {
+impl From<crate::W<UCB0I2COA_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCB0I2COA_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCB0I2COA_SPEC>> for W {
 #[doc = "Field `UCGCEN` reader - I2C General Call enable"]
 pub struct UCGCEN_R(crate::FieldReader<bool, bool>);
 impl UCGCEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCGCEN_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl<'a> UCGCEN_W<'a> {
 #[doc = "Field `UCOA` reader - I2C Own Address 0"]
 pub struct UCOA_R(crate::FieldReader<u16, u16>);
 impl UCOA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         UCOA_R(crate::FieldReader::new(bits))
     }
@@ -119,6 +123,7 @@ impl W {
         UCOA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

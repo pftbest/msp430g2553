@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FCTL2_SPEC>> for R {
+impl From<crate::R<FCTL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FCTL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FCTL2_SPEC>> for W {
+impl From<crate::W<FCTL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FCTL2_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<FSSEL_A> for u8 {
 #[doc = "Field `FSSEL` reader - Flash clock select 0 */ /* to distinguish from USART SSELx"]
 pub struct FSSEL_R(crate::FieldReader<u8, FSSEL_A>);
 impl FSSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FSSEL_R(crate::FieldReader::new(bits))
     }
@@ -150,6 +153,7 @@ impl From<FWKEY_A> for u8 {
 #[doc = "Field `FWKEY` reader - FCTL2 Password"]
 pub struct FWKEY_R(crate::FieldReader<u8, FWKEY_A>);
 impl FWKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FWKEY_R(crate::FieldReader::new(bits))
     }
@@ -213,6 +217,7 @@ impl<'a> FWKEY_W<'a> {
 #[doc = "Field `FN` reader - Divide Flash clock by 1 to 64 using FN0 to FN5 according to:"]
 pub struct FN_R(crate::FieldReader<u8, u8>);
 impl FN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FN_R(crate::FieldReader::new(bits))
     }
@@ -270,6 +275,7 @@ impl W {
         FN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

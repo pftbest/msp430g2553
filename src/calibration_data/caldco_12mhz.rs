@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CALDCO_12MHZ_SPEC>> for R {
+impl From<crate::R<CALDCO_12MHZ_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CALDCO_12MHZ_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CALDCO_12MHZ_SPEC>> for W {
+impl From<crate::W<CALDCO_12MHZ_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CALDCO_12MHZ_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CALDCO_12MHZ_SPEC>> for W {
 #[doc = "Field `CALDCO_12MHZ` reader - DCOCTL Calibration Data for 12MHz register"]
 pub struct CALDCO_12MHZ_R(crate::FieldReader<u8, u8>);
 impl CALDCO_12MHZ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CALDCO_12MHZ_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> CALDCO_12MHZ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u8 & 0xff);
+        self.w.bits = value as u8;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:7 - DCOCTL Calibration Data for 12MHz register"]
     #[inline(always)]
     pub fn caldco_12mhz(&self) -> CALDCO_12MHZ_R {
-        CALDCO_12MHZ_R::new((self.bits & 0xff) as u8)
+        CALDCO_12MHZ_R::new(self.bits as u8)
     }
 }
 impl W {
@@ -72,8 +75,9 @@ impl W {
         CALDCO_12MHZ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+    #[inline(always)]
+    pub fn bits(&mut self, bits: u8) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }

@@ -17,7 +17,7 @@ pub struct RegisterBlock {
     pub ucb0rxbuf: crate::Reg<ucb0rxbuf::UCB0RXBUF_SPEC>,
     #[doc = "0x07 - USCI B0 Transmit Buffer"]
     pub ucb0txbuf: crate::Reg<ucb0txbuf::UCB0TXBUF_SPEC>,
-    _reserved8: [u8; 168usize],
+    _reserved8: [u8; 0xa8],
     #[doc = "0xb0 - USCI B0 I2C Own Address"]
     pub ucb0i2coa: crate::Reg<ucb0i2coa::UCB0I2COA_SPEC>,
     #[doc = "0xb2 - USCI B0 I2C Slave Address"]

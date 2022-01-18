@@ -3,12 +3,12 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - TLV CHECK SUM"]
     pub tlv_checksum: crate::Reg<tlv_checksum::TLV_CHECKSUM_SPEC>,
-    _reserved1: [u8; 24usize],
+    _reserved1: [u8; 0x18],
     #[doc = "0x1a - TLV ADC10_1 TAG"]
     pub tlv_adc10_1_tag: crate::Reg<tlv_adc10_1_tag::TLV_ADC10_1_TAG_SPEC>,
     #[doc = "0x1b - TLV ADC10_1 LEN"]
     pub tlv_adc10_1_len: crate::Reg<tlv_adc10_1_len::TLV_ADC10_1_LEN_SPEC>,
-    _reserved3: [u8; 26usize],
+    _reserved3: [u8; 0x1a],
     #[doc = "0x36 - TLV TAG_DCO30 TAG"]
     pub tlv_dco_30_tag: crate::Reg<tlv_dco_30_tag::TLV_DCO_30_TAG_SPEC>,
     #[doc = "0x37 - TLV TAG_DCO30 LEN"]

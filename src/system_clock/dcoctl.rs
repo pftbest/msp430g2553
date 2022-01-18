@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DCOCTL_SPEC>> for R {
+impl From<crate::R<DCOCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DCOCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DCOCTL_SPEC>> for W {
+impl From<crate::W<DCOCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DCOCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DCOCTL_SPEC>> for W {
 #[doc = "Field `DCOCTL` reader - DCO Clock Frequency Control register"]
 pub struct DCOCTL_R(crate::FieldReader<u8, u8>);
 impl DCOCTL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DCOCTL_R(crate::FieldReader::new(bits))
     }
@@ -54,13 +57,14 @@ impl<'a> DCOCTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u8 & 0xff);
+        self.w.bits = value as u8;
         self.w
     }
 }
 #[doc = "Field `DCO` reader - DCO Select Bit 0"]
 pub struct DCO_R(crate::FieldReader<u8, u8>);
 impl DCO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DCO_R(crate::FieldReader::new(bits))
     }
@@ -88,6 +92,7 @@ impl<'a> DCO_W<'a> {
 #[doc = "Field `MOD` reader - Modulation Bit 0"]
 pub struct MOD_R(crate::FieldReader<u8, u8>);
 impl MOD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MOD_R(crate::FieldReader::new(bits))
     }
@@ -115,7 +120,7 @@ impl R {
     #[doc = "Bits 0:7 - DCO Clock Frequency Control register"]
     #[inline(always)]
     pub fn dcoctl(&self) -> DCOCTL_R {
-        DCOCTL_R::new((self.bits & 0xff) as u8)
+        DCOCTL_R::new(self.bits as u8)
     }
     #[doc = "Bits 5:7 - DCO Select Bit 0"]
     #[inline(always)]
@@ -145,8 +150,9 @@ impl W {
         MOD_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
-    pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
-        self.0.bits(bits);
+    #[inline(always)]
+    pub fn bits(&mut self, bits: u8) -> &mut Self {
+        unsafe { self.0.bits(bits) };
         self
     }
 }

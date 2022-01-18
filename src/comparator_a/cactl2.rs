@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CACTL2_SPEC>> for R {
+impl From<crate::R<CACTL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CACTL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CACTL2_SPEC>> for W {
+impl From<crate::W<CACTL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CACTL2_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CACTL2_SPEC>> for W {
 #[doc = "Field `CAOUT` reader - Comp. A Output"]
 pub struct CAOUT_R(crate::FieldReader<bool, bool>);
 impl CAOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAOUT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CAOUT_W<'a> {
 #[doc = "Field `CAF` reader - Comp. A Enable Output Filter"]
 pub struct CAF_R(crate::FieldReader<bool, bool>);
 impl CAF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAF_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> CAF_W<'a> {
 #[doc = "Field `CASHORT` reader - Comp. A Short + and - Terminals"]
 pub struct CASHORT_R(crate::FieldReader<bool, bool>);
 impl CASHORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CASHORT_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +225,7 @@ impl From<P2CA_A> for u8 {
 #[doc = "Field `P2CA` reader - Comp. A +Terminal Multiplexer"]
 pub struct P2CA_R(crate::FieldReader<u8, P2CA_A>);
 impl P2CA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         P2CA_R(crate::FieldReader::new(bits))
     }
@@ -652,6 +658,7 @@ impl W {
         P2CA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

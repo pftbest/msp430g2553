@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TACTL_SPEC>> for R {
+impl From<crate::R<TACTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TACTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TACTL_SPEC>> for W {
+impl From<crate::W<TACTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TACTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<TACTL_SPEC>> for W {
 #[doc = "Field `TAIFG` reader - Timer A counter interrupt flag"]
 pub struct TAIFG_R(crate::FieldReader<bool, bool>);
 impl TAIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TAIFG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TAIFG_W<'a> {
 #[doc = "Field `TAIE` reader - Timer A counter interrupt enable"]
 pub struct TAIE_R(crate::FieldReader<bool, bool>);
 impl TAIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TAIE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> TAIE_W<'a> {
 #[doc = "Field `TACLR` reader - Timer A counter clear"]
 pub struct TACLR_R(crate::FieldReader<bool, bool>);
 impl TACLR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TACLR_R(crate::FieldReader::new(bits))
     }
@@ -164,6 +169,7 @@ impl From<MC_A> for u8 {
 #[doc = "Field `MC` reader - Timer A mode control 1"]
 pub struct MC_R(crate::FieldReader<u8, MC_A>);
 impl MC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MC_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +272,7 @@ impl From<ID_A> for u8 {
 #[doc = "Field `ID` reader - Timer A clock input divider 1"]
 pub struct ID_R(crate::FieldReader<u8, ID_A>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }
@@ -368,6 +375,7 @@ impl From<TASSEL_A> for u8 {
 #[doc = "Field `TASSEL` reader - Timer A clock source select 1"]
 pub struct TASSEL_R(crate::FieldReader<u8, TASSEL_A>);
 impl TASSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TASSEL_R(crate::FieldReader::new(bits))
     }
@@ -512,6 +520,7 @@ impl W {
         TASSEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0IRRCTL_SPEC>> for R {
+impl From<crate::R<UCA0IRRCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0IRRCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0IRRCTL_SPEC>> for W {
+impl From<crate::W<UCA0IRRCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0IRRCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0IRRCTL_SPEC>> for W {
 #[doc = "Field `UCIRRXFE` reader - IRDA Receive Filter enable"]
 pub struct UCIRRXFE_R(crate::FieldReader<bool, bool>);
 impl UCIRRXFE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCIRRXFE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCIRRXFE_W<'a> {
 #[doc = "Field `UCIRRXPL` reader - IRDA Receive Input Polarity"]
 pub struct UCIRRXPL_R(crate::FieldReader<bool, bool>);
 impl UCIRRXPL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCIRRXPL_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCIRRXPL_W<'a> {
 #[doc = "Field `UCIRRXFL` reader - IRDA Receive Filter Length 0"]
 pub struct UCIRRXFL_R(crate::FieldReader<u8, u8>);
 impl UCIRRXFL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCIRRXFL_R(crate::FieldReader::new(bits))
     }
@@ -166,6 +171,7 @@ impl W {
         UCIRRXFL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

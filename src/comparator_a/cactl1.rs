@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CACTL1_SPEC>> for R {
+impl From<crate::R<CACTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CACTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CACTL1_SPEC>> for W {
+impl From<crate::W<CACTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CACTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CACTL1_SPEC>> for W {
 #[doc = "Field `CAIFG` reader - Comp. A Interrupt Flag"]
 pub struct CAIFG_R(crate::FieldReader<bool, bool>);
 impl CAIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAIFG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CAIFG_W<'a> {
 #[doc = "Field `CAIE` reader - Comp. A Interrupt Enable"]
 pub struct CAIE_R(crate::FieldReader<bool, bool>);
 impl CAIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAIE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> CAIE_W<'a> {
 #[doc = "Field `CAIES` reader - Comp. A Int. Edge Select: 0:rising / 1:falling"]
 pub struct CAIES_R(crate::FieldReader<bool, bool>);
 impl CAIES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAIES_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> CAIES_W<'a> {
 #[doc = "Field `CAON` reader - Comp. A enable"]
 pub struct CAON_R(crate::FieldReader<bool, bool>);
 impl CAON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAON_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +207,7 @@ impl From<CAREF_A> for u8 {
 #[doc = "Field `CAREF` reader - Comp. A Internal Reference Select 0"]
 pub struct CAREF_R(crate::FieldReader<u8, CAREF_A>);
 impl CAREF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CAREF_R(crate::FieldReader::new(bits))
     }
@@ -284,6 +291,7 @@ impl<'a> CAREF_W<'a> {
 #[doc = "Field `CARSEL` reader - Comp. A Internal Reference Enable"]
 pub struct CARSEL_R(crate::FieldReader<bool, bool>);
 impl CARSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARSEL_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +329,7 @@ impl<'a> CARSEL_W<'a> {
 #[doc = "Field `CAEX` reader - Comp. A Exchange Inputs"]
 pub struct CAEX_R(crate::FieldReader<bool, bool>);
 impl CAEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAEX_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +438,7 @@ impl W {
         CAEX_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

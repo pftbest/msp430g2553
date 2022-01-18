@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0CTL1_SPEC>> for R {
+impl From<crate::R<UCA0CTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0CTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0CTL1_SPEC>> for W {
+impl From<crate::W<UCA0CTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0CTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0CTL1_SPEC>> for W {
 #[doc = "Field `UCSWRST` reader - USCI Software Reset"]
 pub struct UCSWRST_R(crate::FieldReader<bool, bool>);
 impl UCSWRST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSWRST_R(crate::FieldReader::new(bits))
     }
@@ -90,6 +93,7 @@ impl From<UCSSEL_A> for u8 {
 #[doc = "Field `UCSSEL` reader - USCI 1 Clock Source Select 1"]
 pub struct UCSSEL_R(crate::FieldReader<u8, UCSSEL_A>);
 impl UCSSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCSSEL_R(crate::FieldReader::new(bits))
     }
@@ -194,6 +198,7 @@ impl W {
         UCSSEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

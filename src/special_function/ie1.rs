@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IE1_SPEC>> for R {
+impl From<crate::R<IE1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IE1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IE1_SPEC>> for W {
+impl From<crate::W<IE1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IE1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IE1_SPEC>> for W {
 #[doc = "Field `WDTIE` reader - Watchdog Interrupt Enable"]
 pub struct WDTIE_R(crate::FieldReader<bool, bool>);
 impl WDTIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTIE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> WDTIE_W<'a> {
 #[doc = "Field `OFIE` reader - Osc. Fault Interrupt Enable"]
 pub struct OFIE_R(crate::FieldReader<bool, bool>);
 impl OFIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OFIE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> OFIE_W<'a> {
 #[doc = "Field `NMIIE` reader - NMI Interrupt Enable"]
 pub struct NMIIE_R(crate::FieldReader<bool, bool>);
 impl NMIIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NMIIE_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> NMIIE_W<'a> {
 #[doc = "Field `ACCVIE` reader - Flash Access Violation Interrupt Enable"]
 pub struct ACCVIE_R(crate::FieldReader<bool, bool>);
 impl ACCVIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACCVIE_R(crate::FieldReader::new(bits))
     }
@@ -223,6 +229,7 @@ impl W {
         ACCVIE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

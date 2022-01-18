@@ -3,7 +3,7 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Timer0_A3 Interrupt Vector Word"]
     pub taiv: crate::Reg<taiv::TAIV_SPEC>,
-    _reserved1: [u8; 48usize],
+    _reserved1: [u8; 0x30],
     #[doc = "0x32 - Timer0_A3 Control"]
     pub tactl: crate::Reg<tactl::TACTL_SPEC>,
     #[doc = "0x34 - Timer0_A3 Capture/Compare Control 0"]
@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     pub tacctl1: crate::Reg<tacctl1::TACCTL1_SPEC>,
     #[doc = "0x38 - Timer0_A3 Capture/Compare Control 2"]
     pub tacctl2: crate::Reg<tacctl2::TACCTL2_SPEC>,
-    _reserved5: [u8; 8usize],
+    _reserved5: [u8; 0x08],
     #[doc = "0x42 - Timer0_A3 Counter Register"]
     pub tar: crate::Reg<tar::TAR_SPEC>,
     #[doc = "0x44 - Timer0_A3 Capture/Compare 0"]

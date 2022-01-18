@@ -7,14 +7,14 @@ pub struct RegisterBlock {
     pub adc10dtc1: crate::Reg<adc10dtc1::ADC10DTC1_SPEC>,
     #[doc = "0x02 - ADC10 Analog Enable 0"]
     pub adc10ae0: crate::Reg<adc10ae0::ADC10AE0_SPEC>,
-    _reserved3: [u8; 357usize],
+    _reserved3: [u8; 0x0165],
     #[doc = "0x168 - ADC10 Control 0"]
     pub adc10ctl0: crate::Reg<adc10ctl0::ADC10CTL0_SPEC>,
     #[doc = "0x16a - ADC10 Control 1"]
     pub adc10ctl1: crate::Reg<adc10ctl1::ADC10CTL1_SPEC>,
     #[doc = "0x16c - ADC10 Memory"]
     pub adc10mem: crate::Reg<adc10mem::ADC10MEM_SPEC>,
-    _reserved6: [u8; 6usize],
+    _reserved6: [u8; 0x06],
     #[doc = "0x174 - ADC10 Data Transfer Start Address"]
     pub adc10sa: crate::Reg<adc10sa::ADC10SA_SPEC>,
 }

@@ -1,10 +1,10 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 1usize],
+    _reserved0: [u8; 0x01],
     #[doc = "0x01 - Basic Clock System Control 3"]
     pub bcsctl3: crate::Reg<bcsctl3::BCSCTL3_SPEC>,
-    _reserved1: [u8; 2usize],
+    _reserved1: [u8; 0x02],
     #[doc = "0x04 - DCO Clock Frequency Control"]
     pub dcoctl: crate::Reg<dcoctl::DCOCTL_SPEC>,
     #[doc = "0x05 - Basic Clock System Control 1"]

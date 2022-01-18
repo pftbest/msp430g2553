@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BCSCTL1_SPEC>> for R {
+impl From<crate::R<BCSCTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BCSCTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BCSCTL1_SPEC>> for W {
+impl From<crate::W<BCSCTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BCSCTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<DIVA_A> for u8 {
 #[doc = "Field `DIVA` reader - ACLK Divider 0"]
 pub struct DIVA_R(crate::FieldReader<u8, DIVA_A>);
 impl DIVA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DIVA_R(crate::FieldReader::new(bits))
     }
@@ -137,6 +140,7 @@ impl<'a> DIVA_W<'a> {
 #[doc = "Field `XTS` reader - LFXTCLK 0:Low Freq. / 1: High Freq."]
 pub struct XTS_R(crate::FieldReader<bool, bool>);
 impl XTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XTS_R(crate::FieldReader::new(bits))
     }
@@ -174,6 +178,7 @@ impl<'a> XTS_W<'a> {
 #[doc = "Field `XT2OFF` reader - Enable XT2CLK"]
 pub struct XT2OFF_R(crate::FieldReader<bool, bool>);
 impl XT2OFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XT2OFF_R(crate::FieldReader::new(bits))
     }
@@ -211,6 +216,7 @@ impl<'a> XT2OFF_W<'a> {
 #[doc = "Field `BCSCTL1` reader - Basic Clock System Control 1 register"]
 pub struct BCSCTL1_R(crate::FieldReader<u8, u8>);
 impl BCSCTL1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BCSCTL1_R(crate::FieldReader::new(bits))
     }
@@ -230,13 +236,14 @@ impl<'a> BCSCTL1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u8 & 0xff);
+        self.w.bits = value as u8;
         self.w
     }
 }
 #[doc = "Field `RSEL` reader - Range Select Bit 0"]
 pub struct RSEL_R(crate::FieldReader<u8, u8>);
 impl RSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RSEL_R(crate::FieldReader::new(bits))
     }
@@ -279,7 +286,7 @@ impl R {
     #[doc = "Bits 0:7 - Basic Clock System Control 1 register"]
     #[inline(always)]
     pub fn bcsctl1(&self) -> BCSCTL1_R {
-        BCSCTL1_R::new((self.bits & 0xff) as u8)
+        BCSCTL1_R::new(self.bits as u8)
     }
     #[doc = "Bits 0:3 - Range Select Bit 0"]
     #[inline(always)]
@@ -314,6 +321,7 @@ impl W {
         RSEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

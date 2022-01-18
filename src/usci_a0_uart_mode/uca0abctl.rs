@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0ABCTL_SPEC>> for R {
+impl From<crate::R<UCA0ABCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0ABCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0ABCTL_SPEC>> for W {
+impl From<crate::W<UCA0ABCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0ABCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0ABCTL_SPEC>> for W {
 #[doc = "Field `UCABDEN` reader - Auto Baud Rate detect enable"]
 pub struct UCABDEN_R(crate::FieldReader<bool, bool>);
 impl UCABDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCABDEN_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCABDEN_W<'a> {
 #[doc = "Field `UCBTOE` reader - Break Timeout error"]
 pub struct UCBTOE_R(crate::FieldReader<bool, bool>);
 impl UCBTOE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCBTOE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCBTOE_W<'a> {
 #[doc = "Field `UCSTOE` reader - Sync-Field Timeout error"]
 pub struct UCSTOE_R(crate::FieldReader<bool, bool>);
 impl UCSTOE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSTOE_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> UCSTOE_W<'a> {
 #[doc = "Field `UCDELIM` reader - Break Sync Delimiter 0"]
 pub struct UCDELIM_R(crate::FieldReader<u8, u8>);
 impl UCDELIM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCDELIM_R(crate::FieldReader::new(bits))
     }
@@ -213,6 +219,7 @@ impl W {
         UCDELIM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

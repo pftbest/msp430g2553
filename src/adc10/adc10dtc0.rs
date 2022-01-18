@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC10DTC0_SPEC>> for R {
+impl From<crate::R<ADC10DTC0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC10DTC0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC10DTC0_SPEC>> for W {
+impl From<crate::W<ADC10DTC0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC10DTC0_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ADC10DTC0_SPEC>> for W {
 #[doc = "Field `ADC10FETCH` reader - This bit should normally be reset"]
 pub struct ADC10FETCH_R(crate::FieldReader<bool, bool>);
 impl ADC10FETCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10FETCH_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ADC10FETCH_W<'a> {
 #[doc = "Field `ADC10B1` reader - ADC10 block one"]
 pub struct ADC10B1_R(crate::FieldReader<bool, bool>);
 impl ADC10B1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10B1_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> ADC10B1_W<'a> {
 #[doc = "Field `ADC10CT` reader - ADC10 continuous transfer"]
 pub struct ADC10CT_R(crate::FieldReader<bool, bool>);
 impl ADC10CT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10CT_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> ADC10CT_W<'a> {
 #[doc = "Field `ADC10TB` reader - ADC10 two-block mode"]
 pub struct ADC10TB_R(crate::FieldReader<bool, bool>);
 impl ADC10TB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10TB_R(crate::FieldReader::new(bits))
     }
@@ -223,6 +229,7 @@ impl W {
         ADC10TB_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<WDTCTL_SPEC>> for R {
+impl From<crate::R<WDTCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<WDTCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<WDTCTL_SPEC>> for W {
+impl From<crate::W<WDTCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<WDTCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<WDTCTL_SPEC>> for W {
 #[doc = "Field `WDTSSEL` reader - WDTSSEL"]
 pub struct WDTSSEL_R(crate::FieldReader<bool, bool>);
 impl WDTSSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTSSEL_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl<'a> WDTSSEL_W<'a> {
 #[doc = "Field `WDTCNTCL` reader - WDTCNTCL"]
 pub struct WDTCNTCL_R(crate::FieldReader<bool, bool>);
 impl WDTCNTCL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTCNTCL_R(crate::FieldReader::new(bits))
     }
@@ -109,6 +113,7 @@ impl<'a> WDTCNTCL_W<'a> {
 #[doc = "Field `WDTTMSEL` reader - WDTTMSEL"]
 pub struct WDTTMSEL_R(crate::FieldReader<bool, bool>);
 impl WDTTMSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTTMSEL_R(crate::FieldReader::new(bits))
     }
@@ -146,6 +151,7 @@ impl<'a> WDTTMSEL_W<'a> {
 #[doc = "Field `WDTNMI` reader - WDTNMI"]
 pub struct WDTNMI_R(crate::FieldReader<bool, bool>);
 impl WDTNMI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTNMI_R(crate::FieldReader::new(bits))
     }
@@ -183,6 +189,7 @@ impl<'a> WDTNMI_W<'a> {
 #[doc = "Field `WDTNMIES` reader - WDTNMIES"]
 pub struct WDTNMIES_R(crate::FieldReader<bool, bool>);
 impl WDTNMIES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTNMIES_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +227,7 @@ impl<'a> WDTNMIES_W<'a> {
 #[doc = "Field `WDTHOLD` reader - WDTHOLD"]
 pub struct WDTHOLD_R(crate::FieldReader<bool, bool>);
 impl WDTHOLD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTHOLD_R(crate::FieldReader::new(bits))
     }
@@ -270,6 +278,7 @@ impl From<WDTPW_A> for u8 {
 #[doc = "Field `WDTPW` reader - Watchdog Timer Password"]
 pub struct WDTPW_R(crate::FieldReader<u8, WDTPW_A>);
 impl WDTPW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WDTPW_R(crate::FieldReader::new(bits))
     }
@@ -333,6 +342,7 @@ impl<'a> WDTPW_W<'a> {
 #[doc = "Field `WDTIS` reader - WDTIS0"]
 pub struct WDTIS_R(crate::FieldReader<u8, u8>);
 impl WDTIS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WDTIS_R(crate::FieldReader::new(bits))
     }
@@ -440,6 +450,7 @@ impl W {
         WDTIS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 1usize],
+    _reserved0: [u8; 0x01],
     #[doc = "0x01 - Comparator A Control 1"]
     pub cactl1: crate::Reg<cactl1::CACTL1_SPEC>,
     #[doc = "0x02 - Comparator A Control 2"]

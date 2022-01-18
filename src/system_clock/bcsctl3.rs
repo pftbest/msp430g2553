@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BCSCTL3_SPEC>> for R {
+impl From<crate::R<BCSCTL3_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BCSCTL3_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BCSCTL3_SPEC>> for W {
+impl From<crate::W<BCSCTL3_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BCSCTL3_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<BCSCTL3_SPEC>> for W {
 #[doc = "Field `LFXT1OF` reader - Low/high Frequency Oscillator Fault Flag"]
 pub struct LFXT1OF_R(crate::FieldReader<bool, bool>);
 impl LFXT1OF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LFXT1OF_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> LFXT1OF_W<'a> {
 #[doc = "Field `XT2OF` reader - High frequency oscillator 2 fault flag"]
 pub struct XT2OF_R(crate::FieldReader<bool, bool>);
 impl XT2OF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XT2OF_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +131,7 @@ impl From<XCAP_A> for u8 {
 #[doc = "Field `XCAP` reader - XIN/XOUT Cap 0"]
 pub struct XCAP_R(crate::FieldReader<u8, XCAP_A>);
 impl XCAP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         XCAP_R(crate::FieldReader::new(bits))
     }
@@ -229,6 +234,7 @@ impl From<LFXT1S_A> for u8 {
 #[doc = "Field `LFXT1S` reader - Mode 0 for LFXT1 (XTS = 0)"]
 pub struct LFXT1S_R(crate::FieldReader<u8, LFXT1S_A>);
 impl LFXT1S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LFXT1S_R(crate::FieldReader::new(bits))
     }
@@ -331,6 +337,7 @@ impl From<XT2S_A> for u8 {
 #[doc = "Field `XT2S` reader - Mode 0 for XT2"]
 pub struct XT2S_R(crate::FieldReader<u8, XT2S_A>);
 impl XT2S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         XT2S_R(crate::FieldReader::new(bits))
     }
@@ -465,6 +472,7 @@ impl W {
         XT2S_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

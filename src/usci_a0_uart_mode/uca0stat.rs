@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0STAT_SPEC>> for R {
+impl From<crate::R<UCA0STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0STAT_SPEC>> for W {
+impl From<crate::W<UCA0STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0STAT_SPEC>> for W {
 #[doc = "Field `UCBUSY` reader - USCI Busy Flag"]
 pub struct UCBUSY_R(crate::FieldReader<bool, bool>);
 impl UCBUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCBUSY_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCBUSY_W<'a> {
 #[doc = "Field `UCADDR` reader - USCI Address received Flag"]
 pub struct UCADDR_R(crate::FieldReader<bool, bool>);
 impl UCADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCADDR_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCADDR_W<'a> {
 #[doc = "Field `UCRXERR` reader - USCI RX Error Flag"]
 pub struct UCRXERR_R(crate::FieldReader<bool, bool>);
 impl UCRXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCRXERR_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> UCRXERR_W<'a> {
 #[doc = "Field `UCBRK` reader - USCI Break received"]
 pub struct UCBRK_R(crate::FieldReader<bool, bool>);
 impl UCBRK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCBRK_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +188,7 @@ impl<'a> UCBRK_W<'a> {
 #[doc = "Field `UCPE` reader - USCI Parity Error Flag"]
 pub struct UCPE_R(crate::FieldReader<bool, bool>);
 impl UCPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCPE_R(crate::FieldReader::new(bits))
     }
@@ -219,6 +226,7 @@ impl<'a> UCPE_W<'a> {
 #[doc = "Field `UCOE` reader - USCI Overrun Error Flag"]
 pub struct UCOE_R(crate::FieldReader<bool, bool>);
 impl UCOE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCOE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +264,7 @@ impl<'a> UCOE_W<'a> {
 #[doc = "Field `UCFE` reader - USCI Frame Error Flag"]
 pub struct UCFE_R(crate::FieldReader<bool, bool>);
 impl UCFE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCFE_R(crate::FieldReader::new(bits))
     }
@@ -293,6 +302,7 @@ impl<'a> UCFE_W<'a> {
 #[doc = "Field `UCLISTEN` reader - USCI Listen mode"]
 pub struct UCLISTEN_R(crate::FieldReader<bool, bool>);
 impl UCLISTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCLISTEN_R(crate::FieldReader::new(bits))
     }
@@ -330,6 +340,7 @@ impl<'a> UCLISTEN_W<'a> {
 #[doc = "Field `UCIDLE` reader - Idle line detected"]
 pub struct UCIDLE_R(crate::FieldReader<bool, bool>);
 impl UCIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCIDLE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +469,7 @@ impl W {
         UCIDLE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

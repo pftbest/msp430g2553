@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IFG2_SPEC>> for R {
+impl From<crate::R<IFG2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IFG2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IFG2_SPEC>> for W {
+impl From<crate::W<IFG2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IFG2_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IFG2_SPEC>> for W {
 #[doc = "Field `UCA0RXIFG` reader - UCA0RXIFG"]
 pub struct UCA0RXIFG_R(crate::FieldReader<bool, bool>);
 impl UCA0RXIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCA0RXIFG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCA0RXIFG_W<'a> {
 #[doc = "Field `UCA0TXIFG` reader - UCA0TXIFG"]
 pub struct UCA0TXIFG_R(crate::FieldReader<bool, bool>);
 impl UCA0TXIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCA0TXIFG_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCA0TXIFG_W<'a> {
 #[doc = "Field `UCB0RXIFG` reader - UCB0RXIFG"]
 pub struct UCB0RXIFG_R(crate::FieldReader<bool, bool>);
 impl UCB0RXIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCB0RXIFG_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> UCB0RXIFG_W<'a> {
 #[doc = "Field `UCB0TXIFG` reader - UCB0TXIFG"]
 pub struct UCB0TXIFG_R(crate::FieldReader<bool, bool>);
 impl UCB0TXIFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCB0TXIFG_R(crate::FieldReader::new(bits))
     }
@@ -223,6 +229,7 @@ impl W {
         UCB0TXIFG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

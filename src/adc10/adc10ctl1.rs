@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC10CTL1_SPEC>> for R {
+impl From<crate::R<ADC10CTL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC10CTL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC10CTL1_SPEC>> for W {
+impl From<crate::W<ADC10CTL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC10CTL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ADC10CTL1_SPEC>> for W {
 #[doc = "Field `ADC10BUSY` reader - ADC10 BUSY"]
 pub struct ADC10BUSY_R(crate::FieldReader<bool, bool>);
 impl ADC10BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10BUSY_R(crate::FieldReader::new(bits))
     }
@@ -90,6 +93,7 @@ impl From<CONSEQ_A> for u8 {
 #[doc = "Field `CONSEQ` reader - ADC10 Conversion Sequence Select 0"]
 pub struct CONSEQ_R(crate::FieldReader<u8, CONSEQ_A>);
 impl CONSEQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CONSEQ_R(crate::FieldReader::new(bits))
     }
@@ -192,6 +196,7 @@ impl From<ADC10SSEL_A> for u8 {
 #[doc = "Field `ADC10SSEL` reader - ADC10 Clock Source Select Bit: 0"]
 pub struct ADC10SSEL_R(crate::FieldReader<u8, ADC10SSEL_A>);
 impl ADC10SSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADC10SSEL_R(crate::FieldReader::new(bits))
     }
@@ -302,6 +307,7 @@ impl From<ADC10DIV_A> for u8 {
 #[doc = "Field `ADC10DIV` reader - ADC10 Clock Divider Select Bit: 0"]
 pub struct ADC10DIV_R(crate::FieldReader<u8, ADC10DIV_A>);
 impl ADC10DIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADC10DIV_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +435,7 @@ impl<'a> ADC10DIV_W<'a> {
 #[doc = "Field `ISSH` reader - ADC10 Invert Sample Hold Signal"]
 pub struct ISSH_R(crate::FieldReader<bool, bool>);
 impl ISSH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISSH_R(crate::FieldReader::new(bits))
     }
@@ -466,6 +473,7 @@ impl<'a> ISSH_W<'a> {
 #[doc = "Field `ADC10DF` reader - ADC10 Data Format 0:binary 1:2's complement"]
 pub struct ADC10DF_R(crate::FieldReader<bool, bool>);
 impl ADC10DF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC10DF_R(crate::FieldReader::new(bits))
     }
@@ -522,6 +530,7 @@ impl From<SHS_A> for u8 {
 #[doc = "Field `SHS` reader - ADC10 Sample/Hold Source Bit: 0"]
 pub struct SHS_R(crate::FieldReader<u8, SHS_A>);
 impl SHS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SHS_R(crate::FieldReader::new(bits))
     }
@@ -648,6 +657,7 @@ impl From<INCH_A> for u8 {
 #[doc = "Field `INCH` reader - ADC10 Input Channel Select Bit: 0"]
 pub struct INCH_R(crate::FieldReader<u8, INCH_A>);
 impl INCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INCH_R(crate::FieldReader::new(bits))
     }
@@ -944,6 +954,7 @@ impl W {
         INCH_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

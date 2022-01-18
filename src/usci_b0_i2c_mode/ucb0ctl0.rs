@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCB0CTL0_SPEC>> for R {
+impl From<crate::R<UCB0CTL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCB0CTL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCB0CTL0_SPEC>> for W {
+impl From<crate::W<UCB0CTL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCB0CTL0_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCB0CTL0_SPEC>> for W {
 #[doc = "Field `UCSYNC` reader - Sync-Mode 0:UART-Mode / 1:SPI-Mode"]
 pub struct UCSYNC_R(crate::FieldReader<bool, bool>);
 impl UCSYNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSYNC_R(crate::FieldReader::new(bits))
     }
@@ -90,6 +93,7 @@ impl From<UCMODE_A> for u8 {
 #[doc = "Field `UCMODE` reader - Sync. Mode: USCI Mode 1"]
 pub struct UCMODE_R(crate::FieldReader<u8, UCMODE_A>);
 impl UCMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCMODE_R(crate::FieldReader::new(bits))
     }
@@ -173,6 +177,7 @@ impl<'a> UCMODE_W<'a> {
 #[doc = "Field `UCMST` reader - Sync. Mode: Master Select"]
 pub struct UCMST_R(crate::FieldReader<bool, bool>);
 impl UCMST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCMST_R(crate::FieldReader::new(bits))
     }
@@ -210,6 +215,7 @@ impl<'a> UCMST_W<'a> {
 #[doc = "Field `UCMM` reader - Multi-Master Environment"]
 pub struct UCMM_R(crate::FieldReader<bool, bool>);
 impl UCMM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCMM_R(crate::FieldReader::new(bits))
     }
@@ -247,6 +253,7 @@ impl<'a> UCMM_W<'a> {
 #[doc = "Field `UCSLA10` reader - 10-bit Slave Address Mode"]
 pub struct UCSLA10_R(crate::FieldReader<bool, bool>);
 impl UCSLA10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSLA10_R(crate::FieldReader::new(bits))
     }
@@ -284,6 +291,7 @@ impl<'a> UCSLA10_W<'a> {
 #[doc = "Field `UCA10` reader - 10-bit Address Mode"]
 pub struct UCA10_R(crate::FieldReader<bool, bool>);
 impl UCA10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCA10_R(crate::FieldReader::new(bits))
     }
@@ -382,6 +390,7 @@ impl W {
         UCA10_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

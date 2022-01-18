@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCB0I2CIE_SPEC>> for R {
+impl From<crate::R<UCB0I2CIE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCB0I2CIE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCB0I2CIE_SPEC>> for W {
+impl From<crate::W<UCB0I2CIE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCB0I2CIE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCB0I2CIE_SPEC>> for W {
 #[doc = "Field `UCALIE` reader - Arbitration Lost interrupt enable"]
 pub struct UCALIE_R(crate::FieldReader<bool, bool>);
 impl UCALIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCALIE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> UCALIE_W<'a> {
 #[doc = "Field `UCSTTIE` reader - START Condition interrupt enable"]
 pub struct UCSTTIE_R(crate::FieldReader<bool, bool>);
 impl UCSTTIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSTTIE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> UCSTTIE_W<'a> {
 #[doc = "Field `UCSTPIE` reader - STOP Condition interrupt enable"]
 pub struct UCSTPIE_R(crate::FieldReader<bool, bool>);
 impl UCSTPIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSTPIE_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> UCSTPIE_W<'a> {
 #[doc = "Field `UCNACKIE` reader - NACK Condition interrupt enable"]
 pub struct UCNACKIE_R(crate::FieldReader<bool, bool>);
 impl UCNACKIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCNACKIE_R(crate::FieldReader::new(bits))
     }
@@ -223,6 +229,7 @@ impl W {
         UCNACKIE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

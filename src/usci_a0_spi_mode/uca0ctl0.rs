@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCA0CTL0_SPEC>> for R {
+impl From<crate::R<UCA0CTL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCA0CTL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCA0CTL0_SPEC>> for W {
+impl From<crate::W<UCA0CTL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCA0CTL0_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<UCA0CTL0_SPEC>> for W {
 #[doc = "Field `UCSYNC` reader - Sync-Mode 0:UART-Mode / 1:SPI-Mode"]
 pub struct UCSYNC_R(crate::FieldReader<bool, bool>);
 impl UCSYNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCSYNC_R(crate::FieldReader::new(bits))
     }
@@ -90,6 +93,7 @@ impl From<UCMODE_A> for u8 {
 #[doc = "Field `UCMODE` reader - Sync. Mode: USCI Mode 1"]
 pub struct UCMODE_R(crate::FieldReader<u8, UCMODE_A>);
 impl UCMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UCMODE_R(crate::FieldReader::new(bits))
     }
@@ -173,6 +177,7 @@ impl<'a> UCMODE_W<'a> {
 #[doc = "Field `UCMST` reader - Sync. Mode: Master Select"]
 pub struct UCMST_R(crate::FieldReader<bool, bool>);
 impl UCMST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCMST_R(crate::FieldReader::new(bits))
     }
@@ -210,6 +215,7 @@ impl<'a> UCMST_W<'a> {
 #[doc = "Field `UC7BIT` reader - Sync. Mode: Data Bits 0:8-bits / 1:7-bits"]
 pub struct UC7BIT_R(crate::FieldReader<bool, bool>);
 impl UC7BIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UC7BIT_R(crate::FieldReader::new(bits))
     }
@@ -247,6 +253,7 @@ impl<'a> UC7BIT_W<'a> {
 #[doc = "Field `UCMSB` reader - Sync. Mode: MSB first 0:LSB / 1:MSB"]
 pub struct UCMSB_R(crate::FieldReader<bool, bool>);
 impl UCMSB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCMSB_R(crate::FieldReader::new(bits))
     }
@@ -284,6 +291,7 @@ impl<'a> UCMSB_W<'a> {
 #[doc = "Field `UCCKPL` reader - Sync. Mode: Clock Polarity"]
 pub struct UCCKPL_R(crate::FieldReader<bool, bool>);
 impl UCCKPL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCCKPL_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +329,7 @@ impl<'a> UCCKPL_W<'a> {
 #[doc = "Field `UCCKPH` reader - Sync. Mode: Clock Phase"]
 pub struct UCCKPH_R(crate::FieldReader<bool, bool>);
 impl UCCKPH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UCCKPH_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +438,7 @@ impl W {
         UCCKPH_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

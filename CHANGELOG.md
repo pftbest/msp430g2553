@@ -21,11 +21,14 @@ Breaking changes include:
 
 - Many breaking changes to svd2rust API between svd2rust v0.17.0 plus msp-fix
   branch changes and v0.18.0 (see commits f635f19 and 272a6d2).
+  - Changes from regeneration with v0.20.0 were less breaking (see commit
+    f3e0e99); some generated `bits()` functions became safe after svd2rust
+    improvements.
 - Reorganize timer peripheral register names (see commit 358c0d9).
 - Using patching, merge multiple individual bit fields from peripherals into
   larger single fields as appropriate, such as USCI_B0_I2C_MODE
   (see commit 92f9892).
-- Update msp430 and msp4300-rt to version 0.3.0.
+- Update msp430 and msp430-rt to version 0.3.0.
 
 With the additional register fields added via patching, _it should now be
 possible to write completely safe applications using this PAC._

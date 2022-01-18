@@ -10,15 +10,16 @@ license = "MIT OR Apache-2.0"
 name = "msp430g2553"
 repository = "https://github.com/pftbest/msp430g2553"
 version = "0.3.0"
+edition = "2021"
 
 [dependencies]
-bare-metal = "0.2.0"
-msp430 = "0.2.0"
+bare-metal = "1.0.0"
+msp430 = "0.3.0"
 vcell = "0.1.0"
 
 [dependencies.msp430-rt]
 optional = true
-version = "0.2.0"
+version = "0.3.0"
 
 [features]
 rt = ["msp430-rt/device"]

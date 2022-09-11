@@ -35,44 +35,22 @@ impl From<crate::W<ADC10AE0_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC10AE0` reader - ADC10 Analog Enable 0 register"]
-pub struct ADC10AE0_R(crate::FieldReader<u8, u8>);
-impl ADC10AE0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC10AE0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10AE0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10AE0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADC10AE0` writer - ADC10 Analog Enable 0 register"]
-pub struct ADC10AE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10AE0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type ADC10AE0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, ADC10AE0_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - ADC10 Analog Enable 0 register"]
     #[inline(always)]
     pub fn adc10ae0(&self) -> ADC10AE0_R {
-        ADC10AE0_R::new(self.bits as u8)
+        ADC10AE0_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - ADC10 Analog Enable 0 register"]
     #[inline(always)]
-    pub fn adc10ae0(&mut self) -> ADC10AE0_W {
-        ADC10AE0_W { w: self }
+    pub fn adc10ae0(&mut self) -> ADC10AE0_W<0> {
+        ADC10AE0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

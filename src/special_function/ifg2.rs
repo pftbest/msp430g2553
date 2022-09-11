@@ -35,198 +35,67 @@ impl From<crate::W<IFG2_SPEC>> for W {
     }
 }
 #[doc = "Field `UCA0RXIFG` reader - UCA0RXIFG"]
-pub struct UCA0RXIFG_R(crate::FieldReader<bool, bool>);
-impl UCA0RXIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCA0RXIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCA0RXIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCA0RXIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCA0RXIFG` writer - UCA0RXIFG"]
-pub struct UCA0RXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCA0RXIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCA0RXIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, IFG2_SPEC, bool, O>;
 #[doc = "Field `UCA0TXIFG` reader - UCA0TXIFG"]
-pub struct UCA0TXIFG_R(crate::FieldReader<bool, bool>);
-impl UCA0TXIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCA0TXIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCA0TXIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCA0TXIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCA0TXIFG` writer - UCA0TXIFG"]
-pub struct UCA0TXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCA0TXIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCA0TXIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, IFG2_SPEC, bool, O>;
 #[doc = "Field `UCB0RXIFG` reader - UCB0RXIFG"]
-pub struct UCB0RXIFG_R(crate::FieldReader<bool, bool>);
-impl UCB0RXIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCB0RXIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCB0RXIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCB0RXIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCB0RXIFG` writer - UCB0RXIFG"]
-pub struct UCB0RXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCB0RXIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type UCB0RXIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, IFG2_SPEC, bool, O>;
 #[doc = "Field `UCB0TXIFG` reader - UCB0TXIFG"]
-pub struct UCB0TXIFG_R(crate::FieldReader<bool, bool>);
-impl UCB0TXIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCB0TXIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCB0TXIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCB0TXIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCB0TXIFG` writer - UCB0TXIFG"]
-pub struct UCB0TXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCB0TXIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type UCB0TXIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, IFG2_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - UCA0RXIFG"]
     #[inline(always)]
     pub fn uca0rxifg(&self) -> UCA0RXIFG_R {
-        UCA0RXIFG_R::new((self.bits & 0x01) != 0)
+        UCA0RXIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - UCA0TXIFG"]
     #[inline(always)]
     pub fn uca0txifg(&self) -> UCA0TXIFG_R {
-        UCA0TXIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCA0TXIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - UCB0RXIFG"]
     #[inline(always)]
     pub fn ucb0rxifg(&self) -> UCB0RXIFG_R {
-        UCB0RXIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCB0RXIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - UCB0TXIFG"]
     #[inline(always)]
     pub fn ucb0txifg(&self) -> UCB0TXIFG_R {
-        UCB0TXIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCB0TXIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - UCA0RXIFG"]
     #[inline(always)]
-    pub fn uca0rxifg(&mut self) -> UCA0RXIFG_W {
-        UCA0RXIFG_W { w: self }
+    pub fn uca0rxifg(&mut self) -> UCA0RXIFG_W<0> {
+        UCA0RXIFG_W::new(self)
     }
     #[doc = "Bit 1 - UCA0TXIFG"]
     #[inline(always)]
-    pub fn uca0txifg(&mut self) -> UCA0TXIFG_W {
-        UCA0TXIFG_W { w: self }
+    pub fn uca0txifg(&mut self) -> UCA0TXIFG_W<1> {
+        UCA0TXIFG_W::new(self)
     }
     #[doc = "Bit 2 - UCB0RXIFG"]
     #[inline(always)]
-    pub fn ucb0rxifg(&mut self) -> UCB0RXIFG_W {
-        UCB0RXIFG_W { w: self }
+    pub fn ucb0rxifg(&mut self) -> UCB0RXIFG_W<2> {
+        UCB0RXIFG_W::new(self)
     }
     #[doc = "Bit 3 - UCB0TXIFG"]
     #[inline(always)]
-    pub fn ucb0txifg(&mut self) -> UCB0TXIFG_W {
-        UCB0TXIFG_W { w: self }
+    pub fn ucb0txifg(&mut self) -> UCB0TXIFG_W<3> {
+        UCB0TXIFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

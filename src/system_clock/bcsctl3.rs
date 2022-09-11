@@ -35,82 +35,19 @@ impl From<crate::W<BCSCTL3_SPEC>> for W {
     }
 }
 #[doc = "Field `LFXT1OF` reader - Low/high Frequency Oscillator Fault Flag"]
-pub struct LFXT1OF_R(crate::FieldReader<bool, bool>);
-impl LFXT1OF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXT1OF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LFXT1OF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LFXT1OF_R = crate::BitReader<bool>;
 #[doc = "Field `LFXT1OF` writer - Low/high Frequency Oscillator Fault Flag"]
-pub struct LFXT1OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXT1OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type LFXT1OF_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, BCSCTL3_SPEC, bool, O>;
 #[doc = "Field `XT2OF` reader - High frequency oscillator 2 fault flag"]
-pub struct XT2OF_R(crate::FieldReader<bool, bool>);
-impl XT2OF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        XT2OF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for XT2OF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type XT2OF_R = crate::BitReader<bool>;
 #[doc = "Field `XT2OF` writer - High frequency oscillator 2 fault flag"]
-pub struct XT2OF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT2OF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type XT2OF_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, BCSCTL3_SPEC, bool, O>;
+#[doc = "Field `XCAP` reader - XIN/XOUT Cap 0"]
+pub type XCAP_R = crate::FieldReader<u8, XCAP_A>;
 #[doc = "XIN/XOUT Cap 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum XCAP_A {
     #[doc = "0: XIN/XOUT Cap : 0 pF"]
@@ -128,14 +65,8 @@ impl From<XCAP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `XCAP` reader - XIN/XOUT Cap 0"]
-pub struct XCAP_R(crate::FieldReader<u8, XCAP_A>);
 impl XCAP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        XCAP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XCAP_A {
         match self.bits {
@@ -149,41 +80,28 @@ impl XCAP_R {
     #[doc = "Checks if the value of the field is `XCAP_0`"]
     #[inline(always)]
     pub fn is_xcap_0(&self) -> bool {
-        **self == XCAP_A::XCAP_0
+        *self == XCAP_A::XCAP_0
     }
     #[doc = "Checks if the value of the field is `XCAP_1`"]
     #[inline(always)]
     pub fn is_xcap_1(&self) -> bool {
-        **self == XCAP_A::XCAP_1
+        *self == XCAP_A::XCAP_1
     }
     #[doc = "Checks if the value of the field is `XCAP_2`"]
     #[inline(always)]
     pub fn is_xcap_2(&self) -> bool {
-        **self == XCAP_A::XCAP_2
+        *self == XCAP_A::XCAP_2
     }
     #[doc = "Checks if the value of the field is `XCAP_3`"]
     #[inline(always)]
     pub fn is_xcap_3(&self) -> bool {
-        **self == XCAP_A::XCAP_3
-    }
-}
-impl core::ops::Deref for XCAP_R {
-    type Target = crate::FieldReader<u8, XCAP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == XCAP_A::XCAP_3
     }
 }
 #[doc = "Field `XCAP` writer - XIN/XOUT Cap 0"]
-pub struct XCAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XCAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XCAP_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type XCAP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, BCSCTL3_SPEC, u8, XCAP_A, 2, O>;
+impl<'a, const O: u8> XCAP_W<'a, O> {
     #[doc = "XIN/XOUT Cap : 0 pF"]
     #[inline(always)]
     pub fn xcap_0(self) -> &'a mut W {
@@ -204,16 +122,11 @@ impl<'a> XCAP_W<'a> {
     pub fn xcap_3(self) -> &'a mut W {
         self.variant(XCAP_A::XCAP_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 2)) | ((value as u8 & 0x03) << 2);
-        self.w
-    }
 }
+#[doc = "Field `LFXT1S` reader - Mode 0 for LFXT1 (XTS = 0)"]
+pub type LFXT1S_R = crate::FieldReader<u8, LFXT1S_A>;
 #[doc = "Mode 0 for LFXT1 (XTS = 0)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFXT1S_A {
     #[doc = "0: Mode 0 for LFXT1 : Normal operation"]
@@ -231,14 +144,8 @@ impl From<LFXT1S_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LFXT1S` reader - Mode 0 for LFXT1 (XTS = 0)"]
-pub struct LFXT1S_R(crate::FieldReader<u8, LFXT1S_A>);
 impl LFXT1S_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LFXT1S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXT1S_A {
         match self.bits {
@@ -252,41 +159,28 @@ impl LFXT1S_R {
     #[doc = "Checks if the value of the field is `LFXT1S_0`"]
     #[inline(always)]
     pub fn is_lfxt1s_0(&self) -> bool {
-        **self == LFXT1S_A::LFXT1S_0
+        *self == LFXT1S_A::LFXT1S_0
     }
     #[doc = "Checks if the value of the field is `LFXT1S_1`"]
     #[inline(always)]
     pub fn is_lfxt1s_1(&self) -> bool {
-        **self == LFXT1S_A::LFXT1S_1
+        *self == LFXT1S_A::LFXT1S_1
     }
     #[doc = "Checks if the value of the field is `LFXT1S_2`"]
     #[inline(always)]
     pub fn is_lfxt1s_2(&self) -> bool {
-        **self == LFXT1S_A::LFXT1S_2
+        *self == LFXT1S_A::LFXT1S_2
     }
     #[doc = "Checks if the value of the field is `LFXT1S_3`"]
     #[inline(always)]
     pub fn is_lfxt1s_3(&self) -> bool {
-        **self == LFXT1S_A::LFXT1S_3
-    }
-}
-impl core::ops::Deref for LFXT1S_R {
-    type Target = crate::FieldReader<u8, LFXT1S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXT1S_A::LFXT1S_3
     }
 }
 #[doc = "Field `LFXT1S` writer - Mode 0 for LFXT1 (XTS = 0)"]
-pub struct LFXT1S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXT1S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXT1S_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LFXT1S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, BCSCTL3_SPEC, u8, LFXT1S_A, 2, O>;
+impl<'a, const O: u8> LFXT1S_W<'a, O> {
     #[doc = "Mode 0 for LFXT1 : Normal operation"]
     #[inline(always)]
     pub fn lfxt1s_0(self) -> &'a mut W {
@@ -307,16 +201,11 @@ impl<'a> LFXT1S_W<'a> {
     pub fn lfxt1s_3(self) -> &'a mut W {
         self.variant(LFXT1S_A::LFXT1S_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 4)) | ((value as u8 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `XT2S` reader - Mode 0 for XT2"]
+pub type XT2S_R = crate::FieldReader<u8, XT2S_A>;
 #[doc = "Mode 0 for XT2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum XT2S_A {
     #[doc = "0: Mode 0 for XT2 : 0.4 - 1 MHz"]
@@ -334,14 +223,8 @@ impl From<XT2S_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `XT2S` reader - Mode 0 for XT2"]
-pub struct XT2S_R(crate::FieldReader<u8, XT2S_A>);
 impl XT2S_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        XT2S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> XT2S_A {
         match self.bits {
@@ -355,41 +238,28 @@ impl XT2S_R {
     #[doc = "Checks if the value of the field is `XT2S_0`"]
     #[inline(always)]
     pub fn is_xt2s_0(&self) -> bool {
-        **self == XT2S_A::XT2S_0
+        *self == XT2S_A::XT2S_0
     }
     #[doc = "Checks if the value of the field is `XT2S_1`"]
     #[inline(always)]
     pub fn is_xt2s_1(&self) -> bool {
-        **self == XT2S_A::XT2S_1
+        *self == XT2S_A::XT2S_1
     }
     #[doc = "Checks if the value of the field is `XT2S_2`"]
     #[inline(always)]
     pub fn is_xt2s_2(&self) -> bool {
-        **self == XT2S_A::XT2S_2
+        *self == XT2S_A::XT2S_2
     }
     #[doc = "Checks if the value of the field is `XT2S_3`"]
     #[inline(always)]
     pub fn is_xt2s_3(&self) -> bool {
-        **self == XT2S_A::XT2S_3
-    }
-}
-impl core::ops::Deref for XT2S_R {
-    type Target = crate::FieldReader<u8, XT2S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == XT2S_A::XT2S_3
     }
 }
 #[doc = "Field `XT2S` writer - Mode 0 for XT2"]
-pub struct XT2S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XT2S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: XT2S_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type XT2S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, BCSCTL3_SPEC, u8, XT2S_A, 2, O>;
+impl<'a, const O: u8> XT2S_W<'a, O> {
     #[doc = "Mode 0 for XT2 : 0.4 - 1 MHz"]
     #[inline(always)]
     pub fn xt2s_0(self) -> &'a mut W {
@@ -410,66 +280,59 @@ impl<'a> XT2S_W<'a> {
     pub fn xt2s_3(self) -> &'a mut W {
         self.variant(XT2S_A::XT2S_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 6)) | ((value as u8 & 0x03) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Low/high Frequency Oscillator Fault Flag"]
     #[inline(always)]
     pub fn lfxt1of(&self) -> LFXT1OF_R {
-        LFXT1OF_R::new((self.bits & 0x01) != 0)
+        LFXT1OF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - High frequency oscillator 2 fault flag"]
     #[inline(always)]
     pub fn xt2of(&self) -> XT2OF_R {
-        XT2OF_R::new(((self.bits >> 1) & 0x01) != 0)
+        XT2OF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - XIN/XOUT Cap 0"]
     #[inline(always)]
     pub fn xcap(&self) -> XCAP_R {
-        XCAP_R::new(((self.bits >> 2) & 0x03) as u8)
+        XCAP_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Mode 0 for LFXT1 (XTS = 0)"]
     #[inline(always)]
     pub fn lfxt1s(&self) -> LFXT1S_R {
-        LFXT1S_R::new(((self.bits >> 4) & 0x03) as u8)
+        LFXT1S_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Mode 0 for XT2"]
     #[inline(always)]
     pub fn xt2s(&self) -> XT2S_R {
-        XT2S_R::new(((self.bits >> 6) & 0x03) as u8)
+        XT2S_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Low/high Frequency Oscillator Fault Flag"]
     #[inline(always)]
-    pub fn lfxt1of(&mut self) -> LFXT1OF_W {
-        LFXT1OF_W { w: self }
+    pub fn lfxt1of(&mut self) -> LFXT1OF_W<0> {
+        LFXT1OF_W::new(self)
     }
     #[doc = "Bit 1 - High frequency oscillator 2 fault flag"]
     #[inline(always)]
-    pub fn xt2of(&mut self) -> XT2OF_W {
-        XT2OF_W { w: self }
+    pub fn xt2of(&mut self) -> XT2OF_W<1> {
+        XT2OF_W::new(self)
     }
     #[doc = "Bits 2:3 - XIN/XOUT Cap 0"]
     #[inline(always)]
-    pub fn xcap(&mut self) -> XCAP_W {
-        XCAP_W { w: self }
+    pub fn xcap(&mut self) -> XCAP_W<2> {
+        XCAP_W::new(self)
     }
     #[doc = "Bits 4:5 - Mode 0 for LFXT1 (XTS = 0)"]
     #[inline(always)]
-    pub fn lfxt1s(&mut self) -> LFXT1S_W {
-        LFXT1S_W { w: self }
+    pub fn lfxt1s(&mut self) -> LFXT1S_W<4> {
+        LFXT1S_W::new(self)
     }
     #[doc = "Bits 6:7 - Mode 0 for XT2"]
     #[inline(always)]
-    pub fn xt2s(&mut self) -> XT2S_W {
-        XT2S_W { w: self }
+    pub fn xt2s(&mut self) -> XT2S_W<6> {
+        XT2S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

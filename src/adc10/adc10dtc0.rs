@@ -35,198 +35,67 @@ impl From<crate::W<ADC10DTC0_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC10FETCH` reader - This bit should normally be reset"]
-pub struct ADC10FETCH_R(crate::FieldReader<bool, bool>);
-impl ADC10FETCH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10FETCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10FETCH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10FETCH_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10FETCH` writer - This bit should normally be reset"]
-pub struct ADC10FETCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10FETCH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type ADC10FETCH_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, ADC10DTC0_SPEC, bool, O>;
 #[doc = "Field `ADC10B1` reader - ADC10 block one"]
-pub struct ADC10B1_R(crate::FieldReader<bool, bool>);
-impl ADC10B1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10B1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10B1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10B1_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10B1` writer - ADC10 block one"]
-pub struct ADC10B1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10B1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ADC10B1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, ADC10DTC0_SPEC, bool, O>;
 #[doc = "Field `ADC10CT` reader - ADC10 continuous transfer"]
-pub struct ADC10CT_R(crate::FieldReader<bool, bool>);
-impl ADC10CT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10CT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10CT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10CT_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10CT` writer - ADC10 continuous transfer"]
-pub struct ADC10CT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10CT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ADC10CT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, ADC10DTC0_SPEC, bool, O>;
 #[doc = "Field `ADC10TB` reader - ADC10 two-block mode"]
-pub struct ADC10TB_R(crate::FieldReader<bool, bool>);
-impl ADC10TB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10TB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10TB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10TB_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10TB` writer - ADC10 two-block mode"]
-pub struct ADC10TB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10TB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type ADC10TB_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, ADC10DTC0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - This bit should normally be reset"]
     #[inline(always)]
     pub fn adc10fetch(&self) -> ADC10FETCH_R {
-        ADC10FETCH_R::new((self.bits & 0x01) != 0)
+        ADC10FETCH_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - ADC10 block one"]
     #[inline(always)]
     pub fn adc10b1(&self) -> ADC10B1_R {
-        ADC10B1_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADC10B1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - ADC10 continuous transfer"]
     #[inline(always)]
     pub fn adc10ct(&self) -> ADC10CT_R {
-        ADC10CT_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADC10CT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - ADC10 two-block mode"]
     #[inline(always)]
     pub fn adc10tb(&self) -> ADC10TB_R {
-        ADC10TB_R::new(((self.bits >> 3) & 0x01) != 0)
+        ADC10TB_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - This bit should normally be reset"]
     #[inline(always)]
-    pub fn adc10fetch(&mut self) -> ADC10FETCH_W {
-        ADC10FETCH_W { w: self }
+    pub fn adc10fetch(&mut self) -> ADC10FETCH_W<0> {
+        ADC10FETCH_W::new(self)
     }
     #[doc = "Bit 1 - ADC10 block one"]
     #[inline(always)]
-    pub fn adc10b1(&mut self) -> ADC10B1_W {
-        ADC10B1_W { w: self }
+    pub fn adc10b1(&mut self) -> ADC10B1_W<1> {
+        ADC10B1_W::new(self)
     }
     #[doc = "Bit 2 - ADC10 continuous transfer"]
     #[inline(always)]
-    pub fn adc10ct(&mut self) -> ADC10CT_W {
-        ADC10CT_W { w: self }
+    pub fn adc10ct(&mut self) -> ADC10CT_W<2> {
+        ADC10CT_W::new(self)
     }
     #[doc = "Bit 3 - ADC10 two-block mode"]
     #[inline(always)]
-    pub fn adc10tb(&mut self) -> ADC10TB_W {
-        ADC10TB_W { w: self }
+    pub fn adc10tb(&mut self) -> ADC10TB_W<3> {
+        ADC10TB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

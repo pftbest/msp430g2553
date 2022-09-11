@@ -35,44 +35,22 @@ impl From<crate::W<UCA0TXBUF_SPEC>> for W {
     }
 }
 #[doc = "Field `UCA0TXBUF` reader - USCI A0 Transmit Buffer register"]
-pub struct UCA0TXBUF_R(crate::FieldReader<u8, u8>);
-impl UCA0TXBUF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCA0TXBUF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCA0TXBUF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCA0TXBUF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UCA0TXBUF` writer - USCI A0 Transmit Buffer register"]
-pub struct UCA0TXBUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCA0TXBUF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type UCA0TXBUF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCA0TXBUF_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - USCI A0 Transmit Buffer register"]
     #[inline(always)]
     pub fn uca0txbuf(&self) -> UCA0TXBUF_R {
-        UCA0TXBUF_R::new(self.bits as u8)
+        UCA0TXBUF_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - USCI A0 Transmit Buffer register"]
     #[inline(always)]
-    pub fn uca0txbuf(&mut self) -> UCA0TXBUF_W {
-        UCA0TXBUF_W { w: self }
+    pub fn uca0txbuf(&mut self) -> UCA0TXBUF_W<0> {
+        UCA0TXBUF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

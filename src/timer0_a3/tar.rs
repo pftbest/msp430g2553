@@ -35,44 +35,22 @@ impl From<crate::W<TAR_SPEC>> for W {
     }
 }
 #[doc = "Field `TAR` reader - Timer A Counter Register"]
-pub struct TAR_R(crate::FieldReader<u16, u16>);
-impl TAR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TAR` writer - Timer A Counter Register"]
-pub struct TAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = value as u16;
-        self.w
-    }
-}
+pub type TAR_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, TAR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Timer A Counter Register"]
     #[inline(always)]
     pub fn tar(&self) -> TAR_R {
-        TAR_R::new(self.bits as u16)
+        TAR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Timer A Counter Register"]
     #[inline(always)]
-    pub fn tar(&mut self) -> TAR_W {
-        TAR_W { w: self }
+    pub fn tar(&mut self) -> TAR_W<0> {
+        TAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

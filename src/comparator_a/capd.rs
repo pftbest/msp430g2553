@@ -35,427 +35,142 @@ impl From<crate::W<CAPD_SPEC>> for W {
     }
 }
 #[doc = "Field `CAPD0` reader - Comp. A Disable Input Buffer of Port Register .0"]
-pub struct CAPD0_R(crate::FieldReader<bool, bool>);
-impl CAPD0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAPD0_R = crate::BitReader<bool>;
 #[doc = "Field `CAPD0` writer - Comp. A Disable Input Buffer of Port Register .0"]
-pub struct CAPD0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
-#[doc = "Field `CAPD1` reader - Comp. A Disable Input Buffer of Port Register .1"]
-pub struct CAPD1_R(crate::FieldReader<bool, bool>);
-impl CAPD1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD1` writer - Comp. A Disable Input Buffer of Port Register .1"]
-pub struct CAPD1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Field `CAPD2` reader - Comp. A Disable Input Buffer of Port Register .2"]
-pub struct CAPD2_R(crate::FieldReader<bool, bool>);
-impl CAPD2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD2` writer - Comp. A Disable Input Buffer of Port Register .2"]
-pub struct CAPD2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Field `CAPD3` reader - Comp. A Disable Input Buffer of Port Register .3"]
-pub struct CAPD3_R(crate::FieldReader<bool, bool>);
-impl CAPD3_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD3` writer - Comp. A Disable Input Buffer of Port Register .3"]
-pub struct CAPD3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Field `CAPD4` reader - Comp. A Disable Input Buffer of Port Register .4"]
-pub struct CAPD4_R(crate::FieldReader<bool, bool>);
-impl CAPD4_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD4` writer - Comp. A Disable Input Buffer of Port Register .4"]
-pub struct CAPD4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Field `CAPD5` reader - Comp. A Disable Input Buffer of Port Register .5"]
-pub struct CAPD5_R(crate::FieldReader<bool, bool>);
-impl CAPD5_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD5` writer - Comp. A Disable Input Buffer of Port Register .5"]
-pub struct CAPD5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Field `CAPD6` reader - Comp. A Disable Input Buffer of Port Register .6"]
-pub struct CAPD6_R(crate::FieldReader<bool, bool>);
-impl CAPD6_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD6` writer - Comp. A Disable Input Buffer of Port Register .6"]
-pub struct CAPD6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Field `CAPD7` reader - Comp. A Disable Input Buffer of Port Register .7"]
-pub struct CAPD7_R(crate::FieldReader<bool, bool>);
-impl CAPD7_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPD7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CAPD7` writer - Comp. A Disable Input Buffer of Port Register .7"]
-pub struct CAPD7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CAPD0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
 #[doc = "Field `CAPD` reader - Comparator A Port Disable register"]
-pub struct CAPD_R(crate::FieldReader<u8, u8>);
-impl CAPD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAPD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAPD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAPD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CAPD` writer - Comparator A Port Disable register"]
-pub struct CAPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type CAPD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, CAPD_SPEC, u8, u8, 8, O>;
+#[doc = "Field `CAPD1` reader - Comp. A Disable Input Buffer of Port Register .1"]
+pub type CAPD1_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD1` writer - Comp. A Disable Input Buffer of Port Register .1"]
+pub type CAPD1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD2` reader - Comp. A Disable Input Buffer of Port Register .2"]
+pub type CAPD2_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD2` writer - Comp. A Disable Input Buffer of Port Register .2"]
+pub type CAPD2_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD3` reader - Comp. A Disable Input Buffer of Port Register .3"]
+pub type CAPD3_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD3` writer - Comp. A Disable Input Buffer of Port Register .3"]
+pub type CAPD3_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD4` reader - Comp. A Disable Input Buffer of Port Register .4"]
+pub type CAPD4_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD4` writer - Comp. A Disable Input Buffer of Port Register .4"]
+pub type CAPD4_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD5` reader - Comp. A Disable Input Buffer of Port Register .5"]
+pub type CAPD5_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD5` writer - Comp. A Disable Input Buffer of Port Register .5"]
+pub type CAPD5_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD6` reader - Comp. A Disable Input Buffer of Port Register .6"]
+pub type CAPD6_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD6` writer - Comp. A Disable Input Buffer of Port Register .6"]
+pub type CAPD6_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
+#[doc = "Field `CAPD7` reader - Comp. A Disable Input Buffer of Port Register .7"]
+pub type CAPD7_R = crate::BitReader<bool>;
+#[doc = "Field `CAPD7` writer - Comp. A Disable Input Buffer of Port Register .7"]
+pub type CAPD7_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CAPD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Comp. A Disable Input Buffer of Port Register .0"]
     #[inline(always)]
     pub fn capd0(&self) -> CAPD0_R {
-        CAPD0_R::new((self.bits & 0x01) != 0)
-    }
-    #[doc = "Bit 1 - Comp. A Disable Input Buffer of Port Register .1"]
-    #[inline(always)]
-    pub fn capd1(&self) -> CAPD1_R {
-        CAPD1_R::new(((self.bits >> 1) & 0x01) != 0)
-    }
-    #[doc = "Bit 2 - Comp. A Disable Input Buffer of Port Register .2"]
-    #[inline(always)]
-    pub fn capd2(&self) -> CAPD2_R {
-        CAPD2_R::new(((self.bits >> 2) & 0x01) != 0)
-    }
-    #[doc = "Bit 3 - Comp. A Disable Input Buffer of Port Register .3"]
-    #[inline(always)]
-    pub fn capd3(&self) -> CAPD3_R {
-        CAPD3_R::new(((self.bits >> 3) & 0x01) != 0)
-    }
-    #[doc = "Bit 4 - Comp. A Disable Input Buffer of Port Register .4"]
-    #[inline(always)]
-    pub fn capd4(&self) -> CAPD4_R {
-        CAPD4_R::new(((self.bits >> 4) & 0x01) != 0)
-    }
-    #[doc = "Bit 5 - Comp. A Disable Input Buffer of Port Register .5"]
-    #[inline(always)]
-    pub fn capd5(&self) -> CAPD5_R {
-        CAPD5_R::new(((self.bits >> 5) & 0x01) != 0)
-    }
-    #[doc = "Bit 6 - Comp. A Disable Input Buffer of Port Register .6"]
-    #[inline(always)]
-    pub fn capd6(&self) -> CAPD6_R {
-        CAPD6_R::new(((self.bits >> 6) & 0x01) != 0)
-    }
-    #[doc = "Bit 7 - Comp. A Disable Input Buffer of Port Register .7"]
-    #[inline(always)]
-    pub fn capd7(&self) -> CAPD7_R {
-        CAPD7_R::new(((self.bits >> 7) & 0x01) != 0)
+        CAPD0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 0:7 - Comparator A Port Disable register"]
     #[inline(always)]
     pub fn capd(&self) -> CAPD_R {
-        CAPD_R::new(self.bits as u8)
+        CAPD_R::new(self.bits)
+    }
+    #[doc = "Bit 1 - Comp. A Disable Input Buffer of Port Register .1"]
+    #[inline(always)]
+    pub fn capd1(&self) -> CAPD1_R {
+        CAPD1_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - Comp. A Disable Input Buffer of Port Register .2"]
+    #[inline(always)]
+    pub fn capd2(&self) -> CAPD2_R {
+        CAPD2_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - Comp. A Disable Input Buffer of Port Register .3"]
+    #[inline(always)]
+    pub fn capd3(&self) -> CAPD3_R {
+        CAPD3_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - Comp. A Disable Input Buffer of Port Register .4"]
+    #[inline(always)]
+    pub fn capd4(&self) -> CAPD4_R {
+        CAPD4_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - Comp. A Disable Input Buffer of Port Register .5"]
+    #[inline(always)]
+    pub fn capd5(&self) -> CAPD5_R {
+        CAPD5_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - Comp. A Disable Input Buffer of Port Register .6"]
+    #[inline(always)]
+    pub fn capd6(&self) -> CAPD6_R {
+        CAPD6_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - Comp. A Disable Input Buffer of Port Register .7"]
+    #[inline(always)]
+    pub fn capd7(&self) -> CAPD7_R {
+        CAPD7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comp. A Disable Input Buffer of Port Register .0"]
     #[inline(always)]
-    pub fn capd0(&mut self) -> CAPD0_W {
-        CAPD0_W { w: self }
-    }
-    #[doc = "Bit 1 - Comp. A Disable Input Buffer of Port Register .1"]
-    #[inline(always)]
-    pub fn capd1(&mut self) -> CAPD1_W {
-        CAPD1_W { w: self }
-    }
-    #[doc = "Bit 2 - Comp. A Disable Input Buffer of Port Register .2"]
-    #[inline(always)]
-    pub fn capd2(&mut self) -> CAPD2_W {
-        CAPD2_W { w: self }
-    }
-    #[doc = "Bit 3 - Comp. A Disable Input Buffer of Port Register .3"]
-    #[inline(always)]
-    pub fn capd3(&mut self) -> CAPD3_W {
-        CAPD3_W { w: self }
-    }
-    #[doc = "Bit 4 - Comp. A Disable Input Buffer of Port Register .4"]
-    #[inline(always)]
-    pub fn capd4(&mut self) -> CAPD4_W {
-        CAPD4_W { w: self }
-    }
-    #[doc = "Bit 5 - Comp. A Disable Input Buffer of Port Register .5"]
-    #[inline(always)]
-    pub fn capd5(&mut self) -> CAPD5_W {
-        CAPD5_W { w: self }
-    }
-    #[doc = "Bit 6 - Comp. A Disable Input Buffer of Port Register .6"]
-    #[inline(always)]
-    pub fn capd6(&mut self) -> CAPD6_W {
-        CAPD6_W { w: self }
-    }
-    #[doc = "Bit 7 - Comp. A Disable Input Buffer of Port Register .7"]
-    #[inline(always)]
-    pub fn capd7(&mut self) -> CAPD7_W {
-        CAPD7_W { w: self }
+    pub fn capd0(&mut self) -> CAPD0_W<0> {
+        CAPD0_W::new(self)
     }
     #[doc = "Bits 0:7 - Comparator A Port Disable register"]
     #[inline(always)]
-    pub fn capd(&mut self) -> CAPD_W {
-        CAPD_W { w: self }
+    pub fn capd(&mut self) -> CAPD_W<0> {
+        CAPD_W::new(self)
+    }
+    #[doc = "Bit 1 - Comp. A Disable Input Buffer of Port Register .1"]
+    #[inline(always)]
+    pub fn capd1(&mut self) -> CAPD1_W<1> {
+        CAPD1_W::new(self)
+    }
+    #[doc = "Bit 2 - Comp. A Disable Input Buffer of Port Register .2"]
+    #[inline(always)]
+    pub fn capd2(&mut self) -> CAPD2_W<2> {
+        CAPD2_W::new(self)
+    }
+    #[doc = "Bit 3 - Comp. A Disable Input Buffer of Port Register .3"]
+    #[inline(always)]
+    pub fn capd3(&mut self) -> CAPD3_W<3> {
+        CAPD3_W::new(self)
+    }
+    #[doc = "Bit 4 - Comp. A Disable Input Buffer of Port Register .4"]
+    #[inline(always)]
+    pub fn capd4(&mut self) -> CAPD4_W<4> {
+        CAPD4_W::new(self)
+    }
+    #[doc = "Bit 5 - Comp. A Disable Input Buffer of Port Register .5"]
+    #[inline(always)]
+    pub fn capd5(&mut self) -> CAPD5_W<5> {
+        CAPD5_W::new(self)
+    }
+    #[doc = "Bit 6 - Comp. A Disable Input Buffer of Port Register .6"]
+    #[inline(always)]
+    pub fn capd6(&mut self) -> CAPD6_W<6> {
+        CAPD6_W::new(self)
+    }
+    #[doc = "Bit 7 - Comp. A Disable Input Buffer of Port Register .7"]
+    #[inline(always)]
+    pub fn capd7(&mut self) -> CAPD7_W<7> {
+        CAPD7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

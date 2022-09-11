@@ -34,8 +34,10 @@ impl From<crate::W<TAIV_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TAIV` reader - Timer A Interrupt Vector value"]
+pub type TAIV_R = crate::FieldReader<u8, TAIV_A>;
 #[doc = "Timer A Interrupt Vector value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TAIV_A {
     #[doc = "0: No interrupt pending"]
@@ -53,14 +55,8 @@ impl From<TAIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAIV` reader - Timer A Interrupt Vector value"]
-pub struct TAIV_R(crate::FieldReader<u8, TAIV_A>);
 impl TAIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TAIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TAIV_A> {
         match self.bits {
@@ -74,41 +70,28 @@ impl TAIV_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == TAIV_A::NONE
+        *self == TAIV_A::NONE
     }
     #[doc = "Checks if the value of the field is `TACCR1`"]
     #[inline(always)]
     pub fn is_taccr1(&self) -> bool {
-        **self == TAIV_A::TACCR1
+        *self == TAIV_A::TACCR1
     }
     #[doc = "Checks if the value of the field is `TACCR2`"]
     #[inline(always)]
     pub fn is_taccr2(&self) -> bool {
-        **self == TAIV_A::TACCR2
+        *self == TAIV_A::TACCR2
     }
     #[doc = "Checks if the value of the field is `TAIFG`"]
     #[inline(always)]
     pub fn is_taifg(&self) -> bool {
-        **self == TAIV_A::TAIFG
-    }
-}
-impl core::ops::Deref for TAIV_R {
-    type Target = crate::FieldReader<u8, TAIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAIV_A::TAIFG
     }
 }
 #[doc = "Field `TAIV` writer - Timer A Interrupt Vector value"]
-pub struct TAIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAIV_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TAIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u16, TAIV_SPEC, u8, TAIV_A, 4, O>;
+impl<'a, const O: u8> TAIV_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -129,12 +112,6 @@ impl<'a> TAIV_W<'a> {
     pub fn taifg(self) -> &'a mut W {
         self.variant(TAIV_A::TAIFG)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u16 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:3 - Timer A Interrupt Vector value"]
@@ -146,8 +123,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Timer A Interrupt Vector value"]
     #[inline(always)]
-    pub fn taiv(&mut self) -> TAIV_W {
-        TAIV_W { w: self }
+    pub fn taiv(&mut self) -> TAIV_W<0> {
+        TAIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,44 +35,22 @@ impl From<crate::W<UCB0BR1_SPEC>> for W {
     }
 }
 #[doc = "Field `UCB0BR1` reader - USCI B0 Baud Rate 1 register"]
-pub struct UCB0BR1_R(crate::FieldReader<u8, u8>);
-impl UCB0BR1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCB0BR1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCB0BR1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCB0BR1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UCB0BR1` writer - USCI B0 Baud Rate 1 register"]
-pub struct UCB0BR1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCB0BR1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type UCB0BR1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCB0BR1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - USCI B0 Baud Rate 1 register"]
     #[inline(always)]
     pub fn ucb0br1(&self) -> UCB0BR1_R {
-        UCB0BR1_R::new(self.bits as u8)
+        UCB0BR1_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - USCI B0 Baud Rate 1 register"]
     #[inline(always)]
-    pub fn ucb0br1(&mut self) -> UCB0BR1_W {
-        UCB0BR1_W { w: self }
+    pub fn ucb0br1(&mut self) -> UCB0BR1_W<0> {
+        UCB0BR1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

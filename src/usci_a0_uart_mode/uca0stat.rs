@@ -35,438 +35,142 @@ impl From<crate::W<UCA0STAT_SPEC>> for W {
     }
 }
 #[doc = "Field `UCBUSY` reader - USCI Busy Flag"]
-pub struct UCBUSY_R(crate::FieldReader<bool, bool>);
-impl UCBUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCBUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCBUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCBUSY_R = crate::BitReader<bool>;
 #[doc = "Field `UCBUSY` writer - USCI Busy Flag"]
-pub struct UCBUSY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBUSY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCBUSY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
 #[doc = "Field `UCADDR` reader - USCI Address received Flag"]
-pub struct UCADDR_R(crate::FieldReader<bool, bool>);
-impl UCADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCADDR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCADDR_R = crate::BitReader<bool>;
 #[doc = "Field `UCADDR` writer - USCI Address received Flag"]
-pub struct UCADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCADDR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Field `UCRXERR` reader - USCI RX Error Flag"]
-pub struct UCRXERR_R(crate::FieldReader<bool, bool>);
-impl UCRXERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCRXERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCRXERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCRXERR` writer - USCI RX Error Flag"]
-pub struct UCRXERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCRXERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Field `UCBRK` reader - USCI Break received"]
-pub struct UCBRK_R(crate::FieldReader<bool, bool>);
-impl UCBRK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCBRK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCBRK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCBRK` writer - USCI Break received"]
-pub struct UCBRK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBRK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Field `UCPE` reader - USCI Parity Error Flag"]
-pub struct UCPE_R(crate::FieldReader<bool, bool>);
-impl UCPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCPE` writer - USCI Parity Error Flag"]
-pub struct UCPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCPE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Field `UCOE` reader - USCI Overrun Error Flag"]
-pub struct UCOE_R(crate::FieldReader<bool, bool>);
-impl UCOE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCOE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCOE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCOE` writer - USCI Overrun Error Flag"]
-pub struct UCOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Field `UCFE` reader - USCI Frame Error Flag"]
-pub struct UCFE_R(crate::FieldReader<bool, bool>);
-impl UCFE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCFE` writer - USCI Frame Error Flag"]
-pub struct UCFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Field `UCLISTEN` reader - USCI Listen mode"]
-pub struct UCLISTEN_R(crate::FieldReader<bool, bool>);
-impl UCLISTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCLISTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCLISTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCLISTEN` writer - USCI Listen mode"]
-pub struct UCLISTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCLISTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
-}
+pub type UCADDR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
 #[doc = "Field `UCIDLE` reader - Idle line detected"]
-pub struct UCIDLE_R(crate::FieldReader<bool, bool>);
-impl UCIDLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIDLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIDLE_R = crate::BitReader<bool>;
 #[doc = "Field `UCIDLE` writer - Idle line detected"]
-pub struct UCIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIDLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCIDLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCRXERR` reader - USCI RX Error Flag"]
+pub type UCRXERR_R = crate::BitReader<bool>;
+#[doc = "Field `UCRXERR` writer - USCI RX Error Flag"]
+pub type UCRXERR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCBRK` reader - USCI Break received"]
+pub type UCBRK_R = crate::BitReader<bool>;
+#[doc = "Field `UCBRK` writer - USCI Break received"]
+pub type UCBRK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCPE` reader - USCI Parity Error Flag"]
+pub type UCPE_R = crate::BitReader<bool>;
+#[doc = "Field `UCPE` writer - USCI Parity Error Flag"]
+pub type UCPE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCOE` reader - USCI Overrun Error Flag"]
+pub type UCOE_R = crate::BitReader<bool>;
+#[doc = "Field `UCOE` writer - USCI Overrun Error Flag"]
+pub type UCOE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCFE` reader - USCI Frame Error Flag"]
+pub type UCFE_R = crate::BitReader<bool>;
+#[doc = "Field `UCFE` writer - USCI Frame Error Flag"]
+pub type UCFE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
+#[doc = "Field `UCLISTEN` reader - USCI Listen mode"]
+pub type UCLISTEN_R = crate::BitReader<bool>;
+#[doc = "Field `UCLISTEN` writer - USCI Listen mode"]
+pub type UCLISTEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0STAT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - USCI Busy Flag"]
     #[inline(always)]
     pub fn ucbusy(&self) -> UCBUSY_R {
-        UCBUSY_R::new((self.bits & 0x01) != 0)
+        UCBUSY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - USCI Address received Flag"]
     #[inline(always)]
     pub fn ucaddr(&self) -> UCADDR_R {
-        UCADDR_R::new(((self.bits >> 1) & 0x01) != 0)
-    }
-    #[doc = "Bit 2 - USCI RX Error Flag"]
-    #[inline(always)]
-    pub fn ucrxerr(&self) -> UCRXERR_R {
-        UCRXERR_R::new(((self.bits >> 2) & 0x01) != 0)
-    }
-    #[doc = "Bit 3 - USCI Break received"]
-    #[inline(always)]
-    pub fn ucbrk(&self) -> UCBRK_R {
-        UCBRK_R::new(((self.bits >> 3) & 0x01) != 0)
-    }
-    #[doc = "Bit 4 - USCI Parity Error Flag"]
-    #[inline(always)]
-    pub fn ucpe(&self) -> UCPE_R {
-        UCPE_R::new(((self.bits >> 4) & 0x01) != 0)
-    }
-    #[doc = "Bit 5 - USCI Overrun Error Flag"]
-    #[inline(always)]
-    pub fn ucoe(&self) -> UCOE_R {
-        UCOE_R::new(((self.bits >> 5) & 0x01) != 0)
-    }
-    #[doc = "Bit 6 - USCI Frame Error Flag"]
-    #[inline(always)]
-    pub fn ucfe(&self) -> UCFE_R {
-        UCFE_R::new(((self.bits >> 6) & 0x01) != 0)
-    }
-    #[doc = "Bit 7 - USCI Listen mode"]
-    #[inline(always)]
-    pub fn uclisten(&self) -> UCLISTEN_R {
-        UCLISTEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        UCADDR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 1 - Idle line detected"]
     #[inline(always)]
     pub fn ucidle(&self) -> UCIDLE_R {
-        UCIDLE_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCIDLE_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - USCI RX Error Flag"]
+    #[inline(always)]
+    pub fn ucrxerr(&self) -> UCRXERR_R {
+        UCRXERR_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - USCI Break received"]
+    #[inline(always)]
+    pub fn ucbrk(&self) -> UCBRK_R {
+        UCBRK_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - USCI Parity Error Flag"]
+    #[inline(always)]
+    pub fn ucpe(&self) -> UCPE_R {
+        UCPE_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - USCI Overrun Error Flag"]
+    #[inline(always)]
+    pub fn ucoe(&self) -> UCOE_R {
+        UCOE_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - USCI Frame Error Flag"]
+    #[inline(always)]
+    pub fn ucfe(&self) -> UCFE_R {
+        UCFE_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - USCI Listen mode"]
+    #[inline(always)]
+    pub fn uclisten(&self) -> UCLISTEN_R {
+        UCLISTEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - USCI Busy Flag"]
     #[inline(always)]
-    pub fn ucbusy(&mut self) -> UCBUSY_W {
-        UCBUSY_W { w: self }
+    pub fn ucbusy(&mut self) -> UCBUSY_W<0> {
+        UCBUSY_W::new(self)
     }
     #[doc = "Bit 1 - USCI Address received Flag"]
     #[inline(always)]
-    pub fn ucaddr(&mut self) -> UCADDR_W {
-        UCADDR_W { w: self }
-    }
-    #[doc = "Bit 2 - USCI RX Error Flag"]
-    #[inline(always)]
-    pub fn ucrxerr(&mut self) -> UCRXERR_W {
-        UCRXERR_W { w: self }
-    }
-    #[doc = "Bit 3 - USCI Break received"]
-    #[inline(always)]
-    pub fn ucbrk(&mut self) -> UCBRK_W {
-        UCBRK_W { w: self }
-    }
-    #[doc = "Bit 4 - USCI Parity Error Flag"]
-    #[inline(always)]
-    pub fn ucpe(&mut self) -> UCPE_W {
-        UCPE_W { w: self }
-    }
-    #[doc = "Bit 5 - USCI Overrun Error Flag"]
-    #[inline(always)]
-    pub fn ucoe(&mut self) -> UCOE_W {
-        UCOE_W { w: self }
-    }
-    #[doc = "Bit 6 - USCI Frame Error Flag"]
-    #[inline(always)]
-    pub fn ucfe(&mut self) -> UCFE_W {
-        UCFE_W { w: self }
-    }
-    #[doc = "Bit 7 - USCI Listen mode"]
-    #[inline(always)]
-    pub fn uclisten(&mut self) -> UCLISTEN_W {
-        UCLISTEN_W { w: self }
+    pub fn ucaddr(&mut self) -> UCADDR_W<1> {
+        UCADDR_W::new(self)
     }
     #[doc = "Bit 1 - Idle line detected"]
     #[inline(always)]
-    pub fn ucidle(&mut self) -> UCIDLE_W {
-        UCIDLE_W { w: self }
+    pub fn ucidle(&mut self) -> UCIDLE_W<1> {
+        UCIDLE_W::new(self)
+    }
+    #[doc = "Bit 2 - USCI RX Error Flag"]
+    #[inline(always)]
+    pub fn ucrxerr(&mut self) -> UCRXERR_W<2> {
+        UCRXERR_W::new(self)
+    }
+    #[doc = "Bit 3 - USCI Break received"]
+    #[inline(always)]
+    pub fn ucbrk(&mut self) -> UCBRK_W<3> {
+        UCBRK_W::new(self)
+    }
+    #[doc = "Bit 4 - USCI Parity Error Flag"]
+    #[inline(always)]
+    pub fn ucpe(&mut self) -> UCPE_W<4> {
+        UCPE_W::new(self)
+    }
+    #[doc = "Bit 5 - USCI Overrun Error Flag"]
+    #[inline(always)]
+    pub fn ucoe(&mut self) -> UCOE_W<5> {
+        UCOE_W::new(self)
+    }
+    #[doc = "Bit 6 - USCI Frame Error Flag"]
+    #[inline(always)]
+    pub fn ucfe(&mut self) -> UCFE_W<6> {
+        UCFE_W::new(self)
+    }
+    #[doc = "Bit 7 - USCI Listen mode"]
+    #[inline(always)]
+    pub fn uclisten(&mut self) -> UCLISTEN_W<7> {
+        UCLISTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

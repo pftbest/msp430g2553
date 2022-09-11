@@ -35,198 +35,64 @@ impl From<crate::W<IE1_SPEC>> for W {
     }
 }
 #[doc = "Field `WDTIE` reader - Watchdog Interrupt Enable"]
-pub struct WDTIE_R(crate::FieldReader<bool, bool>);
-impl WDTIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDTIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDTIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDTIE_R = crate::BitReader<bool>;
 #[doc = "Field `WDTIE` writer - Watchdog Interrupt Enable"]
-pub struct WDTIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type WDTIE_W<'a, const O: u8> = crate::BitWriter<'a, u8, IE1_SPEC, bool, O>;
 #[doc = "Field `OFIE` reader - Osc. Fault Interrupt Enable"]
-pub struct OFIE_R(crate::FieldReader<bool, bool>);
-impl OFIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OFIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFIE_R = crate::BitReader<bool>;
 #[doc = "Field `OFIE` writer - Osc. Fault Interrupt Enable"]
-pub struct OFIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type OFIE_W<'a, const O: u8> = crate::BitWriter<'a, u8, IE1_SPEC, bool, O>;
 #[doc = "Field `NMIIE` reader - NMI Interrupt Enable"]
-pub struct NMIIE_R(crate::FieldReader<bool, bool>);
-impl NMIIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NMIIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NMIIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NMIIE_R = crate::BitReader<bool>;
 #[doc = "Field `NMIIE` writer - NMI Interrupt Enable"]
-pub struct NMIIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NMIIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NMIIE_W<'a, const O: u8> = crate::BitWriter<'a, u8, IE1_SPEC, bool, O>;
 #[doc = "Field `ACCVIE` reader - Flash Access Violation Interrupt Enable"]
-pub struct ACCVIE_R(crate::FieldReader<bool, bool>);
-impl ACCVIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ACCVIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACCVIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACCVIE_R = crate::BitReader<bool>;
 #[doc = "Field `ACCVIE` writer - Flash Access Violation Interrupt Enable"]
-pub struct ACCVIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACCVIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ACCVIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, IE1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Watchdog Interrupt Enable"]
     #[inline(always)]
     pub fn wdtie(&self) -> WDTIE_R {
-        WDTIE_R::new((self.bits & 0x01) != 0)
+        WDTIE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Osc. Fault Interrupt Enable"]
     #[inline(always)]
     pub fn ofie(&self) -> OFIE_R {
-        OFIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        OFIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - NMI Interrupt Enable"]
     #[inline(always)]
     pub fn nmiie(&self) -> NMIIE_R {
-        NMIIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        NMIIE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Flash Access Violation Interrupt Enable"]
     #[inline(always)]
     pub fn accvie(&self) -> ACCVIE_R {
-        ACCVIE_R::new(((self.bits >> 5) & 0x01) != 0)
+        ACCVIE_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Watchdog Interrupt Enable"]
     #[inline(always)]
-    pub fn wdtie(&mut self) -> WDTIE_W {
-        WDTIE_W { w: self }
+    pub fn wdtie(&mut self) -> WDTIE_W<0> {
+        WDTIE_W::new(self)
     }
     #[doc = "Bit 1 - Osc. Fault Interrupt Enable"]
     #[inline(always)]
-    pub fn ofie(&mut self) -> OFIE_W {
-        OFIE_W { w: self }
+    pub fn ofie(&mut self) -> OFIE_W<1> {
+        OFIE_W::new(self)
     }
     #[doc = "Bit 4 - NMI Interrupt Enable"]
     #[inline(always)]
-    pub fn nmiie(&mut self) -> NMIIE_W {
-        NMIIE_W { w: self }
+    pub fn nmiie(&mut self) -> NMIIE_W<4> {
+        NMIIE_W::new(self)
     }
     #[doc = "Bit 5 - Flash Access Violation Interrupt Enable"]
     #[inline(always)]
-    pub fn accvie(&mut self) -> ACCVIE_W {
-        ACCVIE_W { w: self }
+    pub fn accvie(&mut self) -> ACCVIE_W<5> {
+        ACCVIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

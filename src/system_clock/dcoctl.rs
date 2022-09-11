@@ -35,119 +35,52 @@ impl From<crate::W<DCOCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `DCOCTL` reader - DCO Clock Frequency Control register"]
-pub struct DCOCTL_R(crate::FieldReader<u8, u8>);
-impl DCOCTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DCOCTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCOCTL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCOCTL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DCOCTL` writer - DCO Clock Frequency Control register"]
-pub struct DCOCTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCOCTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
-#[doc = "Field `DCO` reader - DCO Select Bit 0"]
-pub struct DCO_R(crate::FieldReader<u8, u8>);
-impl DCO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DCO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `DCO` writer - DCO Select Bit 0"]
-pub struct DCO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x07 << 5)) | ((value as u8 & 0x07) << 5);
-        self.w
-    }
-}
+pub type DCOCTL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, DCOCTL_SPEC, u8, u8, 8, O>;
 #[doc = "Field `MOD` reader - Modulation Bit 0"]
-pub struct MOD_R(crate::FieldReader<u8, u8>);
-impl MOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MOD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MOD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MOD` writer - Modulation Bit 0"]
-pub struct MOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MOD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u8 & 0x1f);
-        self.w
-    }
-}
+pub type MOD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, DCOCTL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `DCO` reader - DCO Select Bit 0"]
+pub type DCO_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DCO` writer - DCO Select Bit 0"]
+pub type DCO_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, DCOCTL_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:7 - DCO Clock Frequency Control register"]
     #[inline(always)]
     pub fn dcoctl(&self) -> DCOCTL_R {
-        DCOCTL_R::new(self.bits as u8)
-    }
-    #[doc = "Bits 5:7 - DCO Select Bit 0"]
-    #[inline(always)]
-    pub fn dco(&self) -> DCO_R {
-        DCO_R::new(((self.bits >> 5) & 0x07) as u8)
+        DCOCTL_R::new(self.bits)
     }
     #[doc = "Bits 0:4 - Modulation Bit 0"]
     #[inline(always)]
     pub fn mod_(&self) -> MOD_R {
         MOD_R::new((self.bits & 0x1f) as u8)
     }
+    #[doc = "Bits 5:7 - DCO Select Bit 0"]
+    #[inline(always)]
+    pub fn dco(&self) -> DCO_R {
+        DCO_R::new(((self.bits >> 5) & 7) as u8)
+    }
 }
 impl W {
     #[doc = "Bits 0:7 - DCO Clock Frequency Control register"]
     #[inline(always)]
-    pub fn dcoctl(&mut self) -> DCOCTL_W {
-        DCOCTL_W { w: self }
-    }
-    #[doc = "Bits 5:7 - DCO Select Bit 0"]
-    #[inline(always)]
-    pub fn dco(&mut self) -> DCO_W {
-        DCO_W { w: self }
+    pub fn dcoctl(&mut self) -> DCOCTL_W<0> {
+        DCOCTL_W::new(self)
     }
     #[doc = "Bits 0:4 - Modulation Bit 0"]
     #[inline(always)]
-    pub fn mod_(&mut self) -> MOD_W {
-        MOD_W { w: self }
+    pub fn mod_(&mut self) -> MOD_W<0> {
+        MOD_W::new(self)
+    }
+    #[doc = "Bits 5:7 - DCO Select Bit 0"]
+    #[inline(always)]
+    pub fn dco(&mut self) -> DCO_W<5> {
+        DCO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

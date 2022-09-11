@@ -35,118 +35,30 @@ impl From<crate::W<UCA0IRRCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `UCIRRXFE` reader - IRDA Receive Filter enable"]
-pub struct UCIRRXFE_R(crate::FieldReader<bool, bool>);
-impl UCIRRXFE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCIRRXFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIRRXFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIRRXFE_R = crate::BitReader<bool>;
 #[doc = "Field `UCIRRXFE` writer - IRDA Receive Filter enable"]
-pub struct UCIRRXFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIRRXFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCIRRXFE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0IRRCTL_SPEC, bool, O>;
 #[doc = "Field `UCIRRXPL` reader - IRDA Receive Input Polarity"]
-pub struct UCIRRXPL_R(crate::FieldReader<bool, bool>);
-impl UCIRRXPL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCIRRXPL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIRRXPL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIRRXPL_R = crate::BitReader<bool>;
 #[doc = "Field `UCIRRXPL` writer - IRDA Receive Input Polarity"]
-pub struct UCIRRXPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIRRXPL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCIRRXPL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0IRRCTL_SPEC, bool, O>;
 #[doc = "Field `UCIRRXFL` reader - IRDA Receive Filter Length 0"]
-pub struct UCIRRXFL_R(crate::FieldReader<u8, u8>);
-impl UCIRRXFL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCIRRXFL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIRRXFL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIRRXFL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UCIRRXFL` writer - IRDA Receive Filter Length 0"]
-pub struct UCIRRXFL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIRRXFL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x3f << 2)) | ((value as u8 & 0x3f) << 2);
-        self.w
-    }
-}
+pub type UCIRRXFL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCA0IRRCTL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 0 - IRDA Receive Filter enable"]
     #[inline(always)]
     pub fn ucirrxfe(&self) -> UCIRRXFE_R {
-        UCIRRXFE_R::new((self.bits & 0x01) != 0)
+        UCIRRXFE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - IRDA Receive Input Polarity"]
     #[inline(always)]
     pub fn ucirrxpl(&self) -> UCIRRXPL_R {
-        UCIRRXPL_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCIRRXPL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:7 - IRDA Receive Filter Length 0"]
     #[inline(always)]
@@ -157,18 +69,18 @@ impl R {
 impl W {
     #[doc = "Bit 0 - IRDA Receive Filter enable"]
     #[inline(always)]
-    pub fn ucirrxfe(&mut self) -> UCIRRXFE_W {
-        UCIRRXFE_W { w: self }
+    pub fn ucirrxfe(&mut self) -> UCIRRXFE_W<0> {
+        UCIRRXFE_W::new(self)
     }
     #[doc = "Bit 1 - IRDA Receive Input Polarity"]
     #[inline(always)]
-    pub fn ucirrxpl(&mut self) -> UCIRRXPL_W {
-        UCIRRXPL_W { w: self }
+    pub fn ucirrxpl(&mut self) -> UCIRRXPL_W<1> {
+        UCIRRXPL_W::new(self)
     }
     #[doc = "Bits 2:7 - IRDA Receive Filter Length 0"]
     #[inline(always)]
-    pub fn ucirrxfl(&mut self) -> UCIRRXFL_W {
-        UCIRRXFL_W { w: self }
+    pub fn ucirrxfl(&mut self) -> UCIRRXFL_W<2> {
+        UCIRRXFL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

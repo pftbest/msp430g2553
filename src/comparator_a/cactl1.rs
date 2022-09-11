@@ -35,158 +35,29 @@ impl From<crate::W<CACTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `CAIFG` reader - Comp. A Interrupt Flag"]
-pub struct CAIFG_R(crate::FieldReader<bool, bool>);
-impl CAIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAIFG_R = crate::BitReader<bool>;
 #[doc = "Field `CAIFG` writer - Comp. A Interrupt Flag"]
-pub struct CAIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type CAIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
 #[doc = "Field `CAIE` reader - Comp. A Interrupt Enable"]
-pub struct CAIE_R(crate::FieldReader<bool, bool>);
-impl CAIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAIE_R = crate::BitReader<bool>;
 #[doc = "Field `CAIE` writer - Comp. A Interrupt Enable"]
-pub struct CAIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CAIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
 #[doc = "Field `CAIES` reader - Comp. A Int. Edge Select: 0:rising / 1:falling"]
-pub struct CAIES_R(crate::FieldReader<bool, bool>);
-impl CAIES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAIES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAIES_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAIES_R = crate::BitReader<bool>;
 #[doc = "Field `CAIES` writer - Comp. A Int. Edge Select: 0:rising / 1:falling"]
-pub struct CAIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CAIES_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
 #[doc = "Field `CAON` reader - Comp. A enable"]
-pub struct CAON_R(crate::FieldReader<bool, bool>);
-impl CAON_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAON_R = crate::BitReader<bool>;
 #[doc = "Field `CAON` writer - Comp. A enable"]
-pub struct CAON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CAON_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
+#[doc = "Field `CAREF` reader - Comp. A Internal Reference Select 0"]
+pub type CAREF_R = crate::FieldReader<u8, CAREF_A>;
 #[doc = "Comp. A Internal Reference Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CAREF_A {
     #[doc = "0: Comp. A Int. Ref. Select 0 : Off"]
@@ -204,14 +75,8 @@ impl From<CAREF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CAREF` reader - Comp. A Internal Reference Select 0"]
-pub struct CAREF_R(crate::FieldReader<u8, CAREF_A>);
 impl CAREF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CAREF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAREF_A {
         match self.bits {
@@ -225,41 +90,28 @@ impl CAREF_R {
     #[doc = "Checks if the value of the field is `CAREF_0`"]
     #[inline(always)]
     pub fn is_caref_0(&self) -> bool {
-        **self == CAREF_A::CAREF_0
+        *self == CAREF_A::CAREF_0
     }
     #[doc = "Checks if the value of the field is `CAREF_1`"]
     #[inline(always)]
     pub fn is_caref_1(&self) -> bool {
-        **self == CAREF_A::CAREF_1
+        *self == CAREF_A::CAREF_1
     }
     #[doc = "Checks if the value of the field is `CAREF_2`"]
     #[inline(always)]
     pub fn is_caref_2(&self) -> bool {
-        **self == CAREF_A::CAREF_2
+        *self == CAREF_A::CAREF_2
     }
     #[doc = "Checks if the value of the field is `CAREF_3`"]
     #[inline(always)]
     pub fn is_caref_3(&self) -> bool {
-        **self == CAREF_A::CAREF_3
-    }
-}
-impl core::ops::Deref for CAREF_R {
-    type Target = crate::FieldReader<u8, CAREF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAREF_A::CAREF_3
     }
 }
 #[doc = "Field `CAREF` writer - Comp. A Internal Reference Select 0"]
-pub struct CAREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAREF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAREF_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CAREF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, CACTL1_SPEC, u8, CAREF_A, 2, O>;
+impl<'a, const O: u8> CAREF_W<'a, O> {
     #[doc = "Comp. A Int. Ref. Select 0 : Off"]
     #[inline(always)]
     pub fn caref_0(self) -> &'a mut W {
@@ -280,162 +132,89 @@ impl<'a> CAREF_W<'a> {
     pub fn caref_3(self) -> &'a mut W {
         self.variant(CAREF_A::CAREF_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 4)) | ((value as u8 & 0x03) << 4);
-        self.w
-    }
 }
 #[doc = "Field `CARSEL` reader - Comp. A Internal Reference Enable"]
-pub struct CARSEL_R(crate::FieldReader<bool, bool>);
-impl CARSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CARSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CARSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CARSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CARSEL` writer - Comp. A Internal Reference Enable"]
-pub struct CARSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CARSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
 #[doc = "Field `CAEX` reader - Comp. A Exchange Inputs"]
-pub struct CAEX_R(crate::FieldReader<bool, bool>);
-impl CAEX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAEX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAEX_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAEX_R = crate::BitReader<bool>;
 #[doc = "Field `CAEX` writer - Comp. A Exchange Inputs"]
-pub struct CAEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAEX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CAEX_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Comp. A Interrupt Flag"]
     #[inline(always)]
     pub fn caifg(&self) -> CAIFG_R {
-        CAIFG_R::new((self.bits & 0x01) != 0)
+        CAIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Comp. A Interrupt Enable"]
     #[inline(always)]
     pub fn caie(&self) -> CAIE_R {
-        CAIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        CAIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Comp. A Int. Edge Select: 0:rising / 1:falling"]
     #[inline(always)]
     pub fn caies(&self) -> CAIES_R {
-        CAIES_R::new(((self.bits >> 2) & 0x01) != 0)
+        CAIES_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Comp. A enable"]
     #[inline(always)]
     pub fn caon(&self) -> CAON_R {
-        CAON_R::new(((self.bits >> 3) & 0x01) != 0)
+        CAON_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Comp. A Internal Reference Select 0"]
     #[inline(always)]
     pub fn caref(&self) -> CAREF_R {
-        CAREF_R::new(((self.bits >> 4) & 0x03) as u8)
+        CAREF_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Comp. A Internal Reference Enable"]
     #[inline(always)]
     pub fn carsel(&self) -> CARSEL_R {
-        CARSEL_R::new(((self.bits >> 6) & 0x01) != 0)
+        CARSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Comp. A Exchange Inputs"]
     #[inline(always)]
     pub fn caex(&self) -> CAEX_R {
-        CAEX_R::new(((self.bits >> 7) & 0x01) != 0)
+        CAEX_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Comp. A Interrupt Flag"]
     #[inline(always)]
-    pub fn caifg(&mut self) -> CAIFG_W {
-        CAIFG_W { w: self }
+    pub fn caifg(&mut self) -> CAIFG_W<0> {
+        CAIFG_W::new(self)
     }
     #[doc = "Bit 1 - Comp. A Interrupt Enable"]
     #[inline(always)]
-    pub fn caie(&mut self) -> CAIE_W {
-        CAIE_W { w: self }
+    pub fn caie(&mut self) -> CAIE_W<1> {
+        CAIE_W::new(self)
     }
     #[doc = "Bit 2 - Comp. A Int. Edge Select: 0:rising / 1:falling"]
     #[inline(always)]
-    pub fn caies(&mut self) -> CAIES_W {
-        CAIES_W { w: self }
+    pub fn caies(&mut self) -> CAIES_W<2> {
+        CAIES_W::new(self)
     }
     #[doc = "Bit 3 - Comp. A enable"]
     #[inline(always)]
-    pub fn caon(&mut self) -> CAON_W {
-        CAON_W { w: self }
+    pub fn caon(&mut self) -> CAON_W<3> {
+        CAON_W::new(self)
     }
     #[doc = "Bits 4:5 - Comp. A Internal Reference Select 0"]
     #[inline(always)]
-    pub fn caref(&mut self) -> CAREF_W {
-        CAREF_W { w: self }
+    pub fn caref(&mut self) -> CAREF_W<4> {
+        CAREF_W::new(self)
     }
     #[doc = "Bit 6 - Comp. A Internal Reference Enable"]
     #[inline(always)]
-    pub fn carsel(&mut self) -> CARSEL_W {
-        CARSEL_W { w: self }
+    pub fn carsel(&mut self) -> CARSEL_W<6> {
+        CARSEL_W::new(self)
     }
     #[doc = "Bit 7 - Comp. A Exchange Inputs"]
     #[inline(always)]
-    pub fn caex(&mut self) -> CAEX_W {
-        CAEX_W { w: self }
+    pub fn caex(&mut self) -> CAEX_W<7> {
+        CAEX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

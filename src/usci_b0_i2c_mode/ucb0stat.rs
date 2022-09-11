@@ -35,390 +35,127 @@ impl From<crate::W<UCB0STAT_SPEC>> for W {
     }
 }
 #[doc = "Field `UCALIFG` reader - Arbitration Lost interrupt Flag"]
-pub struct UCALIFG_R(crate::FieldReader<bool, bool>);
-impl UCALIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCALIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCALIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCALIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCALIFG` writer - Arbitration Lost interrupt Flag"]
-pub struct UCALIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCALIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCALIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCSTTIFG` reader - START Condition interrupt Flag"]
-pub struct UCSTTIFG_R(crate::FieldReader<bool, bool>);
-impl UCSTTIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSTTIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSTTIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSTTIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCSTTIFG` writer - START Condition interrupt Flag"]
-pub struct UCSTTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTTIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCSTTIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCSTPIFG` reader - STOP Condition interrupt Flag"]
-pub struct UCSTPIFG_R(crate::FieldReader<bool, bool>);
-impl UCSTPIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSTPIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSTPIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSTPIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCSTPIFG` writer - STOP Condition interrupt Flag"]
-pub struct UCSTPIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTPIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type UCSTPIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCNACKIFG` reader - NAK Condition interrupt Flag"]
-pub struct UCNACKIFG_R(crate::FieldReader<bool, bool>);
-impl UCNACKIFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCNACKIFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCNACKIFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCNACKIFG_R = crate::BitReader<bool>;
 #[doc = "Field `UCNACKIFG` writer - NAK Condition interrupt Flag"]
-pub struct UCNACKIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCNACKIFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type UCNACKIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCBBUSY` reader - Bus Busy Flag"]
-pub struct UCBBUSY_R(crate::FieldReader<bool, bool>);
-impl UCBBUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCBBUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCBBUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCBBUSY_R = crate::BitReader<bool>;
 #[doc = "Field `UCBBUSY` writer - Bus Busy Flag"]
-pub struct UCBBUSY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBBUSY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
-        self.w
-    }
-}
+pub type UCBBUSY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCGC` reader - General Call address received Flag"]
-pub struct UCGC_R(crate::FieldReader<bool, bool>);
-impl UCGC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCGC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCGC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCGC_R = crate::BitReader<bool>;
 #[doc = "Field `UCGC` writer - General Call address received Flag"]
-pub struct UCGC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCGC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 5)) | ((value as u8 & 0x01) << 5);
-        self.w
-    }
-}
+pub type UCGC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCSCLLOW` reader - SCL low"]
-pub struct UCSCLLOW_R(crate::FieldReader<bool, bool>);
-impl UCSCLLOW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSCLLOW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSCLLOW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSCLLOW_R = crate::BitReader<bool>;
 #[doc = "Field `UCSCLLOW` writer - SCL low"]
-pub struct UCSCLLOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSCLLOW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | ((value as u8 & 0x01) << 6);
-        self.w
-    }
-}
+pub type UCSCLLOW_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 #[doc = "Field `UCLISTEN` reader - USCI Listen mode"]
-pub struct UCLISTEN_R(crate::FieldReader<bool, bool>);
-impl UCLISTEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCLISTEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCLISTEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCLISTEN_R = crate::BitReader<bool>;
 #[doc = "Field `UCLISTEN` writer - USCI Listen mode"]
-pub struct UCLISTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCLISTEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
-}
+pub type UCLISTEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0STAT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Arbitration Lost interrupt Flag"]
     #[inline(always)]
     pub fn ucalifg(&self) -> UCALIFG_R {
-        UCALIFG_R::new((self.bits & 0x01) != 0)
+        UCALIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - START Condition interrupt Flag"]
     #[inline(always)]
     pub fn ucsttifg(&self) -> UCSTTIFG_R {
-        UCSTTIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCSTTIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - STOP Condition interrupt Flag"]
     #[inline(always)]
     pub fn ucstpifg(&self) -> UCSTPIFG_R {
-        UCSTPIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCSTPIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - NAK Condition interrupt Flag"]
     #[inline(always)]
     pub fn ucnackifg(&self) -> UCNACKIFG_R {
-        UCNACKIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCNACKIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Bus Busy Flag"]
     #[inline(always)]
     pub fn ucbbusy(&self) -> UCBBUSY_R {
-        UCBBUSY_R::new(((self.bits >> 4) & 0x01) != 0)
+        UCBBUSY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - General Call address received Flag"]
     #[inline(always)]
     pub fn ucgc(&self) -> UCGC_R {
-        UCGC_R::new(((self.bits >> 5) & 0x01) != 0)
+        UCGC_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
     pub fn ucscllow(&self) -> UCSCLLOW_R {
-        UCSCLLOW_R::new(((self.bits >> 6) & 0x01) != 0)
+        UCSCLLOW_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - USCI Listen mode"]
     #[inline(always)]
     pub fn uclisten(&self) -> UCLISTEN_R {
-        UCLISTEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        UCLISTEN_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Arbitration Lost interrupt Flag"]
     #[inline(always)]
-    pub fn ucalifg(&mut self) -> UCALIFG_W {
-        UCALIFG_W { w: self }
+    pub fn ucalifg(&mut self) -> UCALIFG_W<0> {
+        UCALIFG_W::new(self)
     }
     #[doc = "Bit 1 - START Condition interrupt Flag"]
     #[inline(always)]
-    pub fn ucsttifg(&mut self) -> UCSTTIFG_W {
-        UCSTTIFG_W { w: self }
+    pub fn ucsttifg(&mut self) -> UCSTTIFG_W<1> {
+        UCSTTIFG_W::new(self)
     }
     #[doc = "Bit 2 - STOP Condition interrupt Flag"]
     #[inline(always)]
-    pub fn ucstpifg(&mut self) -> UCSTPIFG_W {
-        UCSTPIFG_W { w: self }
+    pub fn ucstpifg(&mut self) -> UCSTPIFG_W<2> {
+        UCSTPIFG_W::new(self)
     }
     #[doc = "Bit 3 - NAK Condition interrupt Flag"]
     #[inline(always)]
-    pub fn ucnackifg(&mut self) -> UCNACKIFG_W {
-        UCNACKIFG_W { w: self }
+    pub fn ucnackifg(&mut self) -> UCNACKIFG_W<3> {
+        UCNACKIFG_W::new(self)
     }
     #[doc = "Bit 4 - Bus Busy Flag"]
     #[inline(always)]
-    pub fn ucbbusy(&mut self) -> UCBBUSY_W {
-        UCBBUSY_W { w: self }
+    pub fn ucbbusy(&mut self) -> UCBBUSY_W<4> {
+        UCBBUSY_W::new(self)
     }
     #[doc = "Bit 5 - General Call address received Flag"]
     #[inline(always)]
-    pub fn ucgc(&mut self) -> UCGC_W {
-        UCGC_W { w: self }
+    pub fn ucgc(&mut self) -> UCGC_W<5> {
+        UCGC_W::new(self)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
-    pub fn ucscllow(&mut self) -> UCSCLLOW_W {
-        UCSCLLOW_W { w: self }
+    pub fn ucscllow(&mut self) -> UCSCLLOW_W<6> {
+        UCSCLLOW_W::new(self)
     }
     #[doc = "Bit 7 - USCI Listen mode"]
     #[inline(always)]
-    pub fn uclisten(&mut self) -> UCLISTEN_W {
-        UCLISTEN_W { w: self }
+    pub fn uclisten(&mut self) -> UCLISTEN_W<7> {
+        UCLISTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

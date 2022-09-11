@@ -35,254 +35,98 @@ impl From<crate::W<FCTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASE` reader - Enable bit for Flash segment erase"]
-pub struct ERASE_R(crate::FieldReader<bool, bool>);
-impl ERASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - Enable bit for Flash segment erase"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ERASE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, FCTL1_SPEC, bool, O>;
 #[doc = "Field `MERAS` reader - Enable bit for Flash mass erase"]
-pub struct MERAS_R(crate::FieldReader<bool, bool>);
-impl MERAS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MERAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MERAS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MERAS_R = crate::BitReader<bool>;
 #[doc = "Field `MERAS` writer - Enable bit for Flash mass erase"]
-pub struct MERAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MERAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
-        self.w
-    }
-}
+pub type MERAS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, FCTL1_SPEC, bool, O>;
 #[doc = "Field `WRT` reader - Enable bit for Flash write"]
-pub struct WRT_R(crate::FieldReader<bool, bool>);
-impl WRT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WRT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WRT_R = crate::BitReader<bool>;
 #[doc = "Field `WRT` writer - Enable bit for Flash write"]
-pub struct WRT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
-        self.w
-    }
-}
+pub type WRT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, FCTL1_SPEC, bool, O>;
 #[doc = "Field `BLKWRT` reader - Enable bit for Flash segment write"]
-pub struct BLKWRT_R(crate::FieldReader<bool, bool>);
-impl BLKWRT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BLKWRT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLKWRT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLKWRT_R = crate::BitReader<bool>;
 #[doc = "Field `BLKWRT` writer - Enable bit for Flash segment write"]
-pub struct BLKWRT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLKWRT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
-        self.w
-    }
-}
+pub type BLKWRT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, FCTL1_SPEC, bool, O>;
+#[doc = "Field `FWKEY` reader - FCTL1 Password"]
+pub type FWKEY_R = crate::FieldReader<u8, FWKEYR_A>;
 #[doc = "FCTL1 Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FWKEY_A {
+pub enum FWKEYR_A {
     #[doc = "150: Value always read from the FCTL1 Password register"]
     PASSWORD = 150,
 }
-impl From<FWKEY_A> for u8 {
+impl From<FWKEYR_A> for u8 {
     #[inline(always)]
-    fn from(variant: FWKEY_A) -> Self {
+    fn from(variant: FWKEYR_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FWKEY` reader - FCTL1 Password"]
-pub struct FWKEY_R(crate::FieldReader<u8, FWKEY_A>);
 impl FWKEY_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FWKEY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<FWKEY_A> {
+    pub fn variant(&self) -> Option<FWKEYR_A> {
         match self.bits {
-            150 => Some(FWKEY_A::PASSWORD),
+            150 => Some(FWKEYR_A::PASSWORD),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PASSWORD`"]
     #[inline(always)]
     pub fn is_password(&self) -> bool {
-        **self == FWKEY_A::PASSWORD
-    }
-}
-impl core::ops::Deref for FWKEY_R {
-    type Target = crate::FieldReader<u8, FWKEY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FWKEYR_A::PASSWORD
     }
 }
 #[doc = "FCTL1 Password\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FWKEY_AW {
+pub enum FWKEYW_AW {
     #[doc = "165: Value which must be written to the FCTL1 Password register"]
     PASSWORD = 165,
 }
-impl From<FWKEY_AW> for u8 {
+impl From<FWKEYW_AW> for u8 {
     #[inline(always)]
-    fn from(variant: FWKEY_AW) -> Self {
+    fn from(variant: FWKEYW_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `FWKEY` writer - FCTL1 Password"]
-pub struct FWKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FWKEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FWKEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FWKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u16, FCTL1_SPEC, u8, FWKEYW_AW, 8, O>;
+impl<'a, const O: u8> FWKEY_W<'a, O> {
     #[doc = "Value which must be written to the FCTL1 Password register"]
     #[inline(always)]
     pub fn password(self) -> &'a mut W {
-        self.variant(FWKEY_AW::PASSWORD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
+        self.variant(FWKEYW_AW::PASSWORD)
     }
 }
 impl R {
     #[doc = "Bit 1 - Enable bit for Flash segment erase"]
     #[inline(always)]
     pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new(((self.bits >> 1) & 0x01) != 0)
+        ERASE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable bit for Flash mass erase"]
     #[inline(always)]
     pub fn meras(&self) -> MERAS_R {
-        MERAS_R::new(((self.bits >> 2) & 0x01) != 0)
+        MERAS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 6 - Enable bit for Flash write"]
     #[inline(always)]
     pub fn wrt(&self) -> WRT_R {
-        WRT_R::new(((self.bits >> 6) & 0x01) != 0)
+        WRT_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable bit for Flash segment write"]
     #[inline(always)]
     pub fn blkwrt(&self) -> BLKWRT_R {
-        BLKWRT_R::new(((self.bits >> 7) & 0x01) != 0)
+        BLKWRT_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:15 - FCTL1 Password"]
     #[inline(always)]
@@ -293,28 +137,28 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Enable bit for Flash segment erase"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<1> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 2 - Enable bit for Flash mass erase"]
     #[inline(always)]
-    pub fn meras(&mut self) -> MERAS_W {
-        MERAS_W { w: self }
+    pub fn meras(&mut self) -> MERAS_W<2> {
+        MERAS_W::new(self)
     }
     #[doc = "Bit 6 - Enable bit for Flash write"]
     #[inline(always)]
-    pub fn wrt(&mut self) -> WRT_W {
-        WRT_W { w: self }
+    pub fn wrt(&mut self) -> WRT_W<6> {
+        WRT_W::new(self)
     }
     #[doc = "Bit 7 - Enable bit for Flash segment write"]
     #[inline(always)]
-    pub fn blkwrt(&mut self) -> BLKWRT_W {
-        BLKWRT_W { w: self }
+    pub fn blkwrt(&mut self) -> BLKWRT_W<7> {
+        BLKWRT_W::new(self)
     }
     #[doc = "Bits 8:15 - FCTL1 Password"]
     #[inline(always)]
-    pub fn fwkey(&mut self) -> FWKEY_W {
-        FWKEY_W { w: self }
+    pub fn fwkey(&mut self) -> FWKEY_W<8> {
+        FWKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

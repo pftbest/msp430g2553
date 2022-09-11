@@ -35,44 +35,22 @@ impl From<crate::W<CALDCO_12MHZ_SPEC>> for W {
     }
 }
 #[doc = "Field `CALDCO_12MHZ` reader - DCOCTL Calibration Data for 12MHz register"]
-pub struct CALDCO_12MHZ_R(crate::FieldReader<u8, u8>);
-impl CALDCO_12MHZ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CALDCO_12MHZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALDCO_12MHZ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALDCO_12MHZ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALDCO_12MHZ` writer - DCOCTL Calibration Data for 12MHz register"]
-pub struct CALDCO_12MHZ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALDCO_12MHZ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type CALDCO_12MHZ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, CALDCO_12MHZ_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DCOCTL Calibration Data for 12MHz register"]
     #[inline(always)]
     pub fn caldco_12mhz(&self) -> CALDCO_12MHZ_R {
-        CALDCO_12MHZ_R::new(self.bits as u8)
+        CALDCO_12MHZ_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - DCOCTL Calibration Data for 12MHz register"]
     #[inline(always)]
-    pub fn caldco_12mhz(&mut self) -> CALDCO_12MHZ_W {
-        CALDCO_12MHZ_W { w: self }
+    pub fn caldco_12mhz(&mut self) -> CALDCO_12MHZ_W<0> {
+        CALDCO_12MHZ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

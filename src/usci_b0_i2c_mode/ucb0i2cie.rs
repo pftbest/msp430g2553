@@ -35,198 +35,67 @@ impl From<crate::W<UCB0I2CIE_SPEC>> for W {
     }
 }
 #[doc = "Field `UCALIE` reader - Arbitration Lost interrupt enable"]
-pub struct UCALIE_R(crate::FieldReader<bool, bool>);
-impl UCALIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCALIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCALIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCALIE_R = crate::BitReader<bool>;
 #[doc = "Field `UCALIE` writer - Arbitration Lost interrupt enable"]
-pub struct UCALIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCALIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCALIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0I2CIE_SPEC, bool, O>;
 #[doc = "Field `UCSTTIE` reader - START Condition interrupt enable"]
-pub struct UCSTTIE_R(crate::FieldReader<bool, bool>);
-impl UCSTTIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSTTIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSTTIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSTTIE_R = crate::BitReader<bool>;
 #[doc = "Field `UCSTTIE` writer - START Condition interrupt enable"]
-pub struct UCSTTIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTTIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCSTTIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0I2CIE_SPEC, bool, O>;
 #[doc = "Field `UCSTPIE` reader - STOP Condition interrupt enable"]
-pub struct UCSTPIE_R(crate::FieldReader<bool, bool>);
-impl UCSTPIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSTPIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSTPIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSTPIE_R = crate::BitReader<bool>;
 #[doc = "Field `UCSTPIE` writer - STOP Condition interrupt enable"]
-pub struct UCSTPIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTPIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type UCSTPIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0I2CIE_SPEC, bool, O>;
 #[doc = "Field `UCNACKIE` reader - NACK Condition interrupt enable"]
-pub struct UCNACKIE_R(crate::FieldReader<bool, bool>);
-impl UCNACKIE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCNACKIE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCNACKIE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCNACKIE_R = crate::BitReader<bool>;
 #[doc = "Field `UCNACKIE` writer - NACK Condition interrupt enable"]
-pub struct UCNACKIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCNACKIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type UCNACKIE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0I2CIE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Arbitration Lost interrupt enable"]
     #[inline(always)]
     pub fn ucalie(&self) -> UCALIE_R {
-        UCALIE_R::new((self.bits & 0x01) != 0)
+        UCALIE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - START Condition interrupt enable"]
     #[inline(always)]
     pub fn ucsttie(&self) -> UCSTTIE_R {
-        UCSTTIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCSTTIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - STOP Condition interrupt enable"]
     #[inline(always)]
     pub fn ucstpie(&self) -> UCSTPIE_R {
-        UCSTPIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCSTPIE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - NACK Condition interrupt enable"]
     #[inline(always)]
     pub fn ucnackie(&self) -> UCNACKIE_R {
-        UCNACKIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCNACKIE_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Arbitration Lost interrupt enable"]
     #[inline(always)]
-    pub fn ucalie(&mut self) -> UCALIE_W {
-        UCALIE_W { w: self }
+    pub fn ucalie(&mut self) -> UCALIE_W<0> {
+        UCALIE_W::new(self)
     }
     #[doc = "Bit 1 - START Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucsttie(&mut self) -> UCSTTIE_W {
-        UCSTTIE_W { w: self }
+    pub fn ucsttie(&mut self) -> UCSTTIE_W<1> {
+        UCSTTIE_W::new(self)
     }
     #[doc = "Bit 2 - STOP Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucstpie(&mut self) -> UCSTPIE_W {
-        UCSTPIE_W { w: self }
+    pub fn ucstpie(&mut self) -> UCSTPIE_W<2> {
+        UCSTPIE_W::new(self)
     }
     #[doc = "Bit 3 - NACK Condition interrupt enable"]
     #[inline(always)]
-    pub fn ucnackie(&mut self) -> UCNACKIE_W {
-        UCNACKIE_W { w: self }
+    pub fn ucnackie(&mut self) -> UCNACKIE_W<3> {
+        UCNACKIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,196 +35,34 @@ impl From<crate::W<UCB0CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `UCSWRST` reader - USCI Software Reset"]
-pub struct UCSWRST_R(crate::FieldReader<bool, bool>);
-impl UCSWRST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSWRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCSWRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCSWRST_R = crate::BitReader<bool>;
 #[doc = "Field `UCSWRST` writer - USCI Software Reset"]
-pub struct UCSWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCSWRST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0CTL1_SPEC, bool, O>;
 #[doc = "Field `UCTXSTT` reader - Transmit START"]
-pub struct UCTXSTT_R(crate::FieldReader<bool, bool>);
-impl UCTXSTT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTXSTT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCTXSTT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCTXSTT_R = crate::BitReader<bool>;
 #[doc = "Field `UCTXSTT` writer - Transmit START"]
-pub struct UCTXSTT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXSTT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCTXSTT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0CTL1_SPEC, bool, O>;
 #[doc = "Field `UCTXSTP` reader - Transmit STOP"]
-pub struct UCTXSTP_R(crate::FieldReader<bool, bool>);
-impl UCTXSTP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTXSTP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCTXSTP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCTXSTP_R = crate::BitReader<bool>;
 #[doc = "Field `UCTXSTP` writer - Transmit STOP"]
-pub struct UCTXSTP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXSTP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 2)) | ((value as u8 & 0x01) << 2);
-        self.w
-    }
-}
+pub type UCTXSTP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0CTL1_SPEC, bool, O>;
 #[doc = "Field `UCTXNACK` reader - Transmit NACK"]
-pub struct UCTXNACK_R(crate::FieldReader<bool, bool>);
-impl UCTXNACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTXNACK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCTXNACK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCTXNACK_R = crate::BitReader<bool>;
 #[doc = "Field `UCTXNACK` writer - Transmit NACK"]
-pub struct UCTXNACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXNACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 3)) | ((value as u8 & 0x01) << 3);
-        self.w
-    }
-}
+pub type UCTXNACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0CTL1_SPEC, bool, O>;
 #[doc = "Field `UCTR` reader - Transmit/Receive Select/Flag"]
-pub struct UCTR_R(crate::FieldReader<bool, bool>);
-impl UCTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCTR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCTR_R = crate::BitReader<bool>;
 #[doc = "Field `UCTR` writer - Transmit/Receive Select/Flag"]
-pub struct UCTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 4)) | ((value as u8 & 0x01) << 4);
-        self.w
-    }
-}
+pub type UCTR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCB0CTL1_SPEC, bool, O>;
+#[doc = "Field `UCSSEL` reader - USCI 1 Clock Source Select 1"]
+pub type UCSSEL_R = crate::FieldReader<u8, UCSSEL_A>;
 #[doc = "USCI 1 Clock Source Select 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCSSEL_A {
     #[doc = "0: USCI 0 Clock Source: 0"]
@@ -242,14 +80,8 @@ impl From<UCSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCSSEL` reader - USCI 1 Clock Source Select 1"]
-pub struct UCSSEL_R(crate::FieldReader<u8, UCSSEL_A>);
 impl UCSSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCSSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSSEL_A {
         match self.bits {
@@ -263,41 +95,28 @@ impl UCSSEL_R {
     #[doc = "Checks if the value of the field is `UCSSEL_0`"]
     #[inline(always)]
     pub fn is_ucssel_0(&self) -> bool {
-        **self == UCSSEL_A::UCSSEL_0
+        *self == UCSSEL_A::UCSSEL_0
     }
     #[doc = "Checks if the value of the field is `UCSSEL_1`"]
     #[inline(always)]
     pub fn is_ucssel_1(&self) -> bool {
-        **self == UCSSEL_A::UCSSEL_1
+        *self == UCSSEL_A::UCSSEL_1
     }
     #[doc = "Checks if the value of the field is `UCSSEL_2`"]
     #[inline(always)]
     pub fn is_ucssel_2(&self) -> bool {
-        **self == UCSSEL_A::UCSSEL_2
+        *self == UCSSEL_A::UCSSEL_2
     }
     #[doc = "Checks if the value of the field is `UCSSEL_3`"]
     #[inline(always)]
     pub fn is_ucssel_3(&self) -> bool {
-        **self == UCSSEL_A::UCSSEL_3
-    }
-}
-impl core::ops::Deref for UCSSEL_R {
-    type Target = crate::FieldReader<u8, UCSSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCSSEL_A::UCSSEL_3
     }
 }
 #[doc = "Field `UCSSEL` writer - USCI 1 Clock Source Select 1"]
-pub struct UCSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type UCSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCB0CTL1_SPEC, u8, UCSSEL_A, 2, O>;
+impl<'a, const O: u8> UCSSEL_W<'a, O> {
     #[doc = "USCI 0 Clock Source: 0"]
     #[inline(always)]
     pub fn ucssel_0(self) -> &'a mut W {
@@ -318,76 +137,69 @@ impl<'a> UCSSEL_W<'a> {
     pub fn ucssel_3(self) -> &'a mut W {
         self.variant(UCSSEL_A::UCSSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 6)) | ((value as u8 & 0x03) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - USCI Software Reset"]
     #[inline(always)]
     pub fn ucswrst(&self) -> UCSWRST_R {
-        UCSWRST_R::new((self.bits & 0x01) != 0)
+        UCSWRST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit START"]
     #[inline(always)]
     pub fn uctxstt(&self) -> UCTXSTT_R {
-        UCTXSTT_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCTXSTT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transmit STOP"]
     #[inline(always)]
     pub fn uctxstp(&self) -> UCTXSTP_R {
-        UCTXSTP_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCTXSTP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Transmit NACK"]
     #[inline(always)]
     pub fn uctxnack(&self) -> UCTXNACK_R {
-        UCTXNACK_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCTXNACK_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Transmit/Receive Select/Flag"]
     #[inline(always)]
     pub fn uctr(&self) -> UCTR_R {
-        UCTR_R::new(((self.bits >> 4) & 0x01) != 0)
+        UCTR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 6:7 - USCI 1 Clock Source Select 1"]
     #[inline(always)]
     pub fn ucssel(&self) -> UCSSEL_R {
-        UCSSEL_R::new(((self.bits >> 6) & 0x03) as u8)
+        UCSSEL_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - USCI Software Reset"]
     #[inline(always)]
-    pub fn ucswrst(&mut self) -> UCSWRST_W {
-        UCSWRST_W { w: self }
+    pub fn ucswrst(&mut self) -> UCSWRST_W<0> {
+        UCSWRST_W::new(self)
     }
     #[doc = "Bit 1 - Transmit START"]
     #[inline(always)]
-    pub fn uctxstt(&mut self) -> UCTXSTT_W {
-        UCTXSTT_W { w: self }
+    pub fn uctxstt(&mut self) -> UCTXSTT_W<1> {
+        UCTXSTT_W::new(self)
     }
     #[doc = "Bit 2 - Transmit STOP"]
     #[inline(always)]
-    pub fn uctxstp(&mut self) -> UCTXSTP_W {
-        UCTXSTP_W { w: self }
+    pub fn uctxstp(&mut self) -> UCTXSTP_W<2> {
+        UCTXSTP_W::new(self)
     }
     #[doc = "Bit 3 - Transmit NACK"]
     #[inline(always)]
-    pub fn uctxnack(&mut self) -> UCTXNACK_W {
-        UCTXNACK_W { w: self }
+    pub fn uctxnack(&mut self) -> UCTXNACK_W<3> {
+        UCTXNACK_W::new(self)
     }
     #[doc = "Bit 4 - Transmit/Receive Select/Flag"]
     #[inline(always)]
-    pub fn uctr(&mut self) -> UCTR_W {
-        UCTR_W { w: self }
+    pub fn uctr(&mut self) -> UCTR_W<4> {
+        UCTR_W::new(self)
     }
     #[doc = "Bits 6:7 - USCI 1 Clock Source Select 1"]
     #[inline(always)]
-    pub fn ucssel(&mut self) -> UCSSEL_W {
-        UCSSEL_W { w: self }
+    pub fn ucssel(&mut self) -> UCSSEL_W<6> {
+        UCSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,44 +35,22 @@ impl From<crate::W<ADC10SA_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC10SA` reader - ADC10 Data Transfer Start Address register"]
-pub struct ADC10SA_R(crate::FieldReader<u16, u16>);
-impl ADC10SA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        ADC10SA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10SA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10SA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADC10SA` writer - ADC10 Data Transfer Start Address register"]
-pub struct ADC10SA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10SA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = value as u16;
-        self.w
-    }
-}
+pub type ADC10SA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10SA_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - ADC10 Data Transfer Start Address register"]
     #[inline(always)]
     pub fn adc10sa(&self) -> ADC10SA_R {
-        ADC10SA_R::new(self.bits as u16)
+        ADC10SA_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - ADC10 Data Transfer Start Address register"]
     #[inline(always)]
-    pub fn adc10sa(&mut self) -> ADC10SA_W {
-        ADC10SA_W { w: self }
+    pub fn adc10sa(&mut self) -> ADC10SA_W<0> {
+        ADC10SA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

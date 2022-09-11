@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
-<device>
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.1" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_1.xsd">
+  <vendor>msp430gen</vendor>
   <name>MSP430G2553</name>
-  <size>2</size>
+  <version>v0.4.0</version>
+  <description/>
+  <addressUnitBits>8</addressUnitBits>
+  <width>16</width>
+  <size>16</size>
   <access>read-write</access>
   <resetValue>0</resetValue>
   <peripherals>
@@ -5238,6 +5243,7 @@
     </peripheral>
     <peripheral derivedFrom="TIMER0_A3">
       <name>TIMER1_A3</name>
+      <description>Timer1_A3</description>
       <baseAddress>286</baseAddress>
     </peripheral>
     <peripheral>
@@ -6363,7 +6369,7 @@
       </interrupt>
       <interrupt>
         <name>TIMER0_A1</name>
-        <description>0xFFF0 Timer0)A CC1, TA0</description>
+        <description>0xFFF0 Timer0_A CC1, TA0</description>
         <value>8</value>
       </interrupt>
       <interrupt>
@@ -6398,10 +6404,4 @@
       </interrupt>
     </peripheral>
   </peripherals>
-  <vendorExtensions>
-    <msp430_svd>
-      <version>0.2.0</version>
-      <commit_hash>564e4d1</commit_hash>
-    </msp430_svd>
-  </vendorExtensions>
 </device>

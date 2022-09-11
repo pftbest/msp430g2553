@@ -35,118 +35,30 @@ impl From<crate::W<UCA0IRTCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `UCIREN` reader - IRDA Encoder/Decoder enable"]
-pub struct UCIREN_R(crate::FieldReader<bool, bool>);
-impl UCIREN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCIREN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIREN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIREN_R = crate::BitReader<bool>;
 #[doc = "Field `UCIREN` writer - IRDA Encoder/Decoder enable"]
-pub struct UCIREN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIREN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCIREN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0IRTCTL_SPEC, bool, O>;
 #[doc = "Field `UCIRTXCLK` reader - IRDA Transmit Pulse Clock Select"]
-pub struct UCIRTXCLK_R(crate::FieldReader<bool, bool>);
-impl UCIRTXCLK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCIRTXCLK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIRTXCLK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIRTXCLK_R = crate::BitReader<bool>;
 #[doc = "Field `UCIRTXCLK` writer - IRDA Transmit Pulse Clock Select"]
-pub struct UCIRTXCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIRTXCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
+pub type UCIRTXCLK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0IRTCTL_SPEC, bool, O>;
 #[doc = "Field `UCIRTXPL` reader - IRDA Transmit Pulse Length 0"]
-pub struct UCIRTXPL_R(crate::FieldReader<u8, u8>);
-impl UCIRTXPL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCIRTXPL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCIRTXPL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCIRTXPL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UCIRTXPL` writer - IRDA Transmit Pulse Length 0"]
-pub struct UCIRTXPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCIRTXPL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x3f << 2)) | ((value as u8 & 0x3f) << 2);
-        self.w
-    }
-}
+pub type UCIRTXPL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCA0IRTCTL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 0 - IRDA Encoder/Decoder enable"]
     #[inline(always)]
     pub fn uciren(&self) -> UCIREN_R {
-        UCIREN_R::new((self.bits & 0x01) != 0)
+        UCIREN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - IRDA Transmit Pulse Clock Select"]
     #[inline(always)]
     pub fn ucirtxclk(&self) -> UCIRTXCLK_R {
-        UCIRTXCLK_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCIRTXCLK_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:7 - IRDA Transmit Pulse Length 0"]
     #[inline(always)]
@@ -157,18 +69,18 @@ impl R {
 impl W {
     #[doc = "Bit 0 - IRDA Encoder/Decoder enable"]
     #[inline(always)]
-    pub fn uciren(&mut self) -> UCIREN_W {
-        UCIREN_W { w: self }
+    pub fn uciren(&mut self) -> UCIREN_W<0> {
+        UCIREN_W::new(self)
     }
     #[doc = "Bit 1 - IRDA Transmit Pulse Clock Select"]
     #[inline(always)]
-    pub fn ucirtxclk(&mut self) -> UCIRTXCLK_W {
-        UCIRTXCLK_W { w: self }
+    pub fn ucirtxclk(&mut self) -> UCIRTXCLK_W<1> {
+        UCIRTXCLK_W::new(self)
     }
     #[doc = "Bits 2:7 - IRDA Transmit Pulse Length 0"]
     #[inline(always)]
-    pub fn ucirtxpl(&mut self) -> UCIRTXPL_W {
-        UCIRTXPL_W { w: self }
+    pub fn ucirtxpl(&mut self) -> UCIRTXPL_W<2> {
+        UCIRTXPL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

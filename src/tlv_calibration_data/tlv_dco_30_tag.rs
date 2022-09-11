@@ -35,44 +35,22 @@ impl From<crate::W<TLV_DCO_30_TAG_SPEC>> for W {
     }
 }
 #[doc = "Field `TLV_DCO_30_TAG` reader - TLV TAG_DCO30 TAG register"]
-pub struct TLV_DCO_30_TAG_R(crate::FieldReader<u8, u8>);
-impl TLV_DCO_30_TAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TLV_DCO_30_TAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLV_DCO_30_TAG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLV_DCO_30_TAG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TLV_DCO_30_TAG` writer - TLV TAG_DCO30 TAG register"]
-pub struct TLV_DCO_30_TAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLV_DCO_30_TAG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type TLV_DCO_30_TAG_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, TLV_DCO_30_TAG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - TLV TAG_DCO30 TAG register"]
     #[inline(always)]
     pub fn tlv_dco_30_tag(&self) -> TLV_DCO_30_TAG_R {
-        TLV_DCO_30_TAG_R::new(self.bits as u8)
+        TLV_DCO_30_TAG_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - TLV TAG_DCO30 TAG register"]
     #[inline(always)]
-    pub fn tlv_dco_30_tag(&mut self) -> TLV_DCO_30_TAG_W {
-        TLV_DCO_30_TAG_W { w: self }
+    pub fn tlv_dco_30_tag(&mut self) -> TLV_DCO_30_TAG_W<0> {
+        TLV_DCO_30_TAG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,44 +35,22 @@ impl From<crate::W<CALBC1_16MHZ_SPEC>> for W {
     }
 }
 #[doc = "Field `CALBC1_16MHZ` reader - BCSCTL1 Calibration Data for 16MHz register"]
-pub struct CALBC1_16MHZ_R(crate::FieldReader<u8, u8>);
-impl CALBC1_16MHZ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CALBC1_16MHZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALBC1_16MHZ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALBC1_16MHZ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALBC1_16MHZ` writer - BCSCTL1 Calibration Data for 16MHz register"]
-pub struct CALBC1_16MHZ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALBC1_16MHZ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = value as u8;
-        self.w
-    }
-}
+pub type CALBC1_16MHZ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, CALBC1_16MHZ_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - BCSCTL1 Calibration Data for 16MHz register"]
     #[inline(always)]
     pub fn calbc1_16mhz(&self) -> CALBC1_16MHZ_R {
-        CALBC1_16MHZ_R::new(self.bits as u8)
+        CALBC1_16MHZ_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - BCSCTL1 Calibration Data for 16MHz register"]
     #[inline(always)]
-    pub fn calbc1_16mhz(&mut self) -> CALBC1_16MHZ_W {
-        CALBC1_16MHZ_W { w: self }
+    pub fn calbc1_16mhz(&mut self) -> CALBC1_16MHZ_W<0> {
+        CALBC1_16MHZ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

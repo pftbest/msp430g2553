@@ -35,44 +35,14 @@ impl From<crate::W<UCA0MCTL_SPEC>> for W {
     }
 }
 #[doc = "Field `UCOS16` reader - USCI 16-times Oversampling enable"]
-pub struct UCOS16_R(crate::FieldReader<bool, bool>);
-impl UCOS16_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCOS16_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCOS16_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCOS16_R = crate::BitReader<bool>;
 #[doc = "Field `UCOS16` writer - USCI 16-times Oversampling enable"]
-pub struct UCOS16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOS16_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type UCOS16_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, UCA0MCTL_SPEC, bool, O>;
+#[doc = "Field `UCBRS` reader - USCI Second Stage Modulation Select 2"]
+pub type UCBRS_R = crate::FieldReader<u8, UCBRS_A>;
 #[doc = "USCI Second Stage Modulation Select 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCBRS_A {
     #[doc = "0: USCI Second Stage Modulation: 0"]
@@ -98,14 +68,8 @@ impl From<UCBRS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCBRS` reader - USCI Second Stage Modulation Select 2"]
-pub struct UCBRS_R(crate::FieldReader<u8, UCBRS_A>);
 impl UCBRS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCBRS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCBRS_A {
         match self.bits {
@@ -123,61 +87,48 @@ impl UCBRS_R {
     #[doc = "Checks if the value of the field is `UCBRS_0`"]
     #[inline(always)]
     pub fn is_ucbrs_0(&self) -> bool {
-        **self == UCBRS_A::UCBRS_0
+        *self == UCBRS_A::UCBRS_0
     }
     #[doc = "Checks if the value of the field is `UCBRS_1`"]
     #[inline(always)]
     pub fn is_ucbrs_1(&self) -> bool {
-        **self == UCBRS_A::UCBRS_1
+        *self == UCBRS_A::UCBRS_1
     }
     #[doc = "Checks if the value of the field is `UCBRS_2`"]
     #[inline(always)]
     pub fn is_ucbrs_2(&self) -> bool {
-        **self == UCBRS_A::UCBRS_2
+        *self == UCBRS_A::UCBRS_2
     }
     #[doc = "Checks if the value of the field is `UCBRS_3`"]
     #[inline(always)]
     pub fn is_ucbrs_3(&self) -> bool {
-        **self == UCBRS_A::UCBRS_3
+        *self == UCBRS_A::UCBRS_3
     }
     #[doc = "Checks if the value of the field is `UCBRS_4`"]
     #[inline(always)]
     pub fn is_ucbrs_4(&self) -> bool {
-        **self == UCBRS_A::UCBRS_4
+        *self == UCBRS_A::UCBRS_4
     }
     #[doc = "Checks if the value of the field is `UCBRS_5`"]
     #[inline(always)]
     pub fn is_ucbrs_5(&self) -> bool {
-        **self == UCBRS_A::UCBRS_5
+        *self == UCBRS_A::UCBRS_5
     }
     #[doc = "Checks if the value of the field is `UCBRS_6`"]
     #[inline(always)]
     pub fn is_ucbrs_6(&self) -> bool {
-        **self == UCBRS_A::UCBRS_6
+        *self == UCBRS_A::UCBRS_6
     }
     #[doc = "Checks if the value of the field is `UCBRS_7`"]
     #[inline(always)]
     pub fn is_ucbrs_7(&self) -> bool {
-        **self == UCBRS_A::UCBRS_7
-    }
-}
-impl core::ops::Deref for UCBRS_R {
-    type Target = crate::FieldReader<u8, UCBRS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCBRS_A::UCBRS_7
     }
 }
 #[doc = "Field `UCBRS` writer - USCI Second Stage Modulation Select 2"]
-pub struct UCBRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCBRS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type UCBRS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCA0MCTL_SPEC, u8, UCBRS_A, 3, O>;
+impl<'a, const O: u8> UCBRS_W<'a, O> {
     #[doc = "USCI Second Stage Modulation: 0"]
     #[inline(always)]
     pub fn ucbrs_0(self) -> &'a mut W {
@@ -218,16 +169,11 @@ impl<'a> UCBRS_W<'a> {
     pub fn ucbrs_7(self) -> &'a mut W {
         self.variant(UCBRS_A::UCBRS_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x07 << 1)) | ((value as u8 & 0x07) << 1);
-        self.w
-    }
 }
+#[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
+pub type UCBRF_R = crate::FieldReader<u8, UCBRF_A>;
 #[doc = "USCI First Stage Modulation Select 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UCBRF_A {
     #[doc = "0: USCI First Stage Modulation: 0"]
@@ -269,14 +215,8 @@ impl From<UCBRF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `UCBRF` reader - USCI First Stage Modulation Select 3"]
-pub struct UCBRF_R(crate::FieldReader<u8, UCBRF_A>);
 impl UCBRF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        UCBRF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCBRF_A {
         match self.bits {
@@ -302,101 +242,88 @@ impl UCBRF_R {
     #[doc = "Checks if the value of the field is `UCBRF_0`"]
     #[inline(always)]
     pub fn is_ucbrf_0(&self) -> bool {
-        **self == UCBRF_A::UCBRF_0
+        *self == UCBRF_A::UCBRF_0
     }
     #[doc = "Checks if the value of the field is `UCBRF_1`"]
     #[inline(always)]
     pub fn is_ucbrf_1(&self) -> bool {
-        **self == UCBRF_A::UCBRF_1
+        *self == UCBRF_A::UCBRF_1
     }
     #[doc = "Checks if the value of the field is `UCBRF_2`"]
     #[inline(always)]
     pub fn is_ucbrf_2(&self) -> bool {
-        **self == UCBRF_A::UCBRF_2
+        *self == UCBRF_A::UCBRF_2
     }
     #[doc = "Checks if the value of the field is `UCBRF_3`"]
     #[inline(always)]
     pub fn is_ucbrf_3(&self) -> bool {
-        **self == UCBRF_A::UCBRF_3
+        *self == UCBRF_A::UCBRF_3
     }
     #[doc = "Checks if the value of the field is `UCBRF_4`"]
     #[inline(always)]
     pub fn is_ucbrf_4(&self) -> bool {
-        **self == UCBRF_A::UCBRF_4
+        *self == UCBRF_A::UCBRF_4
     }
     #[doc = "Checks if the value of the field is `UCBRF_5`"]
     #[inline(always)]
     pub fn is_ucbrf_5(&self) -> bool {
-        **self == UCBRF_A::UCBRF_5
+        *self == UCBRF_A::UCBRF_5
     }
     #[doc = "Checks if the value of the field is `UCBRF_6`"]
     #[inline(always)]
     pub fn is_ucbrf_6(&self) -> bool {
-        **self == UCBRF_A::UCBRF_6
+        *self == UCBRF_A::UCBRF_6
     }
     #[doc = "Checks if the value of the field is `UCBRF_7`"]
     #[inline(always)]
     pub fn is_ucbrf_7(&self) -> bool {
-        **self == UCBRF_A::UCBRF_7
+        *self == UCBRF_A::UCBRF_7
     }
     #[doc = "Checks if the value of the field is `UCBRF_8`"]
     #[inline(always)]
     pub fn is_ucbrf_8(&self) -> bool {
-        **self == UCBRF_A::UCBRF_8
+        *self == UCBRF_A::UCBRF_8
     }
     #[doc = "Checks if the value of the field is `UCBRF_9`"]
     #[inline(always)]
     pub fn is_ucbrf_9(&self) -> bool {
-        **self == UCBRF_A::UCBRF_9
+        *self == UCBRF_A::UCBRF_9
     }
     #[doc = "Checks if the value of the field is `UCBRF_10`"]
     #[inline(always)]
     pub fn is_ucbrf_10(&self) -> bool {
-        **self == UCBRF_A::UCBRF_10
+        *self == UCBRF_A::UCBRF_10
     }
     #[doc = "Checks if the value of the field is `UCBRF_11`"]
     #[inline(always)]
     pub fn is_ucbrf_11(&self) -> bool {
-        **self == UCBRF_A::UCBRF_11
+        *self == UCBRF_A::UCBRF_11
     }
     #[doc = "Checks if the value of the field is `UCBRF_12`"]
     #[inline(always)]
     pub fn is_ucbrf_12(&self) -> bool {
-        **self == UCBRF_A::UCBRF_12
+        *self == UCBRF_A::UCBRF_12
     }
     #[doc = "Checks if the value of the field is `UCBRF_13`"]
     #[inline(always)]
     pub fn is_ucbrf_13(&self) -> bool {
-        **self == UCBRF_A::UCBRF_13
+        *self == UCBRF_A::UCBRF_13
     }
     #[doc = "Checks if the value of the field is `UCBRF_14`"]
     #[inline(always)]
     pub fn is_ucbrf_14(&self) -> bool {
-        **self == UCBRF_A::UCBRF_14
+        *self == UCBRF_A::UCBRF_14
     }
     #[doc = "Checks if the value of the field is `UCBRF_15`"]
     #[inline(always)]
     pub fn is_ucbrf_15(&self) -> bool {
-        **self == UCBRF_A::UCBRF_15
-    }
-}
-impl core::ops::Deref for UCBRF_R {
-    type Target = crate::FieldReader<u8, UCBRF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCBRF_A::UCBRF_15
     }
 }
 #[doc = "Field `UCBRF` writer - USCI First Stage Modulation Select 3"]
-pub struct UCBRF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBRF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCBRF_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type UCBRF_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, UCA0MCTL_SPEC, u8, UCBRF_A, 4, O>;
+impl<'a, const O: u8> UCBRF_W<'a, O> {
     #[doc = "USCI First Stage Modulation: 0"]
     #[inline(always)]
     pub fn ucbrf_0(self) -> &'a mut W {
@@ -477,24 +404,17 @@ impl<'a> UCBRF_W<'a> {
     pub fn ucbrf_15(self) -> &'a mut W {
         self.variant(UCBRF_A::UCBRF_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x0f << 4)) | ((value as u8 & 0x0f) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - USCI 16-times Oversampling enable"]
     #[inline(always)]
     pub fn ucos16(&self) -> UCOS16_R {
-        UCOS16_R::new((self.bits & 0x01) != 0)
+        UCOS16_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - USCI Second Stage Modulation Select 2"]
     #[inline(always)]
     pub fn ucbrs(&self) -> UCBRS_R {
-        UCBRS_R::new(((self.bits >> 1) & 0x07) as u8)
+        UCBRS_R::new(((self.bits >> 1) & 7) as u8)
     }
     #[doc = "Bits 4:7 - USCI First Stage Modulation Select 3"]
     #[inline(always)]
@@ -505,18 +425,18 @@ impl R {
 impl W {
     #[doc = "Bit 0 - USCI 16-times Oversampling enable"]
     #[inline(always)]
-    pub fn ucos16(&mut self) -> UCOS16_W {
-        UCOS16_W { w: self }
+    pub fn ucos16(&mut self) -> UCOS16_W<0> {
+        UCOS16_W::new(self)
     }
     #[doc = "Bits 1:3 - USCI Second Stage Modulation Select 2"]
     #[inline(always)]
-    pub fn ucbrs(&mut self) -> UCBRS_W {
-        UCBRS_W { w: self }
+    pub fn ucbrs(&mut self) -> UCBRS_W<1> {
+        UCBRS_W::new(self)
     }
     #[doc = "Bits 4:7 - USCI First Stage Modulation Select 3"]
     #[inline(always)]
-    pub fn ucbrf(&mut self) -> UCBRF_W {
-        UCBRF_W { w: self }
+    pub fn ucbrf(&mut self) -> UCBRF_W<4> {
+        UCBRF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

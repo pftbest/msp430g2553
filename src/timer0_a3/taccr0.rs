@@ -35,44 +35,22 @@ impl From<crate::W<TACCR0_SPEC>> for W {
     }
 }
 #[doc = "Field `TACCR0` reader - Timer A Capture/Compare register 0"]
-pub struct TACCR0_R(crate::FieldReader<u16, u16>);
-impl TACCR0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TACCR0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TACCR0_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TACCR0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TACCR0` writer - Timer A Capture/Compare register 0"]
-pub struct TACCR0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TACCR0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = value as u16;
-        self.w
-    }
-}
+pub type TACCR0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, TACCR0_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Timer A Capture/Compare register 0"]
     #[inline(always)]
     pub fn taccr0(&self) -> TACCR0_R {
-        TACCR0_R::new(self.bits as u16)
+        TACCR0_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Timer A Capture/Compare register 0"]
     #[inline(always)]
-    pub fn taccr0(&mut self) -> TACCR0_W {
-        TACCR0_W { w: self }
+    pub fn taccr0(&mut self) -> TACCR0_W<0> {
+        TACCR0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

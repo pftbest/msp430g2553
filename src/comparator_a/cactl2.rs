@@ -35,120 +35,19 @@ impl From<crate::W<CACTL2_SPEC>> for W {
     }
 }
 #[doc = "Field `CAOUT` reader - Comp. A Output"]
-pub struct CAOUT_R(crate::FieldReader<bool, bool>);
-impl CAOUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAOUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAOUT_R = crate::BitReader<bool>;
 #[doc = "Field `CAOUT` writer - Comp. A Output"]
-pub struct CAOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAOUT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u8 & 0x01);
-        self.w
-    }
-}
+pub type CAOUT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL2_SPEC, bool, O>;
 #[doc = "Field `CAF` reader - Comp. A Enable Output Filter"]
-pub struct CAF_R(crate::FieldReader<bool, bool>);
-impl CAF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAF_R = crate::BitReader<bool>;
 #[doc = "Field `CAF` writer - Comp. A Enable Output Filter"]
-pub struct CAF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 1)) | ((value as u8 & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Field `CASHORT` reader - Comp. A Short + and - Terminals"]
-pub struct CASHORT_R(crate::FieldReader<bool, bool>);
-impl CASHORT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CASHORT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CASHORT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `CASHORT` writer - Comp. A Short + and - Terminals"]
-pub struct CASHORT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CASHORT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 7)) | ((value as u8 & 0x01) << 7);
-        self.w
-    }
-}
+pub type CAF_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL2_SPEC, bool, O>;
+#[doc = "Field `P2CA` reader - Comp. A +Terminal Multiplexer"]
+pub type P2CA_R = crate::FieldReader<u8, P2CA_A>;
 #[doc = "Comp. A +Terminal Multiplexer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum P2CA_A {
     #[doc = "0: No + or - connection"]
@@ -222,14 +121,8 @@ impl From<P2CA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `P2CA` reader - Comp. A +Terminal Multiplexer"]
-pub struct P2CA_R(crate::FieldReader<u8, P2CA_A>);
 impl P2CA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        P2CA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> P2CA_A {
         match self.bits {
@@ -271,181 +164,168 @@ impl P2CA_R {
     #[doc = "Checks if the value of the field is `NONE_NONE`"]
     #[inline(always)]
     pub fn is_none_none(&self) -> bool {
-        **self == P2CA_A::NONE_NONE
+        *self == P2CA_A::NONE_NONE
     }
     #[doc = "Checks if the value of the field is `NONE_CA1`"]
     #[inline(always)]
     pub fn is_none_ca1(&self) -> bool {
-        **self == P2CA_A::NONE_CA1
+        *self == P2CA_A::NONE_CA1
     }
     #[doc = "Checks if the value of the field is `NONE_CA2`"]
     #[inline(always)]
     pub fn is_none_ca2(&self) -> bool {
-        **self == P2CA_A::NONE_CA2
+        *self == P2CA_A::NONE_CA2
     }
     #[doc = "Checks if the value of the field is `NONE_CA3`"]
     #[inline(always)]
     pub fn is_none_ca3(&self) -> bool {
-        **self == P2CA_A::NONE_CA3
+        *self == P2CA_A::NONE_CA3
     }
     #[doc = "Checks if the value of the field is `NONE_CA4`"]
     #[inline(always)]
     pub fn is_none_ca4(&self) -> bool {
-        **self == P2CA_A::NONE_CA4
+        *self == P2CA_A::NONE_CA4
     }
     #[doc = "Checks if the value of the field is `NONE_CA5`"]
     #[inline(always)]
     pub fn is_none_ca5(&self) -> bool {
-        **self == P2CA_A::NONE_CA5
+        *self == P2CA_A::NONE_CA5
     }
     #[doc = "Checks if the value of the field is `NONE_CA6`"]
     #[inline(always)]
     pub fn is_none_ca6(&self) -> bool {
-        **self == P2CA_A::NONE_CA6
+        *self == P2CA_A::NONE_CA6
     }
     #[doc = "Checks if the value of the field is `NONE_CA7`"]
     #[inline(always)]
     pub fn is_none_ca7(&self) -> bool {
-        **self == P2CA_A::NONE_CA7
+        *self == P2CA_A::NONE_CA7
     }
     #[doc = "Checks if the value of the field is `CA0_NONE`"]
     #[inline(always)]
     pub fn is_ca0_none(&self) -> bool {
-        **self == P2CA_A::CA0_NONE
+        *self == P2CA_A::CA0_NONE
     }
     #[doc = "Checks if the value of the field is `CA0_CA1`"]
     #[inline(always)]
     pub fn is_ca0_ca1(&self) -> bool {
-        **self == P2CA_A::CA0_CA1
+        *self == P2CA_A::CA0_CA1
     }
     #[doc = "Checks if the value of the field is `CA0_CA2`"]
     #[inline(always)]
     pub fn is_ca0_ca2(&self) -> bool {
-        **self == P2CA_A::CA0_CA2
+        *self == P2CA_A::CA0_CA2
     }
     #[doc = "Checks if the value of the field is `CA0_CA3`"]
     #[inline(always)]
     pub fn is_ca0_ca3(&self) -> bool {
-        **self == P2CA_A::CA0_CA3
+        *self == P2CA_A::CA0_CA3
     }
     #[doc = "Checks if the value of the field is `CA0_CA4`"]
     #[inline(always)]
     pub fn is_ca0_ca4(&self) -> bool {
-        **self == P2CA_A::CA0_CA4
+        *self == P2CA_A::CA0_CA4
     }
     #[doc = "Checks if the value of the field is `CA0_CA5`"]
     #[inline(always)]
     pub fn is_ca0_ca5(&self) -> bool {
-        **self == P2CA_A::CA0_CA5
+        *self == P2CA_A::CA0_CA5
     }
     #[doc = "Checks if the value of the field is `CA0_CA6`"]
     #[inline(always)]
     pub fn is_ca0_ca6(&self) -> bool {
-        **self == P2CA_A::CA0_CA6
+        *self == P2CA_A::CA0_CA6
     }
     #[doc = "Checks if the value of the field is `CA0_CA7`"]
     #[inline(always)]
     pub fn is_ca0_ca7(&self) -> bool {
-        **self == P2CA_A::CA0_CA7
+        *self == P2CA_A::CA0_CA7
     }
     #[doc = "Checks if the value of the field is `CA1_NONE`"]
     #[inline(always)]
     pub fn is_ca1_none(&self) -> bool {
-        **self == P2CA_A::CA1_NONE
+        *self == P2CA_A::CA1_NONE
     }
     #[doc = "Checks if the value of the field is `CA1_CA1`"]
     #[inline(always)]
     pub fn is_ca1_ca1(&self) -> bool {
-        **self == P2CA_A::CA1_CA1
+        *self == P2CA_A::CA1_CA1
     }
     #[doc = "Checks if the value of the field is `CA1_CA2`"]
     #[inline(always)]
     pub fn is_ca1_ca2(&self) -> bool {
-        **self == P2CA_A::CA1_CA2
+        *self == P2CA_A::CA1_CA2
     }
     #[doc = "Checks if the value of the field is `CA1_CA3`"]
     #[inline(always)]
     pub fn is_ca1_ca3(&self) -> bool {
-        **self == P2CA_A::CA1_CA3
+        *self == P2CA_A::CA1_CA3
     }
     #[doc = "Checks if the value of the field is `CA1_CA4`"]
     #[inline(always)]
     pub fn is_ca1_ca4(&self) -> bool {
-        **self == P2CA_A::CA1_CA4
+        *self == P2CA_A::CA1_CA4
     }
     #[doc = "Checks if the value of the field is `CA1_CA5`"]
     #[inline(always)]
     pub fn is_ca1_ca5(&self) -> bool {
-        **self == P2CA_A::CA1_CA5
+        *self == P2CA_A::CA1_CA5
     }
     #[doc = "Checks if the value of the field is `CA1_CA6`"]
     #[inline(always)]
     pub fn is_ca1_ca6(&self) -> bool {
-        **self == P2CA_A::CA1_CA6
+        *self == P2CA_A::CA1_CA6
     }
     #[doc = "Checks if the value of the field is `CA1_CA7`"]
     #[inline(always)]
     pub fn is_ca1_ca7(&self) -> bool {
-        **self == P2CA_A::CA1_CA7
+        *self == P2CA_A::CA1_CA7
     }
     #[doc = "Checks if the value of the field is `CA2_NONE`"]
     #[inline(always)]
     pub fn is_ca2_none(&self) -> bool {
-        **self == P2CA_A::CA2_NONE
+        *self == P2CA_A::CA2_NONE
     }
     #[doc = "Checks if the value of the field is `CA2_CA1`"]
     #[inline(always)]
     pub fn is_ca2_ca1(&self) -> bool {
-        **self == P2CA_A::CA2_CA1
+        *self == P2CA_A::CA2_CA1
     }
     #[doc = "Checks if the value of the field is `CA2_CA2`"]
     #[inline(always)]
     pub fn is_ca2_ca2(&self) -> bool {
-        **self == P2CA_A::CA2_CA2
+        *self == P2CA_A::CA2_CA2
     }
     #[doc = "Checks if the value of the field is `CA2_CA3`"]
     #[inline(always)]
     pub fn is_ca2_ca3(&self) -> bool {
-        **self == P2CA_A::CA2_CA3
+        *self == P2CA_A::CA2_CA3
     }
     #[doc = "Checks if the value of the field is `CA2_CA4`"]
     #[inline(always)]
     pub fn is_ca2_ca4(&self) -> bool {
-        **self == P2CA_A::CA2_CA4
+        *self == P2CA_A::CA2_CA4
     }
     #[doc = "Checks if the value of the field is `CA2_CA5`"]
     #[inline(always)]
     pub fn is_ca2_ca5(&self) -> bool {
-        **self == P2CA_A::CA2_CA5
+        *self == P2CA_A::CA2_CA5
     }
     #[doc = "Checks if the value of the field is `CA2_CA6`"]
     #[inline(always)]
     pub fn is_ca2_ca6(&self) -> bool {
-        **self == P2CA_A::CA2_CA6
+        *self == P2CA_A::CA2_CA6
     }
     #[doc = "Checks if the value of the field is `CA2_CA7`"]
     #[inline(always)]
     pub fn is_ca2_ca7(&self) -> bool {
-        **self == P2CA_A::CA2_CA7
-    }
-}
-impl core::ops::Deref for P2CA_R {
-    type Target = crate::FieldReader<u8, P2CA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == P2CA_A::CA2_CA7
     }
 }
 #[doc = "Field `P2CA` writer - Comp. A +Terminal Multiplexer"]
-pub struct P2CA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P2CA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: P2CA_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type P2CA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u8, CACTL2_SPEC, u8, P2CA_A, 5, O>;
+impl<'a, const O: u8> P2CA_W<'a, O> {
     #[doc = "No + or - connection"]
     #[inline(always)]
     pub fn none_none(self) -> &'a mut W {
@@ -606,56 +486,54 @@ impl<'a> P2CA_W<'a> {
     pub fn ca2_ca7(self) -> &'a mut W {
         self.variant(P2CA_A::CA2_CA7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x1f << 2)) | ((value as u8 & 0x1f) << 2);
-        self.w
-    }
 }
+#[doc = "Field `CASHORT` reader - Comp. A Short + and - Terminals"]
+pub type CASHORT_R = crate::BitReader<bool>;
+#[doc = "Field `CASHORT` writer - Comp. A Short + and - Terminals"]
+pub type CASHORT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u8, CACTL2_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Comp. A Output"]
     #[inline(always)]
     pub fn caout(&self) -> CAOUT_R {
-        CAOUT_R::new((self.bits & 0x01) != 0)
+        CAOUT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Comp. A Enable Output Filter"]
     #[inline(always)]
     pub fn caf(&self) -> CAF_R {
-        CAF_R::new(((self.bits >> 1) & 0x01) != 0)
-    }
-    #[doc = "Bit 7 - Comp. A Short + and - Terminals"]
-    #[inline(always)]
-    pub fn cashort(&self) -> CASHORT_R {
-        CASHORT_R::new(((self.bits >> 7) & 0x01) != 0)
+        CAF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:6 - Comp. A +Terminal Multiplexer"]
     #[inline(always)]
     pub fn p2ca(&self) -> P2CA_R {
         P2CA_R::new(((self.bits >> 2) & 0x1f) as u8)
     }
+    #[doc = "Bit 7 - Comp. A Short + and - Terminals"]
+    #[inline(always)]
+    pub fn cashort(&self) -> CASHORT_R {
+        CASHORT_R::new(((self.bits >> 7) & 1) != 0)
+    }
 }
 impl W {
     #[doc = "Bit 0 - Comp. A Output"]
     #[inline(always)]
-    pub fn caout(&mut self) -> CAOUT_W {
-        CAOUT_W { w: self }
+    pub fn caout(&mut self) -> CAOUT_W<0> {
+        CAOUT_W::new(self)
     }
     #[doc = "Bit 1 - Comp. A Enable Output Filter"]
     #[inline(always)]
-    pub fn caf(&mut self) -> CAF_W {
-        CAF_W { w: self }
-    }
-    #[doc = "Bit 7 - Comp. A Short + and - Terminals"]
-    #[inline(always)]
-    pub fn cashort(&mut self) -> CASHORT_W {
-        CASHORT_W { w: self }
+    pub fn caf(&mut self) -> CAF_W<1> {
+        CAF_W::new(self)
     }
     #[doc = "Bits 2:6 - Comp. A +Terminal Multiplexer"]
     #[inline(always)]
-    pub fn p2ca(&mut self) -> P2CA_W {
-        P2CA_W { w: self }
+    pub fn p2ca(&mut self) -> P2CA_W<2> {
+        P2CA_W::new(self)
+    }
+    #[doc = "Bit 7 - Comp. A Short + and - Terminals"]
+    #[inline(always)]
+    pub fn cashort(&mut self) -> CASHORT_W<7> {
+        CASHORT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,44 +35,14 @@ impl From<crate::W<ADC10CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC10BUSY` reader - ADC10 BUSY"]
-pub struct ADC10BUSY_R(crate::FieldReader<bool, bool>);
-impl ADC10BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10BUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10BUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10BUSY_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10BUSY` writer - ADC10 BUSY"]
-pub struct ADC10BUSY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10BUSY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
-        self.w
-    }
-}
+pub type ADC10BUSY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, ADC10CTL1_SPEC, bool, O>;
+#[doc = "Field `CONSEQ` reader - ADC10 Conversion Sequence Select 0"]
+pub type CONSEQ_R = crate::FieldReader<u8, CONSEQ_A>;
 #[doc = "ADC10 Conversion Sequence Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CONSEQ_A {
     #[doc = "0: Single channel single conversion"]
@@ -90,14 +60,8 @@ impl From<CONSEQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CONSEQ` reader - ADC10 Conversion Sequence Select 0"]
-pub struct CONSEQ_R(crate::FieldReader<u8, CONSEQ_A>);
 impl CONSEQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CONSEQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CONSEQ_A {
         match self.bits {
@@ -111,41 +75,28 @@ impl CONSEQ_R {
     #[doc = "Checks if the value of the field is `CONSEQ_0`"]
     #[inline(always)]
     pub fn is_conseq_0(&self) -> bool {
-        **self == CONSEQ_A::CONSEQ_0
+        *self == CONSEQ_A::CONSEQ_0
     }
     #[doc = "Checks if the value of the field is `CONSEQ_1`"]
     #[inline(always)]
     pub fn is_conseq_1(&self) -> bool {
-        **self == CONSEQ_A::CONSEQ_1
+        *self == CONSEQ_A::CONSEQ_1
     }
     #[doc = "Checks if the value of the field is `CONSEQ_2`"]
     #[inline(always)]
     pub fn is_conseq_2(&self) -> bool {
-        **self == CONSEQ_A::CONSEQ_2
+        *self == CONSEQ_A::CONSEQ_2
     }
     #[doc = "Checks if the value of the field is `CONSEQ_3`"]
     #[inline(always)]
     pub fn is_conseq_3(&self) -> bool {
-        **self == CONSEQ_A::CONSEQ_3
-    }
-}
-impl core::ops::Deref for CONSEQ_R {
-    type Target = crate::FieldReader<u8, CONSEQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CONSEQ_A::CONSEQ_3
     }
 }
 #[doc = "Field `CONSEQ` writer - ADC10 Conversion Sequence Select 0"]
-pub struct CONSEQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CONSEQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CONSEQ_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CONSEQ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10CTL1_SPEC, u8, CONSEQ_A, 2, O>;
+impl<'a, const O: u8> CONSEQ_W<'a, O> {
     #[doc = "Single channel single conversion"]
     #[inline(always)]
     pub fn conseq_0(self) -> &'a mut W {
@@ -166,16 +117,11 @@ impl<'a> CONSEQ_W<'a> {
     pub fn conseq_3(self) -> &'a mut W {
         self.variant(CONSEQ_A::CONSEQ_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 1)) | ((value as u16 & 0x03) << 1);
-        self.w
-    }
 }
+#[doc = "Field `ADC10SSEL` reader - ADC10 Clock Source Select Bit: 0"]
+pub type ADC10SSEL_R = crate::FieldReader<u8, ADC10SSEL_A>;
 #[doc = "ADC10 Clock Source Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC10SSEL_A {
     #[doc = "0: ADC10OSC"]
@@ -193,14 +139,8 @@ impl From<ADC10SSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADC10SSEL` reader - ADC10 Clock Source Select Bit: 0"]
-pub struct ADC10SSEL_R(crate::FieldReader<u8, ADC10SSEL_A>);
 impl ADC10SSEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC10SSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC10SSEL_A {
         match self.bits {
@@ -214,41 +154,28 @@ impl ADC10SSEL_R {
     #[doc = "Checks if the value of the field is `ADC10SSEL_0`"]
     #[inline(always)]
     pub fn is_adc10ssel_0(&self) -> bool {
-        **self == ADC10SSEL_A::ADC10SSEL_0
+        *self == ADC10SSEL_A::ADC10SSEL_0
     }
     #[doc = "Checks if the value of the field is `ADC10SSEL_1`"]
     #[inline(always)]
     pub fn is_adc10ssel_1(&self) -> bool {
-        **self == ADC10SSEL_A::ADC10SSEL_1
+        *self == ADC10SSEL_A::ADC10SSEL_1
     }
     #[doc = "Checks if the value of the field is `ADC10SSEL_2`"]
     #[inline(always)]
     pub fn is_adc10ssel_2(&self) -> bool {
-        **self == ADC10SSEL_A::ADC10SSEL_2
+        *self == ADC10SSEL_A::ADC10SSEL_2
     }
     #[doc = "Checks if the value of the field is `ADC10SSEL_3`"]
     #[inline(always)]
     pub fn is_adc10ssel_3(&self) -> bool {
-        **self == ADC10SSEL_A::ADC10SSEL_3
-    }
-}
-impl core::ops::Deref for ADC10SSEL_R {
-    type Target = crate::FieldReader<u8, ADC10SSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC10SSEL_A::ADC10SSEL_3
     }
 }
 #[doc = "Field `ADC10SSEL` writer - ADC10 Clock Source Select Bit: 0"]
-pub struct ADC10SSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10SSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC10SSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ADC10SSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10CTL1_SPEC, u8, ADC10SSEL_A, 2, O>;
+impl<'a, const O: u8> ADC10SSEL_W<'a, O> {
     #[doc = "ADC10OSC"]
     #[inline(always)]
     pub fn adc10ssel_0(self) -> &'a mut W {
@@ -269,16 +196,11 @@ impl<'a> ADC10SSEL_W<'a> {
     pub fn adc10ssel_3(self) -> &'a mut W {
         self.variant(ADC10SSEL_A::ADC10SSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 3)) | ((value as u16 & 0x03) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ADC10DIV` reader - ADC10 Clock Divider Select Bit: 0"]
+pub type ADC10DIV_R = crate::FieldReader<u8, ADC10DIV_A>;
 #[doc = "ADC10 Clock Divider Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC10DIV_A {
     #[doc = "0: ADC10 Clock Divider Select 0"]
@@ -304,14 +226,8 @@ impl From<ADC10DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADC10DIV` reader - ADC10 Clock Divider Select Bit: 0"]
-pub struct ADC10DIV_R(crate::FieldReader<u8, ADC10DIV_A>);
 impl ADC10DIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC10DIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC10DIV_A {
         match self.bits {
@@ -329,61 +245,48 @@ impl ADC10DIV_R {
     #[doc = "Checks if the value of the field is `ADC10DIV_0`"]
     #[inline(always)]
     pub fn is_adc10div_0(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_0
+        *self == ADC10DIV_A::ADC10DIV_0
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_1`"]
     #[inline(always)]
     pub fn is_adc10div_1(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_1
+        *self == ADC10DIV_A::ADC10DIV_1
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_2`"]
     #[inline(always)]
     pub fn is_adc10div_2(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_2
+        *self == ADC10DIV_A::ADC10DIV_2
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_3`"]
     #[inline(always)]
     pub fn is_adc10div_3(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_3
+        *self == ADC10DIV_A::ADC10DIV_3
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_4`"]
     #[inline(always)]
     pub fn is_adc10div_4(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_4
+        *self == ADC10DIV_A::ADC10DIV_4
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_5`"]
     #[inline(always)]
     pub fn is_adc10div_5(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_5
+        *self == ADC10DIV_A::ADC10DIV_5
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_6`"]
     #[inline(always)]
     pub fn is_adc10div_6(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_6
+        *self == ADC10DIV_A::ADC10DIV_6
     }
     #[doc = "Checks if the value of the field is `ADC10DIV_7`"]
     #[inline(always)]
     pub fn is_adc10div_7(&self) -> bool {
-        **self == ADC10DIV_A::ADC10DIV_7
-    }
-}
-impl core::ops::Deref for ADC10DIV_R {
-    type Target = crate::FieldReader<u8, ADC10DIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC10DIV_A::ADC10DIV_7
     }
 }
 #[doc = "Field `ADC10DIV` writer - ADC10 Clock Divider Select Bit: 0"]
-pub struct ADC10DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10DIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC10DIV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ADC10DIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10CTL1_SPEC, u8, ADC10DIV_A, 3, O>;
+impl<'a, const O: u8> ADC10DIV_W<'a, O> {
     #[doc = "ADC10 Clock Divider Select 0"]
     #[inline(always)]
     pub fn adc10div_0(self) -> &'a mut W {
@@ -424,92 +327,21 @@ impl<'a> ADC10DIV_W<'a> {
     pub fn adc10div_7(self) -> &'a mut W {
         self.variant(ADC10DIV_A::ADC10DIV_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x07 << 5)) | ((value as u16 & 0x07) << 5);
-        self.w
-    }
 }
 #[doc = "Field `ISSH` reader - ADC10 Invert Sample Hold Signal"]
-pub struct ISSH_R(crate::FieldReader<bool, bool>);
-impl ISSH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ISSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ISSH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ISSH_R = crate::BitReader<bool>;
 #[doc = "Field `ISSH` writer - ADC10 Invert Sample Hold Signal"]
-pub struct ISSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISSH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ISSH_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, ADC10CTL1_SPEC, bool, O>;
 #[doc = "Field `ADC10DF` reader - ADC10 Data Format 0:binary 1:2's complement"]
-pub struct ADC10DF_R(crate::FieldReader<bool, bool>);
-impl ADC10DF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC10DF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC10DF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC10DF_R = crate::BitReader<bool>;
 #[doc = "Field `ADC10DF` writer - ADC10 Data Format 0:binary 1:2's complement"]
-pub struct ADC10DF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC10DF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
-        self.w
-    }
-}
+pub type ADC10DF_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, ADC10CTL1_SPEC, bool, O>;
+#[doc = "Field `SHS` reader - ADC10 Sample/Hold Source Bit: 0"]
+pub type SHS_R = crate::FieldReader<u8, SHS_A>;
 #[doc = "ADC10 Sample/Hold Source Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SHS_A {
     #[doc = "0: ADC10SC"]
@@ -527,14 +359,8 @@ impl From<SHS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SHS` reader - ADC10 Sample/Hold Source Bit: 0"]
-pub struct SHS_R(crate::FieldReader<u8, SHS_A>);
 impl SHS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SHS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SHS_A {
         match self.bits {
@@ -548,41 +374,28 @@ impl SHS_R {
     #[doc = "Checks if the value of the field is `SHS_0`"]
     #[inline(always)]
     pub fn is_shs_0(&self) -> bool {
-        **self == SHS_A::SHS_0
+        *self == SHS_A::SHS_0
     }
     #[doc = "Checks if the value of the field is `SHS_1`"]
     #[inline(always)]
     pub fn is_shs_1(&self) -> bool {
-        **self == SHS_A::SHS_1
+        *self == SHS_A::SHS_1
     }
     #[doc = "Checks if the value of the field is `SHS_2`"]
     #[inline(always)]
     pub fn is_shs_2(&self) -> bool {
-        **self == SHS_A::SHS_2
+        *self == SHS_A::SHS_2
     }
     #[doc = "Checks if the value of the field is `SHS_3`"]
     #[inline(always)]
     pub fn is_shs_3(&self) -> bool {
-        **self == SHS_A::SHS_3
-    }
-}
-impl core::ops::Deref for SHS_R {
-    type Target = crate::FieldReader<u8, SHS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SHS_A::SHS_3
     }
 }
 #[doc = "Field `SHS` writer - ADC10 Sample/Hold Source Bit: 0"]
-pub struct SHS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SHS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SHS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SHS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10CTL1_SPEC, u8, SHS_A, 2, O>;
+impl<'a, const O: u8> SHS_W<'a, O> {
     #[doc = "ADC10SC"]
     #[inline(always)]
     pub fn shs_0(self) -> &'a mut W {
@@ -603,16 +416,11 @@ impl<'a> SHS_W<'a> {
     pub fn shs_3(self) -> &'a mut W {
         self.variant(SHS_A::SHS_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << 10)) | ((value as u16 & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `INCH` reader - ADC10 Input Channel Select Bit: 0"]
+pub type INCH_R = crate::FieldReader<u8, INCH_A>;
 #[doc = "ADC10 Input Channel Select Bit: 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INCH_A {
     #[doc = "0: Selects Channel 0"]
@@ -654,14 +462,8 @@ impl From<INCH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INCH` reader - ADC10 Input Channel Select Bit: 0"]
-pub struct INCH_R(crate::FieldReader<u8, INCH_A>);
 impl INCH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        INCH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INCH_A {
         match self.bits {
@@ -687,101 +489,88 @@ impl INCH_R {
     #[doc = "Checks if the value of the field is `INCH_0`"]
     #[inline(always)]
     pub fn is_inch_0(&self) -> bool {
-        **self == INCH_A::INCH_0
+        *self == INCH_A::INCH_0
     }
     #[doc = "Checks if the value of the field is `INCH_1`"]
     #[inline(always)]
     pub fn is_inch_1(&self) -> bool {
-        **self == INCH_A::INCH_1
+        *self == INCH_A::INCH_1
     }
     #[doc = "Checks if the value of the field is `INCH_2`"]
     #[inline(always)]
     pub fn is_inch_2(&self) -> bool {
-        **self == INCH_A::INCH_2
+        *self == INCH_A::INCH_2
     }
     #[doc = "Checks if the value of the field is `INCH_3`"]
     #[inline(always)]
     pub fn is_inch_3(&self) -> bool {
-        **self == INCH_A::INCH_3
+        *self == INCH_A::INCH_3
     }
     #[doc = "Checks if the value of the field is `INCH_4`"]
     #[inline(always)]
     pub fn is_inch_4(&self) -> bool {
-        **self == INCH_A::INCH_4
+        *self == INCH_A::INCH_4
     }
     #[doc = "Checks if the value of the field is `INCH_5`"]
     #[inline(always)]
     pub fn is_inch_5(&self) -> bool {
-        **self == INCH_A::INCH_5
+        *self == INCH_A::INCH_5
     }
     #[doc = "Checks if the value of the field is `INCH_6`"]
     #[inline(always)]
     pub fn is_inch_6(&self) -> bool {
-        **self == INCH_A::INCH_6
+        *self == INCH_A::INCH_6
     }
     #[doc = "Checks if the value of the field is `INCH_7`"]
     #[inline(always)]
     pub fn is_inch_7(&self) -> bool {
-        **self == INCH_A::INCH_7
+        *self == INCH_A::INCH_7
     }
     #[doc = "Checks if the value of the field is `INCH_8`"]
     #[inline(always)]
     pub fn is_inch_8(&self) -> bool {
-        **self == INCH_A::INCH_8
+        *self == INCH_A::INCH_8
     }
     #[doc = "Checks if the value of the field is `INCH_9`"]
     #[inline(always)]
     pub fn is_inch_9(&self) -> bool {
-        **self == INCH_A::INCH_9
+        *self == INCH_A::INCH_9
     }
     #[doc = "Checks if the value of the field is `INCH_10`"]
     #[inline(always)]
     pub fn is_inch_10(&self) -> bool {
-        **self == INCH_A::INCH_10
+        *self == INCH_A::INCH_10
     }
     #[doc = "Checks if the value of the field is `INCH_11`"]
     #[inline(always)]
     pub fn is_inch_11(&self) -> bool {
-        **self == INCH_A::INCH_11
+        *self == INCH_A::INCH_11
     }
     #[doc = "Checks if the value of the field is `INCH_12`"]
     #[inline(always)]
     pub fn is_inch_12(&self) -> bool {
-        **self == INCH_A::INCH_12
+        *self == INCH_A::INCH_12
     }
     #[doc = "Checks if the value of the field is `INCH_13`"]
     #[inline(always)]
     pub fn is_inch_13(&self) -> bool {
-        **self == INCH_A::INCH_13
+        *self == INCH_A::INCH_13
     }
     #[doc = "Checks if the value of the field is `INCH_14`"]
     #[inline(always)]
     pub fn is_inch_14(&self) -> bool {
-        **self == INCH_A::INCH_14
+        *self == INCH_A::INCH_14
     }
     #[doc = "Checks if the value of the field is `INCH_15`"]
     #[inline(always)]
     pub fn is_inch_15(&self) -> bool {
-        **self == INCH_A::INCH_15
-    }
-}
-impl core::ops::Deref for INCH_R {
-    type Target = crate::FieldReader<u8, INCH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INCH_A::INCH_15
     }
 }
 #[doc = "Field `INCH` writer - ADC10 Input Channel Select Bit: 0"]
-pub struct INCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INCH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INCH_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type INCH_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, ADC10CTL1_SPEC, u8, INCH_A, 4, O>;
+impl<'a, const O: u8> INCH_W<'a, O> {
     #[doc = "Selects Channel 0"]
     #[inline(always)]
     pub fn inch_0(self) -> &'a mut W {
@@ -862,49 +651,42 @@ impl<'a> INCH_W<'a> {
     pub fn inch_15(self) -> &'a mut W {
         self.variant(INCH_A::INCH_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x0f << 12)) | ((value as u16 & 0x0f) << 12);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - ADC10 BUSY"]
     #[inline(always)]
     pub fn adc10busy(&self) -> ADC10BUSY_R {
-        ADC10BUSY_R::new((self.bits & 0x01) != 0)
+        ADC10BUSY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - ADC10 Conversion Sequence Select 0"]
     #[inline(always)]
     pub fn conseq(&self) -> CONSEQ_R {
-        CONSEQ_R::new(((self.bits >> 1) & 0x03) as u8)
+        CONSEQ_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:4 - ADC10 Clock Source Select Bit: 0"]
     #[inline(always)]
     pub fn adc10ssel(&self) -> ADC10SSEL_R {
-        ADC10SSEL_R::new(((self.bits >> 3) & 0x03) as u8)
+        ADC10SSEL_R::new(((self.bits >> 3) & 3) as u8)
     }
     #[doc = "Bits 5:7 - ADC10 Clock Divider Select Bit: 0"]
     #[inline(always)]
     pub fn adc10div(&self) -> ADC10DIV_R {
-        ADC10DIV_R::new(((self.bits >> 5) & 0x07) as u8)
+        ADC10DIV_R::new(((self.bits >> 5) & 7) as u8)
     }
     #[doc = "Bit 8 - ADC10 Invert Sample Hold Signal"]
     #[inline(always)]
     pub fn issh(&self) -> ISSH_R {
-        ISSH_R::new(((self.bits >> 8) & 0x01) != 0)
+        ISSH_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - ADC10 Data Format 0:binary 1:2's complement"]
     #[inline(always)]
     pub fn adc10df(&self) -> ADC10DF_R {
-        ADC10DF_R::new(((self.bits >> 9) & 0x01) != 0)
+        ADC10DF_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 10:11 - ADC10 Sample/Hold Source Bit: 0"]
     #[inline(always)]
     pub fn shs(&self) -> SHS_R {
-        SHS_R::new(((self.bits >> 10) & 0x03) as u8)
+        SHS_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:15 - ADC10 Input Channel Select Bit: 0"]
     #[inline(always)]
@@ -915,43 +697,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ADC10 BUSY"]
     #[inline(always)]
-    pub fn adc10busy(&mut self) -> ADC10BUSY_W {
-        ADC10BUSY_W { w: self }
+    pub fn adc10busy(&mut self) -> ADC10BUSY_W<0> {
+        ADC10BUSY_W::new(self)
     }
     #[doc = "Bits 1:2 - ADC10 Conversion Sequence Select 0"]
     #[inline(always)]
-    pub fn conseq(&mut self) -> CONSEQ_W {
-        CONSEQ_W { w: self }
+    pub fn conseq(&mut self) -> CONSEQ_W<1> {
+        CONSEQ_W::new(self)
     }
     #[doc = "Bits 3:4 - ADC10 Clock Source Select Bit: 0"]
     #[inline(always)]
-    pub fn adc10ssel(&mut self) -> ADC10SSEL_W {
-        ADC10SSEL_W { w: self }
+    pub fn adc10ssel(&mut self) -> ADC10SSEL_W<3> {
+        ADC10SSEL_W::new(self)
     }
     #[doc = "Bits 5:7 - ADC10 Clock Divider Select Bit: 0"]
     #[inline(always)]
-    pub fn adc10div(&mut self) -> ADC10DIV_W {
-        ADC10DIV_W { w: self }
+    pub fn adc10div(&mut self) -> ADC10DIV_W<5> {
+        ADC10DIV_W::new(self)
     }
     #[doc = "Bit 8 - ADC10 Invert Sample Hold Signal"]
     #[inline(always)]
-    pub fn issh(&mut self) -> ISSH_W {
-        ISSH_W { w: self }
+    pub fn issh(&mut self) -> ISSH_W<8> {
+        ISSH_W::new(self)
     }
     #[doc = "Bit 9 - ADC10 Data Format 0:binary 1:2's complement"]
     #[inline(always)]
-    pub fn adc10df(&mut self) -> ADC10DF_W {
-        ADC10DF_W { w: self }
+    pub fn adc10df(&mut self) -> ADC10DF_W<9> {
+        ADC10DF_W::new(self)
     }
     #[doc = "Bits 10:11 - ADC10 Sample/Hold Source Bit: 0"]
     #[inline(always)]
-    pub fn shs(&mut self) -> SHS_W {
-        SHS_W { w: self }
+    pub fn shs(&mut self) -> SHS_W<10> {
+        SHS_W::new(self)
     }
     #[doc = "Bits 12:15 - ADC10 Input Channel Select Bit: 0"]
     #[inline(always)]
-    pub fn inch(&mut self) -> INCH_W {
-        INCH_W { w: self }
+    pub fn inch(&mut self) -> INCH_W<12> {
+        INCH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,93 +34,38 @@ impl From<crate::W<UCB0I2COA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `UCGCEN` reader - I2C General Call enable"]
-pub struct UCGCEN_R(crate::FieldReader<bool, bool>);
-impl UCGCEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        UCGCEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCGCEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `UCGCEN` writer - I2C General Call enable"]
-pub struct UCGCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCGCEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
-    }
-}
 #[doc = "Field `UCOA` reader - I2C Own Address 0"]
-pub struct UCOA_R(crate::FieldReader<u16, u16>);
-impl UCOA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        UCOA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCOA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCOA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `UCOA` writer - I2C Own Address 0"]
-pub struct UCOA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u16 & 0x03ff);
-        self.w
-    }
-}
+pub type UCOA_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, UCB0I2COA_SPEC, u16, u16, 10, O>;
+#[doc = "Field `UCGCEN` reader - I2C General Call enable"]
+pub type UCGCEN_R = crate::BitReader<bool>;
+#[doc = "Field `UCGCEN` writer - I2C General Call enable"]
+pub type UCGCEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u16, UCB0I2COA_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 15 - I2C General Call enable"]
-    #[inline(always)]
-    pub fn ucgcen(&self) -> UCGCEN_R {
-        UCGCEN_R::new(((self.bits >> 15) & 0x01) != 0)
-    }
     #[doc = "Bits 0:9 - I2C Own Address 0"]
     #[inline(always)]
     pub fn ucoa(&self) -> UCOA_R {
         UCOA_R::new((self.bits & 0x03ff) as u16)
     }
-}
-impl W {
     #[doc = "Bit 15 - I2C General Call enable"]
     #[inline(always)]
-    pub fn ucgcen(&mut self) -> UCGCEN_W {
-        UCGCEN_W { w: self }
+    pub fn ucgcen(&self) -> UCGCEN_R {
+        UCGCEN_R::new(((self.bits >> 15) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:9 - I2C Own Address 0"]
     #[inline(always)]
-    pub fn ucoa(&mut self) -> UCOA_W {
-        UCOA_W { w: self }
+    pub fn ucoa(&mut self) -> UCOA_W<0> {
+        UCOA_W::new(self)
+    }
+    #[doc = "Bit 15 - I2C General Call enable"]
+    #[inline(always)]
+    pub fn ucgcen(&mut self) -> UCGCEN_W<15> {
+        UCGCEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
